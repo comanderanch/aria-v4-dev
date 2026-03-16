@@ -13,6 +13,7 @@
 | 2026-03-16 | ~23:10 | ACTION TAKEN | CLAUDE.md sealed — full architecture vision + documentation protocol | README.md (this file) |
 | 2026-03-16 | ~23:15 | ACTION TAKEN | READMEs written in all 16 directories per Documentation Protocol | README.md (this file) |
 | 2026-03-16 | ~23:20 | FIX APPLIED | Embedded git repos stripped — 4 copies had .git dirs — committed as plain files | README.md (this file) |
+| 2026-03-16 | ~23:30 | ACTION TAKEN | .gitignore created — excludes binaries, memory state, venv, training data, logs | README.md (this file) |
 
 ---
 
@@ -217,6 +218,43 @@ working
 Await Commander direction on which aria-core component to wire first.
 
 **Commit hash:** d9ec6b6
+
+---
+
+## 2026-03-16 ~23:30 — ACTION TAKEN
+
+**What happened:**
+`.gitignore` created at aria-v4 root. Excludes all binary model files, runtime
+memory state, training data, venv, Python cache, and logs from version control.
+
+**File(s) affected:**
+```
+aria-v4/.gitignore
+```
+
+**State before:**
+No .gitignore. All files — including large binaries, .npy, .npz, venv/ —
+would be staged and committed on every `git add`.
+
+**State after:**
+Binary formats excluded: *.npy, *.npz, *.bin, *.pt, *.pth, *.ckpt, *.safetensors.
+Runtime memory excluded: memory/, fold/, session_folds/*.json, *.fold.
+Training outputs excluded: training_data/, checkpoints/, output/, outputs/.
+Large model dirs excluded: models/, weights/.
+Python cache excluded: __pycache__/, *.pyc, *.pyo, .env, venv/, myenv/.
+Logs excluded: *.log, logs/.
+
+**Why:**
+Commander directive. Prevents accidental commits of large binary files,
+runtime-generated memory state, and local environment files.
+
+**Result:**
+working
+
+**Next action required:**
+Await Commander direction on which aria-core component to wire first.
+
+**Commit hash:** (pending)
 
 ---
 

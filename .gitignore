@@ -1,0 +1,41 @@
+# Large token sets and training data
+*.bin
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+*.npy
+*.npz
+
+# Large JSON token sets
+color_tokens_full*.json
+token_space_*.json
+qbithue_full*.json
+
+# Memory state files - generated at runtime
+memory/
+fold/
+session_folds/*.json
+*.fold
+
+# Training data and outputs
+training_data/
+checkpoints/
+output/
+outputs/
+
+# Large model files
+models/
+weights/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+.env
+venv/
+myenv/
+
+# Logs
+*.log
+logs/
