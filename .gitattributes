@@ -1,1 +1,2 @@
+*.json filter= diff= merge= -text
 *.bak !text !filter !merge !diff
