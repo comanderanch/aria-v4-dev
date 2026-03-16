@@ -1,0 +1,24 @@
+{
+  "bridge_version": "1.0",
+  "date": "2026-03-15",
+  "source": "/home/comanderanch/ai-core/memory/trait_memory_log.json",
+  "target": "/home/comanderanch/ai-core-v3-aia/memory/cognitive_weights.json",
+  "dry_run": false,
+  "traits_read": 1,
+  "applied": 1,
+  "skipped": 0,
+  "unmapped": 0,
+  "note": "V1 traits mapped additively to V3 conscience grid. Only raises applied \u2014 nothing lowered. V1 files untouched. Both AIAs intact.",
+  "mapping_log": [
+    {
+      "v1_trait": "curiosity_trigger",
+      "v1_label": "Growth",
+      "v1_bias": 0.9,
+      "v3_axis": "upper",
+      "v3_key": "curiosity",
+      "v3_old": 0.75,
+      "v3_new": 0.9,
+      "changed": true
+    }
+  ]
+}

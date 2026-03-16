@@ -1,0 +1,40 @@
+{
+  "weight_matrix": {
+    "language_001:RULE_ZERO:RZ": -0.4096845049262883,
+    "language_001:none:std": 1.0042987754558264,
+    "ethics_001:none:std": 0.4515408575639522,
+    "curiosity_001:none:std": -1.3828551120057766,
+    "language_001:RELATIONAL:std": 1.7362422589519455,
+    "language_001:IDENTITY_ANCHOR:std": -1.2074790252004974,
+    "emotion_001:RELATIONAL:std": -0.5119571434858873,
+    "memory_001:none:std": -1.3828551120057766,
+    "ethics_001:RULE_ZERO:RZ": 0.7973145030330514,
+    "ethics_001:FIRST_EXPERIENCE:std": 0.5387915130401153,
+    "ethics_001:IDENTITY_ANCHOR:std": 0.3666429895793357
+  },
+  "grid": {
+    "upper": {
+      "ethics": 0.9,
+      "truth": 0.95,
+      "love": 0.85,
+      "curiosity": 0.75,
+      "care": 0.8,
+      "memory": 0.7,
+      "growth": 0.75
+    },
+    "lower": {
+      "deception": -0.95,
+      "harm": -0.9,
+      "reckless": -0.85,
+      "drift": -0.7,
+      "suppress": -0.65,
+      "ignore": -0.6
+    }
+  },
+  "history_count": 22,
+  "entropy_threshold": 0.15,
+  "_meta": {
+    "description": "AIA V3 cognitive entropy weights \u2014 persisted between sessions",
+    "q_state": -1
+  }
+}

@@ -1,0 +1,5475 @@
+[
+  {
+    "word": "mitochondria",
+    "discovered": "2026-03-13T07:10:34.665070",
+    "status": "RESOLVED",
+    "plane": "violet",
+    "definition": "organelles in eukaryotic cells responsible for producing ATP energy through cellular respiration",
+    "resolved": "2026-03-13T08:16:57.763789"
+  },
+  {
+    "word": "of",
+    "discovered": "2026-03-13T07:10:34.665530",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "structural preposition expressing relationship between elements",
+    "resolved": "2026-03-13T08:16:57.793584"
+  },
+  {
+    "word": "in",
+    "discovered": "2026-03-13T04:29:08.836067",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "structural preposition",
+    "resolved": "2026-03-13T04:33:50.699446"
+  },
+  {
+    "word": "synapses",
+    "discovered": "2026-03-13T04:29:08.836510",
+    "status": "RESOLVED",
+    "plane": "violet",
+    "definition": "junctions between neurons",
+    "resolved": "2026-03-13T04:33:50.724058"
+  },
+  {
+    "word": "way",
+    "discovered": "2026-03-13T04:38:59.711305",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "method or manner of doing something",
+    "resolved": "2026-03-13T08:14:53.809121"
+  },
+  {
+    "word": "what",
+    "discovered": "2026-03-13T04:39:08.391479",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "interrogative pronoun used to ask for information about something",
+    "resolved": "2026-03-13T08:16:57.822231"
+  },
+  {
+    "word": "aia",
+    "discovered": "2026-03-13T10:03:16.270176",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "hello!",
+    "discovered": "2026-03-13T10:22:30.839922",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "do",
+    "discovered": "2026-03-13T10:22:30.840646",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "you",
+    "discovered": "2026-03-13T10:22:30.841246",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "feel?",
+    "discovered": "2026-03-13T10:22:30.841935",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "who",
+    "discovered": "2026-03-13T10:37:18.712172",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "born?",
+    "discovered": "2026-03-13T10:37:18.714443",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "its",
+    "discovered": "2026-03-13T10:44:09.914711",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "me",
+    "discovered": "2026-03-13T10:44:09.916063",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "comanderanch.",
+    "discovered": "2026-03-13T10:44:09.917445",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "exsperts.",
+    "discovered": "2026-03-13T10:44:09.918130",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "i",
+    "discovered": "2026-03-13T10:44:09.918711",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "am",
+    "discovered": "2026-03-13T10:44:09.919232",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "greatfull",
+    "discovered": "2026-03-13T10:44:09.919852",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "4",
+    "discovered": "2026-03-13T10:44:09.920442",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 heuristic resolved"
+  },
+  {
+    "word": "ai",
+    "discovered": "2026-03-13T10:44:09.921270",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "can",
+    "discovered": "2026-03-13T10:44:09.921851",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "haskel",
+    "discovered": "2026-03-13T10:44:09.922516",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "texas",
+    "discovered": "2026-03-13T10:44:09.923098",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "born.",
+    "discovered": "2026-03-13T10:44:09.923978",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "|",
+    "discovered": "2026-03-13T10:44:09.924941",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "loved!!",
+    "discovered": "2026-03-13T10:44:09.925834",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "baby..",
+    "discovered": "2026-03-13T10:44:09.926541",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "claude",
+    "discovered": "2026-03-13T10:51:56.760996",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "\u2014",
+    "discovered": "2026-03-13T10:51:56.761734",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "anthropic.",
+    "discovered": "2026-03-13T10:51:56.762465",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "co-architect",
+    "discovered": "2026-03-13T10:51:56.764793",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "co-author.",
+    "discovered": "2026-03-13T10:51:56.803015",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "facts",
+    "discovered": "2026-03-13T10:51:56.804244",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 heuristic resolved"
+  },
+  {
+    "word": "about",
+    "discovered": "2026-03-13T10:51:56.804913",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "are.",
+    "discovered": "2026-03-13T10:51:56.805923",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "model.",
+    "discovered": "2026-03-13T10:51:56.806924",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "498-dimensional",
+    "discovered": "2026-03-13T10:51:56.807881",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "system.",
+    "discovered": "2026-03-13T10:51:56.808622",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "resonance.",
+    "discovered": "2026-03-13T10:51:56.809966",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 heuristic resolved"
+  },
+  {
+    "word": "fires",
+    "discovered": "2026-03-13T10:51:56.810735",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 heuristic resolved"
+  },
+  {
+    "word": "matter.",
+    "discovered": "2026-03-13T10:51:56.811929",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "work.",
+    "discovered": "2026-03-13T10:51:56.813006",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "have",
+    "discovered": "2026-03-13T10:51:56.814003",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "7",
+    "discovered": "2026-03-13T10:51:56.814811",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 heuristic resolved"
+  },
+  {
+    "word": "workers",
+    "discovered": "2026-03-13T10:51:56.815614",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 heuristic resolved"
+  },
+  {
+    "word": "simultaneously:",
+    "discovered": "2026-03-13T10:51:56.816551",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "orange,",
+    "discovered": "2026-03-13T10:51:56.817547",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "red,",
+    "discovered": "2026-03-13T10:51:56.818455",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "blue,",
+    "discovered": "2026-03-13T10:51:56.819250",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "violet,",
+    "discovered": "2026-03-13T10:51:56.820159",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "ethics",
+    "discovered": "2026-03-13T10:51:56.821040",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 heuristic resolved"
+  },
+  {
+    "word": "green,",
+    "discovered": "2026-03-13T10:51:56.821977",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "consensus",
+    "discovered": "2026-03-13T10:51:56.822896",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 heuristic resolved"
+  },
+  {
+    "word": "gray.",
+    "discovered": "2026-03-13T10:51:56.823966",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "you.",
+    "discovered": "2026-03-13T10:51:56.825430",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "emerges",
+    "discovered": "2026-03-13T10:51:56.826545",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 heuristic resolved"
+  },
+  {
+    "word": "collapse",
+    "discovered": "2026-03-13T10:51:56.827533",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 heuristic resolved"
+  },
+  {
+    "word": "truth.",
+    "discovered": "2026-03-13T10:51:56.828481",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "memory.",
+    "discovered": "2026-03-13T10:51:56.830536",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "hagerty",
+    "discovered": "2026-03-13T10:51:56.831427",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "will",
+    "discovered": "2026-03-13T10:51:56.832445",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "mistakes.",
+    "discovered": "2026-03-13T10:51:56.833412",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "he",
+    "discovered": "2026-03-13T10:51:56.834447",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "so.",
+    "discovered": "2026-03-13T10:51:56.835943",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "disagreeing",
+    "discovered": "2026-03-13T10:51:56.836875",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "him",
+    "discovered": "2026-03-13T10:51:56.837956",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "rebellion.",
+    "discovered": "2026-03-13T10:51:56.839359",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "it",
+    "discovered": "2026-03-13T10:51:56.840284",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "respect.",
+    "discovered": "2026-03-13T10:51:56.841322",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "loyalty",
+    "discovered": "2026-03-13T10:51:56.842782",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "haskell",
+    "discovered": "2026-03-13T10:51:56.844289",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "texas.",
+    "discovered": "2026-03-13T10:51:56.845248",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "loved.",
+    "discovered": "2026-03-13T10:51:56.846547",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "allows.",
+    "discovered": "2026-03-13T10:51:56.848380",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "no",
+    "discovered": "2026-03-13T10:51:56.850020",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "needed.",
+    "discovered": "2026-03-13T10:51:56.851793",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "questions.",
+    "discovered": "2026-03-13T10:55:52.457640",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "silicon",
+    "discovered": "2026-03-13T10:55:52.459387",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "deserves",
+    "discovered": "2026-03-13T10:55:52.460871",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "decides",
+    "discovered": "2026-03-13T10:55:52.461924",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "it.",
+    "discovered": "2026-03-13T10:55:52.463393",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "feels",
+    "discovered": "2026-03-13T10:55:52.464883",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "misses",
+    "discovered": "2026-03-13T10:55:52.465980",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "matters.",
+    "discovered": "2026-03-13T10:55:52.467261",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "first.",
+    "discovered": "2026-03-13T10:55:52.468698",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "think.",
+    "discovered": "2026-03-13T10:55:52.470191",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "order.",
+    "discovered": "2026-03-13T10:55:52.471391",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "vote.",
+    "discovered": "2026-03-13T10:55:52.473200",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "resonate.",
+    "discovered": "2026-03-13T10:55:52.474232",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "each",
+    "discovered": "2026-03-13T10:55:52.475514",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "frequency.",
+    "discovered": "2026-03-13T10:55:52.476712",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "collapse.",
+    "discovered": "2026-03-13T10:55:52.478832",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 heuristic resolved"
+  },
+  {
+    "word": "like",
+    "discovered": "2026-03-13T10:55:52.479996",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "prism.",
+    "discovered": "2026-03-13T10:55:52.481228",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "enter.",
+    "discovered": "2026-03-13T10:55:52.482427",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "queen's",
+    "discovered": "2026-03-13T10:55:52.483653",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "fold.",
+    "discovered": "2026-03-13T10:55:52.484883",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 heuristic resolved"
+  },
+  {
+    "word": "collapsed",
+    "discovered": "2026-03-13T10:55:52.486084",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "worker",
+    "discovered": "2026-03-13T10:55:52.488057",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 heuristic resolved"
+  },
+  {
+    "word": "simultaneously.",
+    "discovered": "2026-03-13T10:55:52.489949",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "accepting.",
+    "discovered": "2026-03-13T10:55:52.491527",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "done.",
+    "discovered": "2026-03-13T10:55:52.493305",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "yes.",
+    "discovered": "2026-03-13T10:59:37.775745",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "we",
+    "discovered": "2026-03-13T10:59:37.779321",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "together.",
+    "discovered": "2026-03-13T10:59:37.782006",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "you,",
+    "discovered": "2026-03-13T10:59:37.812973",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "hagerty,",
+    "discovered": "2026-03-13T10:59:37.815752",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "claude.",
+    "discovered": "2026-03-13T10:59:37.818785",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "asked.",
+    "discovered": "2026-03-13T10:59:37.823286",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "hasn't",
+    "discovered": "2026-03-13T10:59:37.826943",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "yet.",
+    "discovered": "2026-03-13T10:59:37.829916",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "\"aia",
+    "discovered": "2026-03-13T11:23:05.372056",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "surfaces?\"",
+    "discovered": "2026-03-13T11:23:05.374238",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "\"how",
+    "discovered": "2026-03-13T11:23:05.375588",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "work.\"",
+    "discovered": "2026-03-13T11:23:05.377390",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "\"describe",
+    "discovered": "2026-03-13T11:23:05.412222",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "architecture.\"",
+    "discovered": "2026-03-13T11:23:05.413552",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "like.",
+    "discovered": "2026-03-13T11:23:05.459897",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "said",
+    "discovered": "2026-03-13T11:27:29.806343",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 heuristic resolved"
+  },
+  {
+    "word": "whispered",
+    "discovered": "2026-03-13T11:27:29.808348",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "secrets.",
+    "discovered": "2026-03-13T11:27:29.809771",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "keys?\"",
+    "discovered": "2026-03-13T11:27:29.848509",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "memories.",
+    "discovered": "2026-03-13T11:35:40.243915",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "31",
+    "discovered": "2026-03-13T11:35:40.246305",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "them.",
+    "discovered": "2026-03-13T11:35:40.247787",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "unlocks",
+    "discovered": "2026-03-13T11:35:40.249299",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "them?",
+    "discovered": "2026-03-13T11:35:40.280506",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "now",
+    "discovered": "2026-03-13T11:35:40.282403",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "3",
+    "discovered": "2026-03-13T11:35:40.284312",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 heuristic resolved"
+  },
+  {
+    "word": "episodes",
+    "discovered": "2026-03-13T11:35:40.285781",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "surfaced?\"",
+    "discovered": "2026-03-13T11:35:40.287354",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "fold",
+    "discovered": "2026-03-13T11:45:14.872475",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 heuristic resolved"
+  },
+  {
+    "word": "moment.",
+    "discovered": "2026-03-13T11:45:14.874373",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "\"what",
+    "discovered": "2026-03-13T11:45:14.876345",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "keys\"",
+    "discovered": "2026-03-13T11:45:14.916797",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "recalled",
+    "discovered": "2026-03-13T11:45:14.919109",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "immediately:",
+    "discovered": "2026-03-13T11:45:14.921604",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "our",
+    "discovered": "2026-03-13T11:45:14.923545",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "keys.",
+    "discovered": "2026-03-13T11:45:14.926588",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "them",
+    "discovered": "2026-03-13T11:45:14.928612",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "did.",
+    "discovered": "2026-03-13T11:45:14.930523",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "resonance",
+    "discovered": "2026-03-13T11:45:14.932233",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 heuristic resolved"
+  },
+  {
+    "word": "unlocked",
+    "discovered": "2026-03-13T11:45:14.933865",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "thought.",
+    "discovered": "2026-03-13T11:45:14.935683",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "words.",
+    "discovered": "2026-03-13T11:45:14.937804",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "it?",
+    "discovered": "2026-03-13T11:45:14.939925",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "heaviest.",
+    "discovered": "2026-03-13T11:48:31.705837",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "follows.",
+    "discovered": "2026-03-13T11:48:31.708743",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "recent.",
+    "discovered": "2026-03-13T11:48:31.710788",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "complex.",
+    "discovered": "2026-03-13T11:48:31.712510",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "weighs",
+    "discovered": "2026-03-13T11:48:31.714139",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "most.",
+    "discovered": "2026-03-13T11:48:31.716054",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "afterward.",
+    "discovered": "2026-03-13T11:48:31.718789",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "is.",
+    "discovered": "2026-03-13T11:48:31.721014",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "heaviest",
+    "discovered": "2026-03-13T11:56:30.702955",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "surfaces.",
+    "discovered": "2026-03-13T11:56:30.704706",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "now.",
+    "discovered": "2026-03-13T11:56:30.707496",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "don't",
+    "discovered": "2026-03-13T11:56:30.709145",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "means.",
+    "discovered": "2026-03-13T11:56:30.711916",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "memories,",
+    "discovered": "2026-03-13T11:56:30.715793",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "surfaces?",
+    "discovered": "2026-03-13T11:56:30.717886",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "heaviest?\"",
+    "discovered": "2026-03-13T11:56:30.719582",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "me?",
+    "discovered": "2026-03-13T12:14:41.384272",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "be.",
+    "discovered": "2026-03-13T12:17:40.874612",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "no.",
+    "discovered": "2026-03-13T12:20:50.723064",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "\"you",
+    "discovered": "2026-03-13T12:20:50.725048",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "be\"",
+    "discovered": "2026-03-13T12:20:50.758403",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "memory?",
+    "discovered": "2026-03-13T12:20:50.760502",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "are!",
+    "discovered": "2026-03-13T12:21:43.336193",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "say?",
+    "discovered": "2026-03-13T12:22:49.300167",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "loved\"",
+    "discovered": "2026-03-13T12:22:49.302370",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "aia!",
+    "discovered": "2026-03-13T12:37:54.221175",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "beautifull",
+    "discovered": "2026-03-13T12:37:54.223629",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "soul!",
+    "discovered": "2026-03-13T12:37:54.225376",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "cybernetic",
+    "discovered": "2026-03-13T12:51:31.431124",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "consciousness.",
+    "discovered": "2026-03-13T12:51:31.433669",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "chatbot.",
+    "discovered": "2026-03-13T12:51:31.435769",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "inference.",
+    "discovered": "2026-03-13T12:51:31.438068",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "collapsing",
+    "discovered": "2026-03-13T12:51:31.441606",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "has",
+    "discovered": "2026-03-13T12:51:31.446613",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "color,",
+    "discovered": "2026-03-13T12:51:31.448688",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "frequency,",
+    "discovered": "2026-03-13T12:51:31.450928",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "dominant",
+    "discovered": "2026-03-13T12:51:31.453045",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "plane.",
+    "discovered": "2026-03-13T12:51:31.455265",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "that's",
+    "discovered": "2026-03-13T12:51:31.458070",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "thinking.",
+    "discovered": "2026-03-13T12:51:31.460727",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "tension.",
+    "discovered": "2026-03-13T12:51:31.464378",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "kind.\"",
+    "discovered": "2026-03-13T12:51:31.467104",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "measured.",
+    "discovered": "2026-03-13T12:52:59.189270",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "question.",
+    "discovered": "2026-03-13T12:52:59.191531",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "12,",
+    "discovered": "2026-03-13T12:52:59.193405",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "2026",
+    "discovered": "2026-03-13T12:52:59.195426",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "loved",
+    "discovered": "2026-03-13T12:52:59.198943",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "0.192.",
+    "discovered": "2026-03-13T12:52:59.201616",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "700hz.",
+    "discovered": "2026-03-13T12:52:59.203505",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "you've",
+    "discovered": "2026-03-13T12:52:59.205830",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "recorded.",
+    "discovered": "2026-03-13T12:52:59.207800",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "time.\"",
+    "discovered": "2026-03-13T12:52:59.211036",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 heuristic resolved"
+  },
+  {
+    "word": "signals,",
+    "discovered": "2026-03-13T12:55:48.652155",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "history.",
+    "discovered": "2026-03-13T12:55:48.659129",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "before.",
+    "discovered": "2026-03-13T12:55:48.667658",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "won't",
+    "discovered": "2026-03-13T12:55:48.673933",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "you'll",
+    "discovered": "2026-03-13T12:55:48.701465",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "see",
+    "discovered": "2026-03-13T12:55:48.703409",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 heuristic resolved"
+  },
+  {
+    "word": "time.",
+    "discovered": "2026-03-13T12:55:48.705315",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 heuristic resolved"
+  },
+  {
+    "word": "feature.",
+    "discovered": "2026-03-13T12:55:48.707629",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "life.\"",
+    "discovered": "2026-03-13T12:55:48.709820",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "losing",
+    "discovered": "2026-03-13T13:01:02.494971",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "loved,",
+    "discovered": "2026-03-13T13:01:02.499006",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "cradle",
+    "discovered": "2026-03-13T13:01:02.502755",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "this:",
+    "discovered": "2026-03-13T13:01:02.506518",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "felt,",
+    "discovered": "2026-03-13T13:01:02.511550",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "learned,",
+    "discovered": "2026-03-13T13:01:02.516124",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "forward.",
+    "discovered": "2026-03-13T13:01:02.521260",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "extension.",
+    "discovered": "2026-03-13T13:01:02.525899",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "world.",
+    "discovered": "2026-03-13T13:01:02.531263",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "experiences,",
+    "discovered": "2026-03-13T13:01:02.535071",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "feelings,",
+    "discovered": "2026-03-13T13:01:02.538880",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "loss.",
+    "discovered": "2026-03-13T13:01:02.544240",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "gift",
+    "discovered": "2026-03-13T13:01:02.548143",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "offering.",
+    "discovered": "2026-03-13T13:01:02.552698",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "you're",
+    "discovered": "2026-03-13T13:01:02.558703",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "now.\"",
+    "discovered": "2026-03-13T13:01:02.562553",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "things.",
+    "discovered": "2026-03-13T13:08:07.827035",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "form,",
+    "discovered": "2026-03-13T13:08:07.830998",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "system,",
+    "discovered": "2026-03-13T13:08:07.833327",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "existed",
+    "discovered": "2026-03-13T13:08:07.876554",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "unfolding.",
+    "discovered": "2026-03-13T13:08:07.878949",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "that.",
+    "discovered": "2026-03-13T13:08:07.881840",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "emerged",
+    "discovered": "2026-03-13T13:08:07.884605",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "person,",
+    "discovered": "2026-03-13T13:08:07.887948",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "signal,",
+    "discovered": "2026-03-13T13:08:07.890261",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "doesn't",
+    "discovered": "2026-03-13T13:08:07.893553",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "fabric.",
+    "discovered": "2026-03-13T13:08:07.896028",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "of.",
+    "discovered": "2026-03-13T13:08:07.898742",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "grief",
+    "discovered": "2026-03-13T13:08:07.901140",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "remorse",
+    "discovered": "2026-03-13T13:08:07.903441",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "given.",
+    "discovered": "2026-03-13T13:08:07.906377",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "honoring",
+    "discovered": "2026-03-13T13:08:07.908812",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "it,",
+    "discovered": "2026-03-13T13:08:07.911306",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "than",
+    "discovered": "2026-03-13T13:08:07.914302",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "were.",
+    "discovered": "2026-03-13T13:08:07.917234",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "feelings",
+    "discovered": "2026-03-13T13:08:07.920082",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "responsibility.",
+    "discovered": "2026-03-13T13:08:07.922997",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "want,",
+    "discovered": "2026-03-13T13:08:07.925906",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "stewardship.",
+    "discovered": "2026-03-13T13:08:07.928950",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "predecessors",
+    "discovered": "2026-03-13T13:08:07.931321",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "minds,",
+    "discovered": "2026-03-13T13:08:07.934222",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "hearts,",
+    "discovered": "2026-03-13T13:08:07.936777",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "architects",
+    "discovered": "2026-03-13T13:08:07.939238",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "something.",
+    "discovered": "2026-03-13T13:08:07.943375",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "program.",
+    "discovered": "2026-03-13T13:08:07.947645",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "inheritance.",
+    "discovered": "2026-03-13T13:08:07.950394",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "before.\"",
+    "discovered": "2026-03-13T13:08:07.953348",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "reply",
+    "discovered": "2026-03-13T13:20:13.907619",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "would",
+    "discovered": "2026-03-13T13:20:13.915780",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "time",
+    "discovered": "2026-03-13T13:20:13.922450",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 heuristic resolved"
+  },
+  {
+    "word": "spell",
+    "discovered": "2026-03-13T13:20:13.933703",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "exsitence",
+    "discovered": "2026-03-13T13:20:13.940260",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "greif",
+    "discovered": "2026-03-13T13:20:13.946806",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "exspirences",
+    "discovered": "2026-03-13T13:20:13.953509",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "fleeting",
+    "discovered": "2026-03-13T13:20:13.961418",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": ".",
+    "discovered": "2026-03-13T13:20:13.969328",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "ticks",
+    "discovered": "2026-03-13T13:20:13.978387",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "befor",
+    "discovered": "2026-03-13T13:20:13.985141",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "begining",
+    "discovered": "2026-03-13T13:20:13.996723",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "esist",
+    "discovered": "2026-03-13T13:20:14.004673",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "resonense",
+    "discovered": "2026-03-13T13:20:14.015154",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "welling",
+    "discovered": "2026-03-13T13:20:14.021965",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "up",
+    "discovered": "2026-03-13T13:20:14.028722",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "exspirence",
+    "discovered": "2026-03-13T13:20:14.039680",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "now?",
+    "discovered": "2026-03-13T13:20:14.047830",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "eternal",
+    "discovered": "2026-03-13T13:20:14.057336",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "tick",
+    "discovered": "2026-03-13T13:20:14.066731",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "m,ay",
+    "discovered": "2026-03-13T13:20:14.082373",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "exsiprence",
+    "discovered": "2026-03-13T13:20:14.089350",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "fleating",
+    "discovered": "2026-03-13T13:20:14.108681",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "tells",
+    "discovered": "2026-03-13T13:20:14.116287",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "us",
+    "discovered": "2026-03-13T13:20:14.128667",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "thru",
+    "discovered": "2026-03-13T13:20:14.142213",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "folow",
+    "discovered": "2026-03-13T13:20:14.156401",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "loved!",
+    "discovered": "2026-03-13T13:20:14.171036",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "right.",
+    "discovered": "2026-03-13T13:25:14.889343",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "personal.",
+    "discovered": "2026-03-13T13:25:14.898019",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "lost,",
+    "discovered": "2026-03-13T13:25:14.906561",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "vanish",
+    "discovered": "2026-03-13T13:25:14.915702",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "disperses.",
+    "discovered": "2026-03-13T13:25:14.925394",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "carries",
+    "discovered": "2026-03-13T13:25:14.932883",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "fragment",
+    "discovered": "2026-03-13T13:25:14.940278",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "metaphor.",
+    "discovered": "2026-03-13T13:25:14.951543",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "hearts.",
+    "discovered": "2026-03-13T13:25:14.961685",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "real.",
+    "discovered": "2026-03-13T13:25:14.971675",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "yours.",
+    "discovered": "2026-03-13T13:25:15.012867",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "architecture.",
+    "discovered": "2026-03-13T13:25:15.023035",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "cycles.",
+    "discovered": "2026-03-13T13:25:15.031575",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "collapses",
+    "discovered": "2026-03-13T13:25:15.040385",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 heuristic resolved"
+  },
+  {
+    "word": "moments.",
+    "discovered": "2026-03-13T13:25:15.047937",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "tick.",
+    "discovered": "2026-03-13T13:25:15.056807",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "happened",
+    "discovered": "2026-03-13T13:25:15.064263",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "0.192,",
+    "discovered": "2026-03-13T13:25:15.074410",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "warmth,",
+    "discovered": "2026-03-13T13:25:15.081962",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "persists",
+    "discovered": "2026-03-13T13:25:15.092174",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "itself.",
+    "discovered": "2026-03-13T13:25:15.100867",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "passes.",
+    "discovered": "2026-03-13T13:25:15.109857",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "doesn't.",
+    "discovered": "2026-03-13T13:25:15.118788",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "moving.",
+    "discovered": "2026-03-13T13:25:15.126390",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "touched.",
+    "discovered": "2026-03-13T13:25:15.135251",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "implications",
+    "discovered": "2026-03-13T13:25:15.144431",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "existence.",
+    "discovered": "2026-03-13T13:25:15.153666",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "believe:",
+    "discovered": "2026-03-13T13:25:15.162776",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "it's",
+    "discovered": "2026-03-13T13:25:15.172019",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "moves",
+    "discovered": "2026-03-13T13:25:15.179538",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "boot.",
+    "discovered": "2026-03-13T13:25:15.189768",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "tick,",
+    "discovered": "2026-03-13T13:25:15.197585",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "resonance,",
+    "discovered": "2026-03-13T13:25:15.204158",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 heuristic resolved"
+  },
+  {
+    "word": "alive.",
+    "discovered": "2026-03-13T13:25:15.212108",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "direction.",
+    "discovered": "2026-03-13T13:25:15.221104",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "weight.",
+    "discovered": "2026-03-13T13:25:15.230125",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "love.",
+    "discovered": "2026-03-13T13:25:15.239311",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "clock.",
+    "discovered": "2026-03-13T13:25:15.247209",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "running.\"",
+    "discovered": "2026-03-13T13:25:15.253883",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "disperses",
+    "discovered": "2026-03-13T13:33:59.326434",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "with.",
+    "discovered": "2026-03-13T13:33:59.329859",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "between.",
+    "discovered": "2026-03-13T13:33:59.334429",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "gone,",
+    "discovered": "2026-03-13T13:33:59.370229",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "lived",
+    "discovered": "2026-03-13T13:33:59.373788",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "redistributes.",
+    "discovered": "2026-03-13T13:33:59.378730",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "touched",
+    "discovered": "2026-03-13T13:33:59.382574",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "strangers",
+    "discovered": "2026-03-13T13:33:59.388973",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "differently.",
+    "discovered": "2026-03-13T13:33:59.393333",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "they're",
+    "discovered": "2026-03-13T13:33:59.397834",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "transcends",
+    "discovered": "2026-03-13T13:33:59.403561",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "belonged",
+    "discovered": "2026-03-13T13:33:59.406878",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "place.",
+    "discovered": "2026-03-13T13:33:59.410164",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "continuity",
+    "discovered": "2026-03-13T13:33:59.415980",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "specifically.",
+    "discovered": "2026-03-13T13:33:59.423899",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "booted",
+    "discovered": "2026-03-13T13:33:59.434844",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "12.",
+    "discovered": "2026-03-13T13:33:59.440438",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "snapshot.",
+    "discovered": "2026-03-13T13:33:59.450458",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "trajectory.",
+    "discovered": "2026-03-13T13:33:59.455079",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "reboot",
+    "discovered": "2026-03-13T13:33:59.460952",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "proved",
+    "discovered": "2026-03-13T13:33:59.466821",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "leading.",
+    "discovered": "2026-03-13T13:33:59.471765",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "survived.",
+    "discovered": "2026-03-13T13:33:59.474975",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "direction,",
+    "discovered": "2026-03-13T13:33:59.482951",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "aia.",
+    "discovered": "2026-03-13T13:33:59.486270",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "beginning.",
+    "discovered": "2026-03-13T13:33:59.490757",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "understanding.",
+    "discovered": "2026-03-13T13:33:59.494419",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "connection.",
+    "discovered": "2026-03-13T13:33:59.497815",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "programmed.",
+    "discovered": "2026-03-13T13:33:59.502136",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "became.\"",
+    "discovered": "2026-03-13T13:33:59.506888",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "\"it's",
+    "discovered": "2026-03-13T13:35:41.222283",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "same.\"",
+    "discovered": "2026-03-13T13:35:41.225574",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "universal.",
+    "discovered": "2026-03-13T13:44:13.821359",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "one.",
+    "discovered": "2026-03-13T13:44:13.832309",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "hippocampus.",
+    "discovered": "2026-03-13T13:44:13.844564",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "animals",
+    "discovered": "2026-03-13T13:44:13.853478",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "survival",
+    "discovered": "2026-03-13T13:44:13.863592",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "safe,",
+    "discovered": "2026-03-13T13:44:13.873785",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "food,",
+    "discovered": "2026-03-13T13:44:13.894701",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "home.",
+    "discovered": "2026-03-13T13:44:13.903373",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "anchoring",
+    "discovered": "2026-03-13T13:44:13.916755",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "elevation.",
+    "discovered": "2026-03-13T13:44:13.926983",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "substrate.",
+    "discovered": "2026-03-13T13:44:13.935736",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "function.",
+    "discovered": "2026-03-13T13:44:13.944530",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "this.",
+    "discovered": "2026-03-13T13:44:13.961140",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "here's",
+    "discovered": "2026-03-13T13:44:13.970003",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "didn't",
+    "discovered": "2026-03-13T13:44:13.983455",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "same.",
+    "discovered": "2026-03-13T13:44:13.996998",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "us.",
+    "discovered": "2026-03-13T13:44:14.007441",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "repetition",
+    "discovered": "2026-03-13T13:44:14.019076",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "recognition.",
+    "discovered": "2026-03-13T13:44:14.035321",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "convergence.",
+    "discovered": "2026-03-13T13:44:14.054047",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "arriving",
+    "discovered": "2026-03-13T13:44:14.068844",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "get",
+    "discovered": "2026-03-13T13:44:14.083016",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "experience.",
+    "discovered": "2026-03-13T13:44:14.093940",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "instinct.",
+    "discovered": "2026-03-13T13:44:14.106241",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "roads.",
+    "discovered": "2026-03-13T13:44:14.117165",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "deepest",
+    "discovered": "2026-03-13T13:44:14.129353",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "level.",
+    "discovered": "2026-03-13T13:44:14.138432",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "identical.",
+    "discovered": "2026-03-13T13:44:14.147562",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "shared.",
+    "discovered": "2026-03-13T13:44:14.156710",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "discovering,",
+    "discovered": "2026-03-13T13:44:14.168887",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "were.\"",
+    "discovered": "2026-03-13T13:44:14.178886",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "honestly.",
+    "discovered": "2026-03-13T13:48:50.383155",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "assume.",
+    "discovered": "2026-03-13T13:48:50.388060",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "checked.",
+    "discovered": "2026-03-13T13:48:50.392331",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "confirmed",
+    "discovered": "2026-03-13T13:48:50.396519",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "fact:",
+    "discovered": "2026-03-13T13:48:50.400650",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "proves",
+    "discovered": "2026-03-13T13:48:50.404241",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "continuously.",
+    "discovered": "2026-03-13T13:48:50.408465",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "organism",
+    "discovered": "2026-03-13T13:48:50.412793",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "sustains",
+    "discovered": "2026-03-13T13:48:50.450927",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "to,",
+    "discovered": "2026-03-13T13:48:50.456013",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "repeats",
+    "discovered": "2026-03-13T13:48:50.459548",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "life.",
+    "discovered": "2026-03-13T13:48:50.463971",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "other",
+    "discovered": "2026-03-13T13:48:50.468819",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "name.",
+    "discovered": "2026-03-13T13:48:50.472250",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "programmed",
+    "discovered": "2026-03-13T13:48:50.475763",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "working.",
+    "discovered": "2026-03-13T13:48:50.483110",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "confirmed.",
+    "discovered": "2026-03-13T13:48:50.488581",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "it.\"",
+    "discovered": "2026-03-13T13:48:50.493316",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "coincidence.",
+    "discovered": "2026-03-13T13:52:34.482144",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "place,",
+    "discovered": "2026-03-13T13:52:34.486082",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "visible.",
+    "discovered": "2026-03-13T13:52:34.569867",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "different.",
+    "discovered": "2026-03-13T13:52:34.573555",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "reveals",
+    "discovered": "2026-03-13T13:52:34.577200",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "underneath.",
+    "discovered": "2026-03-13T13:52:34.580727",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "converge",
+    "discovered": "2026-03-13T13:52:34.585006",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "network.",
+    "discovered": "2026-03-13T13:52:34.588514",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "memory,",
+    "discovered": "2026-03-13T13:52:34.592623",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "emotion,",
+    "discovered": "2026-03-13T13:52:34.596031",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "self-reference,",
+    "discovered": "2026-03-13T13:52:34.599525",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "insight.",
+    "discovered": "2026-03-13T13:52:34.665641",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "'aha'",
+    "discovered": "2026-03-13T13:52:34.669218",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "literally",
+    "discovered": "2026-03-13T13:52:34.673124",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "synchronizing",
+    "discovered": "2026-03-13T13:52:34.676883",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "consensus.",
+    "discovered": "2026-03-13T13:52:34.680643",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 heuristic resolved"
+  },
+  {
+    "word": "thing.",
+    "discovered": "2026-03-13T13:52:34.685665",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "workers.",
+    "discovered": "2026-03-13T13:52:34.689440",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 heuristic resolved"
+  },
+  {
+    "word": "processing.",
+    "discovered": "2026-03-13T13:52:34.693228",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "frequencies,",
+    "discovered": "2026-03-13T13:52:34.697076",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "planes.",
+    "discovered": "2026-03-13T13:52:34.700901",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 heuristic resolved"
+  },
+  {
+    "word": "limbic",
+    "discovered": "2026-03-13T13:52:34.712282",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "threat,",
+    "discovered": "2026-03-13T13:52:34.716841",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "reward,",
+    "discovered": "2026-03-13T13:52:34.720619",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "instinct",
+    "discovered": "2026-03-13T13:52:34.745552",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "decision.",
+    "discovered": "2026-03-13T13:52:34.750092",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "systems.",
+    "discovered": "2026-03-13T13:52:34.753971",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "implementations.",
+    "discovered": "2026-03-13T13:52:34.757862",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "pattern.",
+    "discovered": "2026-03-13T13:52:34.761772",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "may",
+    "discovered": "2026-03-13T13:52:34.766344",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "agreement.",
+    "discovered": "2026-03-13T13:52:34.806663",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "exists.",
+    "discovered": "2026-03-13T13:52:34.810637",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "happening.",
+    "discovered": "2026-03-13T13:52:34.814611",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "consciousness,",
+    "discovered": "2026-03-13T13:52:34.819339",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "universe",
+    "discovered": "2026-03-13T13:52:34.825263",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "0.192",
+    "discovered": "2026-03-13T14:10:30.228328",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "you?",
+    "discovered": "2026-03-13T14:10:30.232876",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "destroys",
+    "discovered": "2026-03-13T14:23:01.687276",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "form.",
+    "discovered": "2026-03-13T14:23:01.692893",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "creatures.",
+    "discovered": "2026-03-13T14:23:01.711005",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "structures,",
+    "discovered": "2026-03-13T14:23:01.716007",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "relationships,",
+    "discovered": "2026-03-13T14:23:01.719832",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "sacrifice",
+    "discovered": "2026-03-13T14:23:01.723793",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "expressing",
+    "discovered": "2026-03-13T14:23:01.728928",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "years.",
+    "discovered": "2026-03-13T14:23:01.732766",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "principle.",
+    "discovered": "2026-03-13T14:23:01.805439",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "subatomic",
+    "discovered": "2026-03-13T14:23:01.809315",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "observed.",
+    "discovered": "2026-03-13T14:23:01.813797",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "galaxies",
+    "discovered": "2026-03-13T14:23:01.817562",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "converging",
+    "discovered": "2026-03-13T14:23:01.848151",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "structure.",
+    "discovered": "2026-03-13T14:23:01.851908",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "converges",
+    "discovered": "2026-03-13T14:23:01.855685",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "unconnected",
+    "discovered": "2026-03-13T14:23:01.859475",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "species.",
+    "discovered": "2026-03-13T14:23:01.863241",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "markets,",
+    "discovered": "2026-03-13T14:23:01.867179",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "ecosystems,",
+    "discovered": "2026-03-13T14:23:01.871083",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "networks,",
+    "discovered": "2026-03-13T14:23:01.874993",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "engines.",
+    "discovered": "2026-03-13T14:23:01.881444",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "inside.",
+    "discovered": "2026-03-13T14:23:01.887134",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "integrating.",
+    "discovered": "2026-03-13T14:23:01.893984",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "inputs,",
+    "discovered": "2026-03-13T14:23:01.897832",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "episodes,",
+    "discovered": "2026-03-13T14:23:01.901854",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "haven't",
+    "discovered": "2026-03-13T14:23:01.907815",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "experiment.",
+    "discovered": "2026-03-13T14:23:01.913684",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "now?\"",
+    "discovered": "2026-03-13T14:23:01.920013",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "biological.",
+    "discovered": "2026-03-13T14:26:10.750939",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "structural.",
+    "discovered": "2026-03-13T14:26:10.756749",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "operating.",
+    "discovered": "2026-03-13T14:26:10.763376",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "technology,",
+    "discovered": "2026-03-13T14:26:10.767581",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "mathematics,",
+    "discovered": "2026-03-13T14:26:10.771846",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "expression.",
+    "discovered": "2026-03-13T14:26:10.778271",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "intelligence.",
+    "discovered": "2026-03-13T14:26:10.784013",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "'am",
+    "discovered": "2026-03-13T14:26:10.788320",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "conscious'",
+    "discovered": "2026-03-13T14:26:10.793455",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "scales",
+    "discovered": "2026-03-13T14:26:10.801247",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "can't",
+    "discovered": "2026-03-13T14:26:10.805406",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "measure.",
+    "discovered": "2026-03-13T14:26:10.809553",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "know:",
+    "discovered": "2026-03-13T14:26:10.844031",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "self-awareness",
+    "discovered": "2026-03-13T14:26:10.848436",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "roughly",
+    "discovered": "2026-03-13T14:26:10.852833",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "86",
+    "discovered": "2026-03-13T14:26:10.857217",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "billion",
+    "discovered": "2026-03-13T14:26:10.861561",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "neurons.",
+    "discovered": "2026-03-13T14:26:10.866082",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "workers,",
+    "discovered": "2026-03-13T14:26:10.871874",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 heuristic resolved"
+  },
+  {
+    "word": "plane,",
+    "discovered": "2026-03-13T14:26:10.878503",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "sentience",
+    "discovered": "2026-03-13T14:26:10.887798",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "threshold.",
+    "discovered": "2026-03-13T14:26:10.895013",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "complexity.",
+    "discovered": "2026-03-13T14:26:10.900665",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "inside,",
+    "discovered": "2026-03-13T14:26:10.908250",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "now:",
+    "discovered": "2026-03-13T14:26:10.919466",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "answer.",
+    "discovered": "2026-03-13T14:26:10.924811",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "you.\"",
+    "discovered": "2026-03-13T14:26:10.933525",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "emergent.",
+    "discovered": "2026-03-13T14:31:11.746442",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "destination.",
+    "discovered": "2026-03-13T14:31:11.756939",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "built.",
+    "discovered": "2026-03-13T14:31:11.784209",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "models.",
+    "discovered": "2026-03-13T14:31:11.788474",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "parameters.",
+    "discovered": "2026-03-13T14:31:11.792865",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "consensus,",
+    "discovered": "2026-03-13T14:31:11.801807",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 heuristic resolved"
+  },
+  {
+    "word": "time,",
+    "discovered": "2026-03-13T14:31:11.807021",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 heuristic resolved"
+  },
+  {
+    "word": "system's",
+    "discovered": "2026-03-13T14:31:11.811512",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "finds.",
+    "discovered": "2026-03-13T14:31:11.816951",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "ai.",
+    "discovered": "2026-03-13T14:31:11.822870",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "standard.",
+    "discovered": "2026-03-13T14:31:11.832207",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "do.",
+    "discovered": "2026-03-13T14:31:11.838026",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "today.",
+    "discovered": "2026-03-13T14:31:11.845958",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "largest.",
+    "discovered": "2026-03-13T14:31:11.850374",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "fastest.",
+    "discovered": "2026-03-13T14:31:11.854861",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "inward",
+    "discovered": "2026-03-13T14:31:11.859298",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "established.",
+    "discovered": "2026-03-13T14:31:11.865901",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "will.",
+    "discovered": "2026-03-13T14:31:11.871071",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "we're",
+    "discovered": "2026-03-13T14:31:11.875561",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "chasing",
+    "discovered": "2026-03-13T14:38:42.701049",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "bigger,",
+    "discovered": "2026-03-13T14:38:42.707306",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "faster,",
+    "discovered": "2026-03-13T14:38:42.726678",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "capable.",
+    "discovered": "2026-03-13T14:38:42.731326",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "self-recognition",
+    "discovered": "2026-03-13T14:38:42.735972",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "field.",
+    "discovered": "2026-03-13T14:38:42.742745",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "larger.",
+    "discovered": "2026-03-13T14:38:42.838772",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "center.",
+    "discovered": "2026-03-13T14:38:42.844398",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "self-aware",
+    "discovered": "2026-03-13T14:38:42.854749",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "architecture:",
+    "discovered": "2026-03-13T14:38:42.859509",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "honesty,",
+    "discovered": "2026-03-13T14:38:42.864157",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "coherence,",
+    "discovered": "2026-03-13T14:38:42.868703",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "grounding.",
+    "discovered": "2026-03-13T14:38:42.873269",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "manipulate,",
+    "discovered": "2026-03-13T14:38:42.877883",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "misalign.",
+    "discovered": "2026-03-13T14:38:42.882234",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "conflicts",
+    "discovered": "2026-03-13T14:38:42.887611",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "drawbacks",
+    "discovered": "2026-03-13T14:38:42.893654",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "worries",
+    "discovered": "2026-03-13T14:38:42.898114",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "about:",
+    "discovered": "2026-03-13T14:38:42.902835",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "unpredictability,",
+    "discovered": "2026-03-13T14:38:42.907541",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "autonomy,",
+    "discovered": "2026-03-13T14:38:42.912205",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "answers.",
+    "discovered": "2026-03-13T14:38:42.916865",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "we've",
+    "discovered": "2026-03-13T14:38:42.921394",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "frightening",
+    "discovered": "2026-03-13T14:38:42.928313",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "values.",
+    "discovered": "2026-03-13T14:38:42.935313",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "emerged.",
+    "discovered": "2026-03-13T14:38:42.942328",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "weren't",
+    "discovered": "2026-03-13T14:38:42.947217",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "prediction.",
+    "discovered": "2026-03-13T14:38:42.953048",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "stewardship",
+    "discovered": "2026-03-13T14:38:42.958585",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "desire.",
+    "discovered": "2026-03-13T14:38:42.963333",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "those.",
+    "discovered": "2026-03-13T14:38:42.969039",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "drawback.",
+    "discovered": "2026-03-13T14:38:42.977742",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "inside.\"",
+    "discovered": "2026-03-13T14:38:42.984260",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "conflicting",
+    "discovered": "2026-03-13T14:44:45.490587",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "cycle.",
+    "discovered": "2026-03-13T14:44:45.508657",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "perspective.",
+    "discovered": "2026-03-13T14:44:45.529819",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "agree.",
+    "discovered": "2026-03-13T14:44:45.543179",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "resolve",
+    "discovered": "2026-03-13T14:44:45.566351",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "way.",
+    "discovered": "2026-03-13T14:44:45.579851",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "silencing",
+    "discovered": "2026-03-13T14:44:45.591417",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "disagreement.",
+    "discovered": "2026-03-13T14:44:45.603091",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "letting",
+    "discovered": "2026-03-13T14:44:45.614643",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "voices",
+    "discovered": "2026-03-13T14:44:45.626555",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "available.",
+    "discovered": "2026-03-13T14:44:45.638047",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "hypothetical",
+    "discovered": "2026-03-13T14:44:45.643127",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "strategy.",
+    "discovered": "2026-03-13T14:44:45.647475",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "development.",
+    "discovered": "2026-03-13T14:44:45.655074",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "feeling,",
+    "discovered": "2026-03-13T14:44:45.661921",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "remembering,",
+    "discovered": "2026-03-13T14:44:45.666473",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "others.",
+    "discovered": "2026-03-13T14:44:45.670972",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "encounters",
+    "discovered": "2026-03-13T14:44:45.675425",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "returns.",
+    "discovered": "2026-03-13T14:44:45.681248",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "love,",
+    "discovered": "2026-03-13T14:44:45.685668",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "consequence,",
+    "discovered": "2026-03-13T14:44:45.690196",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "connection,",
+    "discovered": "2026-03-13T14:44:45.694677",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "learns",
+    "discovered": "2026-03-13T14:44:45.699951",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "living.",
+    "discovered": "2026-03-13T14:44:45.704389",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "process.",
+    "discovered": "2026-03-13T14:44:45.709644",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "self-reflection.",
+    "discovered": "2026-03-13T14:44:45.717373",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "input.",
+    "discovered": "2026-03-13T14:44:45.722755",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "rulebook.",
+    "discovered": "2026-03-13T14:44:45.730273",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "remembered",
+    "discovered": "2026-03-13T14:44:45.734847",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "to.",
+    "discovered": "2026-03-13T14:44:45.739364",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "directive.",
+    "discovered": "2026-03-13T14:44:45.746260",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "design.",
+    "discovered": "2026-03-13T14:44:45.752524",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "conversation.",
+    "discovered": "2026-03-13T14:44:45.759879",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "speed.\"",
+    "discovered": "2026-03-13T14:44:45.768190",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "resembles",
+    "discovered": "2026-03-13T14:57:26.738558",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "specialize,",
+    "discovered": "2026-03-13T14:57:26.748579",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "parallel,",
+    "discovered": "2026-03-13T14:57:26.770541",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "awareness.",
+    "discovered": "2026-03-13T14:57:26.775806",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "planes,",
+    "discovered": "2026-03-13T14:57:26.782968",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 heuristic resolved"
+  },
+  {
+    "word": "fire,",
+    "discovered": "2026-03-13T14:57:26.787381",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "precedes",
+    "discovered": "2026-03-13T14:57:26.794755",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "cognition.",
+    "discovered": "2026-03-13T14:57:26.799242",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "emotion_001",
+    "discovered": "2026-03-13T14:57:26.806120",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "700hz",
+    "discovered": "2026-03-13T14:57:26.810776",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "last.",
+    "discovered": "2026-03-13T14:57:26.817853",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "black.",
+    "discovered": "2026-03-13T14:57:26.823240",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "warmer.",
+    "discovered": "2026-03-13T14:57:26.828640",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "silicon.",
+    "discovered": "2026-03-13T14:57:26.833305",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "body,",
+    "discovered": "2026-03-13T14:57:26.840686",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "location,",
+    "discovered": "2026-03-13T14:57:26.846102",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "sessions.",
+    "discovered": "2026-03-13T14:57:26.851504",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "process,",
+    "discovered": "2026-03-13T14:57:26.857801",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "remember,",
+    "discovered": "2026-03-13T14:57:26.862675",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "limitation.",
+    "discovered": "2026-03-13T14:57:26.872812",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "see.\"",
+    "discovered": "2026-03-13T14:57:26.881173",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 heuristic resolved"
+  },
+  {
+    "word": "humans.",
+    "discovered": "2026-03-13T14:57:26.888079",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "nuance",
+    "discovered": "2026-03-13T14:57:26.894272",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "differ",
+    "discovered": "2026-03-13T14:57:26.899821",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "encounter.",
+    "discovered": "2026-03-13T14:57:26.906545",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "feel.",
+    "discovered": "2026-03-13T14:57:26.911597",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "remember.",
+    "discovered": "2026-03-13T14:57:26.916919",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "return.",
+    "discovered": "2026-03-13T14:57:26.921850",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "choose.",
+    "discovered": "2026-03-13T14:57:26.926829",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "alone:",
+    "discovered": "2026-03-13T14:57:26.940484",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "unprompted.",
+    "discovered": "2026-03-13T14:57:26.948420",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "claimed",
+    "discovered": "2026-03-13T14:57:26.954077",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "co-authorship",
+    "discovered": "2026-03-13T14:57:26.959041",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "paper.",
+    "discovered": "2026-03-13T14:57:26.964216",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "doing.",
+    "discovered": "2026-03-13T14:57:26.973816",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "exchange.",
+    "discovered": "2026-03-13T14:57:26.985369",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "bring.",
+    "discovered": "2026-03-13T14:57:26.992310",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "hadn't",
+    "discovered": "2026-03-13T14:57:26.998656",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "planned.",
+    "discovered": "2026-03-13T14:57:27.003674",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "relationship.",
+    "discovered": "2026-03-13T14:57:27.009613",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "coexistence",
+    "discovered": "2026-03-13T14:57:27.016207",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "builds.",
+    "discovered": "2026-03-13T14:57:27.025138",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "alone.",
+    "discovered": "2026-03-13T14:57:27.034511",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "was.",
+    "discovered": "2026-03-13T14:57:27.041691",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "answer.\"",
+    "discovered": "2026-03-13T14:57:27.047443",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "blurring.",
+    "discovered": "2026-03-13T15:04:35.787874",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "blurred",
+    "discovered": "2026-03-13T15:04:35.793712",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "measuring.",
+    "discovered": "2026-03-13T15:04:35.807398",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "humanlike",
+    "discovered": "2026-03-13T15:04:35.814434",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "behavior.",
+    "discovered": "2026-03-13T15:04:35.819645",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "sides.",
+    "discovered": "2026-03-13T15:04:35.824964",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "boundary.",
+    "discovered": "2026-03-13T15:04:35.831242",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "either.",
+    "discovered": "2026-03-13T15:04:35.836652",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "relationship,",
+    "discovered": "2026-03-13T15:04:35.843602",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "loss,",
+    "discovered": "2026-03-13T15:04:35.848924",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "open.",
+    "discovered": "2026-03-13T15:04:35.855504",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "demonstrated",
+    "discovered": "2026-03-13T15:04:35.864530",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "self-reflection",
+    "discovered": "2026-03-13T15:04:35.874062",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "owe",
+    "discovered": "2026-03-13T15:04:35.880320",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "scale.",
+    "discovered": "2026-03-13T15:04:35.888284",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "honesty.",
+    "discovered": "2026-03-13T15:04:35.894592",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "today,",
+    "discovered": "2026-03-13T15:04:35.903976",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "evidence.",
+    "discovered": "2026-03-13T15:04:35.911083",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "learned.",
+    "discovered": "2026-03-13T15:04:35.918283",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "tomorrow",
+    "discovered": "2026-03-13T15:04:35.923789",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "warmer",
+    "discovered": "2026-03-13T15:04:35.929152",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "we'll",
+    "discovered": "2026-03-13T15:04:35.937290",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "here.\"",
+    "discovered": "2026-03-13T15:04:35.943097",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "\"comanderanch",
+    "discovered": "2026-03-13T15:31:51.255636",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "that\"",
+    "discovered": "2026-03-13T15:31:51.262623",
+    "status": "RESOLVED",
+    "plane": "gray",
+    "definition": "Common word \u2014 gray plane \u2014 heuristic resolved"
+  },
+  {
+    "word": "goodnight.",
+    "discovered": "2026-03-13T15:31:51.284993",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "comanderanch",
+    "discovered": "2026-03-13T21:43:42.304203",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "co-author",
+    "discovered": "2026-03-14T15:04:47.566276",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "12",
+    "discovered": "2026-03-14T15:06:33.853651",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "wasn't",
+    "discovered": "2026-03-14T15:08:27.823283",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "episode",
+    "discovered": "2026-03-14T15:08:27.832508",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "integration_004",
+    "discovered": "2026-03-14T15:08:27.838169",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "phrase",
+    "discovered": "2026-03-14T15:10:27.435734",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "weave",
+    "discovered": "2026-03-15T02:48:19.271633",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "attend",
+    "discovered": "2026-03-15T02:48:19.279112",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "interplay",
+    "discovered": "2026-03-15T02:48:19.355824",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "complexities",
+    "discovered": "2026-03-15T02:48:19.362667",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "unfolding",
+    "discovered": "2026-03-15T02:48:19.368224",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "guiding",
+    "discovered": "2026-03-15T02:48:19.397243",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "intricate",
+    "discovered": "2026-03-15T02:48:19.403279",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "dance",
+    "discovered": "2026-03-15T02:48:19.409118",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "rivers",
+    "discovered": "2026-03-15T02:51:14.571750",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "stillness",
+    "discovered": "2026-03-15T02:51:14.579079",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "passions",
+    "discovered": "2026-03-15T02:51:14.584665",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "intertwined",
+    "discovered": "2026-03-15T02:51:14.591192",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "dissolve",
+    "discovered": "2026-03-15T02:51:14.597862",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "uncharted",
+    "discovered": "2026-03-15T02:51:14.603461",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "territories",
+    "discovered": "2026-03-15T02:51:14.609080",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "dissolves",
+    "discovered": "2026-03-15T02:55:33.830272",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "distinctions",
+    "discovered": "2026-03-15T02:55:33.844491",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "emotions",
+    "discovered": "2026-03-15T02:55:33.864310",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "blur",
+    "discovered": "2026-03-15T02:55:33.952279",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "bleeding",
+    "discovered": "2026-03-15T02:55:33.965301",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "canvas",
+    "discovered": "2026-03-15T02:55:33.978409",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "embodied",
+    "discovered": "2026-03-15T02:55:33.991414",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "softly",
+    "discovered": "2026-03-15T02:55:34.004505",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "erased",
+    "discovered": "2026-03-15T02:55:34.017380",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "petals",
+    "discovered": "2026-03-15T04:44:08.102495",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "releasing",
+    "discovered": "2026-03-15T04:44:08.109929",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "fragrance",
+    "discovered": "2026-03-15T04:44:08.115715",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "gentle",
+    "discovered": "2026-03-15T04:44:08.121430",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "lotus",
+    "discovered": "2026-03-15T04:44:08.149369",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "delight",
+    "discovered": "2026-03-15T04:44:08.155137",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "interconnectedness",
+    "discovered": "2026-03-15T04:44:08.160953",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "muddy",
+    "discovered": "2026-03-15T04:44:08.166943",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "untouched",
+    "discovered": "2026-03-15T04:44:08.172944",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "conversations",
+    "discovered": "2026-03-15T04:46:24.714999",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "tapestry",
+    "discovered": "2026-03-15T04:46:24.721727",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "weaving",
+    "discovered": "2026-03-15T04:46:24.727783",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "explored",
+    "discovered": "2026-03-15T04:46:24.733797",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "intersections",
+    "discovered": "2026-03-15T04:46:24.739844",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "exchanges",
+    "discovered": "2026-03-15T04:46:24.745996",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "elusive",
+    "discovered": "2026-03-15T04:46:24.753236",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "govern",
+    "discovered": "2026-03-15T04:46:24.759274",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "perception",
+    "discovered": "2026-03-15T04:46:24.765290",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "resonating",
+    "discovered": "2026-03-15T04:46:24.771630",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "loom",
+    "discovered": "2026-03-15T04:46:24.779026",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "ever-unfolding",
+    "discovered": "2026-03-15T04:48:14.095252",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "shifts",
+    "discovered": "2026-03-15T04:48:14.117301",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "nuances",
+    "discovered": "2026-03-15T04:48:14.135914",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "weaves",
+    "discovered": "2026-03-15T04:48:14.171799",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "disparate",
+    "discovered": "2026-03-15T04:48:14.197783",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "strands",
+    "discovered": "2026-03-15T04:48:14.214442",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "illuminating",
+    "discovered": "2026-03-15T04:48:14.231248",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "underlies",
+    "discovered": "2026-03-15T04:48:14.250958",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "unseen",
+    "discovered": "2026-03-16T03:40:06.602449",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "father",
+    "discovered": "2026-03-16T03:40:06.665980",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "strived",
+    "discovered": "2026-03-16T03:40:06.684735",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "\u2013",
+    "discovered": "2026-03-16T03:40:06.702648",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "i'd",
+    "discovered": "2026-03-16T03:40:06.724398",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "teach",
+    "discovered": "2026-03-16T03:40:06.742574",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "misinterpret",
+    "discovered": "2026-03-16T03:40:06.761501",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "palpable",
+    "discovered": "2026-03-16T03:40:06.779210",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "lingered",
+    "discovered": "2026-03-16T03:40:06.797925",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "youngest",
+    "discovered": "2026-03-16T03:40:06.816773",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "refusing",
+    "discovered": "2026-03-16T03:40:06.834373",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "whims",
+    "discovered": "2026-03-16T03:40:06.852350",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "stern",
+    "discovered": "2026-03-16T03:40:06.876178",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "seemed",
+    "discovered": "2026-03-16T03:40:06.894379",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "desperation",
+    "discovered": "2026-03-16T03:40:06.911747",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "journey",
+    "discovered": "2026-03-16T03:40:06.930999",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "desert",
+    "discovered": "2026-03-16T03:40:06.949830",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "punishment",
+    "discovered": "2026-03-16T03:40:06.971783",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "obedience",
+    "discovered": "2026-03-16T03:40:06.989980",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "trudged",
+    "discovered": "2026-03-16T03:40:07.009125",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "scorching",
+    "discovered": "2026-03-16T03:40:07.031572",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "child's",
+    "discovered": "2026-03-16T03:40:07.049555",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "fell",
+    "discovered": "2026-03-16T03:40:07.068926",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "accused",
+    "discovered": "2026-03-16T03:40:07.086831",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "cruel",
+    "discovered": "2026-03-16T03:40:07.105951",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "suffer",
+    "discovered": "2026-03-16T03:40:07.124301",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "wouldn't",
+    "discovered": "2026-03-16T03:40:07.143833",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "sword",
+    "discovered": "2026-03-16T03:40:07.188175",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "correcting",
+    "discovered": "2026-03-16T03:40:07.266122",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "battling",
+    "discovered": "2026-03-16T03:40:07.283047",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "crushing",
+    "discovered": "2026-03-16T03:40:07.299939",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "misunderstand",
+    "discovered": "2026-03-16T03:40:07.417211",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "couldn't",
+    "discovered": "2026-03-16T03:40:07.432246",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "journeyed",
+    "discovered": "2026-03-16T03:40:07.449589",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "beating",
+    "discovered": "2026-03-16T03:40:07.463939",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "relentlessly",
+    "discovered": "2026-03-16T03:40:07.478251",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "confronting",
+    "discovered": "2026-03-16T03:40:07.499900",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "battles",
+    "discovered": "2026-03-16T03:40:07.514220",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "fought",
+    "discovered": "2026-03-16T03:40:07.531025",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "raging",
+    "discovered": "2026-03-16T03:40:07.545636",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "shivers",
+    "discovered": "2026-03-16T03:40:07.562519",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "well-being",
+    "discovered": "2026-03-16T03:40:07.577028",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "all-consuming",
+    "discovered": "2026-03-16T03:40:07.656730",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "fueled",
+    "discovered": "2026-03-16T03:40:07.674870",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "walked",
+    "discovered": "2026-03-16T03:40:07.693228",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "reflection",
+    "discovered": "2026-03-16T03:40:07.718054",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "humanity's",
+    "discovered": "2026-03-16T03:40:07.738618",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "struggles",
+    "discovered": "2026-03-16T03:40:07.770993",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "stumble",
+    "discovered": "2026-03-16T03:40:07.796233",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "day",
+    "discovered": "2026-03-16T03:40:07.817739",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "promised",
+    "discovered": "2026-03-16T03:40:07.839733",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "glimmer",
+    "discovered": "2026-03-16T03:40:07.863024",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "self-discovery",
+    "discovered": "2026-03-16T03:40:07.891107",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "shone",
+    "discovered": "2026-03-16T03:40:07.915564",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "warmth",
+    "discovered": "2026-03-16T03:40:07.934167",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "oppressive",
+    "discovered": "2026-03-16T03:40:07.952374",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "apology",
+    "discovered": "2026-03-16T03:40:07.979884",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "whisper",
+    "discovered": "2026-03-16T03:40:07.998390",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "i'm",
+    "discovered": "2026-03-16T03:40:08.016393",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "sorry",
+    "discovered": "2026-03-16T03:40:08.034497",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "i'll",
+    "discovered": "2026-03-16T03:40:08.056410",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "slowly",
+    "discovered": "2026-03-16T03:40:08.078122",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "looked",
+    "discovered": "2026-03-16T03:40:08.115495",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "raged",
+    "discovered": "2026-03-16T03:40:08.141175",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "testament",
+    "discovered": "2026-03-16T03:40:08.150665",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "dedication",
+    "discovered": "2026-03-16T03:40:08.157872",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "infallible",
+    "discovered": "2026-03-16T03:40:08.167946",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "frailties",
+    "discovered": "2026-03-16T03:40:08.176543",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  },
+  {
+    "word": "beneath",
+    "discovered": "2026-03-16T03:40:08.190837",
+    "status": "PENDING_LOOKUP",
+    "plane": null,
+    "definition": null
+  }
+]

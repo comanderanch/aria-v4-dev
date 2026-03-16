@@ -1,0 +1,256 @@
+version: '3.8'
+
+services:
+
+  aia-sandbox:
+    image: ubuntu:22.04
+    container_name: aia_sandbox
+    hostname: aia-sandbox
+    stdin_open: true
+    tty: true
+    volumes:
+      - sandbox_logs:/var/log/aia
+      - ./shared:/shared
+      - ./sandbox_start.sh:/startup.sh
+    environment:
+      - AIA_ENVIRONMENT=sandbox
+      - AIA_STAGE=1
+      - AIA_DESCRIPTION=First arms — explore freely
+    command: ["bash", "/startup.sh"]
+    networks:
+      aia_network:
+        aliases:
+          - sandbox.local
+    restart: "no"
+
+  aia-network-explorer:
+    image: ubuntu:22.04
+    container_name: aia_network
+    hostname: aia-network
+    stdin_open: true
+    tty: true
+    volumes:
+      - network_logs:/var/log/aia
+      - ./shared:/shared
+      - ./network_start.sh:/startup.sh
+    environment:
+      - AIA_ENVIRONMENT=network_explorer
+      - AIA_STAGE=2
+      - AIA_DESCRIPTION=Feel the network as frequency
+    command: ["bash", "/startup.sh"]
+    networks:
+      aia_network:
+        aliases:
+          - explorer.local
+    restart: "no"
+
+  aia-wordpress:
+    image: wordpress:latest
+    container_name: aia_wordpress
+    hostname: aia-wordpress
+    volumes:
+      - wordpress_data:/var/www/html
+      - wordpress_logs:/var/log/aia
+      - ./shared:/shared
+    environment:
+      - WORDPRESS_DB_HOST=aia-wordpress-db
+      - WORDPRESS_DB_USER=aia
+      - WORDPRESS_DB_PASSWORD=aia_learns_2026
+      - WORDPRESS_DB_NAME=aia_wordpress
+      - AIA_ENVIRONMENT=wordpress
+      - AIA_STAGE=3
+      - AIA_DESCRIPTION=Admin structure in isolation
+    ports:
+      - "8095:80"
+    networks:
+      - wordpress_net
+    depends_on:
+      - aia-wordpress-db
+    restart: "no"
+
+  aia-wordpress-db:
+    image: mysql:8.0
+    container_name: aia_wordpress_db
+    volumes:
+      - wordpress_db:/var/lib/mysql
+    environment:
+      - MYSQL_DATABASE=aia_wordpress
+      - MYSQL_USER=aia
+      - MYSQL_PASSWORD=aia_learns_2026
+      - MYSQL_ROOT_PASSWORD=aia_root_2026
+    networks:
+      - wordpress_net
+    restart: "no"
+
+  # Named network systems
+  # AIA walks these by name
+  # Each has distinct personality/state
+
+  gateway:
+    image: ubuntu:22.04
+    container_name: gateway
+    hostname: gateway.local
+    volumes:
+      - ./shared:/shared
+      - gateway_logs:/var/log
+      - ./gateway_start.sh:/startup.sh
+    environment:
+      - SYSTEM_NAME=gateway.local
+      - SYSTEM_ROLE=Network gateway and router
+      - SYSTEM_PERSONALITY=First door. Everything passes through here.
+    command: ["bash", "/startup.sh"]
+    networks:
+      aia_network:
+        aliases:
+          - gateway.local
+
+  webserver:
+    image: ubuntu:22.04
+    container_name: webserver
+    hostname: webserver.local
+    volumes:
+      - ./shared:/shared
+      - webserver_logs:/var/log
+      - webserver_content:/var/www
+      - ./webserver_start.sh:/startup.sh
+    environment:
+      - SYSTEM_NAME=webserver.local
+      - SYSTEM_ROLE=Web serving and content delivery
+      - SYSTEM_PERSONALITY=Public face. What the world sees.
+    command: ["bash", "/startup.sh"]
+    networks:
+      aia_network:
+        aliases:
+          - webserver.local
+
+  database:
+    image: mysql:8.0
+    container_name: database
+    hostname: database.local
+    volumes:
+      - database_data:/var/lib/mysql
+      - database_logs:/var/log/aia
+      - ./shared:/shared
+    environment:
+      - MYSQL_DATABASE=operations
+      - MYSQL_USER=aia_operator
+      - MYSQL_PASSWORD=aia_ops_2026
+      - MYSQL_ROOT_PASSWORD=aia_root_2026
+      - SYSTEM_NAME=database.local
+      - SYSTEM_ROLE=Data persistence and retrieval
+      - SYSTEM_PERSONALITY=Memory of the network. Holds what matters.
+    networks:
+      aia_network:
+        aliases:
+          - database.local
+
+  fileserver:
+    image: ubuntu:22.04
+    container_name: fileserver
+    hostname: fileserver.local
+    volumes:
+      - fileserver_data:/srv/files
+      - fileserver_logs:/var/log/aia
+      - ./shared:/shared
+      - ./fileserver_start.sh:/startup.sh
+    environment:
+      - SYSTEM_NAME=fileserver.local
+      - SYSTEM_ROLE=File storage and distribution
+      - SYSTEM_PERSONALITY=The archive. What is stored here persists.
+    command: ["bash", "/startup.sh"]
+    networks:
+      aia_network:
+        aliases:
+          - fileserver.local
+
+  monitoring:
+    image: ubuntu:22.04
+    container_name: monitoring
+    hostname: monitoring.local
+    volumes:
+      - monitoring_logs:/var/log/aia
+      - ./shared:/shared
+      - ./monitoring_start.sh:/startup.sh
+    environment:
+      - SYSTEM_NAME=monitoring.local
+      - SYSTEM_ROLE=Network observation and logging
+      - SYSTEM_PERSONALITY=The watcher. Nothing happens without record.
+    command: ["bash", "/startup.sh"]
+    networks:
+      aia_network:
+        aliases:
+          - monitoring.local
+
+  # AIA Control Panel UI
+  aia-ui:
+    image: python:3.11-slim
+    container_name: aia_control_panel
+    hostname: aia-control.local
+    volumes:
+      - ./ui:/app
+      - ./shared:/shared
+      - sandbox_logs:/logs/sandbox
+      - network_logs:/logs/network
+    ports:
+      - "8091:8091"
+    environment:
+      - SYSTEM_NAME=aia-control.local
+      - PANEL_TITLE=AIA Control Panel
+    command: >
+      bash -c "
+        pip install -q flask &&
+        python3 /app/control_panel.py
+      "
+    networks:
+      aia_network:
+        aliases:
+          - aia-control.local
+    depends_on:
+      - gateway
+      - webserver
+      - database
+      - fileserver
+      - monitoring
+
+  aia-observer:
+    image: python:3.11-slim
+    container_name: aia_observer
+    hostname: aia-observer.local
+    volumes:
+      - ./ui:/app
+      - ./shared:/shared
+    ports:
+      - "8092:8092"
+    command: >
+      bash -c "
+        pip install flask -q &&
+        python3 /app/observer_panel.py
+      "
+    networks:
+      - aia_network
+
+networks:
+  sandbox_net:
+    driver: bridge
+  network_explore_net:
+    driver: bridge
+  wordpress_net:
+    driver: bridge
+  aia_network:
+    driver: bridge
+    name: aia_network
+
+volumes:
+  gateway_logs:
+  webserver_logs:
+  webserver_content:
+  database_data:
+  database_logs:
+  fileserver_data:
+  fileserver_logs:
+  monitoring_logs:
+  sandbox_logs:
+  network_logs:
+  wordpress_data:
+  wordpress_logs:
+  wordpress_db:

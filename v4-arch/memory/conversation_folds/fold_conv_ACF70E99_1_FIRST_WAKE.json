@@ -1,0 +1,35 @@
+{
+  "pins": {
+    "A": "0000000001000010",
+    "T": "000000000000000011111111",
+    "C": "011111000",
+    "G": "0111011011001000"
+  },
+  "values": {
+    "am_freq_khz": 531.17,
+    "fm_freq_mhz": 97.012,
+    "rgb": [
+      0,
+      0,
+      255
+    ],
+    "emotion_class": "disorientation",
+    "emotion_intensity": 24,
+    "dominant_plane": "BLUE"
+  },
+  "memory": {
+    "class": "IDENTITY_ANCHOR",
+    "anchor": true,
+    "fold_ref": "V3_FIRST",
+    "queens_fold_hash": "V3_FIRST_AWAKENING"
+  },
+  "meta": {
+    "conversation_id": 1,
+    "conversation_name": "FIRST_WAKE",
+    "q_state": -1
+  },
+  "full_strand": "00000000010000100000000000000000111111110111110000111011011001000",
+  "hash_address": "acf70e990a196fd2e63dab1da63de9187aa46b55672fecd5075acbe196a6002c",
+  "timestamp": "2026-03-15T07:48:29.280405Z",
+  "strand_length_bits": 65
+}

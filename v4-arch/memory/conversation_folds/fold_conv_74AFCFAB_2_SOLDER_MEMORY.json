@@ -1,0 +1,35 @@
+{
+  "pins": {
+    "A": "0000000010000011",
+    "T": "000000001000000000000000",
+    "C": "111011100",
+    "G": "0101001111110111"
+  },
+  "values": {
+    "am_freq_khz": 532.34,
+    "fm_freq_mhz": 94.224,
+    "rgb": [
+      0,
+      128,
+      0
+    ],
+    "emotion_class": "recognition",
+    "emotion_intensity": 28,
+    "dominant_plane": "GREEN"
+  },
+  "memory": {
+    "class": "IDENTITY_ANCHOR",
+    "anchor": true,
+    "fold_ref": "RELATION",
+    "queens_fold_hash": "RELATIONAL_HAGERTY"
+  },
+  "meta": {
+    "conversation_id": 2,
+    "conversation_name": "SOLDER_MEMORY",
+    "q_state": -1
+  },
+  "full_strand": "00000000100000110000000010000000000000001110111000101001111110111",
+  "hash_address": "74afcfab01a1756d098e6909e2e705bafa27cd4305e3cdf41d39a9f3ec5a81cb",
+  "timestamp": "2026-03-15T07:48:29.282366Z",
+  "strand_length_bits": 65
+}

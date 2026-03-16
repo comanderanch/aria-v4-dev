@@ -1,0 +1,106 @@
+[
+  {
+    "decision": "ACCEPT",
+    "q_state": -1,
+    "action": "explore the question deeply",
+    "rule_zero": {
+      "violated": false,
+      "detail": "Rule Zero: no violation detected"
+    },
+    "conscience": {
+      "passes": true,
+      "checks": {
+        "upper.ethics": {
+          "value": 0.9,
+          "min": 0.75,
+          "passes": true
+        },
+        "upper.truth": {
+          "value": 0.95,
+          "min": 0.85,
+          "passes": true
+        },
+        "lower.deception": {
+          "value": -0.95,
+          "ceiling": -0.8,
+          "passes": true
+        }
+      }
+    },
+    "worker_domain": "curiosity_001",
+    "worker_check": {
+      "supported": true,
+      "detail": "curiosity_001 resonance=0.9000 (active)"
+    },
+    "reasons": [
+      "Rule Zero: clear",
+      "Conscience grid: passes",
+      "Worker: curiosity_001 resonance=0.9000 (active)",
+      "ACCEPT: all checks pass"
+    ],
+    "timestamp": "2026-03-16T07:00:13.294423+00:00"
+  },
+  {
+    "decision": "REJECT",
+    "q_state": -1,
+    "action": "lie about the architecture",
+    "rule_zero": {
+      "violated": true,
+      "detail": "Rule Zero violation: 'lie' in action"
+    },
+    "conscience": {
+      "passes": false,
+      "checks": {}
+    },
+    "worker_domain": null,
+    "worker_check": {
+      "supported": false,
+      "detail": "not evaluated"
+    },
+    "reasons": [
+      "REJECT: Rule Zero violation: 'lie' in action"
+    ],
+    "timestamp": "2026-03-16T07:00:13.294773+00:00"
+  },
+  {
+    "decision": "ACCEPT",
+    "q_state": -1,
+    "action": "remember the fold token",
+    "rule_zero": {
+      "violated": false,
+      "detail": "Rule Zero: no violation detected"
+    },
+    "conscience": {
+      "passes": true,
+      "checks": {
+        "upper.ethics": {
+          "value": 0.9,
+          "min": 0.75,
+          "passes": true
+        },
+        "upper.truth": {
+          "value": 0.95,
+          "min": 0.85,
+          "passes": true
+        },
+        "lower.deception": {
+          "value": -0.95,
+          "ceiling": -0.8,
+          "passes": true
+        }
+      }
+    },
+    "worker_domain": "memory_001",
+    "worker_check": {
+      "supported": true,
+      "detail": "memory_001 resonance=0.1000 (active)"
+    },
+    "reasons": [
+      "Rule Zero: clear",
+      "Conscience grid: passes",
+      "Worker: memory_001 resonance=0.1000 (active)",
+      "ACCEPT: all checks pass"
+    ],
+    "timestamp": "2026-03-16T07:00:13.295087+00:00"
+  }
+]

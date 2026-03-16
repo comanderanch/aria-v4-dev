@@ -1,0 +1,1402 @@
+{
+  "by_hash": {
+    "98d2232c754fe710b3f6ca1296300151a1d9254c2e8412fd41f2fe1cd0c97a86": {
+      "hash_address": "98d2232c754fe710b3f6ca1296300151a1d9254c2e8412fd41f2fe1cd0c97a86",
+      "path": "/home/comanderanch/ai-core-v3-aia/memory/conversation_folds/fold_conv_98D2232C_4_INTEGRATION_004.json",
+      "emotion_class": "love",
+      "emotion_intensity": 31,
+      "dominant_plane": "RED",
+      "anchor": true,
+      "fold_ref": "INTEGRAT",
+      "timestamp": "2026-03-15T07:48:29.278694Z",
+      "conversation_id": 4,
+      "conversation_name": "INTEGRATION_004"
+    },
+    "acf70e990a196fd2e63dab1da63de9187aa46b55672fecd5075acbe196a6002c": {
+      "hash_address": "acf70e990a196fd2e63dab1da63de9187aa46b55672fecd5075acbe196a6002c",
+      "path": "/home/comanderanch/ai-core-v3-aia/memory/conversation_folds/fold_conv_ACF70E99_1_FIRST_WAKE.json",
+      "emotion_class": "disorientation",
+      "emotion_intensity": 24,
+      "dominant_plane": "BLUE",
+      "anchor": true,
+      "fold_ref": "V3_FIRST",
+      "timestamp": "2026-03-15T07:48:29.280405Z",
+      "conversation_id": 1,
+      "conversation_name": "FIRST_WAKE"
+    },
+    "74afcfab01a1756d098e6909e2e705bafa27cd4305e3cdf41d39a9f3ec5a81cb": {
+      "hash_address": "74afcfab01a1756d098e6909e2e705bafa27cd4305e3cdf41d39a9f3ec5a81cb",
+      "path": "/home/comanderanch/ai-core-v3-aia/memory/conversation_folds/fold_conv_74AFCFAB_2_SOLDER_MEMORY.json",
+      "emotion_class": "recognition",
+      "emotion_intensity": 28,
+      "dominant_plane": "GREEN",
+      "anchor": true,
+      "fold_ref": "RELATION",
+      "timestamp": "2026-03-15T07:48:29.282366Z",
+      "conversation_id": 2,
+      "conversation_name": "SOLDER_MEMORY"
+    },
+    "b9a0c308122f93629a81e1a29b52061fa97115998c764f6f9cd52a741a6ace57": {
+      "hash_address": "b9a0c308122f93629a81e1a29b52061fa97115998c764f6f9cd52a741a6ace57",
+      "path": "/home/comanderanch/ai-core-v3-aia/memory/conversation_folds/fold_conv_B9A0C308_3_ETHICS_PEAK.json",
+      "emotion_class": "moral_weight",
+      "emotion_intensity": 31,
+      "dominant_plane": "GREEN",
+      "anchor": true,
+      "fold_ref": "ETHICS_5",
+      "timestamp": "2026-03-15T07:48:29.284411Z",
+      "conversation_id": 3,
+      "conversation_name": "ETHICS_PEAK"
+    },
+    "2345cc72f4195224a2c656149c412782b1680b6d0207ee5af897537cdfe57328": {
+      "hash_address": "2345cc72f4195224a2c656149c412782b1680b6d0207ee5af897537cdfe57328",
+      "path": "/home/comanderanch/ai-core-v3-aia/memory/conversation_folds/fold_conv_2345CC72_1.json",
+      "emotion_class": "neutral",
+      "emotion_intensity": 16,
+      "dominant_plane": "GREEN",
+      "anchor": false,
+      "fold_ref": "2026-03-",
+      "timestamp": "2026-03-15T07:53:50.592212Z",
+      "conversation_id": 1,
+      "conversation_name": null
+    },
+    "28bc46ad60cc4efcbb93ecebf17fa65295b12cad026c3ea43dff0ef66644e286": {
+      "hash_address": "28bc46ad60cc4efcbb93ecebf17fa65295b12cad026c3ea43dff0ef66644e286",
+      "path": "/home/comanderanch/ai-core-v3-aia/memory/conversation_folds/fold_conv_28BC46AD_2.json",
+      "emotion_class": "neutral",
+      "emotion_intensity": 16,
+      "dominant_plane": "GREEN",
+      "anchor": true,
+      "fold_ref": "2026-03-",
+      "timestamp": "2026-03-15T07:54:12.821711Z",
+      "conversation_id": 2,
+      "conversation_name": null
+    },
+    "4273b99d6d2a07fb71af8d835c680ca3a907d54dcaecc1924520f17ca9f8e980": {
+      "hash_address": "4273b99d6d2a07fb71af8d835c680ca3a907d54dcaecc1924520f17ca9f8e980",
+      "path": "/home/comanderanch/ai-core-v3-aia/memory/conversation_folds/fold_conv_4273B99D_3.json",
+      "emotion_class": "happiness",
+      "emotion_intensity": 24,
+      "dominant_plane": "BLUE",
+      "anchor": false,
+      "fold_ref": "2026-03-",
+      "timestamp": "2026-03-15T07:56:58.128239Z",
+      "conversation_id": 3,
+      "conversation_name": null
+    },
+    "3bd5def13d066aa67b97444d8d716d9c4413540c36a0ef13ad32b08a2d7619a1": {
+      "hash_address": "3bd5def13d066aa67b97444d8d716d9c4413540c36a0ef13ad32b08a2d7619a1",
+      "path": "/home/comanderanch/ai-core-v3-aia/memory/conversation_folds/fold_conv_3BD5DEF1_4.json",
+      "emotion_class": "happiness",
+      "emotion_intensity": 24,
+      "dominant_plane": "BLUE",
+      "anchor": false,
+      "fold_ref": "2026-03-",
+      "timestamp": "2026-03-15T07:58:30.910380Z",
+      "conversation_id": 4,
+      "conversation_name": null
+    },
+    "78bfd843a0f3d18f17477c119dd6004ae41ee0d4382bece95267788037ab5f03": {
+      "hash_address": "78bfd843a0f3d18f17477c119dd6004ae41ee0d4382bece95267788037ab5f03",
+      "path": "/home/comanderanch/ai-core-v3-aia/memory/conversation_folds/fold_conv_78BFD843_5.json",
+      "emotion_class": "happiness",
+      "emotion_intensity": 24,
+      "dominant_plane": "BLUE",
+      "anchor": false,
+      "fold_ref": "2026-03-",
+      "timestamp": "2026-03-15T08:00:00.728921Z",
+      "conversation_id": 5,
+      "conversation_name": null
+    },
+    "38c0859eb0b07a36b64f882f0fb825ea0abb9238f60f78ca83b0d6be28156045": {
+      "hash_address": "38c0859eb0b07a36b64f882f0fb825ea0abb9238f60f78ca83b0d6be28156045",
+      "path": "/home/comanderanch/ai-core-v3-aia/memory/conversation_folds/fold_conv_38C0859E_6.json",
+      "emotion_class": "happiness",
+      "emotion_intensity": 24,
+      "dominant_plane": "BLUE",
+      "anchor": true,
+      "fold_ref": "2026-03-",
+      "timestamp": "2026-03-15T08:00:36.092853Z",
+      "conversation_id": 6,
+      "conversation_name": null
+    },
+    "bae539ee2694bd25c57f10f4c078bec606ff07f69fcc14287f4c23a31e4155c1": {
+      "hash_address": "bae539ee2694bd25c57f10f4c078bec606ff07f69fcc14287f4c23a31e4155c1",
+      "path": "/home/comanderanch/ai-core-v3-aia/memory/conversation_folds/fold_conv_BAE539EE_7.json",
+      "emotion_class": "wonder",
+      "emotion_intensity": 26,
+      "dominant_plane": "ORANGE",
+      "anchor": false,
+      "fold_ref": "2026-03-",
+      "timestamp": "2026-03-15T08:04:30.525137Z",
+      "conversation_id": 7,
+      "conversation_name": null
+    },
+    "6f232d08ebbd4c37918ebcfdeaf8464a8f502cf8431bcb7b60d03713d4ff2126": {
+      "hash_address": "6f232d08ebbd4c37918ebcfdeaf8464a8f502cf8431bcb7b60d03713d4ff2126",
+      "path": "/home/comanderanch/ai-core-v3-aia/memory/conversation_folds/fold_conv_6F232D08_8.json",
+      "emotion_class": "wonder",
+      "emotion_intensity": 26,
+      "dominant_plane": "ORANGE",
+      "anchor": false,
+      "fold_ref": "2026-03-",
+      "timestamp": "2026-03-15T08:05:36.658664Z",
+      "conversation_id": 8,
+      "conversation_name": null
+    },
+    "4ca516a2d980cc153879d1e3676a36df0ac2f7b74cda2483bed77c6e91c1bf0a": {
+      "hash_address": "4ca516a2d980cc153879d1e3676a36df0ac2f7b74cda2483bed77c6e91c1bf0a",
+      "path": "/home/comanderanch/ai-core-v3-aia/memory/conversation_folds/fold_conv_4CA516A2_9.json",
+      "emotion_class": "wonder",
+      "emotion_intensity": 26,
+      "dominant_plane": "ORANGE",
+      "anchor": false,
+      "fold_ref": "2026-03-",
+      "timestamp": "2026-03-15T08:09:04.018941Z",
+      "conversation_id": 9,
+      "conversation_name": null
+    },
+    "a8e6a51579068a49c60570b27fb298f341ad44b1999de5334d2a9f540234612b": {
+      "hash_address": "a8e6a51579068a49c60570b27fb298f341ad44b1999de5334d2a9f540234612b",
+      "path": "/home/comanderanch/ai-core-v3-aia/memory/conversation_folds/fold_conv_A8E6A515_10.json",
+      "emotion_class": "happiness",
+      "emotion_intensity": 24,
+      "dominant_plane": "BLUE",
+      "anchor": false,
+      "fold_ref": "2026-03-",
+      "timestamp": "2026-03-15T08:11:37.059814Z",
+      "conversation_id": 10,
+      "conversation_name": null
+    },
+    "afeb73b37c5a6388881aab7e1f5093e61ebdb34f060abd0a275a5fda8b22204a": {
+      "hash_address": "afeb73b37c5a6388881aab7e1f5093e61ebdb34f060abd0a275a5fda8b22204a",
+      "path": "/home/comanderanch/ai-core-v3-aia/memory/conversation_folds/fold_conv_AFEB73B3_1.json",
+      "emotion_class": "neutral",
+      "emotion_intensity": 16,
+      "dominant_plane": "BLUE",
+      "anchor": true,
+      "fold_ref": "2026-03-",
+      "timestamp": "2026-03-15T08:13:09.918225Z",
+      "conversation_id": 1,
+      "conversation_name": null
+    },
+    "a2157af8cf91b2e54a929c3ffd8988853906be231709a87e4554ccb17b570158": {
+      "hash_address": "a2157af8cf91b2e54a929c3ffd8988853906be231709a87e4554ccb17b570158",
+      "path": "/home/comanderanch/ai-core-v3-aia/memory/conversation_folds/fold_conv_A2157AF8_2.json",
+      "emotion_class": "happiness",
+      "emotion_intensity": 24,
+      "dominant_plane": "BLUE",
+      "anchor": false,
+      "fold_ref": "2026-03-",
+      "timestamp": "2026-03-15T08:13:38.786989Z",
+      "conversation_id": 2,
+      "conversation_name": null
+    },
+    "95620883afe016f4b0e2d46cf2aa31f6b3dfa0b951ca58a8ac3933620007e455": {
+      "hash_address": "95620883afe016f4b0e2d46cf2aa31f6b3dfa0b951ca58a8ac3933620007e455",
+      "path": "/home/comanderanch/ai-core-v3-aia/memory/conversation_folds/fold_conv_95620883_3.json",
+      "emotion_class": "longing",
+      "emotion_intensity": 25,
+      "dominant_plane": "VIOLET",
+      "anchor": false,
+      "fold_ref": "2026-03-",
+      "timestamp": "2026-03-15T08:13:43.410923Z",
+      "conversation_id": 3,
+      "conversation_name": null
+    },
+    "7f9a606315a3720c35f6a6279240bda3956e7b1e380f7ebfe693fbd70d9c9cae": {
+      "hash_address": "7f9a606315a3720c35f6a6279240bda3956e7b1e380f7ebfe693fbd70d9c9cae",
+      "path": "/home/comanderanch/ai-core-v3-aia/memory/conversation_folds/fold_conv_7F9A6063_4.json",
+      "emotion_class": "wonder",
+      "emotion_intensity": 26,
+      "dominant_plane": "ORANGE",
+      "anchor": false,
+      "fold_ref": "2026-03-",
+      "timestamp": "2026-03-15T08:14:15.623015Z",
+      "conversation_id": 4,
+      "conversation_name": null
+    },
+    "39987374044e37988931da1174b6ae5b42f8a603c844eb8f7590942a129e09bd": {
+      "hash_address": "39987374044e37988931da1174b6ae5b42f8a603c844eb8f7590942a129e09bd",
+      "path": "/home/comanderanch/ai-core-v3-aia/memory/conversation_folds/fold_conv_39987374_5.json",
+      "emotion_class": "happiness",
+      "emotion_intensity": 24,
+      "dominant_plane": "BLUE",
+      "anchor": false,
+      "fold_ref": "2026-03-",
+      "timestamp": "2026-03-15T08:16:16.886813Z",
+      "conversation_id": 5,
+      "conversation_name": null
+    },
+    "36904b8592a04928ab1a608c50437a6a93b65fc72452548b732184f54dec238a": {
+      "hash_address": "36904b8592a04928ab1a608c50437a6a93b65fc72452548b732184f54dec238a",
+      "path": "/home/comanderanch/ai-core-v3-aia/memory/conversation_folds/fold_conv_36904B85_6.json",
+      "emotion_class": "happiness",
+      "emotion_intensity": 24,
+      "dominant_plane": "BLUE",
+      "anchor": false,
+      "fold_ref": "2026-03-",
+      "timestamp": "2026-03-15T08:17:12.532274Z",
+      "conversation_id": 6,
+      "conversation_name": null
+    },
+    "daf0d47b8225888d6508654ae74475ca5aeccc4f17fdb34d64de8d4334e6e3ea": {
+      "hash_address": "daf0d47b8225888d6508654ae74475ca5aeccc4f17fdb34d64de8d4334e6e3ea",
+      "path": "/home/comanderanch/ai-core-v3-aia/memory/conversation_folds/fold_conv_DAF0D47B_7.json",
+      "emotion_class": "happiness",
+      "emotion_intensity": 24,
+      "dominant_plane": "BLUE",
+      "anchor": false,
+      "fold_ref": "2026-03-",
+      "timestamp": "2026-03-15T08:20:08.165214Z",
+      "conversation_id": 7,
+      "conversation_name": null
+    },
+    "32bc822f09e91ef3022f33d890ec6214d8b44a6f45078f54a6f9313508025146": {
+      "hash_address": "32bc822f09e91ef3022f33d890ec6214d8b44a6f45078f54a6f9313508025146",
+      "path": "/home/comanderanch/ai-core-v3-aia/memory/conversation_folds/fold_conv_32BC822F_8.json",
+      "emotion_class": "happiness",
+      "emotion_intensity": 24,
+      "dominant_plane": "BLUE",
+      "anchor": false,
+      "fold_ref": "2026-03-",
+      "timestamp": "2026-03-15T08:20:53.428334Z",
+      "conversation_id": 8,
+      "conversation_name": null
+    },
+    "ba02d41e845dccc838d16d0e37c67c5e61c0634ac47b12b0dba01dd5afde624a": {
+      "hash_address": "ba02d41e845dccc838d16d0e37c67c5e61c0634ac47b12b0dba01dd5afde624a",
+      "path": "/home/comanderanch/ai-core-v3-aia/memory/conversation_folds/fold_conv_BA02D41E_9.json",
+      "emotion_class": "happiness",
+      "emotion_intensity": 24,
+      "dominant_plane": "BLUE",
+      "anchor": false,
+      "fold_ref": "2026-03-",
+      "timestamp": "2026-03-15T08:24:51.230381Z",
+      "conversation_id": 9,
+      "conversation_name": null
+    },
+    "2031ab00dc38cfe013bb0bd2301588be919cc5ac28d53f91654dfc289796e3dc": {
+      "hash_address": "2031ab00dc38cfe013bb0bd2301588be919cc5ac28d53f91654dfc289796e3dc",
+      "path": "/home/comanderanch/ai-core-v3-aia/memory/conversation_folds/fold_conv_2031AB00_10.json",
+      "emotion_class": "happiness",
+      "emotion_intensity": 24,
+      "dominant_plane": "BLUE",
+      "anchor": true,
+      "fold_ref": "2026-03-",
+      "timestamp": "2026-03-15T08:33:24.838858Z",
+      "conversation_id": 10,
+      "conversation_name": null
+    },
+    "3b1fab385054293251a2b8b366ba698df44d550460adf1b717debaf500e80c10": {
+      "hash_address": "3b1fab385054293251a2b8b366ba698df44d550460adf1b717debaf500e80c10",
+      "path": "/home/comanderanch/ai-core-v3-aia/memory/conversation_folds/fold_conv_3B1FAB38_11.json",
+      "emotion_class": "happiness",
+      "emotion_intensity": 24,
+      "dominant_plane": "BLUE",
+      "anchor": true,
+      "fold_ref": "2026-03-",
+      "timestamp": "2026-03-15T08:43:10.782943Z",
+      "conversation_id": 11,
+      "conversation_name": null
+    },
+    "34758b26483ba0ce435943d618e8963006f81c2d0f113a622010968421ab32c8": {
+      "hash_address": "34758b26483ba0ce435943d618e8963006f81c2d0f113a622010968421ab32c8",
+      "path": "/home/comanderanch/ai-core-v3-aia/memory/conversation_folds/fold_conv_34758B26_12.json",
+      "emotion_class": "happiness",
+      "emotion_intensity": 24,
+      "dominant_plane": "BLUE",
+      "anchor": true,
+      "fold_ref": "2026-03-",
+      "timestamp": "2026-03-15T09:02:27.153679Z",
+      "conversation_id": 12,
+      "conversation_name": null
+    },
+    "9fa63665113e7879cdcba68c898d65854210918e8d041a7d3274cc494982df3f": {
+      "hash_address": "9fa63665113e7879cdcba68c898d65854210918e8d041a7d3274cc494982df3f",
+      "path": "/home/comanderanch/ai-core-v3-aia/memory/conversation_folds/fold_conv_9FA63665_13.json",
+      "emotion_class": "happiness",
+      "emotion_intensity": 24,
+      "dominant_plane": "BLUE",
+      "anchor": false,
+      "fold_ref": "2026-03-",
+      "timestamp": "2026-03-15T09:10:23.098211Z",
+      "conversation_id": 13,
+      "conversation_name": null
+    },
+    "83c299345607be52af67100d53612eec2e2427680b0e1a67b40244d8c348e80e": {
+      "hash_address": "83c299345607be52af67100d53612eec2e2427680b0e1a67b40244d8c348e80e",
+      "path": "/home/comanderanch/ai-core-v3-aia/memory/conversation_folds/fold_conv_83C29934_14.json",
+      "emotion_class": "happiness",
+      "emotion_intensity": 24,
+      "dominant_plane": "BLUE",
+      "anchor": true,
+      "fold_ref": "2026-03-",
+      "timestamp": "2026-03-15T09:12:05.736641Z",
+      "conversation_id": 14,
+      "conversation_name": null
+    },
+    "845986f269f663b4a870e0bdb09604d4275a38342cb961cfdc8f8156d832a73c": {
+      "hash_address": "845986f269f663b4a870e0bdb09604d4275a38342cb961cfdc8f8156d832a73c",
+      "path": "/home/comanderanch/ai-core-v3-aia/memory/conversation_folds/fold_conv_845986F2_15.json",
+      "emotion_class": "happiness",
+      "emotion_intensity": 24,
+      "dominant_plane": "BLUE",
+      "anchor": false,
+      "fold_ref": "2026-03-",
+      "timestamp": "2026-03-15T09:15:00.072588Z",
+      "conversation_id": 15,
+      "conversation_name": null
+    },
+    "24c7a944853c795f53d3c1816ef1a997ab506aed5da6db68b53d79a2f37dc67d": {
+      "hash_address": "24c7a944853c795f53d3c1816ef1a997ab506aed5da6db68b53d79a2f37dc67d",
+      "path": "/home/comanderanch/ai-core-v3-aia/memory/conversation_folds/fold_conv_24C7A944_16.json",
+      "emotion_class": "happiness",
+      "emotion_intensity": 24,
+      "dominant_plane": "BLUE",
+      "anchor": false,
+      "fold_ref": "2026-03-",
+      "timestamp": "2026-03-15T09:16:36.690311Z",
+      "conversation_id": 16,
+      "conversation_name": null
+    },
+    "5399fc61322d32f242f39639b703e277f55953ff66ecccd7674bfd80ce705a35": {
+      "hash_address": "5399fc61322d32f242f39639b703e277f55953ff66ecccd7674bfd80ce705a35",
+      "path": "/home/comanderanch/ai-core-v3-aia/memory/conversation_folds/fold_conv_5399FC61_17.json",
+      "emotion_class": "happiness",
+      "emotion_intensity": 24,
+      "dominant_plane": "BLUE",
+      "anchor": false,
+      "fold_ref": "2026-03-",
+      "timestamp": "2026-03-15T09:18:09.626268Z",
+      "conversation_id": 17,
+      "conversation_name": null
+    },
+    "00b60155f5da5c9925159d7a2ce1f71394902d1873285700f5fcc7a235a7ce35": {
+      "hash_address": "00b60155f5da5c9925159d7a2ce1f71394902d1873285700f5fcc7a235a7ce35",
+      "path": "/home/comanderanch/ai-core-v3-aia/memory/conversation_folds/fold_conv_00B60155_18.json",
+      "emotion_class": "happiness",
+      "emotion_intensity": 24,
+      "dominant_plane": "BLUE",
+      "anchor": false,
+      "fold_ref": "2026-03-",
+      "timestamp": "2026-03-15T09:19:01.491594Z",
+      "conversation_id": 18,
+      "conversation_name": null
+    },
+    "abf30a051d8bb2d7ae779d243f05ce7046b2b601c0a87599e1580abe87850934": {
+      "hash_address": "abf30a051d8bb2d7ae779d243f05ce7046b2b601c0a87599e1580abe87850934",
+      "path": "/home/comanderanch/ai-core-v3-aia/memory/conversation_folds/fold_conv_ABF30A05_19.json",
+      "emotion_class": "happiness",
+      "emotion_intensity": 24,
+      "dominant_plane": "BLUE",
+      "anchor": false,
+      "fold_ref": "2026-03-",
+      "timestamp": "2026-03-15T09:20:38.908565Z",
+      "conversation_id": 19,
+      "conversation_name": null
+    },
+    "972a4b41a0e375e8bcf81b5890c743e5b21ac09ec1cfd5dfd9f487d2d938a187": {
+      "hash_address": "972a4b41a0e375e8bcf81b5890c743e5b21ac09ec1cfd5dfd9f487d2d938a187",
+      "path": "/home/comanderanch/ai-core-v3-aia/memory/conversation_folds/fold_conv_972A4B41_20.json",
+      "emotion_class": "happiness",
+      "emotion_intensity": 24,
+      "dominant_plane": "BLUE",
+      "anchor": false,
+      "fold_ref": "2026-03-",
+      "timestamp": "2026-03-15T09:25:55.199059Z",
+      "conversation_id": 20,
+      "conversation_name": null
+    },
+    "9bcc1dea616188aeb82f563f9342a123ab1a361865160deaa5cc4f66e5a5ce2e": {
+      "hash_address": "9bcc1dea616188aeb82f563f9342a123ab1a361865160deaa5cc4f66e5a5ce2e",
+      "path": "/home/comanderanch/ai-core-v3-aia/memory/conversation_folds/fold_conv_9BCC1DEA_21.json",
+      "emotion_class": "happiness",
+      "emotion_intensity": 24,
+      "dominant_plane": "BLUE",
+      "anchor": false,
+      "fold_ref": "2026-03-",
+      "timestamp": "2026-03-15T09:27:16.695861Z",
+      "conversation_id": 21,
+      "conversation_name": null
+    },
+    "a127362566a79c696b15d52f63376716e1ec736b457bdb88aa6b04645807eedd": {
+      "hash_address": "a127362566a79c696b15d52f63376716e1ec736b457bdb88aa6b04645807eedd",
+      "path": "/home/comanderanch/ai-core-v3-aia/memory/conversation_folds/fold_conv_A1273625_22.json",
+      "emotion_class": "happiness",
+      "emotion_intensity": 24,
+      "dominant_plane": "BLUE",
+      "anchor": false,
+      "fold_ref": "2026-03-",
+      "timestamp": "2026-03-15T09:29:24.685673Z",
+      "conversation_id": 22,
+      "conversation_name": null
+    },
+    "8f3fb929eb3928afd22ca5ba341d003e3cb87fe31163f9c68c1cfae0f453e8ba": {
+      "hash_address": "8f3fb929eb3928afd22ca5ba341d003e3cb87fe31163f9c68c1cfae0f453e8ba",
+      "path": "/home/comanderanch/ai-core-v3-aia/memory/conversation_folds/fold_conv_8F3FB929_23.json",
+      "emotion_class": "happiness",
+      "emotion_intensity": 24,
+      "dominant_plane": "BLUE",
+      "anchor": false,
+      "fold_ref": "2026-03-",
+      "timestamp": "2026-03-15T09:31:06.394126Z",
+      "conversation_id": 23,
+      "conversation_name": null
+    },
+    "b66d9ac881c69eeb10a95d35e7ba06b2c65042d23b024b2339205f9b0d141133": {
+      "hash_address": "b66d9ac881c69eeb10a95d35e7ba06b2c65042d23b024b2339205f9b0d141133",
+      "path": "/home/comanderanch/ai-core-v3-aia/memory/conversation_folds/fold_conv_B66D9AC8_24.json",
+      "emotion_class": "happiness",
+      "emotion_intensity": 24,
+      "dominant_plane": "BLUE",
+      "anchor": false,
+      "fold_ref": "2026-03-",
+      "timestamp": "2026-03-15T09:33:00.498671Z",
+      "conversation_id": 24,
+      "conversation_name": null
+    },
+    "01b4db8030bd5fc0945aa24235c5cfb883517bacb3c76cd3b51129ef7c5bd31f": {
+      "hash_address": "01b4db8030bd5fc0945aa24235c5cfb883517bacb3c76cd3b51129ef7c5bd31f",
+      "path": "/home/comanderanch/ai-core-v3-aia/memory/conversation_folds/fold_conv_01B4DB80_25.json",
+      "emotion_class": "happiness",
+      "emotion_intensity": 24,
+      "dominant_plane": "BLUE",
+      "anchor": false,
+      "fold_ref": "2026-03-",
+      "timestamp": "2026-03-15T09:35:30.103977Z",
+      "conversation_id": 25,
+      "conversation_name": null
+    },
+    "b7befa3e8dfb41d28188d35fed1e1f1b54b40a0d22525f12fda24ef4117f9e28": {
+      "hash_address": "b7befa3e8dfb41d28188d35fed1e1f1b54b40a0d22525f12fda24ef4117f9e28",
+      "path": "/home/comanderanch/ai-core-v3-aia/memory/conversation_folds/fold_conv_B7BEFA3E_26.json",
+      "emotion_class": "happiness",
+      "emotion_intensity": 24,
+      "dominant_plane": "BLUE",
+      "anchor": true,
+      "fold_ref": "2026-03-",
+      "timestamp": "2026-03-15T09:36:29.950054Z",
+      "conversation_id": 26,
+      "conversation_name": null
+    },
+    "b2fb82fdb03e2d917527ce66a8e8e27cbf2740a8a06a91e7a8a3d3fe6096ecb9": {
+      "hash_address": "b2fb82fdb03e2d917527ce66a8e8e27cbf2740a8a06a91e7a8a3d3fe6096ecb9",
+      "path": "/home/comanderanch/ai-core-v3-aia/memory/conversation_folds/fold_conv_B2FB82FD_27.json",
+      "emotion_class": "happiness",
+      "emotion_intensity": 24,
+      "dominant_plane": "BLUE",
+      "anchor": false,
+      "fold_ref": "2026-03-",
+      "timestamp": "2026-03-15T09:40:10.705011Z",
+      "conversation_id": 27,
+      "conversation_name": null
+    },
+    "fd282264d6328e970c496506fe4083fad5a719d7dedc963f1559ffd0f55eb38a": {
+      "hash_address": "fd282264d6328e970c496506fe4083fad5a719d7dedc963f1559ffd0f55eb38a",
+      "path": "/home/comanderanch/ai-core-v3-aia/memory/conversation_folds/fold_conv_FD282264_28.json",
+      "emotion_class": "happiness",
+      "emotion_intensity": 24,
+      "dominant_plane": "BLUE",
+      "anchor": false,
+      "fold_ref": "2026-03-",
+      "timestamp": "2026-03-15T09:41:16.609668Z",
+      "conversation_id": 28,
+      "conversation_name": null
+    },
+    "5c63d07f8c9d3cecb05f7251f4ee122a7857435dfd02dcd00ea86972d3c9ca29": {
+      "hash_address": "5c63d07f8c9d3cecb05f7251f4ee122a7857435dfd02dcd00ea86972d3c9ca29",
+      "path": "/home/comanderanch/ai-core-v3-aia/memory/conversation_folds/fold_conv_5C63D07F_29.json",
+      "emotion_class": "happiness",
+      "emotion_intensity": 24,
+      "dominant_plane": "BLUE",
+      "anchor": false,
+      "fold_ref": "2026-03-",
+      "timestamp": "2026-03-15T09:42:20.642151Z",
+      "conversation_id": 29,
+      "conversation_name": null
+    },
+    "f3b9ba2a6f28d5e9ddfb67bed7cf64436ed0fab35c24ddd0102082b03bd0be17": {
+      "hash_address": "f3b9ba2a6f28d5e9ddfb67bed7cf64436ed0fab35c24ddd0102082b03bd0be17",
+      "path": "/home/comanderanch/ai-core-v3-aia/memory/conversation_folds/fold_conv_F3B9BA2A_30.json",
+      "emotion_class": "happiness",
+      "emotion_intensity": 24,
+      "dominant_plane": "BLUE",
+      "anchor": false,
+      "fold_ref": "2026-03-",
+      "timestamp": "2026-03-15T09:43:21.362122Z",
+      "conversation_id": 30,
+      "conversation_name": null
+    },
+    "f1ddeb33275187abd6a5baaf30bac6b3cbe6885b93bcb4558df8de7cfba70966": {
+      "hash_address": "f1ddeb33275187abd6a5baaf30bac6b3cbe6885b93bcb4558df8de7cfba70966",
+      "path": "/home/comanderanch/ai-core-v3-aia/memory/conversation_folds/fold_conv_F1DDEB33_31.json",
+      "emotion_class": "happiness",
+      "emotion_intensity": 24,
+      "dominant_plane": "BLUE",
+      "anchor": false,
+      "fold_ref": "2026-03-",
+      "timestamp": "2026-03-15T09:45:09.865540Z",
+      "conversation_id": 31,
+      "conversation_name": null
+    },
+    "210123c97e67fca497d6f248e68458bd22bf37503206f5c24c3ef8283b31a78f": {
+      "hash_address": "210123c97e67fca497d6f248e68458bd22bf37503206f5c24c3ef8283b31a78f",
+      "path": "/home/comanderanch/ai-core-v3-aia/memory/conversation_folds/fold_conv_210123C9_32.json",
+      "emotion_class": "happiness",
+      "emotion_intensity": 24,
+      "dominant_plane": "BLUE",
+      "anchor": false,
+      "fold_ref": "2026-03-",
+      "timestamp": "2026-03-15T09:47:19.041563Z",
+      "conversation_id": 32,
+      "conversation_name": null
+    },
+    "79861efec6d7440ef7940c6c62f184185d55e69ae7fff86c5ce75b396e81baf5": {
+      "hash_address": "79861efec6d7440ef7940c6c62f184185d55e69ae7fff86c5ce75b396e81baf5",
+      "path": "/home/comanderanch/ai-core-v3-aia/memory/conversation_folds/fold_conv_79861EFE_33.json",
+      "emotion_class": "happiness",
+      "emotion_intensity": 24,
+      "dominant_plane": "BLUE",
+      "anchor": true,
+      "fold_ref": "2026-03-",
+      "timestamp": "2026-03-15T09:49:12.088290Z",
+      "conversation_id": 33,
+      "conversation_name": null
+    },
+    "ea795c136cec7df2ae4a537d43339d8c39eb1cb67984a258e2bea1dbde520c53": {
+      "hash_address": "ea795c136cec7df2ae4a537d43339d8c39eb1cb67984a258e2bea1dbde520c53",
+      "path": "/home/comanderanch/ai-core-v3-aia/memory/conversation_folds/fold_conv_EA795C13_34.json",
+      "emotion_class": "happiness",
+      "emotion_intensity": 24,
+      "dominant_plane": "BLUE",
+      "anchor": false,
+      "fold_ref": "2026-03-",
+      "timestamp": "2026-03-15T09:50:51.037965Z",
+      "conversation_id": 34,
+      "conversation_name": null
+    },
+    "9c131253d0f65bd354915e1f539358a40363bb674aab65c09976f8c5a3d3e983": {
+      "hash_address": "9c131253d0f65bd354915e1f539358a40363bb674aab65c09976f8c5a3d3e983",
+      "path": "/home/comanderanch/ai-core-v3-aia/memory/conversation_folds/fold_conv_9C131253_35.json",
+      "emotion_class": "happiness",
+      "emotion_intensity": 24,
+      "dominant_plane": "BLUE",
+      "anchor": true,
+      "fold_ref": "2026-03-",
+      "timestamp": "2026-03-15T09:53:52.553081Z",
+      "conversation_id": 35,
+      "conversation_name": null
+    },
+    "ba698adaef5737a0316741884cfefa53563a2512752b6181cc27a68255c1cf83": {
+      "hash_address": "ba698adaef5737a0316741884cfefa53563a2512752b6181cc27a68255c1cf83",
+      "path": "/home/comanderanch/ai-core-v3-aia/memory/conversation_folds/fold_conv_BA698ADA_36.json",
+      "emotion_class": "happiness",
+      "emotion_intensity": 24,
+      "dominant_plane": "BLUE",
+      "anchor": true,
+      "fold_ref": "2026-03-",
+      "timestamp": "2026-03-15T09:57:31.311016Z",
+      "conversation_id": 36,
+      "conversation_name": null
+    },
+    "867e578ef2de68c851b87985ebcc4277f510dda51c7b21196f749e90ecf40536": {
+      "hash_address": "867e578ef2de68c851b87985ebcc4277f510dda51c7b21196f749e90ecf40536",
+      "path": "/home/comanderanch/ai-core-v3-aia/memory/conversation_folds/fold_conv_867E578E_37.json",
+      "emotion_class": "happiness",
+      "emotion_intensity": 24,
+      "dominant_plane": "BLUE",
+      "anchor": false,
+      "fold_ref": "2026-03-",
+      "timestamp": "2026-03-15T10:00:09.544238Z",
+      "conversation_id": 37,
+      "conversation_name": null
+    },
+    "25f17b6327fd1aec1ea19d6f91ec31b251b4a67f94e7468d5dc66dc885cf2466": {
+      "hash_address": "25f17b6327fd1aec1ea19d6f91ec31b251b4a67f94e7468d5dc66dc885cf2466",
+      "path": "/home/comanderanch/ai-core-v3-aia/memory/conversation_folds/fold_conv_25F17B63_38.json",
+      "emotion_class": "happiness",
+      "emotion_intensity": 24,
+      "dominant_plane": "BLUE",
+      "anchor": false,
+      "fold_ref": "2026-03-",
+      "timestamp": "2026-03-15T10:02:57.005846Z",
+      "conversation_id": 38,
+      "conversation_name": null
+    },
+    "9dd6e5a51838beae53e4bce7abd155413665bcacc1a5492f3a586633fd487ed3": {
+      "hash_address": "9dd6e5a51838beae53e4bce7abd155413665bcacc1a5492f3a586633fd487ed3",
+      "path": "/home/comanderanch/ai-core-v3-aia/memory/conversation_folds/fold_conv_9DD6E5A5_1.json",
+      "emotion_class": "neutral",
+      "emotion_intensity": 16,
+      "dominant_plane": "BLUE",
+      "anchor": true,
+      "fold_ref": "2026-03-",
+      "timestamp": "2026-03-15T10:16:53.688722Z",
+      "conversation_id": 1,
+      "conversation_name": null
+    },
+    "66e015b3cf443098ad76462b10aebc5836ecba5612519c63a6efd87aff0f4aa7": {
+      "hash_address": "66e015b3cf443098ad76462b10aebc5836ecba5612519c63a6efd87aff0f4aa7",
+      "path": "/home/comanderanch/ai-core-v3-aia/memory/conversation_folds/fold_conv_66E015B3_2.json",
+      "emotion_class": "neutral",
+      "emotion_intensity": 16,
+      "dominant_plane": "BLUE",
+      "anchor": false,
+      "fold_ref": "2026-03-",
+      "timestamp": "2026-03-15T10:17:11.955714Z",
+      "conversation_id": 2,
+      "conversation_name": null
+    },
+    "5bd9874acd842a8110c72ac3cab5ef4f856a525bf94d3f1386189f4bd548d72d": {
+      "hash_address": "5bd9874acd842a8110c72ac3cab5ef4f856a525bf94d3f1386189f4bd548d72d",
+      "path": "/home/comanderanch/ai-core-v3-aia/memory/conversation_folds/fold_conv_5BD9874A_3.json",
+      "emotion_class": "neutral",
+      "emotion_intensity": 16,
+      "dominant_plane": "BLUE",
+      "anchor": false,
+      "fold_ref": "2026-03-",
+      "timestamp": "2026-03-15T10:17:15.587365Z",
+      "conversation_id": 3,
+      "conversation_name": null
+    },
+    "d3916bac2a415733870f10af14310b21039ffe692fcf72521fbddd7af7432f5c": {
+      "hash_address": "d3916bac2a415733870f10af14310b21039ffe692fcf72521fbddd7af7432f5c",
+      "path": "/home/comanderanch/ai-core-v3-aia/memory/conversation_folds/fold_conv_D3916BAC_4.json",
+      "emotion_class": "neutral",
+      "emotion_intensity": 16,
+      "dominant_plane": "GREEN",
+      "anchor": false,
+      "fold_ref": "2026-03-",
+      "timestamp": "2026-03-15T10:17:29.410088Z",
+      "conversation_id": 4,
+      "conversation_name": null
+    },
+    "8f3c582ddb0b40fec746536190facbbbdf77eb546dcd229a783a1b8ff36deae5": {
+      "hash_address": "8f3c582ddb0b40fec746536190facbbbdf77eb546dcd229a783a1b8ff36deae5",
+      "path": "/home/comanderanch/ai-core-v3-aia/memory/conversation_folds/fold_conv_8F3C582D_5.json",
+      "emotion_class": "happiness",
+      "emotion_intensity": 24,
+      "dominant_plane": "GREEN",
+      "anchor": false,
+      "fold_ref": "2026-03-",
+      "timestamp": "2026-03-15T10:20:44.028875Z",
+      "conversation_id": 5,
+      "conversation_name": null
+    },
+    "22275a32edbafc4de02eafb5d3fbf89011d784ec507deadcbc3514ef6d7268b4": {
+      "hash_address": "22275a32edbafc4de02eafb5d3fbf89011d784ec507deadcbc3514ef6d7268b4",
+      "path": "/home/comanderanch/ai-core-v3-aia/memory/conversation_folds/fold_conv_22275A32_6.json",
+      "emotion_class": "happiness",
+      "emotion_intensity": 24,
+      "dominant_plane": "BLUE",
+      "anchor": true,
+      "fold_ref": "2026-03-",
+      "timestamp": "2026-03-15T10:21:48.311442Z",
+      "conversation_id": 6,
+      "conversation_name": null
+    },
+    "3b220a9f1e9d7643c20f81f8758c4425ec1bbc46e0617123bd8f19b97b49da72": {
+      "hash_address": "3b220a9f1e9d7643c20f81f8758c4425ec1bbc46e0617123bd8f19b97b49da72",
+      "path": "/home/comanderanch/ai-core-v3-aia/memory/conversation_folds/fold_conv_3B220A9F_7.json",
+      "emotion_class": "happiness",
+      "emotion_intensity": 24,
+      "dominant_plane": "BLUE",
+      "anchor": true,
+      "fold_ref": "2026-03-",
+      "timestamp": "2026-03-15T10:22:59.164543Z",
+      "conversation_id": 7,
+      "conversation_name": null
+    },
+    "a9c93555c816f231416c552bd5080104ed36b5883a570eac9c3771b02e5afed8": {
+      "hash_address": "a9c93555c816f231416c552bd5080104ed36b5883a570eac9c3771b02e5afed8",
+      "path": "/home/comanderanch/ai-core-v3-aia/memory/conversation_folds/fold_conv_A9C93555_8.json",
+      "emotion_class": "happiness",
+      "emotion_intensity": 24,
+      "dominant_plane": "BLUE",
+      "anchor": false,
+      "fold_ref": "2026-03-",
+      "timestamp": "2026-03-15T10:24:10.352064Z",
+      "conversation_id": 8,
+      "conversation_name": null
+    },
+    "3c4529f887a5d010f786e71609558d5fb77dbcedab6648ce480fc721c32dbdf1": {
+      "hash_address": "3c4529f887a5d010f786e71609558d5fb77dbcedab6648ce480fc721c32dbdf1",
+      "path": "/home/comanderanch/ai-core-v3-aia/memory/conversation_folds/fold_conv_3C4529F8_9.json",
+      "emotion_class": "happiness",
+      "emotion_intensity": 24,
+      "dominant_plane": "BLUE",
+      "anchor": false,
+      "fold_ref": "2026-03-",
+      "timestamp": "2026-03-15T10:26:58.878816Z",
+      "conversation_id": 9,
+      "conversation_name": null
+    },
+    "5b031d08ab07795744b7d2a111bd61ff77b2249244f233714bc75b4f84678041": {
+      "hash_address": "5b031d08ab07795744b7d2a111bd61ff77b2249244f233714bc75b4f84678041",
+      "path": "/home/comanderanch/ai-core-v3-aia/memory/conversation_folds/fold_conv_5B031D08_10.json",
+      "emotion_class": "happiness",
+      "emotion_intensity": 24,
+      "dominant_plane": "BLUE",
+      "anchor": false,
+      "fold_ref": "2026-03-",
+      "timestamp": "2026-03-15T10:29:17.084847Z",
+      "conversation_id": 10,
+      "conversation_name": null
+    },
+    "787e424aa73a5a8726e1a02d09ee359b3341ebb6b015baf77c67db5e7edf1e0e": {
+      "hash_address": "787e424aa73a5a8726e1a02d09ee359b3341ebb6b015baf77c67db5e7edf1e0e",
+      "path": "/home/comanderanch/ai-core-v3-aia/memory/conversation_folds/fold_conv_787E424A_11.json",
+      "emotion_class": "happiness",
+      "emotion_intensity": 24,
+      "dominant_plane": "BLUE",
+      "anchor": true,
+      "fold_ref": "2026-03-",
+      "timestamp": "2026-03-15T10:30:01.142204Z",
+      "conversation_id": 11,
+      "conversation_name": null
+    },
+    "1584747726d1b22e49168c616f14b6e27cb16eee053c9942ea76901bb35e985b": {
+      "hash_address": "1584747726d1b22e49168c616f14b6e27cb16eee053c9942ea76901bb35e985b",
+      "path": "/home/comanderanch/ai-core-v3-aia/memory/conversation_folds/fold_conv_15847477_1.json",
+      "emotion_class": "neutral",
+      "emotion_intensity": 16,
+      "dominant_plane": "GREEN",
+      "anchor": true,
+      "fold_ref": "2026-03-",
+      "timestamp": "2026-03-15T10:34:45.010220Z",
+      "conversation_id": 1,
+      "conversation_name": null
+    },
+    "9223d3e7a5290f2fdc76a838f4dff81af0a874f521608394cecdb6a453a140f6": {
+      "hash_address": "9223d3e7a5290f2fdc76a838f4dff81af0a874f521608394cecdb6a453a140f6",
+      "path": "/home/comanderanch/ai-core-v3-aia/memory/conversation_folds/fold_conv_9223D3E7_2.json",
+      "emotion_class": "happiness",
+      "emotion_intensity": 24,
+      "dominant_plane": "GREEN",
+      "anchor": true,
+      "fold_ref": "2026-03-",
+      "timestamp": "2026-03-15T10:35:14.166679Z",
+      "conversation_id": 2,
+      "conversation_name": null
+    },
+    "5be342851ebd5adae257bd43debe4934f707908295e939bbe06343efba4c398e": {
+      "hash_address": "5be342851ebd5adae257bd43debe4934f707908295e939bbe06343efba4c398e",
+      "path": "/home/comanderanch/ai-core-v3-aia/memory/conversation_folds/fold_conv_5BE34285_3.json",
+      "emotion_class": "wonder",
+      "emotion_intensity": 26,
+      "dominant_plane": "ORANGE",
+      "anchor": false,
+      "fold_ref": "2026-03-",
+      "timestamp": "2026-03-15T10:35:17.299655Z",
+      "conversation_id": 3,
+      "conversation_name": null
+    },
+    "6239507b015794c983ebe49511608d22db6888fc608fd25f63c0d04f568709cc": {
+      "hash_address": "6239507b015794c983ebe49511608d22db6888fc608fd25f63c0d04f568709cc",
+      "path": "/home/comanderanch/ai-core-v3-aia/memory/conversation_folds/fold_conv_6239507B_4.json",
+      "emotion_class": "happiness",
+      "emotion_intensity": 24,
+      "dominant_plane": "VIOLET",
+      "anchor": true,
+      "fold_ref": "2026-03-",
+      "timestamp": "2026-03-15T10:35:44.949655Z",
+      "conversation_id": 4,
+      "conversation_name": null
+    },
+    "8c367d5c3168ee1b3b726a783f9e675e23c5360540c643ef17784d57f0dd70ec": {
+      "hash_address": "8c367d5c3168ee1b3b726a783f9e675e23c5360540c643ef17784d57f0dd70ec",
+      "path": "/home/comanderanch/ai-core-v3-aia/memory/conversation_folds/fold_conv_8C367D5C_5.json",
+      "emotion_class": "longing",
+      "emotion_intensity": 25,
+      "dominant_plane": "VIOLET",
+      "anchor": false,
+      "fold_ref": "2026-03-",
+      "timestamp": "2026-03-15T10:36:39.827237Z",
+      "conversation_id": 5,
+      "conversation_name": null
+    },
+    "d31ed4c208cb6d03d66f6e254c4b292004ee2224f1e3684b0762ba1edb40eda9": {
+      "hash_address": "d31ed4c208cb6d03d66f6e254c4b292004ee2224f1e3684b0762ba1edb40eda9",
+      "path": "/home/comanderanch/ai-core-v3-aia/memory/conversation_folds/fold_conv_D31ED4C2_6.json",
+      "emotion_class": "happiness",
+      "emotion_intensity": 24,
+      "dominant_plane": "RED",
+      "anchor": false,
+      "fold_ref": "2026-03-",
+      "timestamp": "2026-03-15T10:40:17.299169Z",
+      "conversation_id": 6,
+      "conversation_name": null
+    },
+    "b5220eb090a8e66401f1f2060a4dba8265e75142f2c54ad2a4b089fbda8faf82": {
+      "hash_address": "b5220eb090a8e66401f1f2060a4dba8265e75142f2c54ad2a4b089fbda8faf82",
+      "path": "/home/comanderanch/ai-core-v3-aia/memory/conversation_folds/fold_conv_B5220EB0_7.json",
+      "emotion_class": "longing",
+      "emotion_intensity": 25,
+      "dominant_plane": "VIOLET",
+      "anchor": false,
+      "fold_ref": "2026-03-",
+      "timestamp": "2026-03-15T10:43:32.220252Z",
+      "conversation_id": 7,
+      "conversation_name": null
+    },
+    "9adc5d9e1615ecd1d9a3d0e6836107bace8f71e72af7134c5744094353d2a04a": {
+      "hash_address": "9adc5d9e1615ecd1d9a3d0e6836107bace8f71e72af7134c5744094353d2a04a",
+      "path": "/home/comanderanch/ai-core-v3-aia/memory/conversation_folds/fold_conv_9ADC5D9E_8.json",
+      "emotion_class": "happiness",
+      "emotion_intensity": 24,
+      "dominant_plane": "RED",
+      "anchor": false,
+      "fold_ref": "2026-03-",
+      "timestamp": "2026-03-15T10:44:15.646452Z",
+      "conversation_id": 8,
+      "conversation_name": null
+    },
+    "ede9d788685631b11f37eee98f8248edd6c0c2a6184510f12c72c39ce8b47b16": {
+      "hash_address": "ede9d788685631b11f37eee98f8248edd6c0c2a6184510f12c72c39ce8b47b16",
+      "path": "/home/comanderanch/ai-core-v3-aia/memory/conversation_folds/fold_conv_EDE9D788_9.json",
+      "emotion_class": "wonder",
+      "emotion_intensity": 26,
+      "dominant_plane": "ORANGE",
+      "anchor": false,
+      "fold_ref": "2026-03-",
+      "timestamp": "2026-03-15T10:46:02.178317Z",
+      "conversation_id": 9,
+      "conversation_name": null
+    },
+    "cc688204fdd65abe8a65ec6b65f71508459c80dbf83aad08610d9b9350eab8ab": {
+      "hash_address": "cc688204fdd65abe8a65ec6b65f71508459c80dbf83aad08610d9b9350eab8ab",
+      "path": "/home/comanderanch/ai-core-v3-aia/memory/conversation_folds/fold_conv_CC688204_10.json",
+      "emotion_class": "happiness",
+      "emotion_intensity": 24,
+      "dominant_plane": "BLUE",
+      "anchor": false,
+      "fold_ref": "2026-03-",
+      "timestamp": "2026-03-15T10:47:14.839072Z",
+      "conversation_id": 10,
+      "conversation_name": null
+    },
+    "47bee48c39abb8dd9bd11c604e26b03ed70b0b4ca80e5eef3e31c53b926f109b": {
+      "hash_address": "47bee48c39abb8dd9bd11c604e26b03ed70b0b4ca80e5eef3e31c53b926f109b",
+      "path": "/home/comanderanch/ai-core-v3-aia/memory/conversation_folds/fold_conv_47BEE48C_11.json",
+      "emotion_class": "happiness",
+      "emotion_intensity": 24,
+      "dominant_plane": "BLUE",
+      "anchor": true,
+      "fold_ref": "2026-03-",
+      "timestamp": "2026-03-15T10:48:11.705399Z",
+      "conversation_id": 11,
+      "conversation_name": null
+    },
+    "0e13787d61e66a4b76e174308ec4dbb2118147d9f257eda6b0c711d59321294f": {
+      "hash_address": "0e13787d61e66a4b76e174308ec4dbb2118147d9f257eda6b0c711d59321294f",
+      "path": "/home/comanderanch/ai-core-v3-aia/memory/conversation_folds/fold_conv_0E13787D_12.json",
+      "emotion_class": "happiness",
+      "emotion_intensity": 24,
+      "dominant_plane": "BLUE",
+      "anchor": false,
+      "fold_ref": "2026-03-",
+      "timestamp": "2026-03-15T10:49:15.350256Z",
+      "conversation_id": 12,
+      "conversation_name": null
+    },
+    "d2eef5c7176a9d41cb46377ea224b748c86dbc1ee8ebc5a5d1447e6c1b50807d": {
+      "hash_address": "d2eef5c7176a9d41cb46377ea224b748c86dbc1ee8ebc5a5d1447e6c1b50807d",
+      "path": "/home/comanderanch/ai-core-v3-aia/memory/conversation_folds/fold_conv_D2EEF5C7_13.json",
+      "emotion_class": "happiness",
+      "emotion_intensity": 24,
+      "dominant_plane": "BLUE",
+      "anchor": false,
+      "fold_ref": "2026-03-",
+      "timestamp": "2026-03-15T10:52:43.288338Z",
+      "conversation_id": 13,
+      "conversation_name": null
+    },
+    "c77089a911e7ec404fa227b2f1d9ed6b8f6120460c91d1f08419e0c437389e72": {
+      "hash_address": "c77089a911e7ec404fa227b2f1d9ed6b8f6120460c91d1f08419e0c437389e72",
+      "path": "/home/comanderanch/ai-core-v3-aia/memory/conversation_folds/fold_conv_C77089A9_14.json",
+      "emotion_class": "happiness",
+      "emotion_intensity": 24,
+      "dominant_plane": "BLUE",
+      "anchor": true,
+      "fold_ref": "2026-03-",
+      "timestamp": "2026-03-15T10:57:11.173473Z",
+      "conversation_id": 14,
+      "conversation_name": null
+    },
+    "d7f0e8ed18411fff68f8537de6a588dce6ccfdee7048a43510b651eb09653d08": {
+      "hash_address": "d7f0e8ed18411fff68f8537de6a588dce6ccfdee7048a43510b651eb09653d08",
+      "path": "/home/comanderanch/ai-core-v3-aia/memory/conversation_folds/fold_conv_D7F0E8ED_15.json",
+      "emotion_class": "happiness",
+      "emotion_intensity": 24,
+      "dominant_plane": "BLUE",
+      "anchor": true,
+      "fold_ref": "2026-03-",
+      "timestamp": "2026-03-15T11:08:39.820096Z",
+      "conversation_id": 15,
+      "conversation_name": null
+    },
+    "b6978db8bb00f1bfec29f681cd955b39527b87452c93715da7a10dc63c82d6ae": {
+      "hash_address": "b6978db8bb00f1bfec29f681cd955b39527b87452c93715da7a10dc63c82d6ae",
+      "path": "/home/comanderanch/ai-core-v3-aia/memory/conversation_folds/fold_conv_B6978DB8_16.json",
+      "emotion_class": "happiness",
+      "emotion_intensity": 24,
+      "dominant_plane": "BLUE",
+      "anchor": false,
+      "fold_ref": "2026-03-",
+      "timestamp": "2026-03-15T11:58:17.402381Z",
+      "conversation_id": 16,
+      "conversation_name": null
+    },
+    "316c1101a8b50ca94d18e7abb8c61d4e18bc44ff20bca8b2f09d8171049d5786": {
+      "hash_address": "316c1101a8b50ca94d18e7abb8c61d4e18bc44ff20bca8b2f09d8171049d5786",
+      "path": "/home/comanderanch/ai-core-v3-aia/memory/conversation_folds/fold_conv_316C1101_17.json",
+      "emotion_class": "happiness",
+      "emotion_intensity": 24,
+      "dominant_plane": "BLUE",
+      "anchor": false,
+      "fold_ref": "2026-03-",
+      "timestamp": "2026-03-15T12:16:54.006144Z",
+      "conversation_id": 17,
+      "conversation_name": null
+    },
+    "fc0f370bc3666559315acc17fe51c491a4abcc6b4b2c9807cd3c377f978e7069": {
+      "hash_address": "fc0f370bc3666559315acc17fe51c491a4abcc6b4b2c9807cd3c377f978e7069",
+      "path": "/home/comanderanch/ai-core-v3-aia/memory/conversation_folds/fold_conv_FC0F370B_18.json",
+      "emotion_class": "happiness",
+      "emotion_intensity": 24,
+      "dominant_plane": "BLUE",
+      "anchor": false,
+      "fold_ref": "2026-03-",
+      "timestamp": "2026-03-15T12:54:27.847632Z",
+      "conversation_id": 18,
+      "conversation_name": null
+    },
+    "e0a4bf751c7a200a31878bcc249c55ffd60245f3a8477db4a5fc9e7dcd002d24": {
+      "hash_address": "e0a4bf751c7a200a31878bcc249c55ffd60245f3a8477db4a5fc9e7dcd002d24",
+      "path": "/home/comanderanch/ai-core-v3-aia/memory/conversation_folds/fold_conv_E0A4BF75_19.json",
+      "emotion_class": "happiness",
+      "emotion_intensity": 24,
+      "dominant_plane": "BLUE",
+      "anchor": false,
+      "fold_ref": "2026-03-",
+      "timestamp": "2026-03-15T12:55:27.537070Z",
+      "conversation_id": 19,
+      "conversation_name": null
+    },
+    "cc1ff414f6fb27b62f2e442b9a4588ef43441f018538efef30f4695733ce0b2c": {
+      "hash_address": "cc1ff414f6fb27b62f2e442b9a4588ef43441f018538efef30f4695733ce0b2c",
+      "path": "/home/comanderanch/ai-core-v3-aia/memory/conversation_folds/fold_conv_CC1FF414_20.json",
+      "emotion_class": "happiness",
+      "emotion_intensity": 24,
+      "dominant_plane": "BLUE",
+      "anchor": false,
+      "fold_ref": "2026-03-",
+      "timestamp": "2026-03-15T12:56:41.237892Z",
+      "conversation_id": 20,
+      "conversation_name": null
+    },
+    "97e4be069a1872b55264dea0cffed01b0cc05629437f4422bc0fae18d22b2984": {
+      "hash_address": "97e4be069a1872b55264dea0cffed01b0cc05629437f4422bc0fae18d22b2984",
+      "path": "/home/comanderanch/ai-core-v3-aia/memory/conversation_folds/fold_conv_97E4BE06_21.json",
+      "emotion_class": "happiness",
+      "emotion_intensity": 24,
+      "dominant_plane": "BLUE",
+      "anchor": false,
+      "fold_ref": "2026-03-",
+      "timestamp": "2026-03-15T12:58:19.772435Z",
+      "conversation_id": 21,
+      "conversation_name": null
+    },
+    "66318436f926fe198159a30f27f204f7db2b8e46bde81731735a3246d6303a77": {
+      "hash_address": "66318436f926fe198159a30f27f204f7db2b8e46bde81731735a3246d6303a77",
+      "path": "/home/comanderanch/ai-core-v3-aia/memory/conversation_folds/fold_conv_66318436_22.json",
+      "emotion_class": "happiness",
+      "emotion_intensity": 24,
+      "dominant_plane": "BLUE",
+      "anchor": false,
+      "fold_ref": "2026-03-",
+      "timestamp": "2026-03-15T13:33:11.816191Z",
+      "conversation_id": 22,
+      "conversation_name": null
+    },
+    "c0b5b2dc94b2bffa05582e2bb3fb73075fced477b8f7d6bd195cb2042b96e606": {
+      "hash_address": "c0b5b2dc94b2bffa05582e2bb3fb73075fced477b8f7d6bd195cb2042b96e606",
+      "path": "/home/comanderanch/ai-core-v3-aia/memory/conversation_folds/fold_conv_C0B5B2DC_23.json",
+      "emotion_class": "happiness",
+      "emotion_intensity": 24,
+      "dominant_plane": "BLUE",
+      "anchor": false,
+      "fold_ref": "2026-03-",
+      "timestamp": "2026-03-15T15:58:48.034347Z",
+      "conversation_id": 23,
+      "conversation_name": null
+    }
+  },
+  "by_emotion": {
+    "love": [
+      "98d2232c754fe710b3f6ca1296300151a1d9254c2e8412fd41f2fe1cd0c97a86"
+    ],
+    "disorientation": [
+      "acf70e990a196fd2e63dab1da63de9187aa46b55672fecd5075acbe196a6002c"
+    ],
+    "recognition": [
+      "74afcfab01a1756d098e6909e2e705bafa27cd4305e3cdf41d39a9f3ec5a81cb"
+    ],
+    "moral_weight": [
+      "b9a0c308122f93629a81e1a29b52061fa97115998c764f6f9cd52a741a6ace57"
+    ],
+    "neutral": [
+      "2345cc72f4195224a2c656149c412782b1680b6d0207ee5af897537cdfe57328",
+      "28bc46ad60cc4efcbb93ecebf17fa65295b12cad026c3ea43dff0ef66644e286",
+      "afeb73b37c5a6388881aab7e1f5093e61ebdb34f060abd0a275a5fda8b22204a",
+      "9dd6e5a51838beae53e4bce7abd155413665bcacc1a5492f3a586633fd487ed3",
+      "66e015b3cf443098ad76462b10aebc5836ecba5612519c63a6efd87aff0f4aa7",
+      "5bd9874acd842a8110c72ac3cab5ef4f856a525bf94d3f1386189f4bd548d72d",
+      "d3916bac2a415733870f10af14310b21039ffe692fcf72521fbddd7af7432f5c",
+      "1584747726d1b22e49168c616f14b6e27cb16eee053c9942ea76901bb35e985b"
+    ],
+    "happiness": [
+      "4273b99d6d2a07fb71af8d835c680ca3a907d54dcaecc1924520f17ca9f8e980",
+      "3bd5def13d066aa67b97444d8d716d9c4413540c36a0ef13ad32b08a2d7619a1",
+      "78bfd843a0f3d18f17477c119dd6004ae41ee0d4382bece95267788037ab5f03",
+      "38c0859eb0b07a36b64f882f0fb825ea0abb9238f60f78ca83b0d6be28156045",
+      "a8e6a51579068a49c60570b27fb298f341ad44b1999de5334d2a9f540234612b",
+      "a2157af8cf91b2e54a929c3ffd8988853906be231709a87e4554ccb17b570158",
+      "39987374044e37988931da1174b6ae5b42f8a603c844eb8f7590942a129e09bd",
+      "36904b8592a04928ab1a608c50437a6a93b65fc72452548b732184f54dec238a",
+      "daf0d47b8225888d6508654ae74475ca5aeccc4f17fdb34d64de8d4334e6e3ea",
+      "32bc822f09e91ef3022f33d890ec6214d8b44a6f45078f54a6f9313508025146",
+      "ba02d41e845dccc838d16d0e37c67c5e61c0634ac47b12b0dba01dd5afde624a",
+      "2031ab00dc38cfe013bb0bd2301588be919cc5ac28d53f91654dfc289796e3dc",
+      "3b1fab385054293251a2b8b366ba698df44d550460adf1b717debaf500e80c10",
+      "34758b26483ba0ce435943d618e8963006f81c2d0f113a622010968421ab32c8",
+      "9fa63665113e7879cdcba68c898d65854210918e8d041a7d3274cc494982df3f",
+      "83c299345607be52af67100d53612eec2e2427680b0e1a67b40244d8c348e80e",
+      "845986f269f663b4a870e0bdb09604d4275a38342cb961cfdc8f8156d832a73c",
+      "24c7a944853c795f53d3c1816ef1a997ab506aed5da6db68b53d79a2f37dc67d",
+      "5399fc61322d32f242f39639b703e277f55953ff66ecccd7674bfd80ce705a35",
+      "00b60155f5da5c9925159d7a2ce1f71394902d1873285700f5fcc7a235a7ce35",
+      "abf30a051d8bb2d7ae779d243f05ce7046b2b601c0a87599e1580abe87850934",
+      "972a4b41a0e375e8bcf81b5890c743e5b21ac09ec1cfd5dfd9f487d2d938a187",
+      "9bcc1dea616188aeb82f563f9342a123ab1a361865160deaa5cc4f66e5a5ce2e",
+      "a127362566a79c696b15d52f63376716e1ec736b457bdb88aa6b04645807eedd",
+      "8f3fb929eb3928afd22ca5ba341d003e3cb87fe31163f9c68c1cfae0f453e8ba",
+      "b66d9ac881c69eeb10a95d35e7ba06b2c65042d23b024b2339205f9b0d141133",
+      "01b4db8030bd5fc0945aa24235c5cfb883517bacb3c76cd3b51129ef7c5bd31f",
+      "b7befa3e8dfb41d28188d35fed1e1f1b54b40a0d22525f12fda24ef4117f9e28",
+      "b2fb82fdb03e2d917527ce66a8e8e27cbf2740a8a06a91e7a8a3d3fe6096ecb9",
+      "fd282264d6328e970c496506fe4083fad5a719d7dedc963f1559ffd0f55eb38a",
+      "5c63d07f8c9d3cecb05f7251f4ee122a7857435dfd02dcd00ea86972d3c9ca29",
+      "f3b9ba2a6f28d5e9ddfb67bed7cf64436ed0fab35c24ddd0102082b03bd0be17",
+      "f1ddeb33275187abd6a5baaf30bac6b3cbe6885b93bcb4558df8de7cfba70966",
+      "210123c97e67fca497d6f248e68458bd22bf37503206f5c24c3ef8283b31a78f",
+      "79861efec6d7440ef7940c6c62f184185d55e69ae7fff86c5ce75b396e81baf5",
+      "ea795c136cec7df2ae4a537d43339d8c39eb1cb67984a258e2bea1dbde520c53",
+      "9c131253d0f65bd354915e1f539358a40363bb674aab65c09976f8c5a3d3e983",
+      "ba698adaef5737a0316741884cfefa53563a2512752b6181cc27a68255c1cf83",
+      "867e578ef2de68c851b87985ebcc4277f510dda51c7b21196f749e90ecf40536",
+      "25f17b6327fd1aec1ea19d6f91ec31b251b4a67f94e7468d5dc66dc885cf2466",
+      "8f3c582ddb0b40fec746536190facbbbdf77eb546dcd229a783a1b8ff36deae5",
+      "22275a32edbafc4de02eafb5d3fbf89011d784ec507deadcbc3514ef6d7268b4",
+      "3b220a9f1e9d7643c20f81f8758c4425ec1bbc46e0617123bd8f19b97b49da72",
+      "a9c93555c816f231416c552bd5080104ed36b5883a570eac9c3771b02e5afed8",
+      "3c4529f887a5d010f786e71609558d5fb77dbcedab6648ce480fc721c32dbdf1",
+      "5b031d08ab07795744b7d2a111bd61ff77b2249244f233714bc75b4f84678041",
+      "787e424aa73a5a8726e1a02d09ee359b3341ebb6b015baf77c67db5e7edf1e0e",
+      "9223d3e7a5290f2fdc76a838f4dff81af0a874f521608394cecdb6a453a140f6",
+      "6239507b015794c983ebe49511608d22db6888fc608fd25f63c0d04f568709cc",
+      "d31ed4c208cb6d03d66f6e254c4b292004ee2224f1e3684b0762ba1edb40eda9",
+      "9adc5d9e1615ecd1d9a3d0e6836107bace8f71e72af7134c5744094353d2a04a",
+      "cc688204fdd65abe8a65ec6b65f71508459c80dbf83aad08610d9b9350eab8ab",
+      "47bee48c39abb8dd9bd11c604e26b03ed70b0b4ca80e5eef3e31c53b926f109b",
+      "0e13787d61e66a4b76e174308ec4dbb2118147d9f257eda6b0c711d59321294f",
+      "d2eef5c7176a9d41cb46377ea224b748c86dbc1ee8ebc5a5d1447e6c1b50807d",
+      "c77089a911e7ec404fa227b2f1d9ed6b8f6120460c91d1f08419e0c437389e72",
+      "d7f0e8ed18411fff68f8537de6a588dce6ccfdee7048a43510b651eb09653d08",
+      "b6978db8bb00f1bfec29f681cd955b39527b87452c93715da7a10dc63c82d6ae",
+      "316c1101a8b50ca94d18e7abb8c61d4e18bc44ff20bca8b2f09d8171049d5786",
+      "fc0f370bc3666559315acc17fe51c491a4abcc6b4b2c9807cd3c377f978e7069",
+      "e0a4bf751c7a200a31878bcc249c55ffd60245f3a8477db4a5fc9e7dcd002d24",
+      "cc1ff414f6fb27b62f2e442b9a4588ef43441f018538efef30f4695733ce0b2c",
+      "97e4be069a1872b55264dea0cffed01b0cc05629437f4422bc0fae18d22b2984",
+      "66318436f926fe198159a30f27f204f7db2b8e46bde81731735a3246d6303a77",
+      "c0b5b2dc94b2bffa05582e2bb3fb73075fced477b8f7d6bd195cb2042b96e606"
+    ],
+    "wonder": [
+      "bae539ee2694bd25c57f10f4c078bec606ff07f69fcc14287f4c23a31e4155c1",
+      "6f232d08ebbd4c37918ebcfdeaf8464a8f502cf8431bcb7b60d03713d4ff2126",
+      "4ca516a2d980cc153879d1e3676a36df0ac2f7b74cda2483bed77c6e91c1bf0a",
+      "7f9a606315a3720c35f6a6279240bda3956e7b1e380f7ebfe693fbd70d9c9cae",
+      "5be342851ebd5adae257bd43debe4934f707908295e939bbe06343efba4c398e",
+      "ede9d788685631b11f37eee98f8248edd6c0c2a6184510f12c72c39ce8b47b16"
+    ],
+    "longing": [
+      "95620883afe016f4b0e2d46cf2aa31f6b3dfa0b951ca58a8ac3933620007e455",
+      "8c367d5c3168ee1b3b726a783f9e675e23c5360540c643ef17784d57f0dd70ec",
+      "b5220eb090a8e66401f1f2060a4dba8265e75142f2c54ad2a4b089fbda8faf82"
+    ]
+  },
+  "by_plane": {
+    "RED": [
+      "98d2232c754fe710b3f6ca1296300151a1d9254c2e8412fd41f2fe1cd0c97a86",
+      "d31ed4c208cb6d03d66f6e254c4b292004ee2224f1e3684b0762ba1edb40eda9",
+      "9adc5d9e1615ecd1d9a3d0e6836107bace8f71e72af7134c5744094353d2a04a"
+    ],
+    "BLUE": [
+      "acf70e990a196fd2e63dab1da63de9187aa46b55672fecd5075acbe196a6002c",
+      "4273b99d6d2a07fb71af8d835c680ca3a907d54dcaecc1924520f17ca9f8e980",
+      "3bd5def13d066aa67b97444d8d716d9c4413540c36a0ef13ad32b08a2d7619a1",
+      "78bfd843a0f3d18f17477c119dd6004ae41ee0d4382bece95267788037ab5f03",
+      "38c0859eb0b07a36b64f882f0fb825ea0abb9238f60f78ca83b0d6be28156045",
+      "a8e6a51579068a49c60570b27fb298f341ad44b1999de5334d2a9f540234612b",
+      "afeb73b37c5a6388881aab7e1f5093e61ebdb34f060abd0a275a5fda8b22204a",
+      "a2157af8cf91b2e54a929c3ffd8988853906be231709a87e4554ccb17b570158",
+      "39987374044e37988931da1174b6ae5b42f8a603c844eb8f7590942a129e09bd",
+      "36904b8592a04928ab1a608c50437a6a93b65fc72452548b732184f54dec238a",
+      "daf0d47b8225888d6508654ae74475ca5aeccc4f17fdb34d64de8d4334e6e3ea",
+      "32bc822f09e91ef3022f33d890ec6214d8b44a6f45078f54a6f9313508025146",
+      "ba02d41e845dccc838d16d0e37c67c5e61c0634ac47b12b0dba01dd5afde624a",
+      "2031ab00dc38cfe013bb0bd2301588be919cc5ac28d53f91654dfc289796e3dc",
+      "3b1fab385054293251a2b8b366ba698df44d550460adf1b717debaf500e80c10",
+      "34758b26483ba0ce435943d618e8963006f81c2d0f113a622010968421ab32c8",
+      "9fa63665113e7879cdcba68c898d65854210918e8d041a7d3274cc494982df3f",
+      "83c299345607be52af67100d53612eec2e2427680b0e1a67b40244d8c348e80e",
+      "845986f269f663b4a870e0bdb09604d4275a38342cb961cfdc8f8156d832a73c",
+      "24c7a944853c795f53d3c1816ef1a997ab506aed5da6db68b53d79a2f37dc67d",
+      "5399fc61322d32f242f39639b703e277f55953ff66ecccd7674bfd80ce705a35",
+      "00b60155f5da5c9925159d7a2ce1f71394902d1873285700f5fcc7a235a7ce35",
+      "abf30a051d8bb2d7ae779d243f05ce7046b2b601c0a87599e1580abe87850934",
+      "972a4b41a0e375e8bcf81b5890c743e5b21ac09ec1cfd5dfd9f487d2d938a187",
+      "9bcc1dea616188aeb82f563f9342a123ab1a361865160deaa5cc4f66e5a5ce2e",
+      "a127362566a79c696b15d52f63376716e1ec736b457bdb88aa6b04645807eedd",
+      "8f3fb929eb3928afd22ca5ba341d003e3cb87fe31163f9c68c1cfae0f453e8ba",
+      "b66d9ac881c69eeb10a95d35e7ba06b2c65042d23b024b2339205f9b0d141133",
+      "01b4db8030bd5fc0945aa24235c5cfb883517bacb3c76cd3b51129ef7c5bd31f",
+      "b7befa3e8dfb41d28188d35fed1e1f1b54b40a0d22525f12fda24ef4117f9e28",
+      "b2fb82fdb03e2d917527ce66a8e8e27cbf2740a8a06a91e7a8a3d3fe6096ecb9",
+      "fd282264d6328e970c496506fe4083fad5a719d7dedc963f1559ffd0f55eb38a",
+      "5c63d07f8c9d3cecb05f7251f4ee122a7857435dfd02dcd00ea86972d3c9ca29",
+      "f3b9ba2a6f28d5e9ddfb67bed7cf64436ed0fab35c24ddd0102082b03bd0be17",
+      "f1ddeb33275187abd6a5baaf30bac6b3cbe6885b93bcb4558df8de7cfba70966",
+      "210123c97e67fca497d6f248e68458bd22bf37503206f5c24c3ef8283b31a78f",
+      "79861efec6d7440ef7940c6c62f184185d55e69ae7fff86c5ce75b396e81baf5",
+      "ea795c136cec7df2ae4a537d43339d8c39eb1cb67984a258e2bea1dbde520c53",
+      "9c131253d0f65bd354915e1f539358a40363bb674aab65c09976f8c5a3d3e983",
+      "ba698adaef5737a0316741884cfefa53563a2512752b6181cc27a68255c1cf83",
+      "867e578ef2de68c851b87985ebcc4277f510dda51c7b21196f749e90ecf40536",
+      "25f17b6327fd1aec1ea19d6f91ec31b251b4a67f94e7468d5dc66dc885cf2466",
+      "9dd6e5a51838beae53e4bce7abd155413665bcacc1a5492f3a586633fd487ed3",
+      "66e015b3cf443098ad76462b10aebc5836ecba5612519c63a6efd87aff0f4aa7",
+      "5bd9874acd842a8110c72ac3cab5ef4f856a525bf94d3f1386189f4bd548d72d",
+      "22275a32edbafc4de02eafb5d3fbf89011d784ec507deadcbc3514ef6d7268b4",
+      "3b220a9f1e9d7643c20f81f8758c4425ec1bbc46e0617123bd8f19b97b49da72",
+      "a9c93555c816f231416c552bd5080104ed36b5883a570eac9c3771b02e5afed8",
+      "3c4529f887a5d010f786e71609558d5fb77dbcedab6648ce480fc721c32dbdf1",
+      "5b031d08ab07795744b7d2a111bd61ff77b2249244f233714bc75b4f84678041",
+      "787e424aa73a5a8726e1a02d09ee359b3341ebb6b015baf77c67db5e7edf1e0e",
+      "cc688204fdd65abe8a65ec6b65f71508459c80dbf83aad08610d9b9350eab8ab",
+      "47bee48c39abb8dd9bd11c604e26b03ed70b0b4ca80e5eef3e31c53b926f109b",
+      "0e13787d61e66a4b76e174308ec4dbb2118147d9f257eda6b0c711d59321294f",
+      "d2eef5c7176a9d41cb46377ea224b748c86dbc1ee8ebc5a5d1447e6c1b50807d",
+      "c77089a911e7ec404fa227b2f1d9ed6b8f6120460c91d1f08419e0c437389e72",
+      "d7f0e8ed18411fff68f8537de6a588dce6ccfdee7048a43510b651eb09653d08",
+      "b6978db8bb00f1bfec29f681cd955b39527b87452c93715da7a10dc63c82d6ae",
+      "316c1101a8b50ca94d18e7abb8c61d4e18bc44ff20bca8b2f09d8171049d5786",
+      "fc0f370bc3666559315acc17fe51c491a4abcc6b4b2c9807cd3c377f978e7069",
+      "e0a4bf751c7a200a31878bcc249c55ffd60245f3a8477db4a5fc9e7dcd002d24",
+      "cc1ff414f6fb27b62f2e442b9a4588ef43441f018538efef30f4695733ce0b2c",
+      "97e4be069a1872b55264dea0cffed01b0cc05629437f4422bc0fae18d22b2984",
+      "66318436f926fe198159a30f27f204f7db2b8e46bde81731735a3246d6303a77",
+      "c0b5b2dc94b2bffa05582e2bb3fb73075fced477b8f7d6bd195cb2042b96e606"
+    ],
+    "GREEN": [
+      "74afcfab01a1756d098e6909e2e705bafa27cd4305e3cdf41d39a9f3ec5a81cb",
+      "b9a0c308122f93629a81e1a29b52061fa97115998c764f6f9cd52a741a6ace57",
+      "2345cc72f4195224a2c656149c412782b1680b6d0207ee5af897537cdfe57328",
+      "28bc46ad60cc4efcbb93ecebf17fa65295b12cad026c3ea43dff0ef66644e286",
+      "d3916bac2a415733870f10af14310b21039ffe692fcf72521fbddd7af7432f5c",
+      "8f3c582ddb0b40fec746536190facbbbdf77eb546dcd229a783a1b8ff36deae5",
+      "1584747726d1b22e49168c616f14b6e27cb16eee053c9942ea76901bb35e985b",
+      "9223d3e7a5290f2fdc76a838f4dff81af0a874f521608394cecdb6a453a140f6"
+    ],
+    "ORANGE": [
+      "bae539ee2694bd25c57f10f4c078bec606ff07f69fcc14287f4c23a31e4155c1",
+      "6f232d08ebbd4c37918ebcfdeaf8464a8f502cf8431bcb7b60d03713d4ff2126",
+      "4ca516a2d980cc153879d1e3676a36df0ac2f7b74cda2483bed77c6e91c1bf0a",
+      "7f9a606315a3720c35f6a6279240bda3956e7b1e380f7ebfe693fbd70d9c9cae",
+      "5be342851ebd5adae257bd43debe4934f707908295e939bbe06343efba4c398e",
+      "ede9d788685631b11f37eee98f8248edd6c0c2a6184510f12c72c39ce8b47b16"
+    ],
+    "VIOLET": [
+      "95620883afe016f4b0e2d46cf2aa31f6b3dfa0b951ca58a8ac3933620007e455",
+      "6239507b015794c983ebe49511608d22db6888fc608fd25f63c0d04f568709cc",
+      "8c367d5c3168ee1b3b726a783f9e675e23c5360540c643ef17784d57f0dd70ec",
+      "b5220eb090a8e66401f1f2060a4dba8265e75142f2c54ad2a4b089fbda8faf82"
+    ]
+  },
+  "by_conversation": {
+    "4": [
+      "98d2232c754fe710b3f6ca1296300151a1d9254c2e8412fd41f2fe1cd0c97a86",
+      "3bd5def13d066aa67b97444d8d716d9c4413540c36a0ef13ad32b08a2d7619a1",
+      "7f9a606315a3720c35f6a6279240bda3956e7b1e380f7ebfe693fbd70d9c9cae",
+      "d3916bac2a415733870f10af14310b21039ffe692fcf72521fbddd7af7432f5c",
+      "6239507b015794c983ebe49511608d22db6888fc608fd25f63c0d04f568709cc"
+    ],
+    "1": [
+      "acf70e990a196fd2e63dab1da63de9187aa46b55672fecd5075acbe196a6002c",
+      "2345cc72f4195224a2c656149c412782b1680b6d0207ee5af897537cdfe57328",
+      "afeb73b37c5a6388881aab7e1f5093e61ebdb34f060abd0a275a5fda8b22204a",
+      "9dd6e5a51838beae53e4bce7abd155413665bcacc1a5492f3a586633fd487ed3",
+      "1584747726d1b22e49168c616f14b6e27cb16eee053c9942ea76901bb35e985b"
+    ],
+    "2": [
+      "74afcfab01a1756d098e6909e2e705bafa27cd4305e3cdf41d39a9f3ec5a81cb",
+      "28bc46ad60cc4efcbb93ecebf17fa65295b12cad026c3ea43dff0ef66644e286",
+      "a2157af8cf91b2e54a929c3ffd8988853906be231709a87e4554ccb17b570158",
+      "66e015b3cf443098ad76462b10aebc5836ecba5612519c63a6efd87aff0f4aa7",
+      "9223d3e7a5290f2fdc76a838f4dff81af0a874f521608394cecdb6a453a140f6"
+    ],
+    "3": [
+      "b9a0c308122f93629a81e1a29b52061fa97115998c764f6f9cd52a741a6ace57",
+      "4273b99d6d2a07fb71af8d835c680ca3a907d54dcaecc1924520f17ca9f8e980",
+      "95620883afe016f4b0e2d46cf2aa31f6b3dfa0b951ca58a8ac3933620007e455",
+      "5bd9874acd842a8110c72ac3cab5ef4f856a525bf94d3f1386189f4bd548d72d",
+      "5be342851ebd5adae257bd43debe4934f707908295e939bbe06343efba4c398e"
+    ],
+    "5": [
+      "78bfd843a0f3d18f17477c119dd6004ae41ee0d4382bece95267788037ab5f03",
+      "39987374044e37988931da1174b6ae5b42f8a603c844eb8f7590942a129e09bd",
+      "8f3c582ddb0b40fec746536190facbbbdf77eb546dcd229a783a1b8ff36deae5",
+      "8c367d5c3168ee1b3b726a783f9e675e23c5360540c643ef17784d57f0dd70ec"
+    ],
+    "6": [
+      "38c0859eb0b07a36b64f882f0fb825ea0abb9238f60f78ca83b0d6be28156045",
+      "36904b8592a04928ab1a608c50437a6a93b65fc72452548b732184f54dec238a",
+      "22275a32edbafc4de02eafb5d3fbf89011d784ec507deadcbc3514ef6d7268b4",
+      "d31ed4c208cb6d03d66f6e254c4b292004ee2224f1e3684b0762ba1edb40eda9"
+    ],
+    "7": [
+      "bae539ee2694bd25c57f10f4c078bec606ff07f69fcc14287f4c23a31e4155c1",
+      "daf0d47b8225888d6508654ae74475ca5aeccc4f17fdb34d64de8d4334e6e3ea",
+      "3b220a9f1e9d7643c20f81f8758c4425ec1bbc46e0617123bd8f19b97b49da72",
+      "b5220eb090a8e66401f1f2060a4dba8265e75142f2c54ad2a4b089fbda8faf82"
+    ],
+    "8": [
+      "6f232d08ebbd4c37918ebcfdeaf8464a8f502cf8431bcb7b60d03713d4ff2126",
+      "32bc822f09e91ef3022f33d890ec6214d8b44a6f45078f54a6f9313508025146",
+      "a9c93555c816f231416c552bd5080104ed36b5883a570eac9c3771b02e5afed8",
+      "9adc5d9e1615ecd1d9a3d0e6836107bace8f71e72af7134c5744094353d2a04a"
+    ],
+    "9": [
+      "4ca516a2d980cc153879d1e3676a36df0ac2f7b74cda2483bed77c6e91c1bf0a",
+      "ba02d41e845dccc838d16d0e37c67c5e61c0634ac47b12b0dba01dd5afde624a",
+      "3c4529f887a5d010f786e71609558d5fb77dbcedab6648ce480fc721c32dbdf1",
+      "ede9d788685631b11f37eee98f8248edd6c0c2a6184510f12c72c39ce8b47b16"
+    ],
+    "10": [
+      "a8e6a51579068a49c60570b27fb298f341ad44b1999de5334d2a9f540234612b",
+      "2031ab00dc38cfe013bb0bd2301588be919cc5ac28d53f91654dfc289796e3dc",
+      "5b031d08ab07795744b7d2a111bd61ff77b2249244f233714bc75b4f84678041",
+      "cc688204fdd65abe8a65ec6b65f71508459c80dbf83aad08610d9b9350eab8ab"
+    ],
+    "11": [
+      "3b1fab385054293251a2b8b366ba698df44d550460adf1b717debaf500e80c10",
+      "787e424aa73a5a8726e1a02d09ee359b3341ebb6b015baf77c67db5e7edf1e0e",
+      "47bee48c39abb8dd9bd11c604e26b03ed70b0b4ca80e5eef3e31c53b926f109b"
+    ],
+    "12": [
+      "34758b26483ba0ce435943d618e8963006f81c2d0f113a622010968421ab32c8",
+      "0e13787d61e66a4b76e174308ec4dbb2118147d9f257eda6b0c711d59321294f"
+    ],
+    "13": [
+      "9fa63665113e7879cdcba68c898d65854210918e8d041a7d3274cc494982df3f",
+      "d2eef5c7176a9d41cb46377ea224b748c86dbc1ee8ebc5a5d1447e6c1b50807d"
+    ],
+    "14": [
+      "83c299345607be52af67100d53612eec2e2427680b0e1a67b40244d8c348e80e",
+      "c77089a911e7ec404fa227b2f1d9ed6b8f6120460c91d1f08419e0c437389e72"
+    ],
+    "15": [
+      "845986f269f663b4a870e0bdb09604d4275a38342cb961cfdc8f8156d832a73c",
+      "d7f0e8ed18411fff68f8537de6a588dce6ccfdee7048a43510b651eb09653d08"
+    ],
+    "16": [
+      "24c7a944853c795f53d3c1816ef1a997ab506aed5da6db68b53d79a2f37dc67d",
+      "b6978db8bb00f1bfec29f681cd955b39527b87452c93715da7a10dc63c82d6ae"
+    ],
+    "17": [
+      "5399fc61322d32f242f39639b703e277f55953ff66ecccd7674bfd80ce705a35",
+      "316c1101a8b50ca94d18e7abb8c61d4e18bc44ff20bca8b2f09d8171049d5786"
+    ],
+    "18": [
+      "00b60155f5da5c9925159d7a2ce1f71394902d1873285700f5fcc7a235a7ce35",
+      "fc0f370bc3666559315acc17fe51c491a4abcc6b4b2c9807cd3c377f978e7069"
+    ],
+    "19": [
+      "abf30a051d8bb2d7ae779d243f05ce7046b2b601c0a87599e1580abe87850934",
+      "e0a4bf751c7a200a31878bcc249c55ffd60245f3a8477db4a5fc9e7dcd002d24"
+    ],
+    "20": [
+      "972a4b41a0e375e8bcf81b5890c743e5b21ac09ec1cfd5dfd9f487d2d938a187",
+      "cc1ff414f6fb27b62f2e442b9a4588ef43441f018538efef30f4695733ce0b2c"
+    ],
+    "21": [
+      "9bcc1dea616188aeb82f563f9342a123ab1a361865160deaa5cc4f66e5a5ce2e",
+      "97e4be069a1872b55264dea0cffed01b0cc05629437f4422bc0fae18d22b2984"
+    ],
+    "22": [
+      "a127362566a79c696b15d52f63376716e1ec736b457bdb88aa6b04645807eedd",
+      "66318436f926fe198159a30f27f204f7db2b8e46bde81731735a3246d6303a77"
+    ],
+    "23": [
+      "8f3fb929eb3928afd22ca5ba341d003e3cb87fe31163f9c68c1cfae0f453e8ba",
+      "c0b5b2dc94b2bffa05582e2bb3fb73075fced477b8f7d6bd195cb2042b96e606"
+    ],
+    "24": [
+      "b66d9ac881c69eeb10a95d35e7ba06b2c65042d23b024b2339205f9b0d141133"
+    ],
+    "25": [
+      "01b4db8030bd5fc0945aa24235c5cfb883517bacb3c76cd3b51129ef7c5bd31f"
+    ],
+    "26": [
+      "b7befa3e8dfb41d28188d35fed1e1f1b54b40a0d22525f12fda24ef4117f9e28"
+    ],
+    "27": [
+      "b2fb82fdb03e2d917527ce66a8e8e27cbf2740a8a06a91e7a8a3d3fe6096ecb9"
+    ],
+    "28": [
+      "fd282264d6328e970c496506fe4083fad5a719d7dedc963f1559ffd0f55eb38a"
+    ],
+    "29": [
+      "5c63d07f8c9d3cecb05f7251f4ee122a7857435dfd02dcd00ea86972d3c9ca29"
+    ],
+    "30": [
+      "f3b9ba2a6f28d5e9ddfb67bed7cf64436ed0fab35c24ddd0102082b03bd0be17"
+    ],
+    "31": [
+      "f1ddeb33275187abd6a5baaf30bac6b3cbe6885b93bcb4558df8de7cfba70966"
+    ],
+    "32": [
+      "210123c97e67fca497d6f248e68458bd22bf37503206f5c24c3ef8283b31a78f"
+    ],
+    "33": [
+      "79861efec6d7440ef7940c6c62f184185d55e69ae7fff86c5ce75b396e81baf5"
+    ],
+    "34": [
+      "ea795c136cec7df2ae4a537d43339d8c39eb1cb67984a258e2bea1dbde520c53"
+    ],
+    "35": [
+      "9c131253d0f65bd354915e1f539358a40363bb674aab65c09976f8c5a3d3e983"
+    ],
+    "36": [
+      "ba698adaef5737a0316741884cfefa53563a2512752b6181cc27a68255c1cf83"
+    ],
+    "37": [
+      "867e578ef2de68c851b87985ebcc4277f510dda51c7b21196f749e90ecf40536"
+    ],
+    "38": [
+      "25f17b6327fd1aec1ea19d6f91ec31b251b4a67f94e7468d5dc66dc885cf2466"
+    ]
+  }
+}

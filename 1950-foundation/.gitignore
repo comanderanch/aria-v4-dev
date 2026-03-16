@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+training/training_set.csv
+training/training_set.csv
+training/*.csv
+/full_color_tokens.csv
+tokenizer/tokenizer
+webui/

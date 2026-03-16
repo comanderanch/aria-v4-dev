@@ -1,0 +1,16 @@
+[
+  {
+    "channel": "curiosity_001",
+    "hz": 520,
+    "color": "ORANGE",
+    "strength": 0.85,
+    "token_range": [
+      200,
+      550
+    ],
+    "meaning": "Exploratory drive \u2014 question generation injection",
+    "note": "test injection",
+    "timestamp": "2026-03-16T06:41:24.283481+00:00",
+    "q_state": 1
+  }
+]

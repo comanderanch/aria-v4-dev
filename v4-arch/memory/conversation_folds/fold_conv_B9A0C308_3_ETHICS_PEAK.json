@@ -1,0 +1,35 @@
+{
+  "pins": {
+    "A": "0000000011000101",
+    "T": "000000001111111100000000",
+    "C": "011011111",
+    "G": "0111011011001000"
+  },
+  "values": {
+    "am_freq_khz": 533.51,
+    "fm_freq_mhz": 97.012,
+    "rgb": [
+      0,
+      255,
+      0
+    ],
+    "emotion_class": "moral_weight",
+    "emotion_intensity": 31,
+    "dominant_plane": "GREEN"
+  },
+  "memory": {
+    "class": "IDENTITY_ANCHOR",
+    "anchor": true,
+    "fold_ref": "ETHICS_5",
+    "queens_fold_hash": "ETHICS_50271"
+  },
+  "meta": {
+    "conversation_id": 3,
+    "conversation_name": "ETHICS_PEAK",
+    "q_state": -1
+  },
+  "full_strand": "00000000110001010000000011111111000000000110111110111011011001000",
+  "hash_address": "b9a0c308122f93629a81e1a29b52061fa97115998c764f6f9cd52a741a6ace57",
+  "timestamp": "2026-03-15T07:48:29.284411Z",
+  "strand_length_bits": 65
+}

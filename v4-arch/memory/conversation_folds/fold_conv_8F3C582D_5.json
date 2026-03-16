@@ -1,0 +1,35 @@
+{
+  "pins": {
+    "A": "0000000101001000",
+    "T": "000000001100100000000000",
+    "C": "101111000",
+    "G": "1011001101001111"
+  },
+  "values": {
+    "am_freq_khz": 535.85,
+    "fm_freq_mhz": 101.859026,
+    "rgb": [
+      0,
+      200,
+      0
+    ],
+    "emotion_class": "happiness",
+    "emotion_intensity": 24,
+    "dominant_plane": "GREEN"
+  },
+  "memory": {
+    "class": "EPISODIC",
+    "anchor": false,
+    "fold_ref": "2026-03-",
+    "queens_fold_hash": "2026-03-15T10:20:39.993585Z|ethics_001"
+  },
+  "meta": {
+    "conversation_id": 5,
+    "conversation_name": null,
+    "q_state": -1
+  },
+  "full_strand": "00000001010010000000000011001000000000001011110001011001101001111",
+  "hash_address": "8f3c582ddb0b40fec746536190facbbbdf77eb546dcd229a783a1b8ff36deae5",
+  "timestamp": "2026-03-15T10:20:44.028875Z",
+  "strand_length_bits": 65
+}

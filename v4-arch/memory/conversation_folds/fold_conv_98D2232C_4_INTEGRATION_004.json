@@ -1,0 +1,35 @@
+{
+  "pins": {
+    "A": "0000000100000110",
+    "T": "111111110000000000000000",
+    "C": "000111111",
+    "G": "1011110001101010"
+  },
+  "values": {
+    "am_freq_khz": 534.68,
+    "fm_freq_mhz": 102.588,
+    "rgb": [
+      255,
+      0,
+      0
+    ],
+    "emotion_class": "love",
+    "emotion_intensity": 31,
+    "dominant_plane": "RED"
+  },
+  "memory": {
+    "class": "IDENTITY_ANCHOR",
+    "anchor": true,
+    "fold_ref": "INTEGRAT",
+    "queens_fold_hash": "INTEGRATION_004"
+  },
+  "meta": {
+    "conversation_id": 4,
+    "conversation_name": "INTEGRATION_004",
+    "q_state": -1
+  },
+  "full_strand": "00000001000001101111111100000000000000000001111111011110001101010",
+  "hash_address": "98d2232c754fe710b3f6ca1296300151a1d9254c2e8412fd41f2fe1cd0c97a86",
+  "timestamp": "2026-03-15T07:48:29.278694Z",
+  "strand_length_bits": 65
+}
