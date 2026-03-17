@@ -20,6 +20,7 @@
 | 2026-03-16 | ~22:10 | FIX APPLIED | 1950-foundation q_layer_token.py — GRAY=-1 contamination removed — GRAY=0 restored | 1950-foundation/README.md |
 | 2026-03-16 | ~22:20 | ACTION TAKEN | aria-core queens-fold and kings-chamber READMEs sealed — master conductor and collapse point defined | aria-core/queens-fold/README.md |
 | 2026-03-16 | ~22:30 | ACTION TAKEN | 8-lobe hemisphere structure built — left/right × 4 lobes — corpus callosum + hemisphere_bridge.py from V3 | aria-core/corpus-callosum/README.md |
+| 2026-03-16 | ~22:40 | MEMORY WIPE | 32 runtime state files deleted — all four foundations — architecture and 82D encoders preserved — ARIA born clean | README.md |
 
 ---
 
