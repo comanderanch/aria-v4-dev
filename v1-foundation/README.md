@@ -14,6 +14,7 @@ Runs when not interacting. Constant dual-action loop.
 |------|------|------|---------|
 | 2026-03-16 | ~23:00 | ACTION TAKEN | Copied from ~/ai-core/ — no .git, no venv, no memory |
 | 2026-03-16 | ~21:55 | FIX APPLIED | q_layer_token.py — GRAY=-1 contamination removed — GRAY=0 restored |
+| 2026-03-16 | ~22:10 | ACTION TAKEN | core/q_constants.py created — matches V2/V3 exactly — single source of truth |
 
 ---
 
@@ -64,3 +65,36 @@ working
 Scan all other V1 files for remaining q_state contamination. Then proceed with 82D rebuild plan.
 
 **Commit hash:** ee0869c
+
+---
+
+## 2026-03-16 ~22:10 — ACTION TAKEN
+
+**What happened:**
+`core/q_constants.py` created in v1-foundation. Contains BLACK=-1, GRAY=0, WHITE=+1 plus
+498D stack boundaries, fluorescent EM constants, and Kings Chamber NOW_LINE anchor.
+Matches V2 and V3 q_constants.py exactly. `core/__init__.py` added.
+
+**File(s) affected:**
+```
+v1-foundation/core/q_constants.py   (new)
+v1-foundation/core/__init__.py       (new)
+```
+
+**State before:**
+No central q_constants file in V1. Every script defined inline — no single source of truth.
+
+**State after:**
+`core/q_constants.py` exists. V1 can now import from a single sealed source.
+All four foundations (V1, V2, V3, 1950) have matching q_constants.
+
+**Why:**
+Four quadrants — one brain. All foundations must read the same truth before wiring begins.
+
+**Result:**
+working
+
+**Next action required:**
+Await Commander direction on 82D rebuild and centralizing V1 inline definitions.
+
+**Commit hash:** 79e7b36
