@@ -142,19 +142,28 @@ if len(dataset) == 0:
     sys.exit(1)
 
 # ═══════════════════════════════════════════════
-# LOAD ROUND 4 CHECKPOINT
+# LOAD CHECKPOINT
+# Priority: word-level checkpoint > char-level best.pt
+# Never restart from char weights if word-level exists
 # ═══════════════════════════════════════════════
-checkpoint_path = Path(__file__).parent / "checkpoints/best.pt"
+word_checkpoint_path = Path(__file__).parent / "checkpoints/best_word_level.pt"
+char_checkpoint_path = Path(__file__).parent / "checkpoints/best.pt"
 model = ARIACoreModel(vocab_size=2304, embed_dim=498)
 
-if checkpoint_path.exists():
-    checkpoint = torch.load(checkpoint_path, map_location=DEVICE)
+if word_checkpoint_path.exists():
+    checkpoint = torch.load(word_checkpoint_path, map_location=DEVICE)
     model.load_state_dict(checkpoint["model_state"])
     prev_loss = checkpoint["best_loss"]
-    print(f"Loaded Round 4 checkpoint.")
+    print(f"Loaded word-level checkpoint — building on prior word run.")
+    print(f"  Previous best loss: {prev_loss:.6f}")
+elif char_checkpoint_path.exists():
+    checkpoint = torch.load(char_checkpoint_path, map_location=DEVICE)
+    model.load_state_dict(checkpoint["model_state"])
+    prev_loss = checkpoint["best_loss"]
+    print(f"No word-level checkpoint — loading char-level base.")
     print(f"  Previous best loss: {prev_loss:.6f}")
 else:
-    print("No checkpoint found — starting from current weights.")
+    print("No checkpoint found — starting from random weights.")
     prev_loss = 8.166
 
 model = model.to(DEVICE)
@@ -162,8 +171,6 @@ print()
 
 # ═══════════════════════════════════════════════
 # TRAIN
-# Lower LR — word IDs attach gently
-# The color planes are already in the field
 # ═══════════════════════════════════════════════
 trainer = EMFieldTrainer(model, learning_rate=0.00005)
 trainer.best_loss = prev_loss
@@ -200,6 +207,15 @@ for epoch in range(1, EPOCHS + 1):
         improved = " ← NEW BEST"
         trainer.best_loss = best
         trainer.save_checkpoint(epoch, metrics, best=True)
+        # Always save word-level best separately — never overwrite with char weights
+        import torch as _torch
+        _torch.save({
+            "model_state": model.state_dict(),
+            "best_loss":   best,
+            "epoch":       epoch,
+            "vocab":       "word_level_265",
+            "note":        "word-level checkpoint — Round 6"
+        }, word_checkpoint_path)
 
     if epoch % 50 == 0:
         trainer.save_checkpoint(epoch, metrics)
@@ -234,6 +250,18 @@ for epoch in range(1, EPOCHS + 1):
             print(f"  TARGET {TARGET} REACHED.")
 
 trainer.save_log()
+
+# Always save final state as word-level checkpoint
+# Next run continues from here — not from char weights
+torch.save({
+    "model_state": model.state_dict(),
+    "best_loss":   best,
+    "epoch":       EPOCHS,
+    "vocab":       "word_level_265",
+    "note":        "word-level final state — Round 6"
+}, word_checkpoint_path)
+print(f"Word-level checkpoint saved — next run continues from here.")
+
 total_time = time.time() - start
 pct = ((8.166 - best) / 8.166) * 100
 

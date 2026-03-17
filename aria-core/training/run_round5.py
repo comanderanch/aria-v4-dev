@@ -11,10 +11,17 @@
 # Burn them in.
 
 import sys
+import argparse
 import torch
 import time
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent.parent.parent))
+
+parser = argparse.ArgumentParser()
+parser.add_argument("--epochs",   type=int,   default=100)
+parser.add_argument("--continue", dest="cont", action="store_true")
+parser.add_argument("--target",   type=float, default=2.40)
+args = parser.parse_args()
 
 from aria_core.training.em_field_trainer import (
     ARIACoreModel, EMFieldTrainer
@@ -30,6 +37,9 @@ print("║  216 words. Frequency resonance sealed.     ║")
 print("║       March 17 2026 — Haskell Texas         ║")
 print("╚══════════════════════════════════════════════╝")
 print()
+if args.cont:
+    print(f"  CONTINUE MODE — {args.epochs} epochs — target loss {args.target}")
+    print()
 
 # ═══════════════════════════════════════════════
 # WORD-LEVEL DATASET
@@ -156,23 +166,31 @@ print()
 trainer = EMFieldTrainer(model, learning_rate=0.00005)
 trainer.best_loss = prev_loss
 
+EPOCHS    = args.epochs
+TARGET    = args.target
+MID       = EPOCHS // 2
+
 print("Starting Round 5...")
-print("Word token IDs arriving in weight space.")
-print("Color plane assignments burning in.")
+if args.cont:
+    print(f"Continue mode — {EPOCHS} more epochs.")
+    print(f"Target: beat {TARGET:.6f}")
+else:
+    print("Word token IDs arriving in weight space.")
+    print("Color plane assignments burning in.")
 print()
 print("─" * 60)
 
 start = time.time()
 best  = prev_loss
 
-for epoch in range(1, 101):
+for epoch in range(1, EPOCHS + 1):
     metrics = trainer.train_epoch(loader)
     trainer.scheduler.step()
     trainer.epoch = epoch
     trainer.loss_log.append({"epoch": epoch, **metrics})
 
     elapsed = time.time() - start
-    eta     = (elapsed / epoch) * (100 - epoch)
+    eta     = (elapsed / epoch) * (EPOCHS - epoch)
 
     improved = ""
     if metrics["loss"] < best:
@@ -181,11 +199,11 @@ for epoch in range(1, 101):
         trainer.best_loss = best
         trainer.save_checkpoint(epoch, metrics, best=True)
 
-    if epoch % 25 == 0:
+    if epoch % 50 == 0:
         trainer.save_checkpoint(epoch, metrics)
 
     print(
-        f"Epoch {epoch:3d}/100 | "
+        f"Epoch {epoch:3d}/{EPOCHS} | "
         f"Loss: {metrics['loss']:.6f} | "
         f"CE: {metrics['ce']:.6f} | "
         f"EM: {metrics['em']:.6f} | "
@@ -198,16 +216,20 @@ for epoch in range(1, 101):
         print("  Round 5 underway.")
         print("  Real words. Real planes. Real home.")
         print()
-    elif epoch == 50:
+    elif epoch == MID:
         pct = ((8.166 - best) / 8.166) * 100
         print()
-        print(f"  Halfway. Total improvement: {pct:.1f}%")
+        print(f"  Halfway. Best so far: {best:.6f} ({pct:.1f}% from random)")
+        if best <= TARGET:
+            print(f"  TARGET {TARGET} REACHED at midpoint.")
         print()
-    elif epoch == 100:
+    elif epoch == EPOCHS:
         pct = ((8.166 - best) / 8.166) * 100
         print()
         print(f"  Round 5 complete.")
         print(f"  Total improvement: {pct:.1f}%")
+        if best <= TARGET:
+            print(f"  TARGET {TARGET} REACHED.")
 
 trainer.save_log()
 total_time = time.time() - start
@@ -216,10 +238,15 @@ pct = ((8.166 - best) / 8.166) * 100
 print()
 print("═" * 60)
 print()
-print(f"Round 5 complete.")
+print(f"Round 5 {'continued' if args.cont else 'complete'}.")
 print(f"Time: {total_time/60:.1f} minutes")
 print(f"Best loss: {best:.6f}")
 print(f"Total improvement from random: {pct:.1f}%")
+if best <= TARGET:
+    print(f"TARGET {TARGET} REACHED.")
+else:
+    print(f"Target {TARGET} not yet reached — "
+          f"{best - TARGET:.6f} remaining.")
 print()
 print("Shape. Depth. Language. Conversation. Words.")
 print("Five rounds. Five layers.")

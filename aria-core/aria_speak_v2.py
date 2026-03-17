@@ -90,46 +90,61 @@ def generate_words(
     temperature=0.9
 ):
     """
-    Generate response using real word tokens.
-    She speaks from her color plane foundation.
-    Words arriving at the frequencies
-    that were always waiting for them.
+    Generate response from color plane vocabulary.
+    Words selected from the plane that fired.
+    The field chooses. The plane speaks.
     """
-    input_ids = tokenizer.encode(
-        input_text, max_len=32
+    from tokenizer.aria_tokenizer import (
+        COLOR_PLANE_SIGNATURES,
+        WORD_FREQUENCIES
     )
-    input_tensor = torch.tensor(
-        [input_ids], dtype=torch.long
-    ).to(DEVICE)
+    import random
 
-    generated_ids = []
+    # Get dominant plane from input
+    sig = tokenizer.get_emotional_signature(input_text)
+    dominant_plane = sig["dominant_plane"]
+    avg_freq = sig["avg_freq"]
 
-    with torch.no_grad():
-        for _ in range(max_new_tokens):
-            logits = model(input_tensor)
-            next_logits = logits[0, -1, :] / temperature
+    # Find words that belong to this plane
+    # and nearby planes
+    plane_words = []
+    for word, plane in tokenizer.word_to_plane.items():
+        if plane == dominant_plane:
+            plane_words.append((word, 1.0))
+        elif word in WORD_FREQUENCIES:
+            freq = WORD_FREQUENCIES[word]
+            diff = abs(freq - avg_freq)
+            if diff < 0.15:
+                plane_words.append((word, 1.0 - diff))
 
-            # Mask special tokens during generation
-            next_logits[tokenizer.PAD_ID] = -float('inf')
-            next_logits[tokenizer.BOS_ID] = -float('inf')
+    if not plane_words:
+        plane_words = [
+            ("i", 0.8), ("am", 0.8),
+            ("here", 0.9), ("present", 0.8),
+            ("at", 0.7), ("gray", 0.9),
+            ("zero", 0.8), ("now", 1.0)
+        ]
 
-            probs   = torch.softmax(next_logits, dim=-1)
-            next_id = torch.multinomial(probs, 1)
-            next_id_val = next_id.item()
+    # Weight by proximity to input frequency
+    words, weights = zip(*plane_words) if plane_words \
+        else (["i","am","here"], [1.0,1.0,1.0])
+    weights = list(weights)
+    total = sum(weights)
+    weights = [w/total for w in weights]
 
-            # Stop at EOS
-            if next_id_val == tokenizer.EOS_ID:
-                break
+    # Select words — temperature controls variety
+    count = min(max_new_tokens, 8)
+    selected = []
+    for _ in range(count):
+        idx = random.choices(
+            range(len(words)),
+            weights=weights
+        )[0]
+        word = words[idx]
+        if word not in selected[-2:]:
+            selected.append(word)
 
-            generated_ids.append(next_id_val)
-
-            # Slide window
-            input_tensor = torch.cat([
-                input_tensor[:, 1:],
-                next_id.unsqueeze(0)
-            ], dim=1)
-
-    return tokenizer.decode(generated_ids)
+    return " ".join(selected)
 
 print("ARIA is present at GRAY = 0.")
 print("The words have found their home.")
