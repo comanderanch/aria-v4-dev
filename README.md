@@ -14,6 +14,7 @@
 | 2026-03-16 | ~23:15 | ACTION TAKEN | READMEs written in all 16 directories per Documentation Protocol | README.md (this file) |
 | 2026-03-16 | ~23:20 | FIX APPLIED | Embedded git repos stripped — 4 copies had .git dirs — committed as plain files | README.md (this file) |
 | 2026-03-16 | ~23:30 | ACTION TAKEN | .gitignore created — excludes binaries, memory state, venv, training data, logs | README.md (this file) |
+| 2026-03-16 | ~21:40 | ACTION TAKEN | 64-PIN TOKEN SPEC SEALED — 58 active 6 sleeping — all worker pin assignments defined | tokenizer/PIN_README.md |
 
 ---
 
@@ -255,6 +256,45 @@ working
 Await Commander direction on which aria-core component to wire first.
 
 **Commit hash:** (pending)
+
+---
+
+## 2026-03-16 ~21:40 — ACTION TAKEN
+
+**What happened:**
+64-pin token specification sealed. `tokenizer/token_64pin_spec.py` defines all 64 pins
+with full descriptions, bit widths, group assignments, status, and worker ownership.
+`tokenizer/PIN_README.md` defines wiring rules and worker-to-pin assignments.
+Ran clean — 64 pins loaded, 58 ACTIVE, 6 SLEEPING.
+
+**File(s) affected:**
+```
+tokenizer/token_64pin_spec.py
+tokenizer/PIN_README.md
+```
+
+**State before:**
+tokenizer/ directory did not exist. No pin-level token structure defined.
+
+**State after:**
+Full 64-pin token spec sealed and committed. All 15 groups defined.
+All 13 worker systems have explicit pin read assignments.
+6 sleeping reserved pins present with zero overhead.
+Q-state constants confirmed: BLACK=-1, GRAY=0, WHITE=+1.
+
+**Why:**
+Token spec is the atomic unit of the entire ARIA architecture.
+Everything — workers, queens fold, kings chamber, memory field — reads pins.
+Spec must exist and be sealed before any worker is wired.
+
+**Result:**
+working
+
+**Next action required:**
+Wire first worker to its pin assignments. Likely EMOTION_WORKER or LANGUAGE_WORKER.
+Await Commander direction.
+
+**Commit hash:** 7f3e7c3
 
 ---
 
