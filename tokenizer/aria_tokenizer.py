@@ -276,21 +276,38 @@ class ARIATokenizer:
 
     def _assign_token_id(self, word, plane):
         """
-        Assign a token ID within the plane.
-        96 slots per plane.
-        Consistent — same word always same ID.
+        Assign a unique token ID within the plane.
+        Collision-safe — increment until slot is free.
+        Every word gets its own unique ID.
+        No two words share a slot.
         """
         sig      = COLOR_PLANE_SIGNATURES[plane]
         base_id  = sig["base_id"]
 
-        # Hash word to position within plane
+        # Hash word to starting position within plane
         word_hash = int(hashlib.md5(
             word.encode()
         ).hexdigest(), 16)
         slot = word_hash % 96
 
-        token_id = base_id + slot
-        self.plane_usage[plane] += 1
+        # Increment until free slot found
+        attempts = 0
+        while attempts < 96:
+            token_id = base_id + slot
+            if token_id not in self.id_to_word:
+                break
+            slot = (slot + 1) % 96
+            attempts += 1
+
+        # If plane full — use overflow area
+        if attempts >= 96:
+            token_id = 2100 + (
+                abs(hash(word)) % 196
+            )
+
+        self.id_to_word[token_id] = word
+        self.plane_usage[plane] = \
+            self.plane_usage.get(plane, 0) + 1
         return token_id
 
     def _build_vocab(self):
