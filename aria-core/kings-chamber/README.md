@@ -1,25 +1,17 @@
-# aria-core/kings-chamber
-## Status: scaffold only — not yet wired
-
-Waiting for Commander direction.
-
----
-
-## LOG
-
-| Date | Time | Type | Summary |
-|------|------|------|---------|
-| 2026-03-16 | ~23:05 | ACTION TAKEN | Directory created as part of aria-core scaffold |
-
----
-
-## 2026-03-16 ~23:05 — ACTION TAKEN
-
-**What happened:** Directory created per CLAUDE.md blueprint.
-**File(s) affected:** aria-core/kings-chamber/
-**State before:** Did not exist.
-**State after:** Empty scaffold directory. Ready to receive code.
-**Why:** Blueprint defines this region of the architecture.
-**Result:** working
-**Next action required:** Wire when Commander directs.
-**Commit hash:** 4306c45
+# ARIA-CORE KINGS CHAMBER — MASTER COLLAPSE POINT
+# GRAY=0 — The NOW line — The Round Table
+# Where all four quadrants report simultaneously
+# Not a filter — a RECEIVER
+# Everything arrives. Nothing dismissed.
+# The King hears all seven knights
+# plus all four quadrant reports
+# and chooses the course
+#
+# Regional Kings Chambers:
+# V1  — fastest collapse — pure reflex
+# V2  — emotionally weighted collapse
+# V3  — deliberate conscious collapse
+# ARIA-CORE — MASTER — integrates all three
+#             the Chief Overlord sees everything
+#
+# Sealed: March 16 2026 — Haskell Texas
