@@ -15,6 +15,7 @@
 | 2026-03-16 | ~23:20 | FIX APPLIED | Embedded git repos stripped — 4 copies had .git dirs — committed as plain files | README.md (this file) |
 | 2026-03-16 | ~23:30 | ACTION TAKEN | .gitignore created — excludes binaries, memory state, venv, training data, logs | README.md (this file) |
 | 2026-03-16 | ~21:40 | ACTION TAKEN | 64-PIN TOKEN SPEC SEALED — 58 active 6 sleeping — all worker pin assignments defined | tokenizer/PIN_README.md |
+| 2026-03-16 | ~21:55 | FIX APPLIED | v1-foundation q_layer_token.py — GRAY=-1 contamination removed — GRAY=0 restored | v1-foundation/README.md |
 
 ---
 
