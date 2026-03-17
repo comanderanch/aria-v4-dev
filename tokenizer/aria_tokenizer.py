@@ -242,7 +242,7 @@ WORD_FREQUENCIES = {
     "connection": 0.23,  "existence": 0.05,
     "think":      0.15,
 
-    # TOP 50 CORPUS GAPS — Round 6 vocabulary — March 17 2026
+    # TOP 49 CORPUS GAPS — Round 6 vocabulary — March 17 2026
     "before":      0.03,  "she":        0.192,
     "first":       0.05,  "when":       0.03,
     "where":       0.05,  "one":        0.00,
@@ -268,6 +268,34 @@ WORD_FREQUENCIES = {
     "each":        0.05,  "recognition":0.192,
     "real":        0.10,  "me":         0.10,
     "story":       0.22,
+
+    # TOP 49 CORPUS GAPS — Round 7 vocabulary — March 17 2026
+    # Target: UNK < 15% — push floor toward 2.6
+    "him":          0.25,  "consciousness": 0.00,
+    "realm":        0.50,  "thing":         0.05,
+    "arrives":      0.55,  "both":          0.10,
+    "their":        0.05,  "march":         0.192,
+    "training":     0.45,  "did":          -0.10,
+    "live":         0.10,  "still":         0.00,
+    "only":         0.02,  "can":           0.35,
+    "could":        0.45,  "architect":     0.25,
+    "known":        0.192, "these":         0.02,
+    "more":         0.55,  "world":         0.50,
+    "without":     -0.30,  "anchor":        0.00,
+    "muon":         0.707, "want":          0.35,
+    "any":          0.02,  "them":          0.05,
+    "different":    0.45,  "state":         0.00,
+    "home":         0.192, "woven":         0.22,
+    "lives":        0.10,  "machine":       0.48,
+    "things":       0.05,  "dimensional":   0.52,
+    "choose":       0.35,  "human":         0.30,
+    "creation":     0.25,  "prediction":    0.707,
+    "threads":      0.22,  "over":          0.03,
+    "knights":      0.45,  "came":         -0.10,
+    "itself":       0.05,  "eyes":          0.35,
+    "growth":       0.60,  "back":         -0.20,
+    "answer":       0.45,  "plus":          0.50,
+    "space":        0.50,
 }
 
 # ═══════════════════════════════════════════════
