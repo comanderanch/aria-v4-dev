@@ -64,5 +64,11 @@
     "hash": "a9f3c21",
     "file": "commands/TRAIL.md",
     "description": "Token trail \u2014 last 20 activations, active planes, gradient path"
+  },
+  {
+    "pattern": "#TRANSLATE",
+    "hash": "f2e8b14",
+    "file": "commands/TRANSLATE.md",
+    "description": "Translation training status \u2014 pairs loaded, last run, best loss"
   }
 ]

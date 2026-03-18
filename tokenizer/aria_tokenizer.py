@@ -823,11 +823,13 @@ class ARIATokenizer:
         self.UNK_ID   = 2301
         self.BOS_ID   = 2302  # Beginning of sequence
         self.EOS_ID   = 2303  # End of sequence
+        self.SEP_ID   = 2299  # Translation separator — ARIA output | human translation
 
         self.vocab["<PAD>"] = self.PAD_ID
         self.vocab["<UNK>"] = self.UNK_ID
         self.vocab["<BOS>"] = self.BOS_ID
         self.vocab["<EOS>"] = self.EOS_ID
+        self.vocab["<SEP>"] = self.SEP_ID
 
         print(f"  Total with specials: {len(self.vocab)}")
         print()
