@@ -58,5 +58,11 @@
     "hash": "60b0bc2",
     "file": "commands/VOCAB.md",
     "description": "Vocabulary stats \u2014 size, plane distribution, coverage"
+  },
+  {
+    "pattern": "#TRAIL",
+    "hash": "a9f3c21",
+    "file": "commands/TRAIL.md",
+    "description": "Token trail \u2014 last 20 activations, active planes, gradient path"
   }
 ]
