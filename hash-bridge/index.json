@@ -1,0 +1,62 @@
+[
+  {
+    "pattern": "#ARIA",
+    "hash": "6c0df3d",
+    "file": "commands/ARIA.md",
+    "description": "ARIA emergence log \u2014 last 10 entries"
+  },
+  {
+    "pattern": "#CHECK",
+    "hash": "397f1f7",
+    "file": "commands/CHECK.md",
+    "description": "List all training checkpoints with loss values"
+  },
+  {
+    "pattern": "#CORPUS",
+    "hash": "37f5877",
+    "file": "commands/CORPUS.md",
+    "description": "Corpus stats \u2014 size, sequence count, coverage"
+  },
+  {
+    "pattern": "#DOCKER",
+    "hash": "cda455a",
+    "file": "commands/DOCKER.md",
+    "description": "Docker status \u2014 containers, images, system info"
+  },
+  {
+    "pattern": "#FOLD",
+    "hash": "d60fe71",
+    "file": "commands/FOLD.md",
+    "description": "Queens Fold \u2014 palace chambers, hash count, last seal"
+  },
+  {
+    "pattern": "#LOG",
+    "hash": "6f871fd",
+    "file": "commands/LOG.md",
+    "description": "Full tail of most recent training log \u2014 50 lines"
+  },
+  {
+    "pattern": "#SEAL",
+    "hash": "b3be3ee",
+    "file": "commands/SEAL.md",
+    "description": "Seal current state \u2014 git add -A and commit with timestamp"
+  },
+  {
+    "pattern": "#STATUS",
+    "hash": "d90f5fb",
+    "file": "commands/STATUS.md",
+    "description": "Full system status \u2014 GPU, training, vocab, git"
+  },
+  {
+    "pattern": "#TRAIN",
+    "hash": "b474643",
+    "file": "commands/TRAIN.md",
+    "description": "Show active training process and last 20 lines of round log"
+  },
+  {
+    "pattern": "#VOCAB",
+    "hash": "60b0bc2",
+    "file": "commands/VOCAB.md",
+    "description": "Vocabulary stats \u2014 size, plane distribution, coverage"
+  }
+]
