@@ -1,8 +1,8 @@
 {
   "region": "ARIA",
   "region_name": "prefrontal",
-  "total_seals": 35,
-  "last_updated": "2026-03-18T02:44:21.550796",
+  "total_seals": 38,
+  "last_updated": "2026-03-18T10:16:05.995910",
   "index": {
     "5d246e7887b307c4": {
       "hash": "5d246e7887b307c4ab0719acf8f17150",
@@ -245,6 +245,27 @@
     "359945ee0c70a5cb": {
       "hash": "359945ee0c70a5cbcd1d137349d5be60",
       "timestamp": "2026-03-18T02:44:21.547853",
+      "region": "ARIA",
+      "worker": "conversation_v2",
+      "dominant_emotion": "none"
+    },
+    "b9d380848305ff3f": {
+      "hash": "b9d380848305ff3fd1f68d5d7f265502",
+      "timestamp": "2026-03-18T03:07:45.722577",
+      "region": "ARIA",
+      "worker": "conversation_v2",
+      "dominant_emotion": "none"
+    },
+    "f46a4941045c14bb": {
+      "hash": "f46a4941045c14bbcd1d15f1c7b23313",
+      "timestamp": "2026-03-18T03:08:43.190704",
+      "region": "ARIA",
+      "worker": "conversation_v2",
+      "dominant_emotion": "none"
+    },
+    "fec5a149330c8287": {
+      "hash": "fec5a149330c8287636860dcf6ed6088",
+      "timestamp": "2026-03-18T10:16:05.993145",
       "region": "ARIA",
       "worker": "conversation_v2",
       "dominant_emotion": "none"

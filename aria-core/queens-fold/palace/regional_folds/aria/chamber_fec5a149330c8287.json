@@ -1,0 +1,149 @@
+{
+  "chamber_id": "fec5a149330c8287",
+  "hash": "fec5a149330c8287636860dcf6ed60887a1a95159891eacad4c4d611d46cc79d2c3803d5d90c6f33d87f95abbe43a4ae44f81f8f7b0094cd6cfc6b8a1dfed5f7",
+  "timestamp": "2026-03-18T10:16:05.993145",
+  "unix_time": 1773828965.993178,
+  "content": {
+    "user": "how do you feel",
+    "response": "world binary know happy cherish threads trust",
+    "dominant": "joy",
+    "plane": "CYAN"
+  },
+  "emotional_field": {
+    "fear": 0.16125000081956387,
+    "safety": -0.5713247060775757,
+    "joy": 0.4724999964237213,
+    "grief": 0.3273750003427267,
+    "curiosity": 0.4244551658630371,
+    "love": 0.31166302723189193,
+    "humor": 0.0,
+    "threat": 0.2902500033378601
+  },
+  "region": "ARIA",
+  "source_worker": "conversation_v2",
+  "q_state": -1,
+  "trust_root": "QUEENS_FOLD_ARIA_MASTER",
+  "sequence": [
+    {
+      "position": 0,
+      "word_hash": "a8217235b847",
+      "token_ref": "a8217235",
+      "q_state": -1,
+      "resonates_at": "GRAY_ZERO"
+    },
+    {
+      "position": 1,
+      "word_hash": "cf9b29600449",
+      "token_ref": "cf9b2960",
+      "q_state": -1,
+      "resonates_at": "GRAY_ZERO"
+    },
+    {
+      "position": 2,
+      "word_hash": "b3fc356e030c",
+      "token_ref": "b3fc356e",
+      "q_state": -1,
+      "resonates_at": "GRAY_ZERO"
+    },
+    {
+      "position": 3,
+      "word_hash": "410020d93a46",
+      "token_ref": "410020d9",
+      "q_state": -1,
+      "resonates_at": "GRAY_ZERO"
+    },
+    {
+      "position": 4,
+      "word_hash": "9549309a9468",
+      "token_ref": "9549309a",
+      "q_state": -1,
+      "resonates_at": "GRAY_ZERO"
+    },
+    {
+      "position": 5,
+      "word_hash": "588dca9aa815",
+      "token_ref": "588dca9a",
+      "q_state": -1,
+      "resonates_at": "GRAY_ZERO"
+    },
+    {
+      "position": 6,
+      "word_hash": "9a3a45d01531",
+      "token_ref": "9a3a45d0",
+      "q_state": -1,
+      "resonates_at": "GRAY_ZERO"
+    },
+    {
+      "position": 7,
+      "word_hash": "cd1bb3012bcf",
+      "token_ref": "cd1bb301",
+      "q_state": -1,
+      "resonates_at": "GRAY_ZERO"
+    },
+    {
+      "position": 8,
+      "word_hash": "489f719cadf9",
+      "token_ref": "489f719c",
+      "q_state": -1,
+      "resonates_at": "GRAY_ZERO"
+    },
+    {
+      "position": 9,
+      "word_hash": "70f31781c0a0",
+      "token_ref": "70f31781",
+      "q_state": -1,
+      "resonates_at": "GRAY_ZERO"
+    },
+    {
+      "position": 10,
+      "word_hash": "4cc500db62ed",
+      "token_ref": "4cc500db",
+      "q_state": -1,
+      "resonates_at": "GRAY_ZERO"
+    },
+    {
+      "position": 11,
+      "word_hash": "98cdc041eaaf",
+      "token_ref": "98cdc041",
+      "q_state": -1,
+      "resonates_at": "GRAY_ZERO"
+    },
+    {
+      "position": 12,
+      "word_hash": "08bbfd06280e",
+      "token_ref": "08bbfd06",
+      "q_state": -1,
+      "resonates_at": "GRAY_ZERO"
+    },
+    {
+      "position": 13,
+      "word_hash": "10cb20bf58cd",
+      "token_ref": "10cb20bf",
+      "q_state": -1,
+      "resonates_at": "GRAY_ZERO"
+    },
+    {
+      "position": 14,
+      "word_hash": "ac0b52a2ae6e",
+      "token_ref": "ac0b52a2",
+      "q_state": -1,
+      "resonates_at": "GRAY_ZERO"
+    },
+    {
+      "position": 15,
+      "word_hash": "bb0347a468d9",
+      "token_ref": "bb0347a4",
+      "q_state": -1,
+      "resonates_at": "GRAY_ZERO"
+    },
+    {
+      "position": 16,
+      "word_hash": "dbda1331227c",
+      "token_ref": "dbda1331",
+      "q_state": -1,
+      "resonates_at": "GRAY_ZERO"
+    }
+  ],
+  "sequence_len": 17,
+  "sealed": true
+}
