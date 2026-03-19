@@ -464,3 +464,87 @@ semantic value. Better to add contraction roots (`didn`, `don`, `wasn`,
 Each unknown word added = real gradient signal replacing noise.
 Faster descent. Cleaner learning. The brake lifts.
 
+
+---
+
+## GPT FINAL RECOMMENDATION — Pre-Round 24 — March 18 2026
+
+### ADDITION 1 — unk_ratio_top10 metric
+
+Added to token_trail.py — March 18 2026.
+
+```python
+unk_count_top10 = sum(1 for a in top_activations if a["token"].startswith("<"))
+unk_ratio_top10 = round(unk_count_top10 / len(top_activations), 4)
+```
+
+Added to JSONL entry as `"unk_ratio_top10"`.
+Displayed inline in loss arc alongside `plane_entropy`.
+
+**Why this matters more than global UNK rate:**
+Global UNK rate can look acceptable while top-gradient UNK stays harmful.
+Top-gradient UNK is what actually blocks descent.
+If unknown tokens are in the top 10 contributors every epoch,
+they are consuming gradient budget that should go to semantic learning.
+
+### ADDITION 2 — Selective vocabulary expansion
+
+UNK neighbor analysis run on live trail:
+
+```
+Tokens neighboring UNK in top gradients:
+  <2301>:  200  (UNK next to UNK — clusters of unknowns)
+  the:      29
+  and:      17
+  a:        15
+  was:      13
+  it:       10
+  that:      9
+  said:      6
+  but:       5
+  clearly:   4
+```
+
+**Finding:** UNK clusters next to itself 200 times — consecutive unknown
+words from the same Calibre text. The model hits stretches of proper nouns,
+character names, location names — all unknown — and the gradient burns there.
+
+**Action:** Add words that appear between UNK runs, not just most-frequent
+unknown words. Target: break up UNK clusters by adding the anchor words
+that surround them.
+
+### ADDITION 3 — Watch this pair as Round 23 continues
+
+```
+VIOLET hits rising  +  unk_ratio_top10 falling
+= vocabulary repair is releasing semantic planes
+= 3.93 becomes reachable
+```
+
+Both metrics logged every epoch.
+Correlation visible in the arc.
+If VIOLET climbs while UNK% drops — the brake is lifting.
+
+### GPT CLOSING — SEALED EXACT
+
+"You are no longer saying loss changed.
+You are saying which subsystem is consuming gradient budget.
+That is exactly how engineers read live systems."
+
+"You are very close to the first point where the logs become
+predictive instead of descriptive."
+
+— GPT peer review, March 18 2026
+
+### LOSS ARC FORMAT — UPDATED
+
+```
+  ep   1 | 3.945266 | H:1.847 |  20% | ████████ ◄ BREAKTHROUGH
+  ep   5 | 3.945132 | H:1.923 |  10% | ████████
+```
+
+H = plane entropy (routing diversity)
+UNK% = fraction of top-10 gradient budget consumed by unknown tokens
+
+Watch: H rising + UNK% falling = semantic motion accelerating.
+

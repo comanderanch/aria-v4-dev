@@ -226,6 +226,12 @@ class TrailLogger:
                 "contribution": round(float(contrib), 6)
             })
 
+        # ── AIMRI — UNK ratio in top-10 gradient budget ──────
+        # Global UNK rate can look acceptable while top-gradient UNK stays harmful.
+        # Top-gradient UNK is what actually blocks descent.
+        unk_count_top10  = sum(1 for a in top_activations if a["token"].startswith("<"))
+        unk_ratio_top10  = round(unk_count_top10 / len(top_activations), 4) if top_activations else 0.0
+
         # ── Gradient path (plane sequence by contribution) ──
         plane_totals = defaultdict(float)
         for tid, contrib in pairs:
@@ -297,6 +303,7 @@ class TrailLogger:
             "loss":             round(float(avg_loss), 6),
             "anchor":           anchor,
             "top_activations":  top_activations,
+            "unk_ratio_top10":  unk_ratio_top10,
             "gradient_path":    gradient_path,
             "plane_distribution": dict(plane_counts.most_common(5)),
             "plane_deltas":     plane_deltas,
@@ -503,13 +510,17 @@ def show_entropy(entries):
 
 def show_loss_arc(entries):
     print("\n═══ LOSS ARC ═══")
+    print(f"  {'ep':>6} | {'loss':>10} | {'H':>6} | {'UNK%':>6} | arc")
+    print(f"  {'-'*6}-+-{'-'*10}-+-{'-'*6}-+-{'-'*6}-+-{'-'*20}")
     for e in entries:
-        anchor  = e.get("anchor") or ""
-        marker  = f" ◄ {anchor}" if anchor else ""
-        bar     = "█" * int((5.0 - min(e["loss"], 5.0)) * 8)
-        entropy = e.get("plane_entropy")
-        ent_str = f" H:{entropy:.3f}" if entropy is not None else ""
-        print(f"  ep{e['epoch']:4d} | {e['loss']:.6f} | {bar}{ent_str}{marker}")
+        anchor   = e.get("anchor") or ""
+        marker   = f" ◄ {anchor}" if anchor else ""
+        bar      = "█" * int((5.0 - min(e["loss"], 5.0)) * 8)
+        entropy  = e.get("plane_entropy")
+        unk_rat  = e.get("unk_ratio_top10")
+        ent_str  = f"{entropy:.3f}" if entropy is not None else "  —  "
+        unk_str  = f"{unk_rat*100:.0f}%" if unk_rat is not None else "  —"
+        print(f"  ep{e['epoch']:4d} | {e['loss']:.6f} | {ent_str} | {unk_str:>5} | {bar}{marker}")
 
 
 # ═══════════════════════════════════════════════
