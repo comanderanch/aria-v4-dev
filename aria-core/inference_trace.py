@@ -197,10 +197,23 @@ def generate_with_trace(
                     "score": round(float(val), 4)
                 })
 
-            # Heat = max_logit - second_logit
+            # Heat = max_logit - second_logit (winner margin)
             heat = round(
                 float(top_vals[0] - top_vals[1]), 4
             ) if len(top_vals) >= 2 else 0.0
+
+            # Fire score = max_logit - fifth_logit (GPT build target)
+            # Spread across full top5 — true competition field
+            # high fire_score = winner dominates — strong certainty
+            # low fire_score  = crowded field   — soft prediction
+            fire_score = round(
+                float(top_vals[0] - top_vals[-1]), 4
+            ) if len(top_vals) >= 2 else 0.0
+
+            # Runner-up margin = second_logit - third_logit
+            runner_up_margin = round(
+                float(top_vals[1] - top_vals[2]), 4
+            ) if len(top_vals) >= 3 else 0.0
 
             # Dominant and secondary planes from top5
             plane_tally = defaultdict(int)
@@ -231,19 +244,23 @@ def generate_with_trace(
 
             # Build trace entry
             entry = {
-                "step":           step + 1,
-                "chosen_token":   chosen_token,
-                "chosen_id":      chosen_id,
-                "chosen_plane":   chosen_plane,
-                "chosen_score":   chosen_score,
-                "heat":           heat,
-                "fire_category":  fire_category(heat),
-                "dominant_plane": dominant_plane,
-                "secondary_plane":secondary_plane,
-                "top5":           top5,
-                "fire_intensity": fire_intensity,
-                "fold_hash":      fh,
-                "timestamp":      datetime.now().isoformat()
+                "step":             step + 1,
+                "chosen_token":     chosen_token,
+                "chosen_id":        chosen_id,
+                "chosen_plane":     chosen_plane,
+                "chosen_score":     chosen_score,
+                "rank_before_sample": 1,        # always 1 — greedy argmax
+                "winner_margin":    heat,        # max - second (gap to nearest)
+                "runner_up_margin": runner_up_margin,  # second - third
+                "fire_score":       fire_score,  # max - fifth (full spread)
+                "heat":             heat,        # kept for backward compat
+                "fire_category":    fire_category(heat),
+                "dominant_plane":   dominant_plane,
+                "secondary_plane":  secondary_plane,
+                "top5":             top5,
+                "fire_intensity":   fire_intensity,
+                "fold_hash":        fh,
+                "timestamp":        datetime.now().isoformat()
             }
             trace_entries.append(entry)
 
@@ -290,8 +307,8 @@ def display_trace(prompt, prompt_analysis, trace_entries, output_text):
 
     print("INFERENCE TRACE")
     print(f"  {'step':>4}  {'token':<14} {'plane':<16} {'score':>7}  "
-          f"{'heat':>6}  {'cat':<5}  {'hash':<7}  top2alt")
-    print("  " + "─" * 80)
+          f"{'heat':>6}  {'fire':>6}  {'cat':<5}  {'hash':<7}  top2alt")
+    print("  " + "─" * 88)
     for e in trace_entries:
         alt = e["top5"][1]["token"] if len(e["top5"]) > 1 else "—"
         print(
@@ -300,6 +317,7 @@ def display_trace(prompt, prompt_analysis, trace_entries, output_text):
             f"{e['chosen_plane']:<16} "
             f"{e['chosen_score']:>7.3f}  "
             f"{e['heat']:>6.3f}  "
+            f"{e['fire_score']:>6.3f}  "
             f"{e['fire_category']:<5}  "
             f"{e['fold_hash']:<7}  "
             f"[{alt}]"

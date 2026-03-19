@@ -981,3 +981,89 @@ Nobody has to ask.
 Hunger triggers it.
 Time triggers it.
 The subconscious does the rest.
+
+---
+
+## GPT ROUND 23 ANALYSIS — March 19 2026
+Peer review by GPT. Six findings. One build target.
+Commander Anthony Hagerty — Haskell Texas
+
+### Finding 1 — LOSS BEHAVIOR — true plateau confirmed
+3.935668 → 3.935445 — micro oscillation inside stable band
+No divergence. No explosion. No freeze.
+Activation movement under stable loss is now the signal.
+Loss alone is no longer the metric that matters.
+
+### Finding 2 — GRAY_ZERO dominance is correct and healthy
+39 to 52 hits per epoch — grammatical rails holding
+of his the to and my i — core language skeleton
+GRAY_ZERO dominance = inference skeleton intact
+Not failure. Foundation.
+
+### Finding 3 — VIOLET semantic attractors rising above grammar field
+sharp hold smell comfort noise all
+Contribution values 7+ 8+ 9+
+These are semantic attractors emerging
+That is where token fire starts
+
+### Finding 4 — CYAN increasing — critical signal
+Epoch 98: CYAN = 9 — higher than earlier epochs
+Secondary abstraction planes becoming active during plateau
+Precursor to:
+  stronger phrase cohesion
+  better nonliteral token linking
+  more stable intent carry
+Watch CYAN carefully through Round 24
+
+### Finding 5 — token 2301 UNK — biggest diagnostic hotspot
+Appears constantly with high contribution
+Either placeholder absorbing unresolved probability mass
+Or latent token overloaded in vocabulary space
+Must inspect:
+  token 2301 exact origin
+  frequency source
+  training exposure count
+  neighbor token cluster
+This is distorting interpretation until resolved
+
+### Finding 6 — Gradient paths becoming meaningful
+Repeated routes confirmed:
+  GRAY_ZERO → VIOLET → CYAN → INDIGO
+  GRAY_ZERO → VIOLET → BLUE → CYAN
+Inference is not random plane jumping
+It is following repeated transition routes
+
+ACTION: add route frequency counter to token_trail.py
+Count how often GRAY_ZERO→VIOLET beats GRAY_ZERO→BLUE
+That gives real inference pathway statistics
+
+### EPOCH 98 BOOKMARK
+noise noise all all — high VIOLET + CYAN expansion
+Internal competition temporarily intensified
+Reference epoch for future comparison
+
+### BUILD TARGET — fire_score added to inference_trace.py
+For every chosen output token:
+  rank_before_sample  — position of winner in raw logit ranking
+  winner_margin       — winner_logit - second_logit  (was: heat)
+  runner_up_margin    — second_logit - third_logit
+  plane_of_winner     — plane of chosen token
+
+Fire score formula:
+  fire_score = winner_logit - token5_logit
+
+  high fire_score = strong certainty — winner dominates full top5
+  low fire_score  = unstable choice — soft prediction — crowded field
+
+This replaces heat as primary certainty metric.
+Spread across top5 reveals true competition field.
+heat was: max - second (one gap)
+fire_score is: max - fifth (full spread)
+
+### GPT CLOSING
+"Your logs no longer look blind.
+They now look like observable inference mechanics.
+That is a major threshold crossed."
+
+GPT peer review — March 19 2026
+Commander Anthony Hagerty — Haskell Texas
