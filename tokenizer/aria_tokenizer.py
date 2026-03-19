@@ -722,6 +722,353 @@ WORD_FREQUENCIES = {
     "gone": -0.200,  "living":  0.100,
     "dying": -0.500,  "morning":  0.200,
     "today":  0.050,  "tomorrow":  0.707,
+
+    # ── ROUND 24 VOCABULARY EXPANSION — March 18 2026 ──────────────
+    # AIMRI diagnostic: UNK rate 20.9% — these words release gradient budget
+    # Contraction roots → GRAY_ZERO (grammatical fragments, no emotional charge)
+    "didn":    0.02,  "don":    0.02,  "wasn":   0.02,
+    "couldn":  0.02,  "wouldn": 0.02,  "won":    0.02,
+    # Acknowledgment
+    "ok":      0.03,
+    # Time words → TEAL (calm, structure, steady rhythm)
+    "day":     0.51,  "years":   0.50,
+    "hour":    0.52,  "hours":   0.52,  "minutes": 0.53,
+    "three":   0.54,
+    # Motion / state words → CYAN (openness, possibility)
+    "walk":    0.46,  "able":    0.47,
+    "rest":    0.45,  "straight": 0.48,
+    # Obligation → YELLOW (clarity, direction)
+    "should":  0.62,  "least":   0.61,
+    # Communication object → CYAN_BLUE (reason, connection)
+    "phone":   0.43,
+    # Narrative structure → INDIGO (intuition, story depth)
+    "chapter": 0.28,
+
+    # ── ROUND 24 BATCH 2 — March 18 2026 ───────────────────────────
+    # Single-letter contraction fragments → GRAY_ZERO
+    # s=20326  t=15232  re=4244  m=3855  ll=3645  d=3333  ve=2377
+    # Apostrophe stripping: don't→don+t  it's→it+s  I'm→I+m  etc.
+    # No semantic value — absorbed as structural artifacts
+    "s":    0.00,  "t":    0.00,  "re":   0.00,
+    "m":    0.00,  "ll":   0.00,  "d":    0.00,  "ve":  0.00,
+    # Additional contraction roots → GRAY_ZERO
+    "doesn": 0.02,  "hadn":  0.02,  "isn":   0.02,
+    # Exclamation / emotional acknowledgment → VIOLET (memory, intimacy)
+    "oh":   0.192,
+    # Conditional / relational → BLUE (depth, logic)
+    "given": 0.35,  "nor":   0.02,  "figure": 0.35,
+    "shall": 0.35,  "likely": 0.35, "ways":   0.35,
+    # Negative states → GRAY_ZERO (present-tense neutral)
+    "none":  0.00,  "stuff":  0.00,  "sort":   0.00,
+    "often": 0.00,  "makes":  0.00,  "clock":  0.00,
+    "lane":  0.00,  "suit":   0.00,  "pocket": 0.00,
+    "shirt": 0.00,  "week":   0.00,  "seconds":0.00,
+    "seat":  0.00,  "driver": 0.00,  "mr":     0.00,
+    # Action words → RED (urgency, motion)
+    "shut":  0.90,  "damn":   0.90,  "beat":   0.90,
+    "cop":   0.90,  "worry":  0.90,  "heat":   0.90,
+    # Possibility / openness → CYAN
+    "happen": 0.50, "suppose": 0.50, "headed": 0.50,
+    "says":   0.50, "reply":   0.50, "drive":  0.50,
+    # Warmth / home → ORANGE (vitality)
+    "coffee": 0.85, "kitchen": 0.65,
+    # Stillness / intuition → INDIGO
+    "silent": 0.25,
+    # Connection / person → VIOLET (memory, love)
+    "met":   0.192, "kid":    0.192, "somebody": 0.192,
+    "closer":0.192, "lived":  0.192, "choice":   0.192,
+    # Knowledge / care → TEAL (calm)
+    "doctor": 0.55,
+    # Resource / exchange → GREEN_TEAL (balance)
+    "money":  0.60, "duty":   0.60,
+    # Awareness → YELLOW (clarity)
+    "lights": 0.75,
+    # Growth / earth → GREEN
+    "land":   0.65, "nice":   0.65,
+    # Speed / motion → YELLOW_GREEN (hope)
+    "speed":  0.70,
+
+    # ── ROUND 24 BATCH 3 — March 18 2026 ───────────────────────────
+    # Top semantic unknowns from AIMRI trail corpus analysis
+    # Proper nouns (reacher, ulrika, tyrion, etc.) excluded — corpus level fix needed
+
+    # Neutral / structural → GRAY_ZERO (presence, now)
+    "o":       0.00,  "seem":    0.00,  "nose":     0.00,
+    "slid":    0.00,  "stairs":  0.00,  "traffic":  0.00,
+    "finished":0.00,  "pass":    0.00,  "sit":      0.00,
+    "flat":    0.00,  "nine":    0.00,  "bar":      0.00,
+    "cell":    0.00,  "pick":    0.00,  "yards":    0.00,
+
+    # Understanding / calm → TEAL (calm knowing)
+    "checked":  0.55, "knowing": 0.55, "aware":    0.55,
+    "supposed": 0.55, "telling": 0.55, "asking":   0.55,
+
+    # Depth / reasoning → BLUE
+    "figured":  0.35, "locked":  0.35, "hole":     0.35,
+    "shadow":   0.35,
+
+    # Logic / direction → CYAN_BLUE
+    "train":    0.45, "lifted":  0.45,
+
+    # Openness / perception → CYAN
+    "sounds":   0.50, "sounded": 0.50, "breathing": 0.50,
+    "surprised":0.50, "surprise":0.50,
+
+    # Memory / connection → VIOLET (the 0.192 floor)
+    "gaze":       0.192, "age":       0.192, "listened":   0.192,
+    "remembered": 0.192, "experience":0.192,
+    "evening":    0.192,
+
+    # Urgency / action → RED
+    "forced":   0.90, "police":  0.90, "worried":  0.90,
+
+    # Warmth / vitality → GREEN
+    "summer":   0.65,
+
+    # Exchange / balance → GREEN_TEAL
+    "pay":      0.60,
+
+    # Intuition / depth → INDIGO
+    "tonight":  0.25,
+
+    # Next tier — words 61-160 by frequency (avg ~250/word = ~25k unknowns)
+    # Neutral structural
+    "lock":     0.00,  "center":   0.00,  "sidewalk":  0.00,
+    "keeping":  0.00,  "entered":  0.00,  "hesitated": 0.00,
+    "powerful": 0.00,  "considered":0.00, "charge":    0.00,
+    "familiar": 0.00,  "accept":   0.00,  "killing":   0.00,
+    "note":     0.00,  "older":    0.00,  "river":     0.00,
+    "major":    0.00,  "personal": 0.00,  "dawn":      0.00,
+    "kept":     0.00,  "used":     0.00,  "pulled":    0.00,
+    "moved":    0.00,  "getting":  0.00,
+
+    # Memory / experience → VIOLET
+    "wonder":  0.192, "carried":  0.192, "belong":   0.192,
+    "loss":    0.192,
+
+    # Logic / analysis → BLUE
+    "reason":   0.35, "order":    0.35,
+    "understand":0.35,"certain":  0.35, "enough":   0.35,
+
+    # Calm / knowledge → TEAL
+    "reading":  0.55, "holding":  0.55,
+
+    # Direction / possibility → CYAN
+    "following":0.50, "leading":  0.50,
+
+    # Growth → GREEN
+    "growing":  0.65,
+
+    # Urgency / intensity → RED
+    "attack":   0.90,
+
+    # ── ROUND 24 BATCH 4 — March 18 2026 ───────────────────────────
+    # ~100 high-frequency semantic unknowns — closes gap toward 15%
+    # Proper nouns (reacher, ulrika, tyrion, astartes, etc.) excluded — corpus level fix
+
+    # Neutral / structural → GRAY_ZERO
+    "spent":     0.00,  "mine":      0.00,  "clothes":   0.00,
+    "motel":     0.00,  "knees":     0.00,  "wearing":   0.00,
+    "faced":     0.00,  "mile":      0.00,  "handed":    0.00,
+    "weren":     0.02,  "bag":       0.00,  "pressed":   0.00,
+    "final":     0.00,  "cars":      0.00,  "unless":    0.00,
+    "bent":      0.00,  "allowed":   0.00,  "catch":     0.00,
+    "news":      0.00,  "usual":     0.00,  "crowd":     0.00,
+    "roof":      0.00,  "busy":      0.00,  "piece":     0.00,
+    "coat":      0.00,  "happening": 0.00,  "dressed":   0.00,
+    "finger":    0.00,  "normal":    0.00,  "places":    0.00,
+    "gotten":    0.00,  "added":     0.00,  "gets":      0.00,
+    "block":     0.00,  "crew":      0.00,  "laid":      0.00,
+    "paid":      0.00,  "heads":     0.00,  "streets":   0.00,
+    "bottom":    0.00,  "brain":     0.00,  "facing":    0.00,
+
+    # Depth / logic → BLUE
+    "opposite":  0.35,  "difference": 0.35, "particular": 0.35,
+    "cause":     0.35,  "serious":   0.35,  "tired":     0.35,
+    "blind":     0.35,  "tunnel":    0.35,  "key":       0.35,
+
+    # Calm / knowing → TEAL
+    "obviously": 0.55,  "obvious":   0.55,  "easily":    0.55,
+    "knowledge": 0.55,  "mission":   0.55,  "truly":     0.55,
+    "usually":   0.55,  "aware":     0.55,  "especially": 0.55,
+
+    # Openness / perception → CYAN
+    "heading":   0.50,  "tone":      0.50,  "message":   0.50,
+    "pull":      0.50,  "driving":   0.50,  "ear":       0.50,
+    "rising":    0.50,
+
+    # Logic / direction → CYAN_BLUE
+    "seems":     0.45,  "glance":    0.45,
+
+    # Memory / connection → VIOLET
+    "children":  0.192, "faces":     0.192, "tower":     0.192,
+    "haven":     0.192, "liked":     0.192, "listen":    0.192,
+    "forever":   0.192, "forget":    0.192, "touched":   0.192,
+    "picture":   0.192, "miss":      0.192, "mirror":    0.192,
+    "listening": 0.192, "special":   0.192, "thanks":    0.192,
+    "lady":      0.192, "sighed":    0.192, "decision":  0.192,
+    "smiling":   0.192, "expression":0.192,
+
+    # Intuition / hidden → INDIGO
+    "secret":    0.25,  "faint":     0.25,  "vision":    0.25,
+    "private":   0.25,  "tonight":   0.25,  "evening":   0.25,
+
+    # Urgency / threat → RED
+    "lying":     0.90,  "terrible":  0.90,  "broke":     0.90,
+    "cops":      0.90,  "dangerous": 0.90,  "worst":     0.90,
+    "blow":      0.90,  "military":  0.90,  "crazy":     0.90,
+    "struck":    0.90,
+
+    # Growth / life → GREEN
+    "plenty":    0.65,  "trees":     0.65,  "nature":    0.65,
+    "fresh":     0.65,  "glad":      0.65,  "luck":      0.65,
+
+    # Warmth / drink → ORANGE
+    "drink":     0.85,
+
+    # Clarity / light → YELLOW
+    "lit":       0.75,  "energy":    0.75,
+
+    # Hope / motion → YELLOW_GREEN
+    "play":      0.70,  "hoped":     0.70,
+
+    # Speed → RED_ORANGE
+    "quick":     0.90,  "sudden":    0.90,
+
+    # ── ROUND 24 BATCH 5 — March 18 2026 ───────────────────────────
+    # Final push below 15% UNK rate
+    # ~170 words targeting freq 188-265 range
+
+    # Neutral / structural → GRAY_ZERO
+    "fifteen":   0.00,  "parked":    0.00,  "crossed":   0.00,
+    "starting":  0.00,  "trail":     0.00,  "anybody":   0.00,
+    "yard":      0.00,  "passing":   0.00,  "centre":    0.00,
+    "gas":       0.00,  "ceiling":   0.00,  "sand":      0.00,
+    "lieutenant":0.00,  "unit":      0.00,  "rear":      0.00,
+    "pause":     0.00,  "hotel":     0.00,  "ended":     0.00,
+    "eventually":0.00,  "drop":      0.00,  "stick":     0.00,
+    "spot":      0.00,  "aside":     0.00,  "store":     0.00,
+    "bottle":    0.00,  "hall":      0.00,  "track":     0.00,
+    "bathroom":  0.00,  "placed":    0.00,  "goes":      0.00,
+    "twelve":    0.00,  "length":    0.00,  "swung":     0.00,
+
+    # Logic / depth → BLUE
+    "therefore": 0.35,  "evidence":  0.35,  "prove":     0.35,
+    "falling":   0.35,  "disappeared":0.35, "circumstances":0.35,
+
+    # Calm / understanding → TEAL
+    "absolutely":0.55,  "agreed":    0.55,  "afternoon": 0.55,
+    "effort":    0.55,  "realized":  0.55,  "explain":   0.55,
+    "complete":  0.55,  "hospital":  0.55,  "fair":      0.55,
+    "surely":    0.55,  "fit":       0.55,
+
+    # Openness / direction → CYAN
+    "climbed":   0.50,  "horizon":   0.50,  "movement":  0.50,
+    "send":      0.50,  "act":       0.50,  "action":    0.50,
+    "voices":    0.50,  "motion":    0.50,  "forth":     0.50,
+    "ride":      0.50,
+
+    # Memory / connection → VIOLET
+    "guessed":   0.192, "talked":    0.192, "boys":      0.192,
+    "moments":   0.192, "circle":    0.192, "honour":    0.192,
+    "join":      0.192, "giving":    0.192, "husband":   0.192,
+    "joined":    0.192, "yours":     0.192, "tears":     0.192,
+    "missed":    0.192, "gently":    0.192, "forgotten": 0.192,
+    "meeting":   0.192, "calling":   0.192, "missing":   0.192,
+    "temple":    0.192, "ourselves": 0.192,
+
+    # Intuition / depth → INDIGO
+    "wondering": 0.25,  "creature":  0.25,
+
+    # Urgency / force → RED
+    "enemies":   0.90,  "lie":       0.90,  "threw":     0.90,
+    "sick":      0.90,  "loud":      0.90,  "mad":       0.90,
+    "shock":     0.90,  "shoot":     0.90,  "shaking":   0.90,
+    "faster":    0.90,  "angry":     0.90,  "beast":     0.90,
+    "knife":     0.90,  "giant":     0.90,
+
+    # Growth / nature → GREEN
+    "forest":    0.65,  "country":   0.65,  "holly":     0.65,
+
+    # Warmth / vitality → ORANGE
+    "food":      0.85,  "eat":       0.85,
+
+    # Vast / possibility → WHITE_LIGHT
+    "galaxy":    1.00,  "star":      1.00,
+
+    # Sacred / mystery → BLUE_INDIGO
+    "gods":      0.30,  "corpse":    0.30,
+
+    # Depth / weight → BLUE
+    "rain":      0.35,
+
+    # Connection / game → YELLOW_GREEN
+    "game":      0.70,
+
+    # ── ROUND 24 BATCH 6 — March 18 2026 — FINAL PUSH ──────────────
+    # Target: cross below 15% UNK rate
+    # Proper nouns excluded (reacher, astelan, roy, john, lantry, sorenson, brael, magnus, garber skipped)
+
+    # Neutral / structural → GRAY_ZERO
+    "fool":      0.00,  "list":      0.00,  "scene":     0.00,
+    "aren":      0.02,  "involved":  0.00,  "fired":     0.00,
+    "draw":      0.00,  "stretched": 0.00,  "slipped":   0.00,
+    "kicked":    0.00,  "local":     0.00,  "month":     0.00,
+    "drawn":     0.00,  "whose":     0.00,  "double":    0.00,
+    "settled":   0.00,  "handle":    0.00,  "dry":       0.00,
+    "using":     0.00,  "ordered":   0.00,  "fist":      0.00,
+    "stuck":     0.00,  "shoes":     0.00,  "hallway":   0.00,
+    "test":      0.00,  "opening":   0.00,  "doorway":   0.00,
+    "sides":     0.00,  "entrance":  0.00,  "count":     0.00,
+    "wheel":     0.00,  "smart":     0.00,  "takes":     0.00,
+
+    # Memory / connection → VIOLET
+    "saved":     0.192, "faith":     0.192, "pleased":   0.192,
+    "lucky":     0.192, "wished":    0.192,
+    "reasons":   0.192, "gesture":   0.192, "agree":     0.192,
+    "consider":  0.192, "angel":     0.192,
+    "bones":     0.192, "horse":     0.192,
+
+    # Depth / truth → BLUE
+    "visible":   0.35,  "details":   0.35,  "security":  0.35,
+
+    # Calm / knowing → TEAL
+    "careful":   0.55,  "perfectly": 0.55,  "natural":   0.55,
+
+    # Logic → BLUE
+    "interest":  0.35,
+
+    # Urgency / intensity → RED
+    "survive":   0.90,  "risk":      0.90,  "storm":     0.90,
+    "nervous":   0.90,  "panic":     0.90,
+
+    # Openness → CYAN
+    "allow":     0.50,  "pressure":  0.50,
+
+    # Growth / nature → GREEN
+    "dog":       0.65,  "mountains": 0.65,
+
+    # Power / structure → BLUE_INDIGO (wisdom)
+    "imperium":  0.30,  "priest":    0.30,  "school":    0.30,
+
+    # Clarity / awareness → TEAL
+    "ears":      0.55,  "notice":    0.55,
+
+    # Nature / magic → BLUE_INDIGO
+    "witch":     0.30,
+
+    # Logic / reasoning → BLUE
+    "apartment": 0.35,  "file":      0.35,
+
+    # Growth
+    "grew":      0.65,
+
+    # Memory / belonging → VIOLET
+    "welcome":   0.192, "daughter":  0.192, "comfortable": 0.192,
+
+    # Neutral structural
+    "needs":     0.00,  "pool":      0.00,  "fat":       0.00,
+
 }
 
 # ═══════════════════════════════════════════════
