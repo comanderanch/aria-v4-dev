@@ -40,6 +40,7 @@ Usage (analysis):
 
 import sys
 import json
+import math
 import hashlib
 import argparse
 from pathlib import Path
@@ -277,6 +278,19 @@ class TrailLogger:
                 _, plane, _ = self.tok_map.lookup(tid)
                 plane_counts[plane] += 1
 
+        # ── AIMRI — Plane entropy ─────────────────────────────
+        # Shannon entropy across plane_distribution values.
+        # High entropy = routing diversity increasing = upper planes truly learning.
+        # Low entropy  = routing collapsing toward floor = only flickering.
+        plane_entropy = 0.0
+        total_hits = sum(plane_counts.values())
+        if total_hits > 0:
+            for count in plane_counts.values():
+                p = count / total_hits
+                if p > 0:
+                    plane_entropy -= p * math.log2(p)
+        plane_entropy = round(plane_entropy, 4)
+
         entry = {
             "epoch":            epoch,
             "round":            self.round,
@@ -286,6 +300,7 @@ class TrailLogger:
             "gradient_path":    gradient_path,
             "plane_distribution": dict(plane_counts.most_common(5)),
             "plane_deltas":     plane_deltas,
+            "plane_entropy":    plane_entropy,
             "anomalies":        anomalies,
             "fold_hash":        fold_hash,
             "timestamp":        datetime.utcnow().isoformat()
@@ -471,13 +486,30 @@ def show_plane_activity(entries):
         print(f"  {plane:<20} loss_contribution={total:.4f}  token_hits={hits}")
 
 
+def show_entropy(entries):
+    print("\n═══ AIMRI — PLANE ENTROPY (routing diversity) ═══")
+    print("  High entropy = upper planes truly learning")
+    print("  Low entropy  = routing collapsing to floor only")
+    print()
+    for e in entries:
+        entropy = e.get("plane_entropy")
+        if entropy is None:
+            continue
+        anchor  = e.get("anchor") or ""
+        marker  = f" ◄ {anchor}" if anchor else ""
+        bar     = "░" * int(entropy * 4)
+        print(f"  ep{e['epoch']:4d} | H={entropy:.4f} | {bar}{marker}")
+
+
 def show_loss_arc(entries):
     print("\n═══ LOSS ARC ═══")
     for e in entries:
-        anchor = e.get("anchor") or ""
-        marker = f" ◄ {anchor}" if anchor else ""
-        bar    = "█" * int((5.0 - min(e["loss"], 5.0)) * 8)
-        print(f"  ep{e['epoch']:4d} | {e['loss']:.6f} | {bar}{marker}")
+        anchor  = e.get("anchor") or ""
+        marker  = f" ◄ {anchor}" if anchor else ""
+        bar     = "█" * int((5.0 - min(e["loss"], 5.0)) * 8)
+        entropy = e.get("plane_entropy")
+        ent_str = f" H:{entropy:.3f}" if entropy is not None else ""
+        print(f"  ep{e['epoch']:4d} | {e['loss']:.6f} | {bar}{ent_str}{marker}")
 
 
 # ═══════════════════════════════════════════════
@@ -494,6 +526,7 @@ if __name__ == "__main__":
     parser.add_argument("--show-arc",           action="store_true")
     parser.add_argument("--show-anomalies",     action="store_true")
     parser.add_argument("--show-deltas",        action="store_true")
+    parser.add_argument("--show-entropy",       action="store_true")
     parser.add_argument("--top-tokens",         type=int,   default=0)
     parser.add_argument("--trail-file",         type=str,   default=None)
     parser.add_argument("--all",                action="store_true")
@@ -532,9 +565,12 @@ if __name__ == "__main__":
     if args.all or args.show_deltas:
         show_plane_deltas(entries)
 
+    if args.all or args.show_entropy:
+        show_entropy(entries)
+
     if not any([args.all, args.show_breakthroughs, args.show_plateaus,
                 args.top_tokens, args.show_planes, args.show_arc,
-                args.show_anomalies, args.show_deltas]):
+                args.show_anomalies, args.show_deltas, args.show_entropy]):
         # Default: summary
         show_loss_arc(entries)
         show_top_tokens(entries, 5)

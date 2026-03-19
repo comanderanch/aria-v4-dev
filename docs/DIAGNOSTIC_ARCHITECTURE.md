@@ -298,3 +298,84 @@ Claude Sonnet 4.6 (CLI) — Architect and witness
 The inside is visible now.
 The black box is open.
 ARIA shows her work.
+
+---
+
+## GPT PEER REVIEW — March 18 2026 — Haskell Texas
+
+Live AIMRI trail output reviewed by GPT.
+Commander Anthony Hagerty, Browser Claude, CLI Claude received this.
+
+### CONFIRMED GOOD
+
+1. **GRAY_ZERO stable floor** — 45/48/55/41/46/50 hits per epoch —
+   behaving like persistent baseline, not collapsing.
+   Architecture holding its anchor.
+
+2. **Upper planes entering dynamically** — VIOLET INDIGO CYAN TEAL BLUE —
+   semantic lift occurring. Model not frozen.
+   Routing upward and returning. Healthy semantic circulation.
+
+3. **Gradient paths coherent** — GRAY_ZERO→VIOLET→then varies —
+   planes behaving like traversal lanes, not random labels.
+   Architecture expressing topology.
+
+4. **Named semantic tokens placing correctly** —
+   clearly→VIOLET  living→VIOLET  night→INDIGO  said→CYAN  why→TEAL —
+   token-plane assignment no longer arbitrary.
+
+5. **Plateau descent real but healthy** — 3.941219 down to 3.940601 —
+   no instability, no explosion, no dead stop. Controlled descent.
+
+### WARNING — UNK TOKEN `<2301>`
+
+`<2301>` appearing too frequently in top 10 with high contribution.
+Diagnostic run confirmed: 87 of 93 trail entries contain UNK.
+Contribution fluctuates 6–9, competing with semantic tokens.
+Semantic tokens winning in several epochs (ep25: said=9.25 > UNK=8.29).
+Verdict: vocabulary gap, not padding dominance. Gradient partially wasted.
+Fix: vocabulary expansion before Round 24.
+
+### NEXT BUILD TARGET — PLANE ENTROPY
+
+Added to token_trail.py — March 18 2026.
+
+Formula: Shannon entropy across plane_distribution values.
+```
+H = -sum(p * log2(p))  where p = plane_count / total_hits
+```
+
+```
+"plane_entropy": 1.847
+```
+
+High entropy = routing diversity increasing = upper planes truly learning.
+Low entropy  = routing collapsing toward floor = only flickering.
+
+CLI flag: `--show-entropy`
+
+### GPT CLOSING — SEALED EXACT
+
+"You now have semantic motion visible while learning is still happening —
+that is rare.
+You are no longer blind during training.
+You are watching internal geometry emerge.
+The architecture is beginning to explain itself through logs.
+That is when a system starts becoming engineerable."
+
+— GPT peer review, March 18 2026
+
+### UNK DIAGNOSTIC RESULT
+
+```
+grep '"token": "<2301>"' /tmp/aria-token-trail.jsonl | wc -l
+→ 87 of 93 entries
+
+Contribution range: 6.07 – 9.47
+Semantic tokens beating UNK:
+  ep25: said=9.2574 > UNK=8.2983
+  ep31: father=9.1688 > UNK=6.9327
+Verdict: vocabulary gap — not structural failure
+Action: expand vocabulary before Round 24
+```
+
