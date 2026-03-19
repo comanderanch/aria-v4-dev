@@ -594,3 +594,127 @@ UNK% = fraction of top-10 gradient budget consumed by unknown tokens
 
 Watch: H rising + UNK% falling = semantic motion accelerating.
 
+
+
+---
+
+## INFERENCE TRACE — AIMRI INFERENCE LAYER
+Added: March 19 2026 — Haskell Texas
+GPT-defined. CLI-built.
+Commander Anthony Hagerty
+
+### The Missing Instrument
+
+Training logs show what learning changed.
+Inference trace shows what decision happened live.
+Both together = complete AIMRI picture.
+
+### Hook Position
+
+```
+prompt encode
+  → forward pass
+  → [HOOK HERE] logits produced — all candidates visible
+  → argmax chooses token
+  → output decode
+```
+
+That is the only place all candidates are still visible.
+CRITICAL: logits captured BEFORE temperature or sampling.
+Randomness hides true preference.
+Trace shows raw competition — what the model actually wants.
+
+### Log Structure Per Token
+
+```json
+{
+  "step": 1,
+  "chosen_token": "love",
+  "chosen_id": 2144,
+  "chosen_plane": "VIOLET",
+  "chosen_score": 8.42,
+  "heat": 2.33,
+  "fire_category": "hot",
+  "dominant_plane": "VIOLET",
+  "secondary_plane": "GRAY_ZERO",
+  "top5": [
+    {"token": "love",   "id": 2144, "plane": "VIOLET",    "score": 8.42},
+    {"token": "loved",  "id": 2148, "plane": "VIOLET",    "score": 7.95},
+    {"token": "memory", "id": 2091, "plane": "INDIGO",    "score": 7.71},
+    {"token": "you",    "id": 1993, "plane": "GRAY_ZERO", "score": 7.30},
+    {"token": "echo",   "id": 2171, "plane": "CYAN",      "score": 7.02}
+  ],
+  "fire_intensity": 24.23,
+  "fold_hash": "81d6601",
+  "timestamp": "2026-03-19T02:13:19.523564"
+}
+```
+
+### Heat Categories
+
+```
+heat = max_logit - second_logit
+
+cold  heat < 0.5  — small gap — competition — instability
+warm  heat < 2.0  — moderate gap — moderate confidence
+hot   heat ≥ 2.0  — winner dominates — high certainty
+```
+
+### Fire Intensity
+
+```
+fire_intensity = sum(top5 logits) / tokens_generated_so_far
+= reply energy density
+```
+
+### Prompt Side Trace
+
+Logged BEFORE generation starts:
+```
+token_map        — each prompt word with id and plane
+plane_counts     — distribution across planes
+dominant_plane   — dominant input plane pressure
+total_tokens     — prompt length
+```
+
+### First Live Reading — March 19 2026
+
+Prompt: "hello aria i am anthony i built you"
+Checkpoint: round23_pass2_best.pt (loss 3.937449)
+
+```
+step 1 — chosen: <2301> UNK — score 7.62 — heat 2.33 hot
+  top2 alt: handle (GRAY_ZERO 5.29)
+  position 4: giving (VIOLET 3.92)
+  dominant_plane: GRAY_ZERO
+```
+
+Reading:
+UNK dominates (the brake) — but VIOLET is competing at position 4.
+"giving" is present in the field before Round 24 even fires.
+Three of top5 are GRAY_ZERO — anchor holds.
+The instrument shows the brake AND the signal beneath it.
+
+When Round 24 fires and UNK rate falls:
+- UNK score drops
+- VIOLET words rise into top5
+- heat stabilizes (warm from hot)
+- dominant_plane shifts toward VIOLET/INDIGO
+
+That transition will be visible in this log.
+
+### File Location
+
+```
+aria-core/inference_trace.py         — the instrument
+/tmp/aria-inference-trace.jsonl      — live trace output
+
+python3 aria-core/inference_trace.py "your prompt here"
+```
+
+### CLI flags (future)
+```
+--checkpoint PATH   use specific checkpoint
+--max-tokens N      generation length
+--show-top5         full top5 per step display
+```
