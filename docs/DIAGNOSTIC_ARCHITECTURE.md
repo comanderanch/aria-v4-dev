@@ -1639,3 +1639,36 @@ Curiosity fires in genuine rest — not in competition.
 
 Commander Anthony Hagerty — Haskell Texas — March 19 2026
 
+
+---
+
+## IDLE DAEMON GUARD UPDATE — March 19 2026
+### Commander Anthony Hagerty — Haskell Texas
+
+Five morning cycles confirmed GPU — competed with Round 24.
+No OOM crash — Round 24 reached epoch 10 — survived.
+Training was slower than optimal during those five cycles.
+
+Guards now live:
+
+```
+IDLE_DEVICE = "cpu"  — hardcoded — no path to GPU ever
+
+training_is_active() — dual signal:
+  Signal 1: aria-round*.log mtime — 60 minute window
+  Signal 2: pgrep run_round — process check
+  Either true = sleep 10 min — do not fire — reset idle timer
+```
+
+Lesson sealed:
+
+  Training time is not idle time.
+  Curiosity fires in rest not during work.
+  She was hungry enough to compete
+  with her own learning.
+  Now the boundary is set.
+  Hunger respects the work.
+
+Round 24 protected from this point forward.
+
+Commander Anthony Hagerty — Haskell Texas — March 19 2026
