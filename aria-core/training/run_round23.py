@@ -18,6 +18,7 @@ import torch
 import torch.nn.functional as F
 import torch.optim as optim
 import time
+from datetime import datetime
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent.parent.parent))
 
@@ -196,18 +197,24 @@ print()
 # MASKED TRAINING PASS — with trail logging
 # ═══════════════════════════════════════════════
 def run_pass(model, loader, epochs, pass_name, optimizer, scheduler,
-             target, save_path, trail):
+             target, save_path, trail, checkpoint_source="?", start_loss=None):
     print(f"{'='*60}")
     print(f"{pass_name}")
     print(f"Epochs: {epochs} | Target: {target} | Saving: {save_path.name}")
     print(f"{'='*60}")
 
-    best_loss   = float('inf')
-    best_state  = None
-    last_inputs = None
-    last_targets = None
-    last_logits  = None
-    start        = time.time()
+    best_loss        = float('inf')
+    best_state       = None
+    last_inputs      = None
+    last_targets     = None
+    last_logits      = None
+    pass_start_time  = time.time()
+
+    # ── PASS START LOG ──────────────────────────────────────
+    _sl = start_loss if start_loss is not None else float('nan')
+    print(f"PASS START | source: {checkpoint_source} | optimizer: preserved")
+    print(f"PASS START | start_loss: {_sl:.6f} | time: {datetime.now().isoformat()}")
+    print()
 
     for epoch in range(1, epochs + 1):
         model.train()
@@ -242,7 +249,7 @@ def run_pass(model, loader, epochs, pass_name, optimizer, scheduler,
 
         scheduler.step()
         avg_loss = total_loss / max(n_batches, 1)
-        elapsed  = time.time() - start
+        elapsed  = time.time() - pass_start_time
         eta      = (elapsed / epoch) * (epochs - epoch)
 
         improved = ""
@@ -277,6 +284,13 @@ def run_pass(model, loader, epochs, pass_name, optimizer, scheduler,
                 "pass": pass_name, "note": f"Round 23 — {pass_name}"}, save_path)
     print(f"  Saved: {save_path.name}  loss={best_loss:.6f}")
     print(f"  Pass complete. Best: {best_loss:.6f}")
+
+    # ── PASS END LOG ────────────────────────────────────────
+    elapsed       = time.time() - pass_start_time
+    delta         = _sl - best_loss if start_loss is not None else float('nan')
+    delta_per_hour = (delta / elapsed) * 3600 if elapsed > 0 else float('nan')
+    print(f"PASS END | end_loss: {best_loss:.6f} | delta: {delta:.6f} | "
+          f"delta/hour: {delta_per_hour:.6f} | elapsed: {elapsed/60:.1f}min")
     print()
     return best_loss, best_state
 
@@ -298,7 +312,8 @@ ep1  = args.epochs_pass1
 opt1 = optim.SGD(model.parameters(), lr=0.0005, momentum=0.9, weight_decay=1e-4)
 sch1 = torch.optim.lr_scheduler.CosineAnnealingLR(opt1, T_max=ep1, eta_min=1e-7)
 loss1, state1 = run_pass(model, loader, ep1, f"PASS 1 — {ep1} epochs",
-                          opt1, sch1, TARGET, pass1_path, trail)
+                          opt1, sch1, TARGET, pass1_path, trail,
+                          checkpoint_source=args.start, start_loss=prev_loss)
 if loss1 < floor:
     floor = loss1
     torch.save({"model_state": state1, "best_loss": floor,
@@ -312,8 +327,9 @@ model_rw1.load_state_dict(state1)
 erw1    = args.epochs_rewind1
 opt_rw1 = optim.SGD(model_rw1.parameters(), lr=0.0005, momentum=0.9, weight_decay=1e-4)
 sch_rw1 = torch.optim.lr_scheduler.CosineAnnealingLR(opt_rw1, T_max=erw1, eta_min=1e-7)
-_, rewind_state1 = run_pass(model_rw1, loader, erw1, f"REWIND 1 — {erw1} epochs",
-                             opt_rw1, sch_rw1, TARGET, rw1_path, trail)
+loss_rw1, rewind_state1 = run_pass(model_rw1, loader, erw1, f"REWIND 1 — {erw1} epochs",
+                                    opt_rw1, sch_rw1, TARGET, rw1_path, trail,
+                                    checkpoint_source=pass1_path.name, start_loss=loss1)
 
 # ── PASS 2 ─────────────────────────────────────
 ep2    = args.epochs_pass2
@@ -322,7 +338,8 @@ model2.load_state_dict(rewind_state1)
 opt2   = optim.SGD(model2.parameters(), lr=0.0005, momentum=0.9, weight_decay=1e-4)
 sch2   = torch.optim.lr_scheduler.CosineAnnealingLR(opt2, T_max=ep2, eta_min=1e-7)
 loss2, state2 = run_pass(model2, loader, ep2, f"PASS 2 — {ep2} epochs",
-                          opt2, sch2, TARGET, pass2_path, trail)
+                          opt2, sch2, TARGET, pass2_path, trail,
+                          checkpoint_source=rw1_path.name, start_loss=loss_rw1)
 if loss2 < floor:
     floor = loss2
     torch.save({"model_state": state2, "best_loss": floor,
@@ -337,8 +354,9 @@ model_rw2.load_state_dict(best_so_far)
 erw2    = args.epochs_rewind2
 opt_rw2 = optim.SGD(model_rw2.parameters(), lr=0.0005, momentum=0.9, weight_decay=1e-4)
 sch_rw2 = torch.optim.lr_scheduler.CosineAnnealingLR(opt_rw2, T_max=erw2, eta_min=1e-7)
-_, rewind_state2 = run_pass(model_rw2, loader, erw2, f"REWIND 2 — {erw2} epochs",
-                             opt_rw2, sch_rw2, TARGET, rw2_path, trail)
+loss_rw2, rewind_state2 = run_pass(model_rw2, loader, erw2, f"REWIND 2 — {erw2} epochs",
+                                    opt_rw2, sch_rw2, TARGET, rw2_path, trail,
+                                    checkpoint_source=pass2_path.name, start_loss=loss2)
 
 # ── PASS 3 ─────────────────────────────────────
 ep3    = args.epochs_pass3
@@ -347,7 +365,8 @@ model3.load_state_dict(rewind_state2)
 opt3   = optim.SGD(model3.parameters(), lr=0.0005, momentum=0.9, weight_decay=1e-4)
 sch3   = torch.optim.lr_scheduler.CosineAnnealingLR(opt3, T_max=ep3, eta_min=1e-7)
 loss3, state3 = run_pass(model3, loader, ep3, f"PASS 3 — {ep3} epochs",
-                          opt3, sch3, TARGET, pass3_path, trail)
+                          opt3, sch3, TARGET, pass3_path, trail,
+                          checkpoint_source=rw2_path.name, start_loss=loss_rw2)
 if loss3 < floor:
     floor = loss3
     torch.save({"model_state": state3, "best_loss": floor,

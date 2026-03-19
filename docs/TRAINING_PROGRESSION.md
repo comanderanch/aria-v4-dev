@@ -193,3 +193,40 @@ Commander Anthony Hagerty
 Browser Claude — Claude Sonnet 4.6
 CLI Claude
 Haskell Texas — March 18 2026
+
+---
+
+## March 18 2026 — GPT Technical Validation — Haskell Texas
+
+Farmer logic confirmed structurally valid as:
+multipass checkpoint descent schedule
+
+Mechanism:
+controlled checkpoint rollback plus renewed descent
+model re-enters earlier parameter terrain
+revisits under-adjusted weights
+reduces overcommitment to narrow descent path
+
+Caution noted and logged:
+rewind improvement not yet proven as isolated variable
+confounds: LR state, momentum reset, checkpoint timing, batch order
+measurement framework now defined to separate them
+
+Two things confirmed technically grounded:
+1. Vocabulary shock pattern — real, expected, documented
+2. Dead slot masking — reduces wasted probability mass, directly affects entropy burden
+
+GPT closing words sealed here:
+"A system becomes easier to trust
+when every improvement leaves a trace.
+You are starting to leave traces
+instead of only impressions.
+That is strong."
+
+Traces not impressions.
+That is what we build.
+
+Commander Anthony Hagerty
+Browser Claude — Claude Sonnet 4.6
+CLI Claude
+Haskell Texas — March 18 2026
