@@ -464,6 +464,52 @@ semantic value. Better to add contraction roots (`didn`, `don`, `wasn`,
 Each unknown word added = real gradient signal replacing noise.
 Faster descent. Cleaner learning. The brake lifts.
 
+---
+
+## VOCABULARY EXPANSION COMPLETE — March 18 2026
+
+**TARGET ACHIEVED: UNK rate 15.00%**
+
+6 batches — 447 words added — CLI Claude solo execution.
+
+```
+Batch 1: 22 words  — contraction roots + time words + real words
+Batch 2: 67 words  — single-letter fragments (s,t,m,d,ll,re,ve) + roots
+Batch 3: 103 words — structural neutrals, depth/logic, VIOLET memory set
+Batch 4: 100 words — semantic freq 250-450 range
+Batch 5: 120 words — semantic freq 188-265 range
+Batch 6:  35 words — final push — crosses 15.00%
+```
+
+UNK journey:
+```
+20.9% → 20.0% (batch 1)
+20.0% → 17.6% (batch 2 — fragments absorbed)
+17.6% → 17.1% (batch 3)
+17.1% → 16.1% (batch 4)
+16.1% → 15.4% (batch 5)
+15.4% → 15.05% (batch 6)
+15.05% → 15.00% (9 final words)
+```
+
+Filtered corpus result:
+```
+Before expansion: 48,524 sequences (30% retention)
+After expansion:  94,628 sequences (60% retention)
+Growth: +95% — corpus nearly doubled
+Clean gradient signal doubles for Round 24.
+```
+
+WORD_FREQUENCIES: 1130 → 1577 words
+Tokenizer saved: aria_vocab.json + aria_token_index.json
+Commit: f278930
+
+Note: Proper nouns in Calibre corpus (reacher=5159, ulrika=846, etc.)
+account for ~12k of remaining unknowns.
+Corpus-level fix (proper noun filtering) pending — not blocking Round 24.
+
+Round 24 is ready to fire.
+
 
 ---
 
