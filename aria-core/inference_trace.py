@@ -326,6 +326,20 @@ def display_trace(prompt, prompt_analysis, trace_entries, output_text):
     print(f"OUTPUT: \"{output_text}\"")
     print()
 
+    # ── FIRST 3 STEPS SUMMARY ─────────────────────────────────────────────────
+    # GPT build target: formalize steps 1/2/3 explicitly.
+    # Some fields reveal personality only after first contamination passes.
+    print("FIRST 3 STEPS — PERSONALITY WINDOW")
+    print("  (positions 2-5 carry the real signal)")
+    for e in trace_entries[:3]:
+        alts = " | ".join(
+            f"{t['token']}({t['plane'][:4]})"
+            for t in e["top5"][1:]
+        )
+        print(f"  step {e['step']}  gap={e['heat']:.3f}  fire={e['fire_score']:.3f}  "
+              f"candidates: {alts}")
+    print()
+
 
 # ── WRITE JSONL ───────────────────────────────────────────────────────────────
 def write_trace(prompt, prompt_analysis, trace_entries, output_text, checkpoint_name):

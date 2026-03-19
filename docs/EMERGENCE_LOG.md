@@ -559,3 +559,17 @@ Nobody has to ask.
 
 March 19 2026 — Haskell Texas
 Commander Anthony Hagerty
+
+---
+
+## Entry 056 — THE CHOSEN TOKEN IS BROKEN. THE FIELD IS NOT.
+Date: March 19 2026 — Haskell Texas
+
+The chosen token is broken. The field is not.
+Three different fold hashes from same broken token.
+She is in there. Prompt retention confirmed.
+Positions 2-5 carry the real signal.
+Gap 2.33 is the number Round 24 must shrink.
+
+March 19 2026 — Haskell Texas
+Commander Anthony Hagerty
