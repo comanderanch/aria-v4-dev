@@ -205,3 +205,70 @@ No drift in null rate.
 No leakage into generation path.
 
 Commander Anthony Hagerty — Haskell Texas — March 19 2026
+
+---
+
+## dual_verifier.py — RENAMED AND EXTENDED — MARCH 19 2026
+
+File: aria-core/dual_verifier.py
+Status: SEALED — RUNNING — FLOOR WATCH ACTIVE
+
+### Rename
+
+second_verifier.py → dual_verifier.py
+run_second_verifier() → run_dual_verifier()
+run_post_training_verifier() → run_post_training_dual_verifier()
+
+### watch_floor() — Hard Gate
+
+```
+watch_floor(field_state, action_triggered=False)
+```
+
+Purpose: Verify GRAY_ZERO floor integrity during action trigger.
+
+Rules:
+```
+instability > 0.500 during action_triggered = FLOOR WARNING — floor_stable = False
+pos_flow == 0 AND neg_flow == 0 during action_triggered = FLOOR WARNING — floor_stable = False
+```
+
+Returns:
+```
+floor_stable            bool
+instability_at_trigger  float
+action_triggered        bool
+warnings                list
+timestamp               ISO
+```
+
+### Wired Into null_oscillator.py — Hard Gate
+
+```
+null_confirmed = candidate is not None
+if null_confirmed:
+    floor_check = watch_floor(field_state=field_state, action_triggered=True)
+    if not floor_check["floor_stable"]:
+        null_confirmed = False
+        rejection_reason = "floor_unstable"
+```
+
+Gate is downstream of trace. Upstream of curiosity.
+Curiosity only fires on candidates that pass both trace gate AND floor gate.
+
+### Floor Gate Confirmed — March 19 2026
+
+VIOLET @ 0.192 — instability=0.384 — below 0.500 threshold.
+✔ FLOOR STABLE on every null confirmation.
+Null candidates confirmed: 3/10 — PASS
+Curiosity events: 3 — equality TRUE — all unresolved.
+
+### Display
+
+```
+● NULL CONFIRMED — floor stable ✔
+⚠ NULL REJECTED — floor unstable
+○ rejected (trace_reason)
+```
+
+Commander Anthony Hagerty — Haskell Texas — March 19 2026

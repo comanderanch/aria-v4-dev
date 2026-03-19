@@ -1,6 +1,7 @@
 import math, hashlib, json, time
 from datetime import datetime
 from curiosity import curiosity_trigger, curiosity_summary
+from dual_verifier import watch_floor
 
 PLANE_ATTRACTORS = {
     "VIOLET": 0.192, "GRAY_ZERO": 0.000,
@@ -131,6 +132,17 @@ def run_idle_oscillation(plane, frequency, cycles=5):
 
         null_confirmed = candidate is not None
 
+        # Floor watch — hard gate during action trigger
+        floor_check = None
+        if null_confirmed:
+            floor_check = watch_floor(
+                field_state=field_state,
+                action_triggered=True
+            )
+            if not floor_check["floor_stable"]:
+                null_confirmed = False
+                rejection_reason = "floor_unstable"
+
         if null_confirmed:
             condition_data = {
                 "timestamp": field_state["timestamp"],
@@ -157,7 +169,13 @@ def run_idle_oscillation(plane, frequency, cycles=5):
 
         results.append(result)
 
-        status = "● NULL CONFIRMED" if null_confirmed else f"○ rejected ({rejection_reason})"
+        if null_confirmed:
+            status = "● NULL CONFIRMED — floor stable ✔"
+        elif rejection_reason == "floor_unstable":
+            status = "⚠ NULL REJECTED — floor unstable"
+        else:
+            status = f"○ rejected ({rejection_reason})"
+
         print(
             f"Cycle {i+1}: "
             f"instability={instability} "
