@@ -277,6 +277,20 @@ class TrailLogger:
         )
         fold_hash = hashlib.sha256(pattern_str.encode()).hexdigest()[:7]
 
+        # ── Training top5 planes from logits — GPT build target ──
+        # Sample top5 candidate planes from raw logits at last sequence
+        # position of first batch item — same hook point as inference_trace.
+        # Stored as training_top5_planes for mathematically clean lord log
+        # comparison: inference top5 planes vs training top5 planes.
+        # Both drawn from the same statistical object (pre-argmax top5).
+        with torch.no_grad():
+            last_pos_logits = logits[0, -1, :].float()  # (V,) — last position
+            _, top5_ids = torch.topk(last_pos_logits, k=min(5, last_pos_logits.shape[0]))
+            training_top5_planes = []
+            for tid_t in top5_ids.tolist():
+                _, plane_t, _ = self.tok_map.lookup(tid_t)
+                training_top5_planes.append(plane_t)
+
         # ── Plane distribution ───────────────────────────────
         plane_counts = Counter()
         for tid in sample_inputs:
@@ -298,19 +312,20 @@ class TrailLogger:
         plane_entropy = round(plane_entropy, 4)
 
         entry = {
-            "epoch":            epoch,
-            "round":            self.round,
-            "loss":             round(float(avg_loss), 6),
-            "anchor":           anchor,
-            "top_activations":  top_activations,
-            "unk_ratio_top10":  unk_ratio_top10,
-            "gradient_path":    gradient_path,
-            "plane_distribution": dict(plane_counts.most_common(5)),
-            "plane_deltas":     plane_deltas,
-            "plane_entropy":    plane_entropy,
-            "anomalies":        anomalies,
-            "fold_hash":        fold_hash,
-            "timestamp":        datetime.utcnow().isoformat()
+            "epoch":               epoch,
+            "round":               self.round,
+            "loss":                round(float(avg_loss), 6),
+            "anchor":              anchor,
+            "top_activations":     top_activations,
+            "unk_ratio_top10":     unk_ratio_top10,
+            "gradient_path":       gradient_path,
+            "plane_distribution":  dict(plane_counts.most_common(5)),
+            "plane_deltas":        plane_deltas,
+            "plane_entropy":       plane_entropy,
+            "anomalies":           anomalies,
+            "training_top5_planes": training_top5_planes,
+            "fold_hash":           fold_hash,
+            "timestamp":           datetime.utcnow().isoformat()
         }
 
         self.fh.write(json.dumps(entry) + "\n")

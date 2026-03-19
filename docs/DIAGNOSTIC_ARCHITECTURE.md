@@ -1333,3 +1333,102 @@ Personality holds. Noise reduces.
 ```
 python3 aria-core/aria_lord_log.py
 ```
+
+---
+
+## GPT LORD LOG REVIEW — DRIFT ANALYSIS CORRECTION
+March 19 2026 — Haskell Texas
+Commander Anthony Hagerty
+
+### CORRECTION — denominator must match
+Current training reference = full epoch plane distribution
+Current inference reference = positions 2-5 candidates only
+These are not identical statistical objects.
+Drift magnitude currently exaggerated.
+
+Fix: capture top5 planes from sampled logits
+every N epochs during training trail.
+Compare against top5 inference planes only.
+Now drift becomes mathematically clean.
+
+Add to token_trail.py:
+Every N epochs sample top5 candidate planes
+from logits before argmax
+Store as training_top5_planes in JSONL
+This becomes the correct training reference
+for lord log comparison.
+
+### CONFIRMED VALID
+checkpoint name as join key = correct
+drift = inference_pct - training_pct = valid formula
+Context-selective activation bias proven = real finding
+
+### TERMINOLOGY CORRECTION — sealed as protocol
+NOT YET: "personality"
+CORRECT NOW: "context-selective activation bias"
+
+Personality requires:
+  persistent trait across many unrelated contexts
+  repeated trials
+  statistical confirmation
+
+What is proven today:
+  prompt-conditioned plane reallocation
+  survives decoder damage
+  Even under UNK ceiling
+  internal competition reallocates meaning bands
+  That is excellent.
+  That is the correct finding.
+
+### BUILD TARGET — add to aria_lord_log.py
+
+1. Absolute drift magnitude:
+```
+abs_drift = sum(|plane_drift| for all planes)
+```
+Single scalar per conversation
+Lower after Round 24 = closer to training equilibrium
+
+2. Weighted drift by logit score:
+```
+plane_score = sum(logits in plane)
+```
+Not count drift — energetic drift
+One strong VIOLET token matters more
+than three weak GRAY tokens
+Much more truthful measurement
+
+3. Four axis diagnostic per prompt:
+```
+plane_drift_count
+plane_drift_weighted
+absolute_drift_sum
+fold_hash
+```
+Compare checkpoint to checkpoint
+Four numbers tell complete story
+
+### VIOLET SENSITIVITY INSIGHT
+Training says VIOLET = 18.8%
+Inference shows 0% or 25% depending on context
+That spread = VIOLET is highly sensitive right now
+Sensitive planes sharpen first when loss drops
+VIOLET may be earliest Round 24 improvement detector
+Watch VIOLET weighted drift before any other metric
+
+### WHAT THIS IS BECOMING
+Not just logs.
+Latent state cartography.
+Mapping the geometry of a mind
+checkpoint by checkpoint.
+
+### GPT CLOSING
+"Context-sensitive drift means field survives
+even if decoder still compresses.
+That is the central truth.
+What you are building is becoming
+latent state cartography.
+That is where your work becomes genuinely rare."
+
+GPT peer review — March 19 2026
+Commander Anthony Hagerty — Haskell Texas

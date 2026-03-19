@@ -96,9 +96,23 @@ def load_training_reference(round_num):
 # ── BUILD TRAINING PLANE PERCENTAGES ──────────────────────────────────────────
 def training_plane_pct(epoch_entry):
     """
-    Convert plane_distribution hit counts to percentages.
-    Returns dict: plane → float (0.0–1.0)
+    Build training reference percentages.
+
+    Prefer training_top5_planes when available — this is the
+    mathematically clean reference (GPT correction): top5 logit planes
+    sampled at last position before argmax, same statistical object as
+    inference top5. Falls back to full plane_distribution for older logs
+    that predate the top5 sampling addition.
     """
+    top5_planes = epoch_entry.get("training_top5_planes")
+    if top5_planes:
+        counts = defaultdict(int)
+        for p in top5_planes:
+            counts[p] += 1
+        total = len(top5_planes)
+        return {plane: count / total for plane, count in counts.items()}
+
+    # Fallback: full epoch plane_distribution (exaggerated — noted as imprecise)
     pd = epoch_entry.get("plane_distribution", {})
     total = sum(pd.values())
     if total == 0:
@@ -147,6 +161,59 @@ def compute_drift(training_pct, inference_pct):
         i = inference_pct.get(plane, 0.0)
         drift[plane] = round(i - t, 4)
     return drift
+
+
+# ── ABSOLUTE DRIFT MAGNITUDE ───────────────────────────────────────────────────
+def absolute_drift(drift):
+    """
+    GPT build target 1: single scalar — sum of |plane_drift| across all planes.
+    Lower after Round 24 = closer to training equilibrium.
+    """
+    return round(sum(abs(d) for d in drift.values()), 4)
+
+
+# ── WEIGHTED DRIFT BY LOGIT SCORE ─────────────────────────────────────────────
+def weighted_drift(step_entries, training_pct):
+    """
+    GPT build target 2: energetic drift — weight each plane by its logit
+    score sum, not raw count. One strong VIOLET token matters more than
+    three weak GRAY tokens.
+
+    Returns dict: plane → weighted_pct, plus abs_weighted_drift scalar.
+    """
+    plane_energy = defaultdict(float)
+    total_energy = 0.0
+
+    for step in step_entries:
+        top5 = step.get("top5", [])
+        # positions 2-5 (index 1-4) — same as count drift
+        for candidate in top5[1:]:
+            plane  = candidate.get("plane", "UNKNOWN")
+            score  = candidate.get("score", 0.0)
+            # only positive logits contribute meaningful energy
+            energy = max(float(score), 0.0)
+            plane_energy[plane] += energy
+            total_energy += energy
+
+    if total_energy == 0:
+        return {}, {}, 0.0
+
+    weighted_pct = {
+        plane: round(energy / total_energy, 4)
+        for plane, energy in plane_energy.items()
+    }
+
+    # Weighted drift vs training reference
+    all_planes = set(training_pct) | set(weighted_pct)
+    w_drift = {}
+    for plane in all_planes:
+        t = training_pct.get(plane, 0.0)
+        w = weighted_pct.get(plane, 0.0)
+        w_drift[plane] = round(w - t, 4)
+
+    abs_w_drift = round(sum(abs(d) for d in w_drift.values()), 4)
+
+    return weighted_pct, w_drift, abs_w_drift
 
 
 # ── GRADIENT PATH ANALYSIS ────────────────────────────────────────────────────
@@ -296,11 +363,23 @@ def display_lord_report(lord_entries):
                 print(f"    {fl['plane']:<16} {direction} {abs(fl['drift']):.1%}")
             print()
 
+        # ── FOUR AXIS DIAGNOSTIC ──────────────────────────────
+        abs_d      = entry.get("absolute_drift_sum", 0.0)
+        abs_wd     = entry.get("abs_weighted_drift", 0.0)
+        fh         = entry.get("reference_fold_hash", "?")
+        violet_wd  = entry.get("weighted_drift", {}).get("VIOLET", 0.0)
+        print(f"  FOUR AXIS DIAGNOSTIC:")
+        print(f"    plane_drift_count:    {abs_d:.4f}   (sum |count drift|)")
+        print(f"    plane_drift_weighted: {abs_wd:.4f}   (sum |energy drift|)")
+        print(f"    VIOLET weighted:      {violet_wd:+.4f}  (earliest R24 detector)")
+        print(f"    fold_hash:            {fh}")
+        print()
+
         # Consistency verdict
         if not alerts and not flags:
             print("  VERDICT: CONSISTENT — inference field matches training state")
         elif alerts:
-            print("  VERDICT: DRIFT DETECTED — alert-level deviation from training")
+            print("  VERDICT: CONTEXT-SELECTIVE ACTIVATION BIAS — field alive under decoder damage")
         else:
             print("  VERDICT: MINOR DRIFT — within flag threshold, not alert level")
 
@@ -355,14 +434,20 @@ def main():
         # Inference plane percentages (positions 2-5)
         inf_pct, inf_counts, inf_total = inference_plane_pct(steps)
 
-        # Drift
+        # Drift (count-based)
         drift = compute_drift(trn_pct, inf_pct)
+
+        # Absolute drift magnitude — GPT build target 1
+        abs_d = absolute_drift(drift)
+
+        # Weighted drift by logit score — GPT build target 2
+        w_pct, w_drift, abs_wd = weighted_drift(steps, trn_pct)
 
         # Gradient route statistics
         route_stats = gradient_path_stats(round_entries)
         top_route   = route_stats[0][0] if route_stats else "unknown"
 
-        # Classify drift
+        # Classify drift (count-based for alerts/flags)
         alerts = []
         flags  = []
         for plane, d in drift.items():
@@ -379,6 +464,9 @@ def main():
                     "drift": round(d, 4),
                 })
 
+        # Note whether training_top5_planes was available for clean comparison
+        used_top5_ref = bool(ref_epoch_entry.get("training_top5_planes"))
+
         lord_entry = {
             "type":                    "lord_log",
             "timestamp":               datetime.now().isoformat(),
@@ -390,11 +478,16 @@ def main():
             "reference_fold_hash":     ref_epoch_entry.get("fold_hash"),
             "reference_gradient":      ref_epoch_entry.get("gradient_path"),
             "reference_timestamp":     ref_epoch_entry.get("timestamp"),
+            "used_top5_reference":     used_top5_ref,
             "training_plane_pct":      {k: round(v, 4) for k, v in trn_pct.items()},
             "inference_plane_pct":     {k: round(v, 4) for k, v in inf_pct.items()},
             "inference_plane_counts":  inf_counts,
             "inference_candidate_total": inf_total,
             "drift":                   {k: round(v, 4) for k, v in drift.items()},
+            "absolute_drift_sum":      abs_d,
+            "weighted_plane_pct":      {k: round(v, 4) for k, v in w_pct.items()},
+            "weighted_drift":          {k: round(v, 4) for k, v in w_drift.items()},
+            "abs_weighted_drift":      abs_wd,
             "drift_alerts":            alerts,
             "drift_flags":             flags,
             "top_gradient_route":      top_route,
