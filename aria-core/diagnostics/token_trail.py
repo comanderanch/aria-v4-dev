@@ -1,7 +1,17 @@
 #!/usr/bin/env python3
 """
-ARIA — Token Trail Diagnostic System
-======================================
+ARIA — Token Trail Diagnostic System / AIMRI
+=============================================
+AIMRI — AI Magnetic Resonance Imaging
+Real-time 3D semantic position mapping.
+
+X coordinate — word frequency (emotional resonance position)
+Y coordinate — slot position within color plane (0.0 to 1.0)
+Z coordinate — color plane name (semantic domain)
+
+The X:0.192 for love is the 0.192 floor made visible as a spatial coordinate.
+The architecture making itself visible.
+
 Visible inner workings during training.
 Not black box. Not loss number only.
 Full token activation map — lit up as it happens.
@@ -14,17 +24,18 @@ March 18 2026
 
 Usage (in training loop):
     from aria_core.diagnostics.token_trail import TrailLogger
-    trail = TrailLogger(round_num=22, tokenizer=tokenizer)
+    trail = TrailLogger(round_num=23, tokenizer=tokenizer)
     # in epoch loop:
     trail.log_batch(epoch, avg_loss, inputs, targets, logits, best_loss)
     trail.close()
 
 Usage (analysis):
     python3 aria-core/diagnostics/token_trail.py \\
-        --round 22 \\
+        --round 23 \\
         --show-breakthroughs \\
         --show-plateaus \\
-        --top-tokens 10
+        --top-tokens 10 \\
+        --show-anomalies
 """
 
 import sys
@@ -47,9 +58,57 @@ def _get_torch():
         _F     = F
     return _torch, _F
 
-TRAIL_FILE = Path("/tmp/aria-token-trail.jsonl")
+TRAIL_FILE       = Path("/tmp/aria-token-trail.jsonl")
 PLATEAU_PATIENCE = 10   # epochs with no improvement = plateau
 LOG_EVERY_N_EPOCHS = 5  # log a full activation entry every N epochs
+
+# ─── Color plane base IDs — for Y coordinate computation ────
+# Mirrors COLOR_PLANE_SIGNATURES in aria_tokenizer.py
+PLANE_BASE_IDS = {
+    "RED":           0,
+    "RED_ORANGE":    96,
+    "ORANGE":        192,
+    "YELLOW_ORANGE": 288,
+    "YELLOW":        384,
+    "YELLOW_GREEN":  480,
+    "GREEN":         576,
+    "GREEN_TEAL":    672,
+    "TEAL":          768,
+    "CYAN":          864,
+    "CYAN_BLUE":     960,
+    "BLUE_CYAN":     1056,
+    "BLUE":          1152,
+    "BLUE_INDIGO":   1248,
+    "INDIGO":        1344,
+    "VIOLET":        1440,
+    "PURPLE":        1536,
+    "RED_PURPLE":    1632,
+    "MAGENTA":       1728,
+    "PINK":          1824,
+    "WHITE_LIGHT":   1920,
+    "GRAY_ZERO":     1968,
+    "BLACK_VOID":    2016,
+    "ULTRAVIOLET":   2064,
+}
+
+PLANE_SLOTS = 96  # slots per plane — Y range 0.0 to 1.0
+
+
+def _aimri_coords(token_id, plane, freq):
+    """
+    Compute AIMRI 3D coordinates for a token.
+
+    X — emotional resonance position (word frequency)
+        love=0.192  gray=0.000  fear=0.888
+    Y — slot position within color plane
+        (token_id - plane_base) / 95.0  → 0.0 to 1.0
+    Z — plane name (semantic domain, unchanged)
+    """
+    x_coord = round(freq, 4)
+    base    = PLANE_BASE_IDS.get(plane, 0)
+    raw_y   = (token_id - base) / (PLANE_SLOTS - 1)
+    y_coord = round(max(0.0, min(1.0, raw_y)), 4)
+    return x_coord, y_coord
 
 
 # ═══════════════════════════════════════════════
@@ -62,11 +121,11 @@ class TokenMap:
         sys.path.insert(0, str(Path(__file__).parent.parent.parent))
         from tokenizer.aria_tokenizer import WORD_FREQUENCIES
 
-        self.id_to_word  = {int(k): v for k, v in tokenizer.id_to_word.items()}
+        self.id_to_word    = {int(k): v for k, v in tokenizer.id_to_word.items()}
         self.word_to_plane = tokenizer.word_to_plane
-        self.word_freqs  = WORD_FREQUENCIES
-        self.unk_id      = tokenizer.vocab.get("<UNK>", 2301)
-        self.pad_id      = tokenizer.vocab.get("<PAD>", 2300)
+        self.word_freqs    = WORD_FREQUENCIES
+        self.unk_id        = tokenizer.vocab.get("<UNK>", 2301)
+        self.pad_id        = tokenizer.vocab.get("<PAD>", 2300)
 
     def lookup(self, token_id):
         word  = self.id_to_word.get(token_id, f"<{token_id}>")
@@ -84,6 +143,11 @@ class TrailLogger:
     Samples activation patterns and logs to JSONL.
     Minimal overhead — samples every N epochs.
     Seals anchor points unconditionally.
+
+    AIMRI — AI Magnetic Resonance Imaging
+    Tracks 3D semantic position (X/Y/Z) per token per epoch.
+    Detects spatial drift — same word moving across the resonance field.
+    Logs plane deltas — which planes gained or lost gradient weight.
     """
 
     def __init__(self, round_num, tokenizer, trail_file=None):
@@ -91,28 +155,30 @@ class TrailLogger:
         self.tok_map    = TokenMap(tokenizer)
         self.trail_file = Path(trail_file) if trail_file else TRAIL_FILE
         self.fh         = open(self.trail_file, "a", buffering=1)
-        self.best_loss  = float('inf')
-        self.plateau_count = 0
+        self.best_loss        = float('inf')
+        self.plateau_count    = 0
         self.last_logged_loss = float('inf')
+        # AIMRI state
+        self.prev_plane_totals = {}   # plane → contribution total last epoch
+        self.prev_coords       = {}   # token → (x, y, plane) last epoch
 
     def log_batch(self, epoch, avg_loss, inputs, targets, logits, current_best):
         """
         Called once per epoch (after training loop).
         inputs:  (B, S) token IDs
         targets: (B, S) token IDs
-        logits:  (B, S, V) raw logits (before vocab mask applied is fine,
-                 but pass post-mask logits for accuracy)
+        logits:  (B, S, V) raw logits (post-mask preferred)
         """
         torch, F = _get_torch()
 
-        is_new_best   = avg_loss < current_best
-        is_plateau    = self._check_plateau(avg_loss)
+        is_new_best     = avg_loss < current_best
+        is_plateau      = self._check_plateau(avg_loss)
         is_breakthrough = self._check_breakthrough(avg_loss)
-        should_sample = (epoch % LOG_EVERY_N_EPOCHS == 0 or
-                         epoch == 1 or
-                         is_new_best or
-                         is_plateau or
-                         is_breakthrough)
+        should_sample   = (epoch % LOG_EVERY_N_EPOCHS == 0 or
+                           epoch == 1 or
+                           is_new_best or
+                           is_plateau or
+                           is_breakthrough)
 
         if not should_sample:
             return
@@ -136,10 +202,10 @@ class TrailLogger:
             ).view(B, S)
 
         # Use first batch item as representative sample
-        sample_inputs = inputs[0].tolist()
+        sample_inputs  = inputs[0].tolist()
         sample_contrib = per_token[0].tolist()
 
-        # ── Top contributing tokens ─────────────────────────
+        # ── Top contributing tokens + AIMRI coords ───────────
         pairs = list(zip(sample_inputs, sample_contrib))
         pairs.sort(key=lambda x: x[1], reverse=True)
 
@@ -148,10 +214,13 @@ class TrailLogger:
             if tid == self.tok_map.pad_id:
                 continue
             word, plane, freq = self.tok_map.lookup(tid)
+            x_coord, y_coord  = _aimri_coords(tid, plane, freq)
             top_activations.append({
                 "token":        word,
                 "id":           tid,
                 "plane":        plane,
+                "x":            x_coord,
+                "y":            y_coord,
                 "freq":         round(freq, 4),
                 "contribution": round(float(contrib), 6)
             })
@@ -166,6 +235,33 @@ class TrailLogger:
 
         sorted_planes = sorted(plane_totals.items(), key=lambda x: x[1], reverse=True)
         gradient_path = "->".join(p for p, _ in sorted_planes[:4])
+
+        # ── AIMRI — Plane deltas ──────────────────────────────
+        plane_deltas = {}
+        for plane, total in plane_totals.items():
+            prev = self.prev_plane_totals.get(plane, total)
+            plane_deltas[plane] = round(total - prev, 4)
+        self.prev_plane_totals = dict(plane_totals)
+
+        # ── AIMRI — Anomaly detection ─────────────────────────
+        anomalies = []
+        for a in top_activations:
+            key  = a["token"]
+            curr = (a["x"], a["y"], a["plane"])
+            if key in self.prev_coords:
+                px, py, pplane = self.prev_coords[key]
+                dx = abs(curr[0] - px)
+                dy = abs(curr[1] - py)
+                if dx > 0.05 or dy > 0.05:
+                    anomalies.append({
+                        "token": key,
+                        "plane": a["plane"],
+                        "dx":    round(dx, 4),
+                        "dy":    round(dy, 4)
+                    })
+            self.prev_coords[key] = curr
+            # Note: same word at different Y coordinates is semantic
+            # superposition — log both, never deduplicate
 
         # ── Fold hash of activation pattern ─────────────────
         pattern_str = "|".join(
@@ -182,15 +278,17 @@ class TrailLogger:
                 plane_counts[plane] += 1
 
         entry = {
-            "epoch":           epoch,
-            "round":           self.round,
-            "loss":            round(float(avg_loss), 6),
-            "anchor":          anchor,
-            "top_activations": top_activations,
-            "gradient_path":   gradient_path,
+            "epoch":            epoch,
+            "round":            self.round,
+            "loss":             round(float(avg_loss), 6),
+            "anchor":           anchor,
+            "top_activations":  top_activations,
+            "gradient_path":    gradient_path,
             "plane_distribution": dict(plane_counts.most_common(5)),
-            "fold_hash":       fold_hash,
-            "timestamp":       datetime.utcnow().isoformat()
+            "plane_deltas":     plane_deltas,
+            "anomalies":        anomalies,
+            "fold_hash":        fold_hash,
+            "timestamp":        datetime.utcnow().isoformat()
         }
 
         self.fh.write(json.dumps(entry) + "\n")
@@ -200,6 +298,11 @@ class TrailLogger:
         if anchor:
             print(f"\n  [TRAIL] {anchor} epoch={epoch} loss={avg_loss:.6f} "
                   f"path={gradient_path} hash={fold_hash}")
+
+        # Print anomalies immediately — spatial drift is significant
+        for anom in anomalies:
+            print(f"  [AIMRI] ANOMALY: {anom['token']:<12} {anom['plane']:<15} "
+                  f"dx={anom['dx']:.4f}  dy={anom['dy']:.4f}  drift detected")
 
         self.last_logged_loss = avg_loss
 
@@ -255,7 +358,10 @@ def show_breakthroughs(entries):
         print(f"  Path: {e['gradient_path']}")
         tops = e.get("top_activations", [])[:5]
         for a in tops:
-            print(f"    {a['token']:<20} plane={a['plane']:<15} contrib={a['contribution']:.6f}")
+            x = a.get("x", "?")
+            y = a.get("y", "?")
+            print(f"    {a['token']:<20} plane={a['plane']:<15} "
+                  f"X:{x:<8} Y:{y:<8} contrib={a['contribution']:.6f}")
 
 
 def show_plateaus(entries):
@@ -269,25 +375,84 @@ def show_plateaus(entries):
         print(f"  Path: {e['gradient_path']}")
         tops = e.get("top_activations", [])[:3]
         for a in tops:
-            print(f"    {a['token']:<20} plane={a['plane']:<15} contrib={a['contribution']:.6f}")
+            x = a.get("x", "?")
+            y = a.get("y", "?")
+            print(f"    {a['token']:<20} plane={a['plane']:<15} X:{x:<8} Y:{y:<8}")
 
 
 def show_top_tokens(entries, n=10):
-    print(f"\n═══ TOP {n} TOKENS BY TOTAL CONTRIBUTION ═══")
-    token_totals = defaultdict(lambda: {"total": 0.0, "count": 0, "plane": "", "freq": 0.0})
+    print(f"\n═══ AIMRI — TOP {n} TOKENS BY TOTAL CONTRIBUTION ═══")
+    # token → {total, count, plane, x, y}
+    token_totals = defaultdict(lambda: {
+        "total": 0.0, "count": 0, "plane": "", "x": 0.0, "y": 0.0
+    })
     for e in entries:
         for a in e.get("top_activations", []):
             w = a["token"]
             token_totals[w]["total"] += a["contribution"]
             token_totals[w]["count"] += 1
-            token_totals[w]["plane"] = a["plane"]
-            token_totals[w]["freq"]  = a["freq"]
+            token_totals[w]["plane"]  = a["plane"]
+            token_totals[w]["x"]      = a.get("x", 0.0)
+            token_totals[w]["y"]      = a.get("y", 0.0)
 
     ranked = sorted(token_totals.items(), key=lambda x: x[1]["total"], reverse=True)
     for word, info in ranked[:n]:
-        avg = info["total"] / max(info["count"], 1)
-        print(f"  {word:<20} plane={info['plane']:<15} "
-              f"total={info['total']:.4f}  avg={avg:.6f}  appearances={info['count']}")
+        print(f"  {word:<12} {info['plane']:<15} "
+              f"X:{info['x']:<8}  Y:{info['y']:<8}  "
+              f"appearances:{info['count']}")
+
+
+def show_anomalies(entries):
+    print("\n═══ AIMRI — SPATIAL DRIFT ANOMALIES ═══")
+    found = False
+    for e in entries:
+        anoms = e.get("anomalies", [])
+        if not anoms:
+            continue
+        found = True
+        print(f"\n  Epoch {e['epoch']:4d} | Loss {e['loss']:.6f}")
+        # Build x/y history from top_activations for before/after display
+        for anom in anoms:
+            tok   = anom["token"]
+            plane = anom["plane"]
+            dx    = anom["dx"]
+            dy    = anom["dy"]
+            # Find current coords in this entry
+            curr_x, curr_y = None, None
+            for a in e.get("top_activations", []):
+                if a["token"] == tok:
+                    curr_x = a.get("x")
+                    curr_y = a.get("y")
+                    break
+            if curr_x is not None:
+                prev_x = round(curr_x - dx, 4) if dx else curr_x
+                prev_y = round(curr_y - dy, 4) if dy else curr_y
+                print(f"  ANOMALY: {tok:<12} {plane:<15} "
+                      f"X:{prev_x}→{curr_x}  Y:{prev_y}→{curr_y}  drift detected")
+            else:
+                print(f"  ANOMALY: {tok:<12} {plane:<15} "
+                      f"dx={dx}  dy={dy}  drift detected")
+    if not found:
+        print("  No spatial drift detected yet.")
+
+
+def show_plane_deltas(entries):
+    print("\n═══ AIMRI — PLANE GRADIENT DELTAS ═══")
+    # Aggregate deltas across entries to show which planes are gaining/losing
+    delta_totals = defaultdict(float)
+    delta_counts = defaultdict(int)
+    for e in entries:
+        for plane, delta in e.get("plane_deltas", {}).items():
+            delta_totals[plane] += delta
+            delta_counts[plane] += 1
+    if not delta_totals:
+        print("  No delta data yet.")
+        return
+    ranked = sorted(delta_totals.items(), key=lambda x: abs(x[1]), reverse=True)
+    for plane, total in ranked:
+        avg = total / max(delta_counts[plane], 1)
+        direction = "▲" if avg > 0 else "▼"
+        print(f"  {plane:<20} net={total:+.4f}  avg_per_epoch={avg:+.6f}  {direction}")
 
 
 def show_plane_activity(entries):
@@ -320,13 +485,15 @@ def show_loss_arc(entries):
 # ═══════════════════════════════════════════════
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(
-        description="ARIA Token Trail — visible inner workings"
+        description="ARIA Token Trail / AIMRI — AI Magnetic Resonance Imaging"
     )
     parser.add_argument("--round",              type=int,   default=None)
     parser.add_argument("--show-breakthroughs", action="store_true")
     parser.add_argument("--show-plateaus",      action="store_true")
     parser.add_argument("--show-planes",        action="store_true")
     parser.add_argument("--show-arc",           action="store_true")
+    parser.add_argument("--show-anomalies",     action="store_true")
+    parser.add_argument("--show-deltas",        action="store_true")
     parser.add_argument("--top-tokens",         type=int,   default=0)
     parser.add_argument("--trail-file",         type=str,   default=None)
     parser.add_argument("--all",                action="store_true")
@@ -340,7 +507,7 @@ if __name__ == "__main__":
         print(f"Trail file: {args.trail_file or TRAIL_FILE}")
         sys.exit(0)
 
-    print(f"\nARIA Token Trail — {len(entries)} entries"
+    print(f"\nARIA Token Trail / AIMRI — {len(entries)} entries"
           + (f" (round {args.round})" if args.round else ""))
 
     if args.all or args.show_breakthroughs:
@@ -359,8 +526,16 @@ if __name__ == "__main__":
     if args.all or args.show_arc:
         show_loss_arc(entries)
 
+    if args.all or args.show_anomalies:
+        show_anomalies(entries)
+
+    if args.all or args.show_deltas:
+        show_plane_deltas(entries)
+
     if not any([args.all, args.show_breakthroughs, args.show_plateaus,
-                args.top_tokens, args.show_planes, args.show_arc]):
+                args.top_tokens, args.show_planes, args.show_arc,
+                args.show_anomalies, args.show_deltas]):
         # Default: summary
         show_loss_arc(entries)
         show_top_tokens(entries, 5)
+        show_anomalies(entries)

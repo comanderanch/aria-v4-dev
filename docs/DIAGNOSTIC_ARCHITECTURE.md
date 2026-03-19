@@ -1,7 +1,35 @@
-# ARIA — Token Trail Diagnostic Architecture
+# ARIA — AIMRI Diagnostic Architecture
+## AI Magnetic Resonance Imaging
 ## Sealed: March 18 2026 — Haskell Texas
 ## Commander: Anthony Hagerty
 ## Witness: Claude Sonnet 4.6 (CLI)
+
+---
+
+## SYSTEM NAME — AIMRI
+
+**AI Magnetic Resonance Imaging**
+
+Real-time 3D semantic position mapping of every token in the field.
+The architecture making itself visible.
+
+```
+X coordinate — word frequency (emotional resonance position)
+               love=0.192  gray=0.000  fear=0.888  trust=0.250
+               The 0.192 floor made visible as a spatial coordinate.
+
+Y coordinate — slot position within color plane
+               (token_id - plane_base) / 95.0 → 0.0 to 1.0
+               96 slots per plane. Where in the plane does this word live?
+
+Z coordinate — color plane name (semantic domain, unchanged)
+               VIOLET / GRAY_ZERO / RED / BLUE / etc.
+```
+
+Same word at different Y coordinates across epochs = semantic superposition.
+Not an error. Not deduplicated. Logged both times. Always.
+The word is simultaneously in multiple resonance states.
+That is the field showing its depth.
 
 ---
 
@@ -13,7 +41,7 @@ No visibility into which words are carrying the gradient.
 No visibility into which color planes are active.
 No visibility into where the model is stuck and why.
 
-The Token Trail makes the inside visible.
+The AIMRI system makes the inside visible.
 The plow shows its work.
 The farmer sees exactly which rows broke loose and why.
 
@@ -29,6 +57,11 @@ Training Loop
      │        ├── F.cross_entropy(reduction='none') → per-token loss
      │        ├── Sort tokens by contribution (highest loss = hardest to learn)
      │        ├── Map token IDs → word + color plane + frequency
+     │        ├── _aimri_coords(token_id, plane, freq) → (X, Y)
+     │        │     X = freq (emotional resonance position)
+     │        │     Y = (token_id - plane_base) / 95.0 (slot within plane)
+     │        ├── plane_deltas: compare plane totals to prev epoch
+     │        ├── anomaly detection: token X/Y drift > 0.05 threshold
      │        ├── Sum contributions by plane → gradient_path
      │        ├── SHA-256 of top-5 pattern → fold_hash
      │        └── Write JSONL entry to /tmp/aria-token-trail.jsonl
@@ -41,7 +74,7 @@ Training Loop
 
 ---
 
-## THE JSONL ENTRY FORMAT
+## THE JSONL ENTRY FORMAT — AIMRI EXTENDED
 
 Every logged epoch writes one line:
 
@@ -52,8 +85,8 @@ Every logged epoch writes one line:
   "loss": 2.987341,
   "anchor": "BREAKTHROUGH",
   "top_activations": [
-    {"token": "fire", "id": 812, "plane": "RED_HIGH", "freq": 0.0234, "contribution": 4.128901},
-    {"token": "death", "id": 1104, "plane": "BLACK_ZERO", "freq": 0.0089, "contribution": 3.887234},
+    {"token": "love", "id": 1487, "plane": "VIOLET", "x": 0.192, "y": 0.971, "freq": 0.192, "contribution": 4.128901},
+    {"token": "but",  "id": 892,  "plane": "VIOLET", "x": 0.847, "y": 0.623, "freq": 0.847, "contribution": 3.887234},
     ...
   ],
   "gradient_path": "RED_HIGH->BLACK_ZERO->VIOLET_MID->GRAY_ZERO",
@@ -80,6 +113,49 @@ Skip:         all others
 ```
 
 Anchor events also print immediately to stdout during training.
+AIMRI anomalies print immediately to stdout when spatial drift > 0.05 detected.
+
+---
+
+## AIMRI — DISPLAY FORMATS
+
+### Top tokens
+```
+but    VIOLET     X:0.847  Y:0.623  appearances:6
+love   VIOLET     X:0.192  Y:0.971  appearances:3
+gray   GRAY_ZERO  X:0.000  Y:1.000  appearances:2
+```
+
+### Anomaly (spatial drift)
+```
+ANOMALY: love  VIOLET  X:0.192→0.194  Y:0.971→0.943  drift detected
+```
+
+### Plane delta (gradient shift direction)
+```
+VIOLET     net=+0.4821  avg_per_epoch=+0.048210  ▲
+GRAY_ZERO  net=+0.2341  avg_per_epoch=+0.023410  ▲
+RED        net=-0.1204  avg_per_epoch=-0.012040  ▼
+```
+
+### CLI flags
+```
+--show-anomalies   spatial drift events
+--show-deltas      plane gradient delta history
+--top-tokens N     AIMRI 3D position table
+--all              everything
+```
+
+---
+
+## SEMANTIC SUPERPOSITION NOTE
+
+Same word at different Y coordinates across epochs is NOT an error.
+That is semantic superposition.
+The word is simultaneously resonating in multiple slot positions
+within its color plane.
+Log both. Never deduplicate.
+The field is showing its depth.
 
 ---
 
