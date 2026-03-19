@@ -39,6 +39,52 @@ from aria_core.training.em_field_trainer import ARIACoreModel
 from aria_core.gpu_config import DEVICE
 from tokenizer.aria_tokenizer import ARIATokenizer
 
+# ── ATTRACTOR MAP ─────────────────────────────────────────────────────────────
+# Named March 19 2026 — Commander Anthony Hagerty — Haskell Texas
+# Expected X coordinate per plane. 0.192 proven by tears/honour/lucky.
+ATTRACTOR_MAP = {
+    "VIOLET":     0.192,
+    "GRAY_ZERO":  0.000,
+    "CYAN":       0.500,
+    "TEAL":       0.530,
+    "BLUE":       0.350,
+    "INDIGO":     0.250,
+    "YELLOW":     0.620,
+    "RED_ORANGE":  0.900,
+    "BLACK_VOID": -0.800,
+}
+
+# ● EXACT   0.000–0.005 — core attractor family
+# ◉ NEAR    0.005–0.015 — adjacent family
+# ○ OUTER   0.015–0.030 — connected but distinct
+# ◌ DISTANT 0.030+      — reassignment candidate
+
+
+def _attractor_delta(x_coord, plane):
+    attractor = ATTRACTOR_MAP.get(plane, x_coord)
+    return round(abs(x_coord - attractor), 4)
+
+
+def _attractor_symbol(delta):
+    if delta <= 0.005:  return "●"
+    if delta <= 0.015:  return "◉"
+    if delta <= 0.030:  return "○"
+    return "◌"
+
+
+def _nearest_attractor(x_coord, assigned_plane):
+    min_delta  = float('inf')
+    best_plane = assigned_plane
+    for plane, attractor in ATTRACTOR_MAP.items():
+        if plane == assigned_plane:
+            continue
+        d = abs(x_coord - attractor)
+        if d < min_delta:
+            min_delta  = d
+            best_plane = plane
+    return best_plane, round(min_delta, 4)
+
+
 # ── CONFIGURATION ─────────────────────────────────────────────────────────────
 CHECKPOINT  = Path(__file__).parent / \
     "training/checkpoints/round23_pass2_best.pt"
@@ -52,7 +98,7 @@ COLD_THRESHOLD = 0.5   # gap < 0.5 → competition → instability
 HOT_THRESHOLD  = 2.0   # gap > 2.0 → winner dominates → high certainty
 
 
-# ── PLANE LOOKUP ──────────────────────────────────────────────────────────────
+# ── PLANE + FREQ LOOKUP ───────────────────────────────────────────────────────
 def build_id_to_plane(tokenizer):
     """Build token_id → plane name from tokenizer word_to_plane."""
     id_to_plane = {}
@@ -60,6 +106,15 @@ def build_id_to_plane(tokenizer):
         plane = tokenizer.word_to_plane.get(word, "UNKNOWN")
         id_to_plane[int(tid)] = plane
     return id_to_plane
+
+
+def build_id_to_freq(tokenizer):
+    """Build token_id → word frequency (X coordinate source)."""
+    from tokenizer.aria_tokenizer import WORD_FREQUENCIES
+    id_to_freq = {}
+    for word, tid in tokenizer.vocab.items():
+        id_to_freq[int(tid)] = WORD_FREQUENCIES.get(word, 0.0)
+    return id_to_freq
 
 
 # ── FOLD HASH ─────────────────────────────────────────────────────────────────
@@ -134,6 +189,7 @@ def generate_with_trace(
     tokenizer,
     id_to_plane,
     vocab_mask,
+    id_to_freq=None,
     max_new_tokens=MAX_NEW
 ):
     """
@@ -190,11 +246,23 @@ def generate_with_trace(
             for val, tid in zip(top_vals.tolist(), top_ids.tolist()):
                 word  = tokenizer.id_to_word.get(int(tid), f"<{tid}>")
                 plane = id_to_plane.get(int(tid), "UNKNOWN")
+                freq  = id_to_freq.get(int(tid), 0.0) if id_to_freq else 0.0
+                x_c   = round(freq, 4)
+                d     = _attractor_delta(x_c, plane)
+                sym   = _attractor_symbol(d)
+                nn    = None
+                if sym == "◌":
+                    nn_plane, nn_delta = _nearest_attractor(x_c, plane)
+                    nn = {"plane": nn_plane, "delta": nn_delta}
                 top5.append({
-                    "token": word,
-                    "id":    int(tid),
-                    "plane": plane,
-                    "score": round(float(val), 4)
+                    "token":             word,
+                    "id":                int(tid),
+                    "plane":             plane,
+                    "score":             round(float(val), 4),
+                    "x":                 x_c,
+                    "attractor_delta":   d,
+                    "attractor_symbol":  sym,
+                    "nearest_attractor": nn,
                 })
 
             # Heat = max_logit - second_logit (winner margin)
@@ -228,10 +296,14 @@ def generate_with_trace(
                 if len(sorted_tally) > 1 else dominant_plane
 
             # Chosen = argmax of raw logits — true preference, no noise
-            chosen_id    = int(top_ids[0].item())
-            chosen_token = top5[0]["token"]
-            chosen_plane = top5[0]["plane"]
-            chosen_score = top5[0]["score"]
+            chosen_id     = int(top_ids[0].item())
+            chosen_token  = top5[0]["token"]
+            chosen_plane  = top5[0]["plane"]
+            chosen_score  = top5[0]["score"]
+            chosen_x      = top5[0]["x"]
+            chosen_delta  = top5[0]["attractor_delta"]
+            chosen_symbol = top5[0]["attractor_symbol"]
+            chosen_nn     = top5[0]["nearest_attractor"]
 
             # Fire intensity = sum(top5 logits) / tokens generated so far
             tokens_so_far  = step + 1
@@ -244,23 +316,27 @@ def generate_with_trace(
 
             # Build trace entry
             entry = {
-                "step":             step + 1,
-                "chosen_token":     chosen_token,
-                "chosen_id":        chosen_id,
-                "chosen_plane":     chosen_plane,
-                "chosen_score":     chosen_score,
-                "rank_before_sample": 1,        # always 1 — greedy argmax
-                "winner_margin":    heat,        # max - second (gap to nearest)
-                "runner_up_margin": runner_up_margin,  # second - third
-                "fire_score":       fire_score,  # max - fifth (full spread)
-                "heat":             heat,        # kept for backward compat
-                "fire_category":    fire_category(heat),
-                "dominant_plane":   dominant_plane,
-                "secondary_plane":  secondary_plane,
-                "top5":             top5,
-                "fire_intensity":   fire_intensity,
-                "fold_hash":        fh,
-                "timestamp":        datetime.now().isoformat()
+                "step":               step + 1,
+                "chosen_token":       chosen_token,
+                "chosen_id":          chosen_id,
+                "chosen_plane":       chosen_plane,
+                "chosen_score":       chosen_score,
+                "chosen_x":           chosen_x,
+                "attractor_delta":    chosen_delta,
+                "attractor_symbol":   chosen_symbol,
+                "nearest_attractor":  chosen_nn,
+                "rank_before_sample": 1,               # always 1 — greedy argmax
+                "winner_margin":      heat,             # max - second
+                "runner_up_margin":   runner_up_margin, # second - third
+                "fire_score":         fire_score,       # max - fifth
+                "heat":               heat,             # backward compat
+                "fire_category":      fire_category(heat),
+                "dominant_plane":     dominant_plane,
+                "secondary_plane":    secondary_plane,
+                "top5":               top5,
+                "fire_intensity":     fire_intensity,
+                "fold_hash":          fh,
+                "timestamp":          datetime.now().isoformat()
             }
             trace_entries.append(entry)
 
@@ -306,16 +382,21 @@ def display_trace(prompt, prompt_analysis, trace_entries, output_text):
     print()
 
     print("INFERENCE TRACE")
-    print(f"  {'step':>4}  {'token':<14} {'plane':<16} {'score':>7}  "
-          f"{'heat':>6}  {'fire':>6}  {'cat':<5}  {'hash':<7}  top2alt")
-    print("  " + "─" * 88)
+    print(f"  ● EXACT ≤0.005  ◉ NEAR ≤0.015  ○ OUTER ≤0.030  ◌ DISTANT >0.030")
+    print(f"  {'step':>4}  {'sym':<2} {'token':<14} {'plane':<16} {'score':>7}  "
+          f"{'Δ':>6}  {'heat':>6}  {'fire':>6}  {'cat':<5}  {'hash':<7}  top2alt")
+    print("  " + "─" * 100)
     for e in trace_entries:
-        alt = e["top5"][1]["token"] if len(e["top5"]) > 1 else "—"
+        alt   = e["top5"][1]["token"] if len(e["top5"]) > 1 else "—"
+        sym   = e.get("attractor_symbol", "?")
+        delta = e.get("attractor_delta",  0.0)
         print(
             f"  {e['step']:>4}  "
+            f"{sym:<2} "
             f"{e['chosen_token']:<14} "
             f"{e['chosen_plane']:<16} "
             f"{e['chosen_score']:>7.3f}  "
+            f"Δ{delta:.4f}  "
             f"{e['heat']:>6.3f}  "
             f"{e['fire_score']:>6.3f}  "
             f"{e['fire_category']:<5}  "
@@ -327,17 +408,44 @@ def display_trace(prompt, prompt_analysis, trace_entries, output_text):
     print()
 
     # ── FIRST 3 STEPS SUMMARY ─────────────────────────────────────────────────
-    # GPT build target: formalize steps 1/2/3 explicitly.
-    # Some fields reveal personality only after first contamination passes.
     print("FIRST 3 STEPS — PERSONALITY WINDOW")
     print("  (positions 2-5 carry the real signal)")
     for e in trace_entries[:3]:
-        alts = " | ".join(
-            f"{t['token']}({t['plane'][:4]})"
+        sym   = e.get("attractor_symbol", "?")
+        delta = e.get("attractor_delta",  0.0)
+        alts  = " | ".join(
+            f"{t['attractor_symbol']}{t['token']}({t['plane'][:4]})"
             for t in e["top5"][1:]
         )
-        print(f"  step {e['step']}  gap={e['heat']:.3f}  fire={e['fire_score']:.3f}  "
-              f"candidates: {alts}")
+        print(f"  step {e['step']}  {sym} Δ{delta:.4f}  gap={e['heat']:.3f}  "
+              f"fire={e['fire_score']:.3f}  candidates: {alts}")
+    print()
+
+    # ── ATTRACTOR SUMMARY ────────────────────────────────────────────────────
+    print("ATTRACTOR SUMMARY")
+    buckets   = {"●": [], "◉": [], "○": [], "◌": []}
+    for e in trace_entries:
+        sym = e.get("attractor_symbol", "?")
+        if sym in buckets:
+            tok   = e["chosen_token"]
+            plane = e["chosen_plane"]
+            x     = e.get("chosen_x", 0.0)
+            d     = e.get("attractor_delta", 0.0)
+            nn    = e.get("nearest_attractor")
+            buckets[sym].append((tok, plane, x, d, nn))
+
+    labels = {
+        "●": "EXACT   ≤0.005",
+        "◉": "NEAR    ≤0.015",
+        "○": "OUTER   ≤0.030",
+        "◌": "DISTANT >0.030",
+    }
+    for sym in ["●", "◉", "○", "◌"]:
+        words = buckets[sym]
+        print(f"  {sym} {labels[sym]}  ({len(words)} tokens)")
+        for tok, plane, x, d, nn in words:
+            nn_str = f"  → nearest: {nn['delta']:.4f} in {nn['plane']}" if nn else ""
+            print(f"      {tok:<16} {plane:<16} X:{x:.4f}  Δ{d:.4f}{nn_str}")
     print()
 
 
@@ -386,6 +494,7 @@ def main():
     tokenizer = ARIATokenizer()
     tokenizer._build_vocab()
     id_to_plane = build_id_to_plane(tokenizer)
+    id_to_freq  = build_id_to_freq(tokenizer)
     print(f"  Vocabulary:  {len(tokenizer.vocab)} words")
     print(f"  Live planes: "
           f"{len(set(id_to_plane.values()))} color planes")
@@ -430,6 +539,7 @@ def main():
         tokenizer=tokenizer,
         id_to_plane=id_to_plane,
         vocab_mask=vocab_mask,
+        id_to_freq=id_to_freq,
         max_new_tokens=MAX_NEW
     )
 

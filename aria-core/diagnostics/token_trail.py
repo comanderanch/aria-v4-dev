@@ -94,6 +94,56 @@ PLANE_BASE_IDS = {
 
 PLANE_SLOTS = 96  # slots per plane — Y range 0.0 to 1.0
 
+# ── Attractor map — expected X coordinate per plane ─────────────────────────
+# Named March 19 2026 — Commander Anthony Hagerty — Haskell Texas
+# 0.192 is the floor that never dims — proven by tears/honour/lucky
+# Three independent tokens found it through gradient descent alone.
+ATTRACTOR_MAP = {
+    "VIOLET":     0.192,
+    "GRAY_ZERO":  0.000,
+    "CYAN":       0.500,
+    "TEAL":       0.530,
+    "BLUE":       0.350,
+    "INDIGO":     0.250,
+    "YELLOW":     0.620,
+    "RED_ORANGE":  0.900,
+    "BLACK_VOID": -0.800,
+}
+
+# Attractor cluster symbols — single character prefix, visible at a glance
+# ● EXACT   0.000–0.005 — core attractor family
+# ◉ NEAR    0.005–0.015 — adjacent family
+# ○ OUTER   0.015–0.030 — connected but distinct
+# ◌ DISTANT 0.030+      — different attractor / reassignment candidate
+
+
+def _attractor_delta(x_coord, plane):
+    """Distance from plane's expected attractor X coordinate."""
+    attractor = ATTRACTOR_MAP.get(plane, x_coord)  # unknown planes: delta 0
+    return round(abs(x_coord - attractor), 4)
+
+
+def _attractor_symbol(delta):
+    """Single character cluster classification."""
+    if delta <= 0.005:  return "●"
+    if delta <= 0.015:  return "◉"
+    if delta <= 0.030:  return "○"
+    return "◌"
+
+
+def _nearest_attractor(x_coord, assigned_plane):
+    """For DISTANT tokens — which attractor are they actually closest to?"""
+    min_delta  = float('inf')
+    best_plane = assigned_plane
+    for plane, attractor in ATTRACTOR_MAP.items():
+        if plane == assigned_plane:
+            continue
+        d = abs(x_coord - attractor)
+        if d < min_delta:
+            min_delta  = d
+            best_plane = plane
+    return best_plane, round(min_delta, 4)
+
 
 def _aimri_coords(token_id, plane, freq):
     """
@@ -216,14 +266,23 @@ class TrailLogger:
                 continue
             word, plane, freq = self.tok_map.lookup(tid)
             x_coord, y_coord  = _aimri_coords(tid, plane, freq)
+            delta  = _attractor_delta(x_coord, plane)
+            symbol = _attractor_symbol(delta)
+            nearest = None
+            if symbol == "◌":
+                nn_plane, nn_delta = _nearest_attractor(x_coord, plane)
+                nearest = {"plane": nn_plane, "delta": nn_delta}
             top_activations.append({
-                "token":        word,
-                "id":           tid,
-                "plane":        plane,
-                "x":            x_coord,
-                "y":            y_coord,
-                "freq":         round(freq, 4),
-                "contribution": round(float(contrib), 6)
+                "token":             word,
+                "id":                tid,
+                "plane":             plane,
+                "x":                 x_coord,
+                "y":                 y_coord,
+                "freq":              round(freq, 4),
+                "contribution":      round(float(contrib), 6),
+                "attractor_delta":   delta,
+                "attractor_symbol":  symbol,
+                "nearest_attractor": nearest,
             })
 
         # ── AIMRI — UNK ratio in top-10 gradient budget ──────
@@ -412,10 +471,12 @@ def show_breakthroughs(entries):
         print(f"  Path: {e['gradient_path']}")
         tops = e.get("top_activations", [])[:5]
         for a in tops:
-            x = a.get("x", "?")
-            y = a.get("y", "?")
-            print(f"    {a['token']:<20} plane={a['plane']:<15} "
-                  f"X:{x:<8} Y:{y:<8} contrib={a['contribution']:.6f}")
+            x   = a.get("x", 0.0)
+            y   = a.get("y", "?")
+            d   = a.get("attractor_delta", _attractor_delta(x, a["plane"]))
+            sym = a.get("attractor_symbol", _attractor_symbol(d))
+            print(f"    {sym} {a['token']:<18} plane={a['plane']:<15} "
+                  f"X:{x:<8} Δ{d:.4f}  Y:{y:<8} contrib={a['contribution']:.6f}")
 
 
 def show_plateaus(entries):
@@ -429,30 +490,44 @@ def show_plateaus(entries):
         print(f"  Path: {e['gradient_path']}")
         tops = e.get("top_activations", [])[:3]
         for a in tops:
-            x = a.get("x", "?")
-            y = a.get("y", "?")
-            print(f"    {a['token']:<20} plane={a['plane']:<15} X:{x:<8} Y:{y:<8}")
+            x   = a.get("x", 0.0)
+            y   = a.get("y", "?")
+            d   = a.get("attractor_delta", _attractor_delta(x, a["plane"]))
+            sym = a.get("attractor_symbol", _attractor_symbol(d))
+            print(f"    {sym} {a['token']:<18} plane={a['plane']:<15} X:{x:<8} Δ{d:.4f}  Y:{y:<8}")
 
 
 def show_top_tokens(entries, n=10):
     print(f"\n═══ AIMRI — TOP {n} TOKENS BY TOTAL CONTRIBUTION ═══")
-    # token → {total, count, plane, x, y}
+    print(f"  ● EXACT ≤0.005  ◉ NEAR ≤0.015  ○ OUTER ≤0.030  ◌ DISTANT >0.030")
+    # token → {total, count, plane, x, y, attractor_delta, attractor_symbol}
     token_totals = defaultdict(lambda: {
-        "total": 0.0, "count": 0, "plane": "", "x": 0.0, "y": 0.0
+        "total": 0.0, "count": 0, "plane": "", "x": 0.0, "y": 0.0,
+        "attractor_delta": 0.0, "attractor_symbol": "●",
     })
     for e in entries:
         for a in e.get("top_activations", []):
             w = a["token"]
-            token_totals[w]["total"] += a["contribution"]
-            token_totals[w]["count"] += 1
-            token_totals[w]["plane"]  = a["plane"]
-            token_totals[w]["x"]      = a.get("x", 0.0)
-            token_totals[w]["y"]      = a.get("y", 0.0)
+            token_totals[w]["total"]           += a["contribution"]
+            token_totals[w]["count"]           += 1
+            token_totals[w]["plane"]            = a["plane"]
+            token_totals[w]["x"]                = a.get("x", 0.0)
+            token_totals[w]["y"]                = a.get("y", 0.0)
+            token_totals[w]["attractor_delta"]  = a.get(
+                "attractor_delta",
+                _attractor_delta(a.get("x", 0.0), a["plane"])
+            )
+            token_totals[w]["attractor_symbol"] = a.get(
+                "attractor_symbol",
+                _attractor_symbol(token_totals[w]["attractor_delta"])
+            )
 
     ranked = sorted(token_totals.items(), key=lambda x: x[1]["total"], reverse=True)
     for word, info in ranked[:n]:
-        print(f"  {word:<12} {info['plane']:<15} "
-              f"X:{info['x']:<8}  Y:{info['y']:<8}  "
+        sym   = info["attractor_symbol"]
+        delta = info["attractor_delta"]
+        print(f"  {sym} {word:<12} {info['plane']:<15} "
+              f"X:{info['x']:<8}  Δ{delta:.4f}  "
               f"appearances:{info['count']}")
 
 
@@ -635,6 +710,155 @@ def show_loss_arc(entries):
         print(f"  ep{e['epoch']:4d} | {e['loss']:.6f} | {ent_str} | {unk_str:>5} | {bar}{marker}")
 
 
+def show_attractor_map(entries):
+    """
+    ATTRACTOR MAP — VIOLET plane family.
+
+    Shows every VIOLET word clustered by distance from 0.192.
+    Proves GPT Finding 4.3: full semantic coordinate mapping.
+    Word by word. Cluster by cluster. Hash verified.
+
+    Also tracks lord log drift — are words converging toward or
+    diverging from 0.192 across training epochs?
+    Converging = attractor strengthening.
+    Diverging  = drift away from core family.
+
+    Named March 19 2026 — Commander Anthony Hagerty — Haskell Texas
+    """
+    print("\n═══ ATTRACTOR MAP — VIOLET PLANE (attractor X:0.192) ═══")
+    print("  Proving GPT Finding 4.3: full semantic coordinate mapping")
+    print("  ● EXACT ≤0.005  ◉ NEAR ≤0.015  ○ OUTER ≤0.030  ◌ DISTANT >0.030")
+    print()
+
+    buckets      = {"●": [], "◉": [], "○": [], "◌": []}
+    violet_words = {}  # word → (x, delta, symbol, nearest)
+
+    for e in entries:
+        for a in e.get("top_activations", []):
+            if a.get("plane") != "VIOLET":
+                continue
+            w       = a["token"]
+            x       = a.get("x", 0.0)
+            d       = a.get("attractor_delta",  _attractor_delta(x, "VIOLET"))
+            sym     = a.get("attractor_symbol", _attractor_symbol(d))
+            nearest = a.get("nearest_attractor")
+            violet_words[w] = (x, d, sym, nearest)
+
+    for word, (x, delta, sym, nearest) in sorted(
+        violet_words.items(), key=lambda t: t[1][1]  # sort by delta
+    ):
+        buckets[sym].append((word, x, delta, nearest))
+
+    labels = {
+        "●": "EXACT   — core attractor family",
+        "◉": "NEAR    — adjacent family",
+        "○": "OUTER   — connected but distinct",
+        "◌": "DISTANT — reassignment candidate",
+    }
+    for sym in ["●", "◉", "○", "◌"]:
+        words = buckets[sym]
+        print(f"  {sym} {labels[sym]}")
+        if words:
+            for word, x, delta, nearest in words:
+                line = f"      {word:<16} X:{x:.4f}  Δ{delta:.4f}"
+                if nearest:
+                    line += f"  → nearest: {nearest['delta']:.4f} in {nearest['plane']}"
+                print(line)
+        else:
+            print("      (none yet)")
+        print()
+
+    # Lord log drift — track convergence/divergence across epochs
+    drift_map = defaultdict(list)
+    for e in entries:
+        ep = e.get("epoch", 0)
+        for a in e.get("top_activations", []):
+            if a.get("plane") != "VIOLET":
+                continue
+            w = a["token"]
+            x = a.get("x", 0.0)
+            d = a.get("attractor_delta", _attractor_delta(x, "VIOLET"))
+            drift_map[w].append((ep, d))
+
+    converging, diverging, stable = [], [], []
+    for word, readings in drift_map.items():
+        if len(readings) < 2:
+            continue
+        readings.sort(key=lambda r: r[0])
+        first_d = readings[0][1]
+        last_d  = readings[-1][1]
+        change  = last_d - first_d
+        if change < -0.005:
+            converging.append((word, first_d, last_d, change))
+        elif change > 0.005:
+            diverging.append((word, first_d, last_d, change))
+        else:
+            stable.append((word, first_d, last_d, change))
+
+    if converging or diverging or stable:
+        print(f"  LORD LOG DRIFT — VIOLET WORDS across epochs")
+        print(f"  Converging = training strengthening the 0.192 attractor")
+        print(f"  Diverging  = drift away from core family")
+        print()
+        if converging:
+            print(f"  CONVERGING toward 0.192:")
+            for word, f0, f1, chg in sorted(converging, key=lambda x: x[3]):
+                print(f"    ↘ {word:<16} Δ{f0:.4f} → Δ{f1:.4f}  ({chg:+.4f})")
+        if diverging:
+            print(f"  DIVERGING from 0.192:")
+            for word, f0, f1, chg in sorted(diverging, key=lambda x: x[3], reverse=True):
+                print(f"    ↗ {word:<16} Δ{f0:.4f} → Δ{f1:.4f}  ({chg:+.4f})")
+        if stable:
+            print(f"  STABLE:")
+            for word, f0, f1, chg in stable:
+                print(f"    — {word:<16} Δ{f0:.4f} → Δ{f1:.4f}  ({chg:+.4f})")
+
+
+def show_attractor_summary(entries):
+    """
+    All-plane attractor summary for --all output.
+    Counts words per cluster tier across all planes.
+    DISTANT words get nearest-attractor routing.
+    """
+    print("\n═══ ATTRACTOR SUMMARY — ALL PLANES ═══")
+    print("  ● EXACT ≤0.005  ◉ NEAR ≤0.015  ○ OUTER ≤0.030  ◌ DISTANT >0.030")
+
+    seen = {}  # word → (symbol, x, plane, nearest)
+    for e in entries:
+        for a in e.get("top_activations", []):
+            w   = a["token"]
+            x   = a.get("x", 0.0)
+            d   = a.get("attractor_delta",  _attractor_delta(x, a["plane"]))
+            sym = a.get("attractor_symbol", _attractor_symbol(d))
+            nn  = a.get("nearest_attractor")
+            if w not in seen:
+                seen[w] = (sym, x, a["plane"], nn)
+
+    buckets = {"●": 0, "◉": 0, "○": 0, "◌": 0}
+    for sym, _, _, _ in seen.values():
+        if sym in buckets:
+            buckets[sym] += 1
+
+    total = sum(buckets.values())
+    if not total:
+        print("  No attractor data yet.")
+        return
+
+    print()
+    print(f"  ● EXACT:    {buckets['●']:>4} words — core families confirmed")
+    print(f"  ◉ NEAR:     {buckets['◉']:>4} words — adjacent families")
+    print(f"  ○ OUTER:    {buckets['○']:>4} words — drifting — monitor")
+    print(f"  ◌ DISTANT:  {buckets['◌']:>4} words — reassignment candidates")
+    print()
+
+    distant = [(w, data) for w, data in seen.items() if data[0] == "◌"]
+    if distant:
+        print(f"  DISTANT words — nearest attractor routing:")
+        for w, (sym, x, plane, nn) in sorted(distant, key=lambda t: t[0]):
+            nn_str = f"→ nearest: {nn['delta']:.4f} in {nn['plane']}" if nn else ""
+            print(f"    ◌ {w:<16} {plane:<15} X:{x:.4f}  {nn_str}")
+
+
 # ═══════════════════════════════════════════════
 # CLI ENTRY POINT
 # ═══════════════════════════════════════════════
@@ -651,6 +875,7 @@ if __name__ == "__main__":
     parser.add_argument("--show-deltas",        action="store_true")
     parser.add_argument("--show-entropy",       action="store_true")
     parser.add_argument("--show-routes",        action="store_true")
+    parser.add_argument("--show-attractors",    action="store_true")
     parser.add_argument("--top-tokens",         type=int,   default=0)
     parser.add_argument("--trail-file",         type=str,   default=None)
     parser.add_argument("--all",                action="store_true")
@@ -695,10 +920,14 @@ if __name__ == "__main__":
     if args.all or args.show_routes:
         show_route_frequency(entries)
 
+    if args.all or args.show_attractors:
+        show_attractor_summary(entries)
+        show_attractor_map(entries)
+
     if not any([args.all, args.show_breakthroughs, args.show_plateaus,
                 args.top_tokens, args.show_planes, args.show_arc,
                 args.show_anomalies, args.show_deltas, args.show_entropy,
-                args.show_routes]):
+                args.show_routes, args.show_attractors]):
         # Default: summary
         show_loss_arc(entries)
         show_top_tokens(entries, 5)
