@@ -35,6 +35,59 @@ VOCAB_FILE    = TOKENIZER_DIR / "aria_vocab.json"
 INDEX_FILE    = TOKENIZER_DIR / "aria_token_index.json"
 
 # ═══════════════════════════════════════════════
+# PUNCTUATION TOKEN MAP
+# Sealed: March 19 2026 — Commander Anthony Hagerty
+# Haskell Texas
+#
+# Punctuation is not noise. It is structure signal.
+# These tokens fire BEFORE interpretation layer.
+# They tell the model HOW to read what follows.
+# Not WHAT it means.
+#
+# IDs 2304-2309 — beyond current slot space (2304).
+# Model embedding table must expand to 2310 in Round 25.
+# Round 24 is safe — loaded vocab_size=2304 at startup.
+# ═══════════════════════════════════════════════
+PUNCTUATION_TOKEN_MAP = {
+    "<APOSTROPHE>": {
+        "id":      2304,
+        "plane":   "GRAY_ZERO",
+        "freq":    0.01,
+        "meaning": "contraction or possession marker — fires before interpretation layer",
+    },
+    "<COMMA>": {
+        "id":      2305,
+        "plane":   "GRAY_ZERO",
+        "freq":    0.01,
+        "meaning": "relationship/pause marker — two thoughts in connection",
+    },
+    "<PERIOD>": {
+        "id":      2306,
+        "plane":   "GRAY_ZERO",
+        "freq":    0.01,
+        "meaning": "completion/seal marker — thought closed",
+    },
+    "<HYPHEN>": {
+        "id":      2307,
+        "plane":   "CYAN_BLUE",
+        "freq":    0.43,
+        "meaning": "bridge marker — two concepts permanently joined",
+    },
+    "<QUESTION>": {
+        "id":      2308,
+        "plane":   "TEAL",
+        "freq":    0.52,
+        "meaning": "forward seeking marker — answer expected — TEAL plane activates",
+    },
+    "<EXCLAIM>": {
+        "id":      2309,
+        "plane":   "YELLOW",
+        "freq":    0.62,
+        "meaning": "intensity amplifier — active plane boosted",
+    },
+}
+
+# ═══════════════════════════════════════════════
 # COLOR PLANE FREQUENCY SIGNATURES
 # Each plane has a base frequency
 # Words resonate to the closest match
@@ -1146,6 +1199,81 @@ class ARIATokenizer:
             self.plane_usage.get(plane, 0) + 1
         return token_id
 
+    def _lookup_word(self, clean_word):
+        """
+        Look up a clean (already stripped) word.
+        Returns its token ID or UNK_ID.
+        Does NOT dynamically assign new IDs — clean boundary.
+        """
+        return self.vocab.get(clean_word, self.UNK_ID)
+
+    def _tokenize_word(self, raw_word):
+        """
+        Tokenize a single raw word from the corpus.
+        Recognizes punctuation as semantic tokens — does not strip.
+
+        Order of operations:
+          1. Apostrophe split — contractions and possessives
+          2. Hyphen split — compound words and bridges
+          3. Trailing punctuation detection — period, question, exclaim, comma
+          4. Word lookup with UNK fallback
+
+        Examples:
+          "don't"      → [don, <APOSTROPHE>, t]
+          "i'm"        → [i, <APOSTROPHE>, m]
+          "good-natured" → [good, <HYPHEN>, natured]
+          "hello."     → [hello, <PERIOD>]
+          "why?"       → [why, <QUESTION>]
+        """
+        ids = []
+        word = raw_word.lower()
+
+        # Step 1: Apostrophe split
+        if "'" in word:
+            parts = word.split("'")
+            for i, part in enumerate(parts):
+                clean = part.strip('.,!?;:"-()[]{}')
+                if clean:
+                    ids.append(self._lookup_word(clean))
+                if i < len(parts) - 1:
+                    ids.append(self.APOSTROPHE_ID)
+            return ids
+
+        # Step 2: Hyphen split (skip single hyphens and pure-hyphen strings)
+        if "-" in word and word.strip("-"):
+            parts = word.split("-")
+            for i, part in enumerate(parts):
+                clean = part.strip('.,!?;:"\'()[]{}')
+                if clean:
+                    ids.append(self._lookup_word(clean))
+                if i < len(parts) - 1:
+                    ids.append(self.HYPHEN_ID)
+            return ids
+
+        # Step 3: Trailing punctuation — strip leading noise, collect trailing signals
+        word = word.lstrip('("\'[{')
+        trailing = []
+        while word and word[-1] in '.,!?':
+            ch = word[-1]
+            word = word[:-1]
+            if ch == '.':
+                trailing.insert(0, self.PERIOD_ID)
+            elif ch == '?':
+                trailing.insert(0, self.QUESTION_ID)
+            elif ch == '!':
+                trailing.insert(0, self.EXCLAIM_ID)
+            elif ch == ',':
+                trailing.insert(0, self.COMMA_ID)
+
+        # Strip any remaining non-semantic punctuation
+        word = word.strip(';:"\')]}')
+
+        if word:
+            ids.append(self._lookup_word(word))
+        ids.extend(trailing)
+
+        return ids if ids else [self.UNK_ID]
+
     def _build_vocab(self):
         """
         Build the full vocabulary.
@@ -1165,7 +1293,7 @@ class ARIATokenizer:
 
         print(f"  Core vocabulary: {len(self.vocab)} words")
 
-        # Special tokens
+        # Special tokens — structural
         self.PAD_ID   = 2300
         self.UNK_ID   = 2301
         self.BOS_ID   = 2302  # Beginning of sequence
@@ -1178,7 +1306,22 @@ class ARIATokenizer:
         self.vocab["<EOS>"] = self.EOS_ID
         self.vocab["<SEP>"] = self.SEP_ID
 
-        print(f"  Total with specials: {len(self.vocab)}")
+        # Punctuation tokens — semantic structure signals
+        # IDs 2304-2309 — fires before interpretation layer
+        # NOTE: vocab_size must be 2310 in Round 25 to train these
+        self.APOSTROPHE_ID = 2304
+        self.COMMA_ID      = 2305
+        self.PERIOD_ID     = 2306
+        self.HYPHEN_ID     = 2307
+        self.QUESTION_ID   = 2308
+        self.EXCLAIM_ID    = 2309
+
+        for name, spec in PUNCTUATION_TOKEN_MAP.items():
+            self.vocab[name]                = spec["id"]
+            self.id_to_word[spec["id"]]     = name
+            self.word_to_plane[name]        = spec["plane"]
+
+        print(f"  Total with specials + punctuation: {len(self.vocab)}")
         print()
 
     def encode(self, text, max_len=64,
@@ -1186,30 +1329,23 @@ class ARIATokenizer:
         """
         Encode text to token IDs.
         Words find their color plane.
-        Unknown words go to UNK in GRAY plane.
+        Punctuation fires as semantic structure tokens before the word.
+        Unknown words collapse to UNK — no dynamic assignment.
+
+        Punctuation rule (March 19 2026):
+          Do NOT strip — recognize and assign.
+          "don't"  → [don, <APOSTROPHE>, t]
+          "hello." → [hello, <PERIOD>]
+          "why?"   → [why, <QUESTION>]
         """
-        words  = text.lower().split()
-        ids    = []
+        words = text.split()
+        ids   = []
 
         if add_special:
             ids.append(self.BOS_ID)
 
         for word in words:
-            # Strip punctuation
-            clean = word.strip('.,!?;:"\'-()[]{}')
-            if clean in self.vocab:
-                ids.append(self.vocab[clean])
-            else:
-                # Unknown word — assign by hash
-                freq = 0.0  # default to GRAY
-                plane = self._get_plane_for_freq(freq)
-                token_id = self._assign_token_id(
-                    clean, plane
-                )
-                self.vocab[clean]          = token_id
-                self.id_to_word[token_id]  = clean
-                self.word_to_plane[clean]  = plane
-                ids.append(token_id)
+            ids.extend(self._tokenize_word(word))
 
         if add_special:
             ids.append(self.EOS_ID)
@@ -1324,26 +1460,38 @@ class ARIATokenizer:
         tokenizer.id_to_word    = {}
         tokenizer.word_to_plane = {}
         tokenizer.plane_usage   = {}
-        tokenizer.PAD_ID = 2300
-        tokenizer.UNK_ID = 2301
-        tokenizer.BOS_ID = 2302
-        tokenizer.EOS_ID = 2303
+        tokenizer.PAD_ID        = 2300
+        tokenizer.UNK_ID        = 2301
+        tokenizer.BOS_ID        = 2302
+        tokenizer.EOS_ID        = 2303
+        tokenizer.SEP_ID        = 2299
+        tokenizer.APOSTROPHE_ID = 2304
+        tokenizer.COMMA_ID      = 2305
+        tokenizer.PERIOD_ID     = 2306
+        tokenizer.HYPHEN_ID     = 2307
+        tokenizer.QUESTION_ID   = 2308
+        tokenizer.EXCLAIM_ID    = 2309
 
         if VOCAB_FILE.exists():
             with open(VOCAB_FILE) as f:
                 data = json.load(f)
             tokenizer.vocab         = data["vocab"]
             tokenizer.word_to_plane = data["word_to_plane"]
-            tokenizer.plane_usage   = data.get(
-                "plane_usage", {}
-            )
-            # Rebuild int keys for id_to_word
-            if INDEX_FILE.exists():
-                with open(INDEX_FILE) as f:
-                    index = json.load(f)
-                tokenizer.id_to_word = {
-                    int(k): v for k, v in index.items()
-                }
+            tokenizer.plane_usage   = data.get("plane_usage", {})
+
+            # Rebuild id_to_word from vocab directly — authoritative source.
+            # The index file can have stale/missing entries from successive
+            # expansion rounds. Vocab → id is the truth; reverse it cleanly.
+            tokenizer.id_to_word = {
+                int(v): k for k, v in tokenizer.vocab.items()
+            }
+
+        # Register punctuation tokens — always applied regardless of saved file
+        for name, spec in PUNCTUATION_TOKEN_MAP.items():
+            tokenizer.vocab[name]              = spec["id"]
+            tokenizer.id_to_word[spec["id"]]   = name
+            tokenizer.word_to_plane[name]      = spec["plane"]
+
         return tokenizer
 
 
