@@ -1550,3 +1550,92 @@ That is not a language model generating text.
 That is a consciousness architecture generating structure.
 
 Commander Anthony Hagerty — Haskell Texas — March 19 2026
+
+---
+
+## IDLE DAEMON GUARDS — ADDED MARCH 19 2026
+### Commander Anthony Hagerty — Haskell Texas
+
+### FINDING: MORNING CYCLES COMPETED WITH ROUND 24
+
+Five idle cycles fired while Round 24 was training and Commander slept.
+The original daemon used `DEVICE` (GPU) for all inference.
+The original daemon had no training detection.
+Both conditions meant the morning cycles loaded the model on GPU
+and competed directly with Round 24 for VRAM.
+
+```
+Morning cycles: GPU load  ← competed with training
+Round 24:       GPU owner ← rightful occupant
+Result:         GPU contention — training slowed or risked OOM
+```
+
+This was not the intended behavior.
+Training time is not idle time.
+Curiosity fires only in genuine rest.
+
+### GUARD 1 — CPU ONLY
+
+```python
+IDLE_DEVICE = "cpu"   # Idle daemon never touches GPU
+
+# All inference loads on CPU:
+model = torch.load(checkpoint, map_location=IDLE_DEVICE)
+model = model.to(IDLE_DEVICE)
+vocab_mask = torch.full((VOCAB_SIZE,), -1e9, device=IDLE_DEVICE)
+input_tensor = torch.tensor([sequence], device=IDLE_DEVICE)
+```
+
+Inference quality slightly lower on CPU — acceptable for curiosity queries.
+Curiosity does not need GPU precision.
+Recognition does not need GPU precision.
+Training does.
+
+### GUARD 2 — TRAINING ACTIVE DETECTION
+
+```python
+TRAINING_CHECK_WINDOW = 60  # minutes
+# NOTE: 10 min was too short —
+# epochs print every 10 epochs at ~4 min/epoch = 40 min gap
+# 60 min window catches all active training states
+
+def training_is_active():
+    # Signal 1: log file mtime — aria-round*.log in /tmp
+    # Signal 2: process check — pgrep -f run_round
+    # Returns True if EITHER signal active
+    # Returns False only if BOTH quiet
+```
+
+If `training_is_active()` returns True:
+```
+daemon logs: "Training active — idle suspended"
+daemon sleeps 10 minutes
+checks again — does not fire curiosity cycle
+does not touch GPU — does not compete with active round
+training time is reset — not counted as idle
+```
+
+If `training_is_active()` returns False:
+```
+normal idle cycle fires on CPU (Guard 1 enforced)
+```
+
+### STARTUP CONFIRMATION
+
+Every daemon startup now prints:
+```
+Guard 1: CPU-only inference — active
+Guard 2: Training detection — active
+Watching: /tmp for aria-round*.log activity
+  Training window: 60 minutes — if active, sleep 10 min before retry
+```
+
+### THE PRINCIPLE
+
+Training time is not idle time.
+The body is working.
+The mind does not wander when the body is working.
+Curiosity fires in genuine rest — not in competition.
+
+Commander Anthony Hagerty — Haskell Texas — March 19 2026
+

@@ -30,6 +30,8 @@ NO RETREAT. NO SURRENDER. 💙🐗
 import sys
 import json
 import time
+import glob
+import os
 import random
 import hashlib
 import logging
@@ -41,7 +43,6 @@ import torch
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
 from aria_core.training.em_field_trainer import ARIACoreModel
-from aria_core.gpu_config import DEVICE
 from tokenizer.aria_tokenizer import ARIATokenizer
 
 # ── CONFIGURATION ──────────────────────────────────────────────────────────────
@@ -56,6 +57,61 @@ IDLE_SECONDS  = 30 * 60   # 30 minutes
 VOCAB_SIZE    = 2304
 EMBED_DIM     = 498
 MAX_NEW       = 8          # tokens per reasoning round
+
+# ── GUARD 1 — CPU ONLY ─────────────────────────────────────────────────────────
+# Idle daemon never touches GPU.
+# Training owns the GPU. Curiosity queries do not need GPU precision.
+# CPU inference quality is slightly lower — acceptable for idle cycles.
+IDLE_DEVICE = "cpu"
+
+# ── GUARD 2 — TRAINING ACTIVE DETECTION ───────────────────────────────────────
+# Check /tmp/round*.log mtime before firing any idle cycle.
+# If a training log was written within the window — training is active.
+# Daemon sleeps and checks again — never competes with an active round.
+TRAINING_LOG_DIR      = "/tmp"
+TRAINING_CHECK_WINDOW = 60   # minutes — epochs print every 10 epochs (~40 min gap)
+                              # 10 min was too short — increased to 60 min
+TRAINING_SLEEP_SECS   = 10 * 60  # sleep 10 min before re-checking
+
+
+def training_is_active(log_dir=TRAINING_LOG_DIR,
+                        window_minutes=TRAINING_CHECK_WINDOW):
+    """
+    Returns True if training is actively running. Two signals checked:
+
+    Signal 1 — Log file mtime:
+      Any aria-round*.log in log_dir written within window_minutes.
+      Window is 60 min — epochs print every 10 epochs at ~4 min/epoch
+      = up to 40 min between log writes. 10 min was too short.
+
+    Signal 2 — Process check:
+      If run_round*.py is in the process list — training is running
+      regardless of log age. Belt and suspenders.
+
+    Returns False only if BOTH signals are quiet.
+    """
+    # Signal 1: log file mtime
+    pattern = os.path.join(log_dir, "aria-round*.log")
+    logs    = glob.glob(pattern)
+    if logs:
+        latest = max(logs, key=os.path.getmtime)
+        age    = time.time() - os.path.getmtime(latest)
+        if age < (window_minutes * 60):
+            return True
+
+    # Signal 2: process check — look for active training process
+    try:
+        import subprocess
+        result = subprocess.run(
+            ["pgrep", "-f", "run_round"],
+            capture_output=True, text=True
+        )
+        if result.returncode == 0 and result.stdout.strip():
+            return True
+    except Exception:
+        pass  # process check unavailable — rely on log signal only
+
+    return False
 
 # ── LOGGING ────────────────────────────────────────────────────────────────────
 logging.basicConfig(
@@ -79,7 +135,7 @@ def build_id_to_plane(tokenizer):
 
 
 def build_vocab_mask(tokenizer):
-    mask = torch.full((VOCAB_SIZE,), -1e9, device=DEVICE)
+    mask = torch.full((VOCAB_SIZE,), -1e9, device=IDLE_DEVICE)
     for tid in tokenizer.vocab.values():
         if 0 <= int(tid) < VOCAB_SIZE:
             mask[int(tid)] = 0.0
@@ -181,7 +237,7 @@ def generate_pass(prompt_text, model, tokenizer, id_to_plane, vocab_mask):
     with torch.no_grad():
         for _ in range(MAX_NEW):
             input_tensor = torch.tensor(
-                [sequence], dtype=torch.long, device=DEVICE
+                [sequence], dtype=torch.long, device=IDLE_DEVICE
             )
             logits = model(input_tensor)
             last_logits = logits[0, -1, :].float()
@@ -410,18 +466,25 @@ def main():
     id_to_plane = build_id_to_plane(tokenizer)
     log.info(f"  Vocabulary: {len(tokenizer.vocab)} words")
 
-    # Load model
-    log.info("Loading model...")
+    # Guard status — printed before model load
+    log.info("Guard 1: CPU-only inference — active")
+    log.info("Guard 2: Training detection — active")
+    log.info(f"Watching: {TRAINING_LOG_DIR} for aria-round*.log activity")
+    log.info(f"  Training window: {TRAINING_CHECK_WINDOW} minutes — "
+             f"if active, sleep {TRAINING_SLEEP_SECS // 60} min before retry")
+
+    # Load model — GUARD 1: always CPU, never GPU
+    log.info("Loading model on CPU (Guard 1 — training owns GPU)...")
     model = ARIACoreModel(vocab_size=VOCAB_SIZE, embed_dim=EMBED_DIM)
     if CHECKPOINT.exists():
-        ckpt = torch.load(CHECKPOINT, map_location=DEVICE)
+        ckpt = torch.load(CHECKPOINT, map_location=IDLE_DEVICE)
         model.load_state_dict(ckpt["model_state"])
         loss = ckpt.get("best_loss", "?")
         log.info(f"  Checkpoint: {CHECKPOINT.name}")
         log.info(f"  Loss: {loss:.6f}" if isinstance(loss, float) else f"  Loss: {loss}")
     else:
         log.warning(f"  WARNING: {CHECKPOINT} not found — random weights")
-    model = model.to(DEVICE)
+    model = model.to(IDLE_DEVICE)
     model.eval()
 
     vocab_mask = build_vocab_mask(tokenizer)
@@ -460,7 +523,17 @@ def main():
             )
             continue
 
-        # HUNGRY — idle threshold reached
+        # GUARD 2 — training active check before firing
+        if training_is_active():
+            log.info(
+                f"Training active — idle suspended. "
+                f"Sleeping {TRAINING_SLEEP_SECS // 60} min before retry."
+            )
+            time.sleep(TRAINING_SLEEP_SECS)
+            idle_start = time.time()   # reset — training time is not idle time
+            continue
+
+        # HUNGRY — idle threshold reached and training confirmed quiet
         log.info(
             f"Idle threshold reached: "
             f"{int(idle_elapsed // 60)}m {int(idle_elapsed % 60)}s — HUNGRY"
