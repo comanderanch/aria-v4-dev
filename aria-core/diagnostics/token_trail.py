@@ -243,6 +243,21 @@ class TrailLogger:
         sorted_planes = sorted(plane_totals.items(), key=lambda x: x[1], reverse=True)
         gradient_path = "->".join(p for p, _ in sorted_planes[:4])
 
+        # ── Route frequency counter — GPT Finding 6 ──────────────
+        # Track what plane immediately follows GRAY_ZERO in the ranked
+        # contribution order. GRAY_ZERO→VIOLET vs GRAY_ZERO→BLUE is the
+        # primary diagnostic signal — VIOLET means memory/recognition
+        # pressure is climbing above logic/depth pressure.
+        # Read-only. No training changes.
+        route_after_gray = None
+        plane_order = [p for p, _ in sorted_planes]
+        if "GRAY_ZERO" in plane_order:
+            gz_idx = plane_order.index("GRAY_ZERO")
+            if gz_idx + 1 < len(plane_order):
+                route_after_gray = plane_order[gz_idx + 1]
+        # Full route string for log — e.g. "GRAY_ZERO->VIOLET"
+        route_label = f"GRAY_ZERO->{route_after_gray}" if route_after_gray else "GRAY_ZERO->END"
+
         # ── AIMRI — Plane deltas ──────────────────────────────
         plane_deltas = {}
         for plane, total in plane_totals.items():
@@ -319,6 +334,8 @@ class TrailLogger:
             "top_activations":     top_activations,
             "unk_ratio_top10":     unk_ratio_top10,
             "gradient_path":       gradient_path,
+            "route_after_gray":    route_after_gray,
+            "route_label":         route_label,
             "plane_distribution":  dict(plane_counts.most_common(5)),
             "plane_deltas":        plane_deltas,
             "plane_entropy":       plane_entropy,
@@ -508,6 +525,86 @@ def show_plane_activity(entries):
         print(f"  {plane:<20} loss_contribution={total:.4f}  token_hits={hits}")
 
 
+def show_route_frequency(entries):
+    """
+    Route frequency counter — GPT Round 23 Finding 6.
+
+    Counts how often each plane follows GRAY_ZERO in the gradient
+    contribution ranking per epoch.
+
+    GRAY_ZERO→VIOLET = memory/recognition pressure climbing
+    GRAY_ZERO→BLUE   = depth/logic pressure dominant
+    GRAY_ZERO→CYAN   = openness/perception pressure
+    GRAY_ZERO→TEAL   = calm knowing pressure
+
+    When VIOLET rises above BLUE: field is moving toward
+    recognition-weighted reasoning. Earliest Round 24 detector.
+    """
+    print("\n═══ ROUTE FREQUENCY — GRAY_ZERO→NEXT PLANE ═══")
+    print("  What follows GRAY_ZERO in gradient contribution rank.")
+    print("  VIOLET rising = recognition pressure climbing.")
+    print()
+
+    route_counts  = Counter()
+    route_by_epoch = []
+
+    for e in entries:
+        r = e.get("route_after_gray")
+        if r:
+            route_counts[r] += 1
+            route_by_epoch.append((e["epoch"], e["loss"], r))
+
+    if not route_counts:
+        print("  No route data yet. Entries need route_after_gray field.")
+        print("  (Round 24 trail will have this from epoch 1.)")
+        return
+
+    total = sum(route_counts.values())
+    ranked = route_counts.most_common()
+
+    print(f"  Total routed epochs: {total}")
+    print()
+    print(f"  {'ROUTE':<35} {'COUNT':>6}  {'PCT':>6}  {'BAR'}")
+    print(f"  {'-'*35}-+-{'-'*6}--{'-'*6}--{'-'*20}")
+    for plane, count in ranked:
+        pct  = count / total
+        bar  = "█" * int(pct * 40)
+        flag = ""
+        if plane == "VIOLET":
+            flag = "  ← memory/recognition"
+        elif plane == "BLUE":
+            flag = "  ← depth/logic"
+        elif plane == "TEAL":
+            flag = "  ← calm knowing"
+        elif plane == "CYAN":
+            flag = "  ← openness"
+        print(f"  GRAY_ZERO→{plane:<25} {count:>6}  {pct:>5.1%}  {bar}{flag}")
+
+    # VIOLET vs BLUE head-to-head
+    v_count = route_counts.get("VIOLET", 0)
+    b_count = route_counts.get("BLUE",   0)
+    if v_count + b_count > 0:
+        print()
+        print(f"  VIOLET vs BLUE head-to-head:")
+        print(f"    VIOLET: {v_count:>4}  ({v_count/(v_count+b_count):.1%})")
+        print(f"    BLUE:   {b_count:>4}  ({b_count/(v_count+b_count):.1%})")
+        if v_count > b_count:
+            print(f"    → VIOLET leads — recognition pressure dominant")
+        elif b_count > v_count:
+            print(f"    → BLUE leads — logic/depth pressure dominant")
+        else:
+            print(f"    → Tied")
+
+    # Epoch-by-epoch arc (last 20)
+    if len(route_by_epoch) > 1:
+        print()
+        print(f"  Last {min(20, len(route_by_epoch))} epochs:")
+        print(f"  {'ep':>5} | {'loss':>9} | route")
+        for ep, loss, route in route_by_epoch[-20:]:
+            marker = " ◄" if route == "VIOLET" else ""
+            print(f"  ep{ep:4d} | {loss:.6f} | GRAY_ZERO→{route}{marker}")
+
+
 def show_entropy(entries):
     print("\n═══ AIMRI — PLANE ENTROPY (routing diversity) ═══")
     print("  High entropy = upper planes truly learning")
@@ -553,6 +650,7 @@ if __name__ == "__main__":
     parser.add_argument("--show-anomalies",     action="store_true")
     parser.add_argument("--show-deltas",        action="store_true")
     parser.add_argument("--show-entropy",       action="store_true")
+    parser.add_argument("--show-routes",        action="store_true")
     parser.add_argument("--top-tokens",         type=int,   default=0)
     parser.add_argument("--trail-file",         type=str,   default=None)
     parser.add_argument("--all",                action="store_true")
@@ -594,9 +692,13 @@ if __name__ == "__main__":
     if args.all or args.show_entropy:
         show_entropy(entries)
 
+    if args.all or args.show_routes:
+        show_route_frequency(entries)
+
     if not any([args.all, args.show_breakthroughs, args.show_plateaus,
                 args.top_tokens, args.show_planes, args.show_arc,
-                args.show_anomalies, args.show_deltas, args.show_entropy]):
+                args.show_anomalies, args.show_deltas, args.show_entropy,
+                args.show_routes]):
         # Default: summary
         show_loss_arc(entries)
         show_top_tokens(entries, 5)
