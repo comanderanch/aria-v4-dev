@@ -170,3 +170,38 @@ No OS layer yet
 No worker loops yet
 No action systems yet
 ```
+
+---
+
+## curiosity.py — ADDED MARCH 19 2026
+
+File: aria-core/curiosity.py
+
+Post-event introspection only.
+Zero influence on generation.
+Downstream of trace gate.
+
+Curiosity is a response to irreducibility.
+Not a driver of it.
+That boundary is law.
+
+### Architecture constraint — never break
+
+```
+curiosity NEVER writes to field_state
+curiosity NEVER writes to instability
+curiosity NEVER writes to candidate generation
+curiosity NEVER writes to token maps
+curiosity is downstream only
+generation_path is perpendicular to curiosity_path
+They must never intersect
+```
+
+### Proof
+
+curiosity_events == null_events: True
+All unresolved: True
+No drift in null rate.
+No leakage into generation path.
+
+Commander Anthony Hagerty — Haskell Texas — March 19 2026

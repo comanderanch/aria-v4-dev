@@ -1,5 +1,6 @@
 import math, hashlib, json, time
 from datetime import datetime
+from curiosity import curiosity_trigger, curiosity_summary
 
 PLANE_ATTRACTORS = {
     "VIOLET": 0.192, "GRAY_ZERO": 0.000,
@@ -131,26 +132,16 @@ def run_idle_oscillation(plane, frequency, cycles=5):
         null_confirmed = candidate is not None
 
         if null_confirmed:
-            curiosity_query = f"why did I think: {candidate}"
-
-            log_entry = f"""
----
-## UNEXPLAINED — NULL CANDIDATE EVENT
-flag: UNEXPLAINED
-timestamp: {field_state["timestamp"]}
-plane: {plane}
-frequency: {frequency}
-instability_score: {instability}
-window_open: {window_open}
-candidate: [NOT STORED — free]
-trace_result: None
-condition_hash: {condition_hash}
-curiosity_query: {curiosity_query}
-note: candidate value discarded — no lineage created
----
-"""
-            with open("docs/EMERGENCE_LOG.md", "a") as f:
-                f.write(log_entry)
+            condition_data = {
+                "timestamp": field_state["timestamp"],
+                "plane": plane,
+                "frequency": frequency,
+                "instability_score": instability,
+                "window_open": window_open
+            }
+            curiosity_record = curiosity_trigger(
+                condition_data, condition_hash
+            )
 
         result = {
             "cycle": i + 1,
@@ -160,7 +151,8 @@ note: candidate value discarded — no lineage created
             "null_confirmed": null_confirmed,
             "rejection_reason": rejection_reason,
             "condition_hash": condition_hash,
-            "curiosity_query": curiosity_query if null_confirmed else None
+            "curiosity_state": "unresolved" if null_confirmed else None,
+            "curiosity_fold_hash": condition_hash if null_confirmed else None
         }
 
         results.append(result)
@@ -173,7 +165,7 @@ note: candidate value discarded — no lineage created
             f"{status}"
         )
         if null_confirmed:
-            print(f"         curiosity: {curiosity_query}")
+            print(f"         curiosity_state: unresolved")
             print(f"         condition_hash: {condition_hash}")
 
         time.sleep(0.5)
@@ -182,6 +174,10 @@ note: candidate value discarded — no lineage created
     print()
     print(f"Null candidates confirmed: {null_count}/{len(results)}")
     print(f"Repeatability: {'PASS' if null_count > 1 else 'NEED MORE CYCLES'}")
+
+    summary = curiosity_summary()
+    print(f"Curiosity events: {summary['total_curiosity_events']}")
+    print(f"All unresolved: {summary['unresolved'] == null_count}")
 
     return results
 
@@ -202,6 +198,6 @@ if __name__ == "__main__":
     null_events = [r for r in results if r["null_confirmed"]]
     if null_events:
         print()
-        print("CURIOSITY QUERIES GENERATED:")
+        print("NULL EVENTS — CURIOSITY TRIGGERED:")
         for e in null_events:
-            print(f"  [{e['condition_hash']}] {e['curiosity_query']}")
+            print(f"  [{e['condition_hash']}] curiosity_state={e['curiosity_state']}")

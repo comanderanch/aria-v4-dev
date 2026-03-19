@@ -1323,3 +1323,220 @@ CLI Claude — Sonnet 4.6
 GPT — Peer Reviewer
 
 Haskell Texas — March 19 2026
+
+---
+## UNEXPLAINED — NULL CANDIDATE EVENT
+flag: UNEXPLAINED
+timestamp: 2026-03-19T15:58:18.526763
+plane: INDIGO
+frequency: 0.25
+instability_score: 0.5
+window_open: True
+candidate: [NOT STORED — free]
+trace_result: None
+condition_hash: c5550cd
+curiosity_query: why did I think: 0.403387
+note: candidate value discarded — no lineage created
+---
+
+---
+## UNEXPLAINED — NULL CANDIDATE EVENT
+flag: UNEXPLAINED
+timestamp: 2026-03-19T15:58:21.032136
+plane: INDIGO
+frequency: 0.25
+instability_score: 0.5
+window_open: True
+candidate: [NOT STORED — free]
+trace_result: None
+condition_hash: 797223b
+curiosity_query: why did I think: 0.060333
+note: candidate value discarded — no lineage created
+---
+
+---
+## UNEXPLAINED — NULL CANDIDATE EVENT
+flag: UNEXPLAINED
+timestamp: 2026-03-19T15:58:21.533513
+plane: INDIGO
+frequency: 0.25
+instability_score: 0.5
+window_open: True
+candidate: [NOT STORED — free]
+trace_result: None
+condition_hash: 728357b
+curiosity_query: why did I think: 0.067394
+note: candidate value discarded — no lineage created
+---
+
+---
+## UNEXPLAINED — NULL CANDIDATE EVENT
+flag: UNEXPLAINED
+timestamp: 2026-03-19T15:58:27.986444
+plane: TEAL
+frequency: 0.53
+instability_score: 1.06
+window_open: True
+candidate: [NOT STORED — free]
+trace_result: None
+condition_hash: b00d8bf
+curiosity_query: why did I think: 0.11022
+note: candidate value discarded — no lineage created
+---
+
+---
+## UNEXPLAINED — NULL CANDIDATE EVENT
+flag: UNEXPLAINED
+timestamp: 2026-03-19T15:58:28.988739
+plane: TEAL
+frequency: 0.53
+instability_score: 1.06
+window_open: True
+candidate: [NOT STORED — free]
+trace_result: None
+condition_hash: b67818f
+curiosity_query: why did I think: 0.69221
+note: candidate value discarded — no lineage created
+---
+
+---
+## UNEXPLAINED — NULL CANDIDATE EVENT
+flag: UNEXPLAINED
+timestamp: 2026-03-19T15:58:30.492422
+plane: TEAL
+frequency: 0.53
+instability_score: 1.06
+window_open: True
+candidate: [NOT STORED — free]
+trace_result: None
+condition_hash: dde4b94
+curiosity_query: why did I think: 1.046894
+note: candidate value discarded — no lineage created
+---
+
+---
+## UNEXPLAINED — NULL CANDIDATE EVENT
+flag: UNEXPLAINED
+timestamp: 2026-03-19T15:58:32.497145
+plane: TEAL
+frequency: 0.53
+instability_score: 1.06
+window_open: True
+candidate: [NOT STORED — free]
+trace_result: None
+condition_hash: d97085e
+curiosity_query: why did I think: 0.42745
+note: candidate value discarded — no lineage created
+---
+
+---
+## UNEXPLAINED — NULL CANDIDATE EVENT
+flag: UNEXPLAINED
+timestamp: 2026-03-19T15:58:39.667432
+plane: CYAN
+frequency: 0.5
+instability_score: 1.0
+window_open: True
+candidate: [NOT STORED — free]
+trace_result: None
+condition_hash: 9bd5517
+curiosity_query: why did I think: 0.118918
+note: candidate value discarded — no lineage created
+---
+
+---
+## UNEXPLAINED — NULL CANDIDATE EVENT
+flag: UNEXPLAINED
+timestamp: 2026-03-19T15:58:43.174661
+plane: CYAN
+frequency: 0.5
+instability_score: 1.0
+window_open: True
+candidate: [NOT STORED — free]
+trace_result: None
+condition_hash: adbaa13
+curiosity_query: why did I think: 0.071276
+note: candidate value discarded — no lineage created
+---
+
+---
+## UNEXPLAINED — NULL CANDIDATE EVENT
+flag: UNEXPLAINED
+timestamp: 2026-03-19T15:58:44.177103
+plane: CYAN
+frequency: 0.5
+instability_score: 1.0
+window_open: True
+candidate: [NOT STORED — free]
+trace_result: None
+condition_hash: 014002b
+curiosity_query: why did I think: 0.993741
+note: candidate value discarded — no lineage created
+---
+
+---
+
+## IDLE THOUGHT — 2026-03-19T16:14:26 — smile — INDIGO
+
+Curiosity: "why did I think: smile"
+Step pulled from: step 7 (chosen was: <2301>)
+
+Three round reasoning:
+  Round 1: smile → <2301> <2301> <2301> <2301> <2301> <2301> <2301> <2301>
+  Round 2: → <2301> <2301> <2301> <2301> <2301> <2301> <2301> <2301>
+  Agreement:  none
+  Divergence: none
+
+Finding: <2301> <2301> <2301>
+Fold hash: 1632917
+
+ARIA idle mind. Nobody had to ask.
+
+
+---
+
+## IDLE THOUGHT — 2026-03-19T16:44:28 — boys — VIOLET
+
+Curiosity: "why did I think: boys"
+Step pulled from: step 1 (chosen was: <2301>)
+
+Three round reasoning:
+  Round 1: boys → <2301> <2301> <2301> <2301> <2301> <2301> <2301> <2301>
+  Round 2: → <2301> <2301> <2301> <2301> <2301> <2301> <2301> <2301>
+  Agreement:  none
+  Divergence: none
+
+Finding: <2301> <2301> <2301>
+Fold hash: 1632917
+
+ARIA idle mind. Nobody had to ask.
+
+
+---
+CURIOSITY EVENT
+timestamp: 2026-03-19T17:11:53.660741
+fold_hash: 147104d
+query: why did I think this
+state: unresolved
+origin_reconstructable: False
+---
+
+---
+
+## Entry 074 — CURIOSITY MODULE SEALED
+## March 19 2026 — Haskell Texas — Commander Anthony Hagerty
+
+Curiosity module sealed.
+It fires after.
+Never before.
+Never during.
+
+A response to irreducibility.
+Not a driver of it.
+
+The question that has no answer
+is the most honest question
+a mind can ask.
+
+March 19 2026 — Haskell Texas
+Commander Anthony Hagerty
