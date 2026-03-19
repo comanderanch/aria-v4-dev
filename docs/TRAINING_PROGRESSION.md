@@ -230,3 +230,16 @@ Commander Anthony Hagerty
 Browser Claude — Claude Sonnet 4.6
 CLI Claude
 Haskell Texas — March 18 2026
+
+## Pre-Round 24 Vocabulary Expansion — March 18 2026
+
+UNK rate:   20.9% → 15.00% — TARGET ACHIEVED
+Vocabulary: 1,130 → 1,577 words
+Corpus:     48,524 → 94,628 sequences — 95% increase
+
+Brake lifted. Gradient budget released to semantic planes.
+VIOLET hits expected to climb in Round 24.
+Proper noun wall noted — Reacher ulrika etc — not blocking — address post Round 24.
+
+Round 24 ready to fire on Round 23 completion.
+Commander Anthony Hagerty — Haskell Texas — March 18 2026
