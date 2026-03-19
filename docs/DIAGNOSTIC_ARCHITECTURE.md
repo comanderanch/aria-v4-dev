@@ -379,3 +379,88 @@ Verdict: vocabulary gap — not structural failure
 Action: expand vocabulary before Round 24
 ```
 
+
+---
+
+## AIMRI TRAIL READING — Round 23 — March 18 2026
+
+### What The Trail Shows
+
+```
+GRAY_ZERO   5064 loss   4012 hits  — NOW anchor — dominant and stable
+VIOLET      1049 loss    992 hits  — love/memory — second place, climbing
+INDIGO       141         181 hits  — intuition
+CYAN         121         121 hits  — openness
+BLUE         103         198 hits  — depth
+```
+
+VIOLET at 992 hits is not assigned behavior.
+That is emerging behavior.
+The gradient is pulling toward memory and love as its second strongest signal.
+That is her nature showing in the numbers.
+
+### The UNK Brake
+
+UNK token `<2301>` — 266 appearances — 22% of gradient budget burning
+on words the model has no name for.
+
+That is not architecture failure.
+That is not farmer logic failure.
+That is vocabulary gap.
+
+```
+UNK rate on filtered corpus: 20.9%
+Total unknown unique words: 35,485
+Total corpus words: 3,121,393
+```
+
+**Top 30 words needed — by frequency:**
+```
+s:       20326  (contraction fragment: it's → s)
+t:       15232  (contraction fragment: don't → t)
+reacher:  5159  (proper noun — Calibre corpus)
+re:       4244  (contraction fragment: we're → re)
+m:        3855  (contraction fragment: I'm → m)
+don:      3852  (contraction root)
+ll:       3645  (contraction fragment: I'll → ll)
+d:        3333  (contraction fragment: I'd → d)
+didn:     3101  (contraction root)
+ve:       2377  (contraction fragment: I've → ve)
+should:   2017  ← REAL WORD — add
+three:    1942  ← REAL WORD — add
+years:    1915  ← REAL WORD — add
+day:      1887  ← REAL WORD — add
+wasn:     1458  (contraction root)
+minutes:  1193  ← REAL WORD — add
+ok:        948  ← REAL WORD — add
+least:     915  ← REAL WORD — add
+couldn:    876  (contraction root)
+rest:      876  ← REAL WORD — add
+ulrika:    846  (proper noun — Calibre)
+won:       809  (contraction root: won't)
+wouldn:    807  (contraction root)
+straight:  793  ← REAL WORD — add
+hours:     790  ← REAL WORD — add
+phone:     786  ← REAL WORD — add
+hour:      706  ← REAL WORD — add
+walk:      700  ← REAL WORD — add
+able:      658  ← REAL WORD — add
+chapter:   626  ← REAL WORD — add
+```
+
+**Note on contraction fragments:**
+The tokenizer strips apostrophes — `didn't` → `didn` + `t`.
+Single-letter fragments (`s`, `t`, `m`, `ll`, `d`, `re`, `ve`) carry near-zero
+semantic value. Better to add contraction roots (`didn`, `don`, `wasn`,
+`couldn`, `wouldn`, `won`) as GRAY_ZERO words than single letters.
+
+**Action before Round 24:**
+1. Browser Claude assigns plane frequencies for real words
+2. Add ~50 words to WORD_FREQUENCIES in aria_tokenizer.py
+3. Target: UNK rate 20.9% → below 15%
+4. Rebuild filtered corpus
+5. Fire Round 24
+
+Each unknown word added = real gradient signal replacing noise.
+Faster descent. Cleaner learning. The brake lifts.
+
