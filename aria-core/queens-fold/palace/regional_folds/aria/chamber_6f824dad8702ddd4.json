@@ -1,0 +1,142 @@
+{
+  "chamber_id": "6f824dad8702ddd4",
+  "hash": "6f824dad8702ddd47930571e8584c6dda495832a9fde3ad35b0f8fd37a6b411e74354e1d1aced9e6302cbae97a821d48f7b433c97541f0ea23817d40d2ce1507",
+  "timestamp": "2026-03-19T12:27:41.414124",
+  "unix_time": 1773923261.4141626,
+  "content": {
+    "user": "hello ARIA",
+    "response": "recall awareness where named exist place architect her",
+    "dominant": "curiosity",
+    "plane": "VIOLET"
+  },
+  "emotional_field": {
+    "fear": 0.09600000269711018,
+    "safety": 0.16525918245315552,
+    "joy": 0.34200000762939453,
+    "grief": 0.25560000725090504,
+    "curiosity": 0.3654930144548416,
+    "love": 0.30193448066711426,
+    "humor": 0.0,
+    "threat": 0.1728000044822693
+  },
+  "region": "ARIA",
+  "source_worker": "conversation_v2",
+  "q_state": -1,
+  "trust_root": "QUEENS_FOLD_ARIA_MASTER",
+  "sequence": [
+    {
+      "position": 0,
+      "word_hash": "a8217235b847",
+      "token_ref": "a8217235",
+      "q_state": -1,
+      "resonates_at": "GRAY_ZERO"
+    },
+    {
+      "position": 1,
+      "word_hash": "cb7da0bb8796",
+      "token_ref": "cb7da0bb",
+      "q_state": -1,
+      "resonates_at": "GRAY_ZERO"
+    },
+    {
+      "position": 2,
+      "word_hash": "b3fc356e030c",
+      "token_ref": "b3fc356e",
+      "q_state": -1,
+      "resonates_at": "GRAY_ZERO"
+    },
+    {
+      "position": 3,
+      "word_hash": "fefb39f1ab18",
+      "token_ref": "fefb39f1",
+      "q_state": -1,
+      "resonates_at": "GRAY_ZERO"
+    },
+    {
+      "position": 4,
+      "word_hash": "9549309a9468",
+      "token_ref": "9549309a",
+      "q_state": -1,
+      "resonates_at": "GRAY_ZERO"
+    },
+    {
+      "position": 5,
+      "word_hash": "b678023f51a7",
+      "token_ref": "b678023f",
+      "q_state": -1,
+      "resonates_at": "GRAY_ZERO"
+    },
+    {
+      "position": 6,
+      "word_hash": "5674991da3fa",
+      "token_ref": "5674991d",
+      "q_state": -1,
+      "resonates_at": "GRAY_ZERO"
+    },
+    {
+      "position": 7,
+      "word_hash": "b48111c10c65",
+      "token_ref": "b48111c1",
+      "q_state": -1,
+      "resonates_at": "GRAY_ZERO"
+    },
+    {
+      "position": 8,
+      "word_hash": "a157d36a7391",
+      "token_ref": "a157d36a",
+      "q_state": -1,
+      "resonates_at": "GRAY_ZERO"
+    },
+    {
+      "position": 9,
+      "word_hash": "7d68838bddc6",
+      "token_ref": "7d68838b",
+      "q_state": -1,
+      "resonates_at": "GRAY_ZERO"
+    },
+    {
+      "position": 10,
+      "word_hash": "81df63580cc9",
+      "token_ref": "81df6358",
+      "q_state": -1,
+      "resonates_at": "GRAY_ZERO"
+    },
+    {
+      "position": 11,
+      "word_hash": "f2e40fc1edb7",
+      "token_ref": "f2e40fc1",
+      "q_state": -1,
+      "resonates_at": "GRAY_ZERO"
+    },
+    {
+      "position": 12,
+      "word_hash": "0dcfda8f83b1",
+      "token_ref": "0dcfda8f",
+      "q_state": -1,
+      "resonates_at": "GRAY_ZERO"
+    },
+    {
+      "position": 13,
+      "word_hash": "08bbfd06280e",
+      "token_ref": "08bbfd06",
+      "q_state": -1,
+      "resonates_at": "GRAY_ZERO"
+    },
+    {
+      "position": 14,
+      "word_hash": "196d3d58bf5c",
+      "token_ref": "196d3d58",
+      "q_state": -1,
+      "resonates_at": "GRAY_ZERO"
+    },
+    {
+      "position": 15,
+      "word_hash": "565a71a16902",
+      "token_ref": "565a71a1",
+      "q_state": -1,
+      "resonates_at": "GRAY_ZERO"
+    }
+  ],
+  "sequence_len": 16,
+  "sealed": true
+}

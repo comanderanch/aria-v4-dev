@@ -1,6 +1,6 @@
 {
-  "total_sealed": 40,
-  "last_updated": "2026-03-18T10:16:06.032360",
+  "total_sealed": 41,
+  "last_updated": "2026-03-19T12:27:41.419748",
   "trust_root": "QUEENS_FOLD_ARIA_MASTER",
   "regions": [
     "V1",
@@ -678,6 +678,23 @@
         "love": 0.31166302723189193,
         "humor": 0.0,
         "threat": 0.2902500033378601
+      },
+      "cross": []
+    },
+    "6f824dad8702ddd4": {
+      "hash": "6f824dad8702ddd47930571e8584c6dd",
+      "region": "ARIA",
+      "timestamp": "2026-03-19T12:27:41.419417",
+      "worker": "conversation_v2",
+      "emotional": {
+        "fear": 0.09600000269711018,
+        "safety": 0.16525918245315552,
+        "joy": 0.34200000762939453,
+        "grief": 0.25560000725090504,
+        "curiosity": 0.3654930144548416,
+        "love": 0.30193448066711426,
+        "humor": 0.0,
+        "threat": 0.1728000044822693
       },
       "cross": []
     }

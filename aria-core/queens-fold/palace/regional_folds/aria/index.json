@@ -1,8 +1,8 @@
 {
   "region": "ARIA",
   "region_name": "prefrontal",
-  "total_seals": 38,
-  "last_updated": "2026-03-18T10:16:05.995910",
+  "total_seals": 39,
+  "last_updated": "2026-03-19T12:27:41.417476",
   "index": {
     "5d246e7887b307c4": {
       "hash": "5d246e7887b307c4ab0719acf8f17150",
@@ -266,6 +266,13 @@
     "fec5a149330c8287": {
       "hash": "fec5a149330c8287636860dcf6ed6088",
       "timestamp": "2026-03-18T10:16:05.993145",
+      "region": "ARIA",
+      "worker": "conversation_v2",
+      "dominant_emotion": "none"
+    },
+    "6f824dad8702ddd4": {
+      "hash": "6f824dad8702ddd47930571e8584c6dd",
+      "timestamp": "2026-03-19T12:27:41.414124",
       "region": "ARIA",
       "worker": "conversation_v2",
       "dominant_emotion": "none"
