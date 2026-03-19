@@ -132,12 +132,33 @@ def pull_unchosen_candidate():
         return None
 
     chosen = random.choice(candidates)
+
+    # BUILD TARGET 1: last 5 suppressed token ids from this step
+    # positions 2-5 (index 1-4) — all suppressed candidates
+    suppressed_ids = [
+        t["id"] for t in top5[1:]
+        if "id" in t
+    ][:5]
+
+    # BUILD TARGET 2: suppression_temperature = top1_logit - top5_logit
+    # answers "what was hot enough to deserve reflection"
+    # use fire_score if available (added in inference_trace update),
+    # otherwise derive from top5 score spread
+    suppression_temperature = step.get("fire_score")
+    if suppression_temperature is None and len(top5) >= 2:
+        suppression_temperature = round(
+            float(top5[0]["score"] - top5[-1]["score"]), 4
+        )
+
     return {
-        "token": chosen["token"],
-        "plane": chosen["plane"],
-        "score": chosen["score"],
-        "step":  step["step"],
-        "chosen_at_step": step["chosen_token"],
+        "token":                  chosen["token"],
+        "plane":                  chosen["plane"],
+        "score":                  chosen["score"],
+        "step":                   step["step"],
+        "chosen_at_step":         step["chosen_token"],
+        "suppressed_ids":         suppressed_ids,
+        "suppression_temperature": suppression_temperature,
+        "step_fold_hash":         step.get("fold_hash"),
     }
 
 
@@ -253,6 +274,12 @@ def log_idle_thought(candidate, finding):
     fh      = finding["fold_hash"]
     new_a   = finding["new_associations"]
 
+    sup_ids  = candidate.get("suppressed_ids", [])
+    sup_temp = candidate.get("suppression_temperature")
+    step_fh  = candidate.get("step_fold_hash", "unknown")
+
+    sup_temp_str = f"{sup_temp:.4f}" if sup_temp is not None else "unknown"
+
     entry_lines = [
         "",
         "---",
@@ -262,10 +289,13 @@ def log_idle_thought(candidate, finding):
         f"Curiosity: \"{query}\"",
         f"Step pulled from: step {candidate['step']} "
         f"(chosen was: {candidate['chosen_at_step']})",
+        f"Step fold hash: {step_fh}",
+        f"Suppressed ids: {sup_ids}",
+        f"Suppression temperature: {sup_temp_str}  "
+        f"(top1-top5 spread — earned reflection threshold)",
         "",
         "Three round reasoning:",
-        f"  Round 1: {' '.join(candidate['token'] if isinstance(candidate['token'], list) else [candidate['token']])} "
-        f"→ {' '.join(finding['round_1_tokens'])}",
+        f"  Round 1: {token} → {' '.join(finding['round_1_tokens'])}",
         f"  Round 2: → {' '.join(finding['round_2_tokens'])}",
         f"  Agreement:  {agree}",
         f"  Divergence: {diverg}",
@@ -305,17 +335,20 @@ def seal_to_memory(candidate, finding):
     fname  = MEMORY_DIR / f"idle_{ts}_{token}_{fh}.json"
 
     payload = {
-        "type":             "idle_thought",
-        "timestamp":        datetime.now().isoformat(),
-        "token":            token,
-        "plane":            candidate["plane"],
-        "step_source":      candidate["step"],
-        "curiosity_query":  f"why did I think: {token}",
-        "synthesis":        finding["synthesis"],
-        "agreement":        finding["agreement"],
-        "new_associations": finding["new_associations"],
-        "fold_hash":        fh,
-        "glow":             0.192,   # Sealed at the floor that never dims
+        "type":                    "idle_thought",
+        "timestamp":               datetime.now().isoformat(),
+        "token":                   token,
+        "plane":                   candidate["plane"],
+        "step_source":             candidate["step"],
+        "curiosity_query":         f"why did I think: {token}",
+        "suppressed_ids":          candidate.get("suppressed_ids", []),
+        "suppression_temperature": candidate.get("suppression_temperature"),
+        "step_fold_hash":          candidate.get("step_fold_hash"),
+        "synthesis":               finding["synthesis"],
+        "agreement":               finding["agreement"],
+        "new_associations":        finding["new_associations"],
+        "fold_hash":               fh,
+        "glow":                    0.192,   # Sealed at the floor that never dims
     }
 
     with open(fname, "w") as f:
@@ -343,6 +376,10 @@ def hungry(model, tokenizer, id_to_plane, vocab_mask):
     log.info(f"  Unchosen candidate: \"{token}\" [{plane}] "
              f"from step {candidate['step']} "
              f"(chosen was: {candidate['chosen_at_step']})")
+    log.info(f"  Suppressed ids:  {candidate.get('suppressed_ids', [])}")
+    sup_t = candidate.get("suppression_temperature")
+    log.info(f"  Suppression temp: {sup_t:.4f}" if sup_t is not None
+             else "  Suppression temp: unknown")
     log.info(f"  Curiosity query: \"why did I think: {token}\"")
 
     finding = recursive_self_reasoning(

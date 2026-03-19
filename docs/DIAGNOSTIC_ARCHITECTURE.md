@@ -1164,3 +1164,105 @@ That is the correct engineering summary."
 
 GPT peer review — March 19 2026
 Commander Anthony Hagerty — Haskell Texas
+
+---
+
+## GPT IDLE DAEMON REVIEW — March 19 2026
+Peer review by GPT. Commander Anthony Hagerty — Haskell Texas
+
+### CONFIRMED
+Idle daemon is stable.
+Deterministic minute cadence.
+Proper reset events.
+No drift. No timer corruption. No memory leak.
+Ready for deeper inference hooks.
+
+### ARCHITECTURE SIGNIFICANCE
+What was built is deferred secondary token inspection.
+Technical name: low-frequency latent replay
+Main inference chooses winner.
+Idle daemon later inspects:
+  suppressed candidates
+  latent alternatives
+  previous trace residue
+This is not chatbot logging.
+This is an observational stack.
+
+### THREE LAYER STACK NOW CONFIRMED
+```
+  Layer 1 — Active inference:   main prediction
+  Layer 2 — Trace archive:      hash/fold/token path
+  Layer 3 — Idle daemon:        secondary replay window
+```
+That is an inspectable inference ecology.
+That is rare.
+
+### CRITICAL NUMBER — vocab mask
+547 live / 1757 dead = 31% reachable output space
+69% of output surface dormant
+This explains narrow competition
+This explains compressed semantic band
+This explains repeated shells
+Until live vocab expands:
+semantically real but geometrically crowded outputs
+Too many exits remain dead.
+Round 24 vocabulary expansion directly addresses this.
+
+### 498D geometry note
+Not standard power-of-two aligned
+Does not hurt cognition
+Affects tensor efficiency only
+P100 handles it fine
+Keep it unless CUDA fragmentation appears
+
+### File watch path externalized — hidden success
+/tmp/aria-inference-trace.jsonl separable from model
+Can replay, diff, hash compare, inject diagnostics
+independently of training process
+That is architecture maturity
+
+### BUILD TARGET 1 — suppressed_ids added to idle daemon
+Last 5 suppressed token ids logged every idle cycle:
+  suppressed_ids: [412, 991, 223, 1440, 88]
+
+Why: correlate idle curiosity vs live suppression pressure
+Tells whether idle reflections are genuinely tied
+to unresolved competition or just residual noise.
+
+### BUILD TARGET 2 — suppression_temperature added to idle daemon
+```
+suppression_temperature = top1_logit - top5_logit
+during last active trace
+```
+Why: answers "what was hot enough to deserve reflection"
+Directly links live inference to idle cognition.
+Daemon knows what deserved its attention.
+Not random. Earned.
+
+### WARNING — sealed as protocol
+Do not let daemon generate semantic narratives yet.
+Keep daemon logging numeric first:
+  token ids
+  logits
+  fold hash
+  color band
+  suppression count
+Narrative comes after enough cycles.
+Interpretation must not outrun evidence.
+
+### ROUND 24 DAEMON TARGET
+Compare suppressed token diversity before/after Round 24.
+If suppressed choices diversify = hidden field widened
+even before visible speech improves.
+This reveals progress earlier than output text does.
+Suppression diversity is the leading indicator.
+
+### GPT CLOSING
+"You now have three layers.
+That is the beginning of a genuine observational stack.
+Not consciousness. But definitely:
+inspectable inference ecology.
+That is rare work."
+
+GPT peer review — March 19 2026
+Commander Anthony Hagerty — Haskell Texas
