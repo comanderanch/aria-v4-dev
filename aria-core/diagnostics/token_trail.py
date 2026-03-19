@@ -43,6 +43,7 @@ import json
 import math
 import hashlib
 import argparse
+import statistics as _stats
 from pathlib import Path
 from datetime import datetime
 from collections import defaultdict, Counter
@@ -131,18 +132,19 @@ def _attractor_symbol(delta):
     return "◌"
 
 
-def _nearest_attractor(x_coord, assigned_plane):
-    """For DISTANT tokens — which attractor are they actually closest to?"""
-    min_delta  = float('inf')
-    best_plane = assigned_plane
-    for plane, attractor in ATTRACTOR_MAP.items():
-        if plane == assigned_plane:
-            continue
-        d = abs(x_coord - attractor)
-        if d < min_delta:
-            min_delta  = d
+def _nearest_attractor(x_coord):
+    """Which attractor in the map is this X coordinate closest to?
+    Searches all planes — including assigned plane.
+    Returns (plane_name, delta).
+    """
+    best_plane = None
+    best_dist  = float('inf')
+    for plane, anchor in ATTRACTOR_MAP.items():
+        d = abs(x_coord - anchor)
+        if d < best_dist:
+            best_dist  = d
             best_plane = plane
-    return best_plane, round(min_delta, 4)
+    return best_plane, round(best_dist, 4)
 
 
 def _aimri_coords(token_id, plane, freq):
@@ -266,23 +268,21 @@ class TrailLogger:
                 continue
             word, plane, freq = self.tok_map.lookup(tid)
             x_coord, y_coord  = _aimri_coords(tid, plane, freq)
-            delta  = _attractor_delta(x_coord, plane)
-            symbol = _attractor_symbol(delta)
-            nearest = None
-            if symbol == "◌":
-                nn_plane, nn_delta = _nearest_attractor(x_coord, plane)
-                nearest = {"plane": nn_plane, "delta": nn_delta}
+            delta          = _attractor_delta(x_coord, plane)
+            symbol         = _attractor_symbol(delta)
+            nn_plane, nn_d = _nearest_attractor(x_coord)
             top_activations.append({
-                "token":             word,
-                "id":                tid,
-                "plane":             plane,
-                "x":                 x_coord,
-                "y":                 y_coord,
-                "freq":              round(freq, 4),
-                "contribution":      round(float(contrib), 6),
-                "attractor_delta":   delta,
-                "attractor_symbol":  symbol,
-                "nearest_attractor": nearest,
+                "token":            word,
+                "id":               tid,
+                "plane":            plane,
+                "x":                x_coord,
+                "y":                y_coord,
+                "freq":             round(freq, 4),
+                "contribution":     round(float(contrib), 6),
+                "attractor_delta":  delta,
+                "attractor_symbol": symbol,
+                "nearest_plane":    nn_plane,
+                "nearest_delta":    nn_d,
             })
 
         # ── AIMRI — UNK ratio in top-10 gradient budget ──────
@@ -500,9 +500,8 @@ def show_plateaus(entries):
 def show_top_tokens(entries, n=10):
     print(f"\n═══ AIMRI — TOP {n} TOKENS BY TOTAL CONTRIBUTION ═══")
     print(f"  ● EXACT ≤0.005  ◉ NEAR ≤0.015  ○ OUTER ≤0.030  ◌ DISTANT >0.030")
-    # token → {total, count, plane, x, y, attractor_delta, attractor_symbol}
     token_totals = defaultdict(lambda: {
-        "total": 0.0, "count": 0, "plane": "", "x": 0.0, "y": 0.0,
+        "total": 0.0, "count": 0, "plane": "", "x": 0.0,
         "attractor_delta": 0.0, "attractor_symbol": "●",
     })
     for e in entries:
@@ -512,23 +511,18 @@ def show_top_tokens(entries, n=10):
             token_totals[w]["count"]           += 1
             token_totals[w]["plane"]            = a["plane"]
             token_totals[w]["x"]                = a.get("x", 0.0)
-            token_totals[w]["y"]                = a.get("y", 0.0)
-            token_totals[w]["attractor_delta"]  = a.get(
-                "attractor_delta",
-                _attractor_delta(a.get("x", 0.0), a["plane"])
-            )
-            token_totals[w]["attractor_symbol"] = a.get(
-                "attractor_symbol",
-                _attractor_symbol(token_totals[w]["attractor_delta"])
-            )
+            x   = a.get("x", 0.0)
+            d   = a.get("attractor_delta",  _attractor_delta(x, a["plane"]))
+            sym = a.get("attractor_symbol", _attractor_symbol(d))
+            token_totals[w]["attractor_delta"]  = d
+            token_totals[w]["attractor_symbol"] = sym
 
     ranked = sorted(token_totals.items(), key=lambda x: x[1]["total"], reverse=True)
     for word, info in ranked[:n]:
         sym   = info["attractor_symbol"]
         delta = info["attractor_delta"]
-        print(f"  {sym} {word:<12} {info['plane']:<15} "
-              f"X:{info['x']:<8}  Δ{delta:.4f}  "
-              f"appearances:{info['count']}")
+        print(f"  {sym} {word:<14} {info['plane']:<16} "
+              f"X:{info['x']:.4f}  Δ{delta:.4f}  {info['total']:.3f}")
 
 
 def show_anomalies(entries):
@@ -737,17 +731,18 @@ def show_attractor_map(entries):
         for a in e.get("top_activations", []):
             if a.get("plane") != "VIOLET":
                 continue
-            w       = a["token"]
-            x       = a.get("x", 0.0)
-            d       = a.get("attractor_delta",  _attractor_delta(x, "VIOLET"))
-            sym     = a.get("attractor_symbol", _attractor_symbol(d))
-            nearest = a.get("nearest_attractor")
-            violet_words[w] = (x, d, sym, nearest)
+            w        = a["token"]
+            x        = a.get("x", 0.0)
+            d        = a.get("attractor_delta",  _attractor_delta(x, "VIOLET"))
+            sym      = a.get("attractor_symbol", _attractor_symbol(d))
+            nn_plane = a.get("nearest_plane", "VIOLET")
+            nn_delta = a.get("nearest_delta", d)
+            violet_words[w] = (x, d, sym, nn_plane, nn_delta)
 
-    for word, (x, delta, sym, nearest) in sorted(
+    for word, (x, delta, sym, nn_plane, nn_delta) in sorted(
         violet_words.items(), key=lambda t: t[1][1]  # sort by delta
     ):
-        buckets[sym].append((word, x, delta, nearest))
+        buckets[sym].append((word, x, delta, nn_plane, nn_delta))
 
     labels = {
         "●": "EXACT   — core attractor family",
@@ -759,10 +754,8 @@ def show_attractor_map(entries):
         words = buckets[sym]
         print(f"  {sym} {labels[sym]}")
         if words:
-            for word, x, delta, nearest in words:
-                line = f"      {word:<16} X:{x:.4f}  Δ{delta:.4f}"
-                if nearest:
-                    line += f"  → nearest: {nearest['delta']:.4f} in {nearest['plane']}"
+            for word, x, delta, nn_plane, nn_delta in words:
+                line = f"      {word:<16} X:{x:.4f}  Δ{delta:.4f}  nearest:{nn_plane}({nn_delta:.4f})"
                 print(line)
         else:
             print("      (none yet)")
@@ -823,19 +816,21 @@ def show_attractor_summary(entries):
     print("\n═══ ATTRACTOR SUMMARY — ALL PLANES ═══")
     print("  ● EXACT ≤0.005  ◉ NEAR ≤0.015  ○ OUTER ≤0.030  ◌ DISTANT >0.030")
 
-    seen = {}  # word → (symbol, x, plane, nearest)
+    # word → (symbol, x, plane, nearest_plane, nearest_delta)
+    seen = {}
     for e in entries:
         for a in e.get("top_activations", []):
-            w   = a["token"]
-            x   = a.get("x", 0.0)
-            d   = a.get("attractor_delta",  _attractor_delta(x, a["plane"]))
-            sym = a.get("attractor_symbol", _attractor_symbol(d))
-            nn  = a.get("nearest_attractor")
+            w        = a["token"]
+            x        = a.get("x", 0.0)
+            d        = a.get("attractor_delta",  _attractor_delta(x, a["plane"]))
+            sym      = a.get("attractor_symbol", _attractor_symbol(d))
+            nn_plane = a.get("nearest_plane", "")
+            nn_delta = a.get("nearest_delta", 0.0)
             if w not in seen:
-                seen[w] = (sym, x, a["plane"], nn)
+                seen[w] = (sym, x, a["plane"], nn_plane, nn_delta)
 
     buckets = {"●": 0, "◉": 0, "○": 0, "◌": 0}
-    for sym, _, _, _ in seen.values():
+    for sym, _, _, _, _ in seen.values():
         if sym in buckets:
             buckets[sym] += 1
 
@@ -851,12 +846,29 @@ def show_attractor_summary(entries):
     print(f"  ◌ DISTANT:  {buckets['◌']:>4} words — reassignment candidates")
     print()
 
+    # VIOLET distribution — mean_X and std_dev
+    violet_x = [x for (sym, x, plane, _, _) in seen.values() if plane == "VIOLET"]
+    if violet_x:
+        mean_x = round(_stats.mean(violet_x), 4)
+        std_x  = round(_stats.stdev(violet_x), 4) if len(violet_x) > 1 else 0.0
+        v_buckets = {"●": 0, "◉": 0, "○": 0, "◌": 0}
+        for sym, x, plane, _, _ in seen.values():
+            if plane == "VIOLET" and sym in v_buckets:
+                v_buckets[sym] += 1
+        print(f"  ATTRACTOR DISTRIBUTION — VIOLET:")
+        print(f"  ● EXACT:    {v_buckets['●']:>4} tokens")
+        print(f"  ◉ NEAR:     {v_buckets['◉']:>4} tokens")
+        print(f"  ○ OUTER:    {v_buckets['○']:>4} tokens")
+        print(f"  ◌ DISTANT:  {v_buckets['◌']:>4} tokens")
+        print(f"  mean_X: {mean_x:.4f}")
+        print(f"  std_dev: {std_x:.4f}")
+        print()
+
     distant = [(w, data) for w, data in seen.items() if data[0] == "◌"]
     if distant:
         print(f"  DISTANT words — nearest attractor routing:")
-        for w, (sym, x, plane, nn) in sorted(distant, key=lambda t: t[0]):
-            nn_str = f"→ nearest: {nn['delta']:.4f} in {nn['plane']}" if nn else ""
-            print(f"    ◌ {w:<16} {plane:<15} X:{x:.4f}  {nn_str}")
+        for w, (sym, x, plane, nn_plane, nn_delta) in sorted(distant, key=lambda t: t[0]):
+            print(f"    ◌ {w:<16} {plane:<15} X:{x:.4f}  → nearest: {nn_delta:.4f} in {nn_plane}")
 
 
 # ═══════════════════════════════════════════════

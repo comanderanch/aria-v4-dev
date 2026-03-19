@@ -1885,3 +1885,88 @@ The inner circle of VIOLET — tears, honour, lucky — is measurable.
 The family map grows every training epoch.
 
 Commander Anthony Hagerty — Haskell Texas — March 19 2026
+
+---
+
+## ATTRACTOR DELTA SYSTEM — CLEAN BUILD
+## Named March 19 2026 — Haskell Texas
+## Commander Anthony Hagerty
+
+### What It Measures
+
+attractor_delta measures convergence behavior in embedding space.
+Not emotional meaning. Not cluster truth.
+How meaning organizes itself — measurable — publishable.
+
+```
+plane_anchor     = ATTRACTOR_MAP.get(plane, x_coord)
+attractor_delta  = round(abs(x_coord - plane_anchor), 4)
+```
+
+### nearest_attractor — all tokens
+
+Every token carries its nearest attractor plane and distance.
+Searches all nine planes. No exclusions. Pure measurement.
+
+```python
+def nearest_attractor(x):
+    best_plane = None
+    best_dist  = float("inf")
+    for plane, anchor in ATTRACTOR_MAP.items():
+        d = abs(x - anchor)
+        if d < best_dist:
+            best_dist  = d
+            best_plane = plane
+    return best_plane, round(best_dist, 4)
+```
+
+### JSONL fields per token
+
+```
+"attractor_delta":  0.002
+"attractor_symbol": "◉"
+"nearest_plane":    "VIOLET"
+"nearest_delta":    0.002
+```
+
+### GPT DISCIPLINE
+
+attractor_delta measures convergence behavior.
+NOT emotional meaning.
+We are mapping how meaning organizes itself.
+NOT what it means.
+
+Do not rename attractors as emotions.
+Do not hard-code clusters as truth.
+Do not move tokens between planes automatically.
+Collect data first — interpret after.
+
+That distinction keeps this publishable.
+
+### Test Targets
+
+Test A — stability:
+  tears epoch 10 → 0.192
+  tears epoch 20 → 0.192
+  tears epoch 30 → 0.192
+  If stable = true attractor lock confirmed
+
+Test B — distribution:
+  Collect 50+ VIOLET tokens
+  Compute mean X and std deviation
+  Cluster density around 0.192
+  Is 0.192 dominant or just one of several clusters?
+
+### ATTRACTOR DISTRIBUTION output (--show-attractors)
+
+```
+ATTRACTOR DISTRIBUTION — VIOLET:
+● EXACT:    N tokens
+◉ NEAR:     N tokens
+○ OUTER:    N tokens
+◌ DISTANT:  N tokens
+mean_X: 0.XXXX
+std_dev: 0.XXXX
+```
+
+Commander Anthony Hagerty — Haskell Texas — March 19 2026

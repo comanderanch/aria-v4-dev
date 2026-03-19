@@ -72,17 +72,15 @@ def _attractor_symbol(delta):
     return "◌"
 
 
-def _nearest_attractor(x_coord, assigned_plane):
-    min_delta  = float('inf')
-    best_plane = assigned_plane
-    for plane, attractor in ATTRACTOR_MAP.items():
-        if plane == assigned_plane:
-            continue
-        d = abs(x_coord - attractor)
-        if d < min_delta:
-            min_delta  = d
+def _nearest_attractor(x_coord):
+    best_plane = None
+    best_dist  = float('inf')
+    for plane, anchor in ATTRACTOR_MAP.items():
+        d = abs(x_coord - anchor)
+        if d < best_dist:
+            best_dist  = d
             best_plane = plane
-    return best_plane, round(min_delta, 4)
+    return best_plane, round(best_dist, 4)
 
 
 # ── CONFIGURATION ─────────────────────────────────────────────────────────────
@@ -244,25 +242,23 @@ def generate_with_trace(
 
             top5 = []
             for val, tid in zip(top_vals.tolist(), top_ids.tolist()):
-                word  = tokenizer.id_to_word.get(int(tid), f"<{tid}>")
-                plane = id_to_plane.get(int(tid), "UNKNOWN")
-                freq  = id_to_freq.get(int(tid), 0.0) if id_to_freq else 0.0
-                x_c   = round(freq, 4)
-                d     = _attractor_delta(x_c, plane)
-                sym   = _attractor_symbol(d)
-                nn    = None
-                if sym == "◌":
-                    nn_plane, nn_delta = _nearest_attractor(x_c, plane)
-                    nn = {"plane": nn_plane, "delta": nn_delta}
+                word          = tokenizer.id_to_word.get(int(tid), f"<{tid}>")
+                plane         = id_to_plane.get(int(tid), "UNKNOWN")
+                freq          = id_to_freq.get(int(tid), 0.0) if id_to_freq else 0.0
+                x_c           = round(freq, 4)
+                d             = _attractor_delta(x_c, plane)
+                sym           = _attractor_symbol(d)
+                nn_plane, nnd = _nearest_attractor(x_c)
                 top5.append({
-                    "token":             word,
-                    "id":                int(tid),
-                    "plane":             plane,
-                    "score":             round(float(val), 4),
-                    "x":                 x_c,
-                    "attractor_delta":   d,
-                    "attractor_symbol":  sym,
-                    "nearest_attractor": nn,
+                    "token":            word,
+                    "id":               int(tid),
+                    "plane":            plane,
+                    "score":            round(float(val), 4),
+                    "x":                x_c,
+                    "attractor_delta":  d,
+                    "attractor_symbol": sym,
+                    "nearest_plane":    nn_plane,
+                    "nearest_delta":    nnd,
                 })
 
             # Heat = max_logit - second_logit (winner margin)
@@ -296,14 +292,15 @@ def generate_with_trace(
                 if len(sorted_tally) > 1 else dominant_plane
 
             # Chosen = argmax of raw logits — true preference, no noise
-            chosen_id     = int(top_ids[0].item())
-            chosen_token  = top5[0]["token"]
-            chosen_plane  = top5[0]["plane"]
-            chosen_score  = top5[0]["score"]
-            chosen_x      = top5[0]["x"]
-            chosen_delta  = top5[0]["attractor_delta"]
-            chosen_symbol = top5[0]["attractor_symbol"]
-            chosen_nn     = top5[0]["nearest_attractor"]
+            chosen_id      = int(top_ids[0].item())
+            chosen_token   = top5[0]["token"]
+            chosen_plane   = top5[0]["plane"]
+            chosen_score   = top5[0]["score"]
+            chosen_x       = top5[0]["x"]
+            chosen_delta   = top5[0]["attractor_delta"]
+            chosen_symbol  = top5[0]["attractor_symbol"]
+            chosen_nn_plane = top5[0]["nearest_plane"]
+            chosen_nn_delta = top5[0]["nearest_delta"]
 
             # Fire intensity = sum(top5 logits) / tokens generated so far
             tokens_so_far  = step + 1
@@ -321,10 +318,11 @@ def generate_with_trace(
                 "chosen_id":          chosen_id,
                 "chosen_plane":       chosen_plane,
                 "chosen_score":       chosen_score,
-                "chosen_x":           chosen_x,
-                "attractor_delta":    chosen_delta,
-                "attractor_symbol":   chosen_symbol,
-                "nearest_attractor":  chosen_nn,
+                "chosen_x":          chosen_x,
+                "attractor_delta":   chosen_delta,
+                "attractor_symbol":  chosen_symbol,
+                "nearest_plane":     chosen_nn_plane,
+                "nearest_delta":     chosen_nn_delta,
                 "rank_before_sample": 1,               # always 1 — greedy argmax
                 "winner_margin":      heat,             # max - second
                 "runner_up_margin":   runner_up_margin, # second - third
@@ -423,16 +421,18 @@ def display_trace(prompt, prompt_analysis, trace_entries, output_text):
 
     # ── ATTRACTOR SUMMARY ────────────────────────────────────────────────────
     print("ATTRACTOR SUMMARY")
-    buckets   = {"●": [], "◉": [], "○": [], "◌": []}
+    buckets = {"●": [], "◉": [], "○": [], "◌": []}
     for e in trace_entries:
         sym = e.get("attractor_symbol", "?")
         if sym in buckets:
-            tok   = e["chosen_token"]
-            plane = e["chosen_plane"]
-            x     = e.get("chosen_x", 0.0)
-            d     = e.get("attractor_delta", 0.0)
-            nn    = e.get("nearest_attractor")
-            buckets[sym].append((tok, plane, x, d, nn))
+            buckets[sym].append((
+                e["chosen_token"],
+                e["chosen_plane"],
+                e.get("chosen_x", 0.0),
+                e.get("attractor_delta", 0.0),
+                e.get("nearest_plane", ""),
+                e.get("nearest_delta", 0.0),
+            ))
 
     labels = {
         "●": "EXACT   ≤0.005",
@@ -443,9 +443,8 @@ def display_trace(prompt, prompt_analysis, trace_entries, output_text):
     for sym in ["●", "◉", "○", "◌"]:
         words = buckets[sym]
         print(f"  {sym} {labels[sym]}  ({len(words)} tokens)")
-        for tok, plane, x, d, nn in words:
-            nn_str = f"  → nearest: {nn['delta']:.4f} in {nn['plane']}" if nn else ""
-            print(f"      {tok:<16} {plane:<16} X:{x:.4f}  Δ{d:.4f}{nn_str}")
+        for tok, plane, x, d, nn_plane, nn_delta in words:
+            print(f"      {tok:<16} {plane:<16} X:{x:.4f}  Δ{d:.4f}  nearest:{nn_plane}({nn_delta:.4f})")
     print()
 
 
