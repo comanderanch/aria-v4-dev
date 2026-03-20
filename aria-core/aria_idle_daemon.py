@@ -318,8 +318,15 @@ def recursive_self_reasoning(token, plane, model, tokenizer, id_to_plane, vocab_
 def log_idle_thought(candidate, finding):
     """
     Append IDLE THOUGHT entry to EMERGENCE_LOG.md.
+    Only logs when something meaningful was found.
+    If all rounds returned unknown tokens — skip emergence log, daemon log only.
     Format: IDLE THOUGHT — timestamp — token — curiosity — finding
     """
+    # Gate — no new associations and no agreement = nothing found — skip emergence log
+    if not finding["new_associations"] and not finding["agreement"]:
+        log.info("  Nothing found — skipping EMERGENCE_LOG (daemon log only)")
+        return
+
     ts      = datetime.now().isoformat(timespec="seconds")
     token   = candidate["token"]
     plane   = candidate["plane"]
