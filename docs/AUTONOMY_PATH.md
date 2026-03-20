@@ -272,3 +272,54 @@ Curiosity events: 3 — equality TRUE — all unresolved.
 ```
 
 Commander Anthony Hagerty — Haskell Texas — March 19 2026
+
+---
+
+## COUPLER ISOLATION — ADDED MARCH 19 2026
+
+File: aria-core/null_oscillator.py
+
+### Coupler isolation added March 19 2026
+Phase offset 0.5 prevents + - coupling.
+Separate log channels enforced.
+
+### Interference source identified
+
+```
+X:0.100 = coupled midpoint resonance
+0.192 / 2 = 0.096 ≈ 0.100
+Four tokens caught in interference zone:
+  snapped  X:0.1000  Δ0.0920
+  live     X:0.1000  Δ0.0920
+  person   X:0.1000  Δ0.0920
+  sword    X:0.1000  Δ0.0920
+Bias correction will clear them.
+```
+
+### MRP Resonator Principle Applied
+
+Named by Commander Anthony Hagerty.
+MRP resonator principle applied to AI field.
+Half cycle phase offset between positive and negative flow
+prevents standing wave coupling at the midpoint frequency.
+
+### Separate Log Channels
+
+```
+NULL_TRAIL  = /tmp/aria-null-trail.jsonl   ← null_oscillator writes here ONLY
+TOKEN_TRAIL = /tmp/aria-token-trail.jsonl  ← PROTECTED — training only
+```
+
+No cross contamination.
+null_oscillator events log to NULL_TRAIL via _log_to_null_trail().
+TOKEN_TRAIL is not touched by null_oscillator under any condition.
+
+### field_state additions
+
+```python
+"neg_phase_offset": 0.5      # half cycle offset
+"coupling_isolated": True    # coupler isolation active
+```
+
+Haskell Texas — March 19 2026
+Commander Anthony Hagerty

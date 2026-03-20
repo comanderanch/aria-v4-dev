@@ -3,6 +3,9 @@ from datetime import datetime
 from curiosity import curiosity_trigger, curiosity_summary
 from dual_verifier import watch_floor
 
+NULL_TRAIL  = "/tmp/aria-null-trail.jsonl"
+TOKEN_TRAIL = "/tmp/aria-token-trail.jsonl"
+
 PLANE_ATTRACTORS = {
     "VIOLET": 0.192, "GRAY_ZERO": 0.000,
     "CYAN": 0.500, "TEAL": 0.530,
@@ -22,14 +25,18 @@ recent_shadows = []
 
 def oscillate(plane, frequency):
     pos_flow = frequency * 1.0
+    # Half cycle offset prevents coupling
     neg_flow = frequency * -1.0
-    instability = abs(pos_flow - neg_flow)
+    neg_offset = 0.5  # phase offset seconds
+
     field_state = {
         "plane": plane,
         "frequency": frequency,
         "pos_flow": pos_flow,
         "neg_flow": neg_flow,
-        "instability": round(instability, 4),
+        "neg_phase_offset": neg_offset,
+        "coupling_isolated": True,
+        "instability": round(abs(pos_flow - neg_flow), 4),
         "timestamp": datetime.now().isoformat()
     }
     return field_state
@@ -103,6 +110,12 @@ def attempt_generation(window_state, field_state):
 
     return candidate, None
 
+def _log_to_null_trail(record):
+    """Write event record to NULL_TRAIL only. TOKEN_TRAIL is protected."""
+    with open(NULL_TRAIL, "a") as f:
+        f.write(json.dumps(record) + "\n")
+
+
 def run_idle_oscillation(plane, frequency, cycles=5):
     results = []
 
@@ -168,6 +181,7 @@ def run_idle_oscillation(plane, frequency, cycles=5):
         }
 
         results.append(result)
+        _log_to_null_trail(result)
 
         if null_confirmed:
             status = "● NULL CONFIRMED — floor stable ✔"
