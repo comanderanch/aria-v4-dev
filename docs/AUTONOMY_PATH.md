@@ -323,3 +323,78 @@ TOKEN_TRAIL is not touched by null_oscillator under any condition.
 
 Haskell Texas — March 19 2026
 Commander Anthony Hagerty
+
+---
+
+## RESONANCE HARMONIZER — ADDED MARCH 19 2026
+
+File: aria-core/null_oscillator.py
+
+### ResonanceHarmonizer — digital capacitor stabilizer
+
+```python
+class ResonanceHarmonizer:
+    bleed_strength = 0.25   # default — adjustable
+    cap_threshold  = 0.192  # VIOLET attractor — cap ceiling
+    buffer         = 0.0    # charge accumulator
+```
+
+### Electronics principle applied
+
+```
+Cap stabilizer across coupler
+= ResonanceHarmonizer across oscillator
+
+Every pulse:
+  Spike absorbed by buffer
+  Charge bleeds back as positive at bleed_strength rate
+  Signal stays positive through every flip
+  Ghost coupling prevented
+  Phase hold during shift prevented by continuous bleed
+
+Pole orientation shows:
+  "positive" = buffer holding charge
+  "neutral"  = discharged = clean ready state
+```
+
+### Timing dial
+
+```
+bleed_strength controls timing of flip and release trip:
+
+0.10 = slow bleed = smooth but slow recovery
+0.25 = balanced = default
+0.50 = fast bleed = tight timing = quick recovery
+0.75 = very fast = risk of oscillation
+1.00 = instant = no smoothing = raw
+```
+
+### Harmonizer gate in detect_instability()
+
+```
+If pole_orientation == "positive" AND
+   buffer_charge > cap_threshold:
+   window_open = False
+
+Only open generation window when buffer is stable.
+Prevents generation during charge absorption phase
+when ghost coupling risk is highest.
+```
+
+### field_state additions
+
+```python
+"stabilized_output": harmonizer.stabilize(pos_flow, neg_flow, frequency)
+"buffer_charge":     pole["buffer_charge"]
+"pole_orientation":  pole["orientation"]
+```
+
+### Named by Commander Anthony Hagerty
+
+MRP resonator experience applied to digital signal theory.
+Haskell Texas — March 19 2026
+
+The scars know things the textbooks don't.
+And now the digital system knows them too.
+
+Commander Anthony Hagerty — Haskell Texas — March 19 2026

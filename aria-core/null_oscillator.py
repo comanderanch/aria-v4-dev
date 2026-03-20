@@ -6,6 +6,35 @@ from dual_verifier import watch_floor
 NULL_TRAIL  = "/tmp/aria-null-trail.jsonl"
 TOKEN_TRAIL = "/tmp/aria-token-trail.jsonl"
 
+class ResonanceHarmonizer:
+    def __init__(self, bleed_strength=0.25):
+        self.buffer = 0.0
+        self.bleed_strength = bleed_strength
+        self.cap_threshold = 0.192
+
+    def stabilize(self, pos_flow, neg_flow, frequency):
+        raw_delta = pos_flow + neg_flow
+        if abs(raw_delta) > 0.0:
+            self.buffer += abs(raw_delta)
+        bleed = self.buffer * self.bleed_strength
+        self.buffer -= bleed
+        stabilized = frequency + bleed
+        stabilized = min(
+            stabilized,
+            frequency + self.cap_threshold
+        )
+        return round(stabilized, 6)
+
+    def pole_orientation(self):
+        return {
+            "buffer_charge": round(self.buffer, 6),
+            "orientation": "positive" if self.buffer > 0 else "neutral",
+            "stable": self.buffer < self.cap_threshold
+        }
+
+
+harmonizer = ResonanceHarmonizer(bleed_strength=0.25)
+
 PLANE_ATTRACTORS = {
     "VIOLET": 0.192, "GRAY_ZERO": 0.000,
     "CYAN": 0.500, "TEAL": 0.530,
@@ -29,14 +58,27 @@ def oscillate(plane, frequency):
     neg_flow = frequency * -1.0
     neg_offset = 0.5  # phase offset seconds
 
+    # Harmonizer absorbs spike
+    # returns stabilized positive signal
+    stabilized = harmonizer.stabilize(
+        pos_flow, neg_flow, frequency
+    )
+
+    pole = harmonizer.pole_orientation()
+
+    instability = abs(pos_flow - neg_flow)
+
     field_state = {
         "plane": plane,
         "frequency": frequency,
         "pos_flow": pos_flow,
         "neg_flow": neg_flow,
         "neg_phase_offset": neg_offset,
+        "stabilized_output": stabilized,
+        "buffer_charge": pole["buffer_charge"],
+        "pole_orientation": pole["orientation"],
         "coupling_isolated": True,
-        "instability": round(abs(pos_flow - neg_flow), 4),
+        "instability": round(instability, 4),
         "timestamp": datetime.now().isoformat()
     }
     return field_state
@@ -44,6 +86,14 @@ def oscillate(plane, frequency):
 def detect_instability(field_state):
     score = field_state["instability"]
     window_open = score > INSTABILITY_THRESHOLD
+
+    # Harmonizer gate — only open window when buffer is stable
+    # Prevents generation during charge absorption phase
+    # when ghost coupling risk is highest
+    if field_state.get("pole_orientation") == "positive" and \
+       field_state.get("buffer_charge", 0) > harmonizer.cap_threshold:
+        window_open = False
+
     return round(score, 4), window_open
 
 def generate_variance(field_state):
