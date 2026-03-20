@@ -29,7 +29,7 @@ LAPTOP INSTALL (one time):
 
 CONFIGURE:
     Set ARIA_SERVER below to your server's IP address.
-    Port 5700 is ARIA's V3 API.
+    Port 5750 is ARIA's V3 API.
 
 RUN:
     python3 aria_voice_client.py
@@ -55,7 +55,7 @@ from pathlib import Path
 from datetime import datetime
 
 # ── CONFIGURE THIS ─────────────────────────────────────────────────────────────
-ARIA_SERVER  = "http://YOUR_SERVER_IP:5700"   # ← set your server IP here
+ARIA_SERVER  = "http://YOUR_SERVER_IP:5750"   # ← set your server IP here
 VOSK_MODEL   = Path("vosk-model-small-en-us-0.15")  # path to vosk model folder
 SAMPLE_RATE  = 16000
 REQUEST_TIMEOUT = 15  # seconds — how long to wait for server response

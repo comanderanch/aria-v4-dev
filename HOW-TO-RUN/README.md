@@ -50,12 +50,12 @@ python3 v1-foundation/chat_sentence_mode.py
 ```
 What it does: Same as above but operates sentence-by-sentence.
 
-### V3 API — Start the REST server (port 5700)
+### V3 API — Start the REST server (port 5750)
 ```bash
 cd /home/comanderanch/aria-v4-dev
 python3 v3-aia/api/v3_api.py
 ```
-What it does: Starts Flask API on port 5700.
+What it does: Starts Flask API on port 5750.
 Endpoints:
   POST  /interact   — full pipeline interaction
   GET   /health     — system health check

@@ -88,7 +88,7 @@ _conversation_counter = 0
 _last_decision_key = None
 
 print("\n" + "=" * 60)
-print("AIA V3 READY — PORT 5700")
+print("AIA V3 READY — PORT 5750")
 print("=" * 60)
 print()
 
@@ -645,4 +645,4 @@ def _run_interact(text: str):
 # ─────────────────────────────────────────────────────────────────
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5700, debug=False)
+    app.run(host='0.0.0.0', port=5750, debug=False)
