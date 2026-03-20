@@ -1,0 +1,18 @@
+{
+  "ai-core": {
+    "host": "192.168.1.142",
+    "port": 22,
+    "user": "comanderanch",
+    "label": "Main server — Tesla P100 — ARIA brain",
+    "key_path": "/home/comanderanch/.ssh/id_rsa",
+    "added": "2026-03-20T00:00:00"
+  },
+  "laptop": {
+    "host": "192.168.1.169",
+    "port": 22,
+    "user": "comanderanch",
+    "label": "Laptop thin client — voice + GUI",
+    "key_path": "/home/comanderanch/.ssh/id_rsa",
+    "added": "2026-03-20T00:00:00"
+  }
+}
