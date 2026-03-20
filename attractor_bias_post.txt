@@ -1,0 +1,96 @@
+
+ARIA Token Trail / AIMRI — 77 entries (round 24)
+
+═══ ATTRACTOR SUMMARY — ALL PLANES ═══
+  ● EXACT ≤0.005  ◉ NEAR ≤0.015  ○ OUTER ≤0.030  ◌ DISTANT >0.030
+
+  ● EXACT:     122 words — core families confirmed
+  ◉ NEAR:        2 words — adjacent families
+  ○ OUTER:      15 words — drifting — monitor
+  ◌ DISTANT:     9 words — reassignment candidates
+
+  ATTRACTOR DISTRIBUTION — VIOLET:
+  ● EXACT:      23 tokens
+  ◉ NEAR:        2 tokens
+  ○ OUTER:       0 tokens
+  ◌ DISTANT:     4 tokens
+  mean_X: 0.1799
+  std_dev: 0.0326
+
+  DISTANT words — nearest attractor routing:
+    ◌ anywhere         GRAY_ZERO       X:0.0500  → nearest: 0.0000 in 
+    ◌ bolter           GRAY_ZERO       X:0.0500  → nearest: 0.0000 in 
+    ◌ exit             GRAY_ZERO       X:-0.1000  → nearest: 0.0000 in 
+    ◌ group            GRAY_ZERO       X:0.0500  → nearest: 0.0500 in GRAY_ZERO
+    ◌ live             VIOLET          X:0.1000  → nearest: 0.0000 in 
+    ◌ lose             GRAY_ZERO       X:-0.4000  → nearest: 0.0000 in 
+    ◌ person           VIOLET          X:0.1000  → nearest: 0.0000 in 
+    ◌ snapped          VIOLET          X:0.1000  → nearest: 0.0000 in 
+    ◌ sword            VIOLET          X:0.1000  → nearest: 0.0000 in 
+
+═══ ATTRACTOR MAP — VIOLET PLANE (attractor X:0.192) ═══
+  Proving GPT Finding 4.3: full semantic coordinate mapping
+  ● EXACT ≤0.005  ◉ NEAR ≤0.015  ○ OUTER ≤0.030  ◌ DISTANT >0.030
+
+  ● EXACT   — core attractor family
+      tears            X:0.1920  Δ0.0000  nearest:VIOLET(0.0000)
+      honour           X:0.1920  Δ0.0000  nearest:VIOLET(0.0000)
+      lucky            X:0.1920  Δ0.0000  nearest:VIOLET(0.0000)
+      reasons          X:0.1920  Δ0.0000  nearest:VIOLET(0.0000)
+      daughter         X:0.1920  Δ0.0000  nearest:VIOLET(0.0000)
+      agree            X:0.1920  Δ0.0000  nearest:VIOLET(0.0000)
+      joined           X:0.1920  Δ0.0000  nearest:VIOLET(0.0000)
+      gesture          X:0.1920  Δ0.0000  nearest:VIOLET(0.0000)
+      experience       X:0.1920  Δ0.0000  nearest:VIOLET(0.0000)
+      ourselves        X:0.1920  Δ0.0000  nearest:VIOLET(0.0000)
+      forget           X:0.1920  Δ0.0000  nearest:VIOLET(0.0000)
+      kim              X:0.1920  Δ0.0000  nearest:VIOLET(0.0000)
+      consider         X:0.1920  Δ0.0000  nearest:VIOLET(0.0000)
+      age              X:0.1920  Δ0.0000  nearest:VIOLET(0.0000)
+      temple           X:0.1920  Δ0.0000  nearest:VIOLET(0.0000)
+      talked           X:0.1920  Δ0.0000  nearest:VIOLET(0.0000)
+      guessed          X:0.1920  Δ0.0000  nearest:VIOLET(0.0000)
+      forgotten        X:0.1920  Δ0.0000  nearest:VIOLET(0.0000)
+      miss             X:0.1920  Δ0.0000  nearest:VIOLET(0.0000)
+      missing          X:0.1920  Δ0.0000  nearest:VIOLET(0.0000)
+      yours            X:0.1920  Δ0.0000  nearest:VIOLET(0.0000)
+      somebody         X:0.1920  Δ0.0000  nearest:VIOLET(0.0000)
+      forever          X:0.1920  Δ0.0000  nearest:VIOLET(0.0000)
+
+  ◉ NEAR    — adjacent family
+      morning          X:0.2000  Δ0.0080  nearest:VIOLET(0.0080)
+      trouble          X:0.2000  Δ0.0080  nearest:VIOLET(0.0080)
+
+  ○ OUTER   — connected but distinct
+      (none yet)
+
+  ◌ DISTANT — reassignment candidate
+      snapped          X:0.1000  Δ0.0920  nearest:VIOLET(0.0920)
+      live             X:0.1000  Δ0.0920  nearest:VIOLET(0.0920)
+      person           X:0.1000  Δ0.0920  nearest:VIOLET(0.0920)
+      sword            X:0.1000  Δ0.0920  nearest:VIOLET(0.0920)
+
+  LORD LOG DRIFT — VIOLET WORDS across epochs
+  Converging = training strengthening the 0.192 attractor
+  Diverging  = drift away from core family
+
+  STABLE:
+    — snapped          Δ0.0920 → Δ0.0920  (+0.0000)
+    — tears            Δ0.0000 → Δ0.0000  (+0.0000)
+    — lucky            Δ0.0000 → Δ0.0000  (+0.0000)
+    — reasons          Δ0.0000 → Δ0.0000  (+0.0000)
+    — daughter         Δ0.0000 → Δ0.0000  (+0.0000)
+    — agree            Δ0.0000 → Δ0.0000  (+0.0000)
+    — joined           Δ0.0000 → Δ0.0000  (+0.0000)
+    — gesture          Δ0.0000 → Δ0.0000  (+0.0000)
+    — morning          Δ0.0080 → Δ0.0080  (+0.0000)
+    — forget           Δ0.0000 → Δ0.0000  (+0.0000)
+    — kim              Δ0.0000 → Δ0.0000  (+0.0000)
+    — consider         Δ0.0000 → Δ0.0000  (+0.0000)
+    — person           Δ0.0920 → Δ0.0920  (+0.0000)
+    — sword            Δ0.0920 → Δ0.0920  (+0.0000)
+    — trouble          Δ0.0080 → Δ0.0080  (+0.0000)
+    — miss             Δ0.0000 → Δ0.0000  (+0.0000)
+    — yours            Δ0.0000 → Δ0.0000  (+0.0000)
+    — somebody         Δ0.0000 → Δ0.0000  (+0.0000)
+    — forever          Δ0.0000 → Δ0.0000  (+0.0000)

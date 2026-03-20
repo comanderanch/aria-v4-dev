@@ -34,17 +34,17 @@ from aria_core.diagnostics.token_trail import TrailLogger
 
 # --- VIOLET ANCHOR PULL ---
 VIOLET_TARGET    = 0.192
-ANCHOR_STRENGTH  = 1.25
+ANCHOR_STRENGTH  = 2.0        # STRONGER — was 1.25
 
 # --- SPREAD CONTROL ---
 STD_TARGET       = 0.015
-STD_PENALTY      = 1.5
+STD_PENALTY      = 2.0        # STRONGER — was 1.5
 
 # --- DELTA CLAMP ---
 MAX_DELTA        = 0.015
 
 # --- DRIFT CONTROL ---
-DRIFT_THRESHOLD  = 0.030
+DRIFT_THRESHOLD  = 0.020      # TIGHTER — was 0.030
 REASSIGN_ENABLED = True
 
 
@@ -235,6 +235,11 @@ def apply_violet_anchor_pull(model, lr):
             # Drift reassignment
             if REASSIGN_ENABLED and abs(new_x - VIOLET_TARGET) > DRIFT_THRESHOLD:
                 new_x = VIOLET_TARGET
+
+            # FORCE LOCK — CRITICAL
+            # Hard 50% pull toward 0.192 every step
+            # Interference zone tokens cannot hold at midpoint
+            new_x = VIOLET_TARGET + (new_x - VIOLET_TARGET) * 0.5
 
             emb[tid, 22] = new_x
 
