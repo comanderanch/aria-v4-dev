@@ -47,7 +47,7 @@ from tokenizer.aria_tokenizer import ARIATokenizer
 
 # ── CONFIGURATION ──────────────────────────────────────────────────────────────
 CHECKPOINT    = Path(__file__).parent / \
-    "training/checkpoints/round26_best.pt"
+    "training/checkpoints/round27_best.pt"
 TRACE_FILE    = Path("/tmp/aria-inference-trace.jsonl")
 EMERGENCE_LOG = Path(__file__).parent.parent / "docs/EMERGENCE_LOG.md"
 MEMORY_DIR    = Path(__file__).parent / "memory-field/field/idle_thoughts"
