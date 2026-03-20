@@ -65,12 +65,21 @@ TEMPERATURE  = 0.85
 MAX_TOKENS   = 40
 
 # Checkpoint — latest round first — fallback chain
-CHECKPOINT_CANDIDATES = [
-    Path(__file__).parent / "training/checkpoints/round30_best.pt",
-    Path(__file__).parent / "training/checkpoints/round27_best.pt",
-    Path(__file__).parent / "training/checkpoints/round24_pass3_best.pt",
-    Path(__file__).parent / "training/checkpoints/best_word_level.pt",
-]
+# Auto-detect highest round checkpoint — picks up new rounds automatically
+def _find_checkpoint_candidates():
+    ckpt_dir = Path(__file__).parent / "training/checkpoints"
+    # Find all roundXX_best.pt files and sort by round number descending
+    round_ckpts = sorted(
+        ckpt_dir.glob("round*_best.pt"),
+        key=lambda p: int(''.join(filter(str.isdigit, p.stem.split('_')[0])) or '0'),
+        reverse=True
+    )
+    fallbacks = [
+        ckpt_dir / "best_word_level.pt",
+    ]
+    return round_ckpts + fallbacks
+
+CHECKPOINT_CANDIDATES = _find_checkpoint_candidates()
 
 # ── RUNTIME STATE — loaded once — lives here ─────────────────────────────────────
 _model     = None
