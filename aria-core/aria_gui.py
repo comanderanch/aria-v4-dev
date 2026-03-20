@@ -59,7 +59,7 @@ except ImportError:
     STT_AVAILABLE = False
 
 # ── CONFIGURE ──────────────────────────────────────────────────────────────────
-ARIA_SERVER  = "http://YOUR_SERVER_IP:5680"   # ← set your server IP
+ARIA_SERVER  = "http://YOUR_SERVER_IP:5700"   # ← set your server IP
 VOSK_MODEL   = Path("vosk-model-small-en-us-0.15")
 SAMPLE_RATE  = 16000
 REQUEST_TIMEOUT = 15

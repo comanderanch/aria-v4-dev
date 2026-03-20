@@ -67,13 +67,13 @@ Put the unzipped folder in the same directory as aria_voice_client.py.
 Open aria_voice_client.py in any text editor.
 Find this line near the top:
 ```python
-ARIA_SERVER = "http://YOUR_SERVER_IP:5680"
+ARIA_SERVER = "http://YOUR_SERVER_IP:5700"
 ```
 Change YOUR_SERVER_IP to your server's actual IP address.
 
 Example:
 ```python
-ARIA_SERVER = "http://192.168.1.50:5680"
+ARIA_SERVER = "http://192.168.1.50:5700"
 ```
 
 ---
@@ -117,10 +117,10 @@ voice mode    — switch back to microphone
 ### "Server unreachable"
 - Make sure v3_api.py is running on the server
 - Make sure ARIA_SERVER has the right IP
-- Make sure port 5680 is not blocked by firewall:
+- Make sure port 5700 is not blocked by firewall:
   ```bash
   # On server:
-  sudo ufw allow 5680
+  sudo ufw allow 5700
   ```
 
 ### "No speech detected"
@@ -139,7 +139,7 @@ voice mode    — switch back to microphone
 ```
 Your Laptop                          Your Server
 ─────────────────                    ──────────────────────
-aria_voice_client.py                 v3_api.py (port 5680)
+aria_voice_client.py                 v3_api.py (port 5700)
 vosk model (STT)                     ARIA's full brain
 pyttsx3 (TTS)                        Queens fold
 microphone                           Memory field

@@ -40,14 +40,14 @@ Open a new terminal for everything else after this.
 ```bash
 python3 v3-aia/api/v3_api.py
 ```
-Runs on port 5680. Leave this running.
-Test it: `curl http://localhost:5680/health`
+Runs on port 5700. Leave this running.
+Test it: `curl http://localhost:5700/health`
 
 ### Step 4 — Talk to ARIA
 ```bash
 python3 v1-foundation/chat_with_aicore.py
 ```
-Or if V3 API is running, POST to: `http://localhost:5680/interact`
+Or if V3 API is running, POST to: `http://localhost:5700/interact`
 
 ---
 
@@ -179,7 +179,7 @@ The sealed weights are:
 7. Only then run training again
 ```
 
-### SYSTEM NOT RESPONDING — PORT 5680 DEAD
+### SYSTEM NOT RESPONDING — PORT 5700 DEAD
 ```bash
 # Check if the process is still running
 ps aux | grep v3_api
@@ -188,7 +188,7 @@ ps aux | grep v3_api
 python3 v3-aia/api/v3_api.py
 
 # Check if port is in use by something else
-lsof -i :5680
+lsof -i :5700
 ```
 
 ### GIT CONFLICT — CAN'T COMMIT
