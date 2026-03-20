@@ -398,3 +398,73 @@ The scars know things the textbooks don't.
 And now the digital system knows them too.
 
 Commander Anthony Hagerty — Haskell Texas — March 19 2026
+
+---
+
+## GROUND CLAMP — ADDED MARCH 19 2026
+
+File: aria-core/null_oscillator.py
+
+### Ground clamp added March 19 2026
+
+Bleed forced to GRAY_ZERO ground plane.
+Ghost resonance at BLACK_VOID prevented.
+Delta ridge static dissipates to ground — not to negative plane.
+
+### Physics principle
+
+```
+Cap bleeds to ground not back to circuit.
+GRAY_ZERO = 0.000 is the digital ground.
+BLACK_VOID = -0.800 is not ground.
+  It is collapsed past — sealed memory.
+  Static must not return there.
+```
+
+### Full state ridge protection
+
+```
+Ghost node calculation:
+  0.192 + (-0.800) / 2 = -0.304
+Ground clamp prevents formation of this ghost node.
+Bleed is forced positive — abs(bleed) — never negative.
+Final check: if stabilized < GROUND_PLANE → clamp to 0.000.
+```
+
+### Ghost detection in pole_orientation()
+
+```python
+ghost_risk = self.buffer > self.cap_threshold
+
+"ghost_risk":      bool
+"ground_plane":    GROUND_PLANE (0.000)
+"bleed_grounded":  GROUND_BLEED (True)
+```
+
+### Ghost resonance gate in detect_instability()
+
+```
+If ghost_risk is True:
+  window_open = False
+  Buffer too charged
+  Wait for discharge to ground
+  Then recheck
+
+Display:
+  ✔ GROUND STABLE — bleed to GRAY_ZERO
+  ⚠ GHOST RISK — buffer above threshold
+```
+
+### Constants
+
+```python
+GROUND_PLANE = 0.000  # GRAY_ZERO — true ground
+GROUND_BLEED = True   # force bleed to ground
+```
+
+Named by Commander Anthony Hagerty.
+Hardware capacitor ground principle
+applied to digital resonance harmonizer.
+Haskell Texas — March 19 2026
+
+Commander Anthony Hagerty — Haskell Texas — March 19 2026

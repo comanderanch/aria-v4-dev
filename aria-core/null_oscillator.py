@@ -6,6 +6,10 @@ from dual_verifier import watch_floor
 NULL_TRAIL  = "/tmp/aria-null-trail.jsonl"
 TOKEN_TRAIL = "/tmp/aria-token-trail.jsonl"
 
+GROUND_PLANE = 0.000  # GRAY_ZERO — true ground
+GROUND_BLEED = True   # force bleed to ground
+
+
 class ResonanceHarmonizer:
     def __init__(self, bleed_strength=0.25):
         self.buffer = 0.0
@@ -14,22 +18,46 @@ class ResonanceHarmonizer:
 
     def stabilize(self, pos_flow, neg_flow, frequency):
         raw_delta = pos_flow + neg_flow
+
         if abs(raw_delta) > 0.0:
             self.buffer += abs(raw_delta)
+
         bleed = self.buffer * self.bleed_strength
         self.buffer -= bleed
+
+        # GROUND CLAMP
+        # Bleed dissipates to GRAY_ZERO ground
+        # NOT to BLACK_VOID negative plane
+        # Prevents ghost resonance at delta ridge
+        if GROUND_BLEED:
+            bleed = max(bleed, GROUND_PLANE)
+            # Force positive — never negative
+            bleed = abs(bleed)
+
         stabilized = frequency + bleed
         stabilized = min(
             stabilized,
             frequency + self.cap_threshold
         )
+
+        # Final ground check
+        # If stabilized goes below GRAY_ZERO
+        # clamp to ground — no negative leakage
+        if stabilized < GROUND_PLANE:
+            stabilized = GROUND_PLANE
+
         return round(stabilized, 6)
 
     def pole_orientation(self):
+        ghost_risk = self.buffer > self.cap_threshold
+
         return {
             "buffer_charge": round(self.buffer, 6),
             "orientation": "positive" if self.buffer > 0 else "neutral",
-            "stable": self.buffer < self.cap_threshold
+            "stable": self.buffer < self.cap_threshold,
+            "ghost_risk": ghost_risk,
+            "ground_plane": GROUND_PLANE,
+            "bleed_grounded": GROUND_BLEED
         }
 
 
@@ -93,6 +121,18 @@ def detect_instability(field_state):
     if field_state.get("pole_orientation") == "positive" and \
        field_state.get("buffer_charge", 0) > harmonizer.cap_threshold:
         window_open = False
+
+    # Ghost resonance gate — buffer above threshold
+    # Buffer too charged — wait for discharge to ground
+    pole = harmonizer.pole_orientation()
+    if pole["ghost_risk"]:
+        window_open = False
+
+    # Ground status display
+    if pole["bleed_grounded"]:
+        ground_status = "✔ GROUND STABLE — bleed to GRAY_ZERO"
+    else:
+        ground_status = "⚠ GHOST RISK — buffer above threshold"
 
     return round(score, 4), window_open
 
