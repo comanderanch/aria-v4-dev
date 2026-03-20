@@ -1058,6 +1058,59 @@ WORD_FREQUENCIES = {
     # Connection / game → YELLOW_GREEN
     "game":      0.70,
 
+    # ── ROUND 26 VOCABULARY FIX — March 20 2026 ────────────────────
+    # Real UNK rate: 16.2% — target: below 15%
+    # Proper nouns from specific book series excluded (reacher, tyrion, astartes, etc.)
+    # Added: real common English words + em-dash structural token
+
+    # Structural — em-dash as punctuation bridge → GRAY_ZERO
+    "—":          0.00,
+
+    # Place / world → CYAN (openness)
+    "china":      0.50,  "navy":       0.48,  "dragon":     0.55,
+    "midnight":   0.25,  "prison":     0.20,  "warehouse":  0.45,
+
+    # Action words → CYAN/TEAL
+    "tells":      0.52,  "asks":       0.53,  "lift":       0.50,
+    "counter":    0.45,  "address":    0.48,  "points":     0.50,
+    "shuttle":    0.50,  "player":     0.50,
+
+    # Intensity / conflict → RED_ORANGE
+    "assassin":   0.85,  "shotgun":    0.85,  "chief":      0.75,
+
+    # Physical / structural → GRAY_ZERO
+    "tile":       0.00,  "tiles":      0.00,  "bus":        0.00,
+    "bars":       0.00,  "slot":       0.00,  "plug":       0.00,
+
+    # Knowledge / tech → CYAN_BLUE
+    "node":       0.43,  "server":     0.43,  "client":     0.43,
+    "port":       0.43,  "host":       0.43,  "connect":    0.45,
+    "connection": 0.45,  "request":    0.48,  "response":   0.48,
+    "endpoint":   0.45,  "api":        0.45,  "route":      0.45,
+    "ping":       0.43,  "ssh":        0.43,  "network":    0.45,
+    "deploy":     0.50,  "install":    0.50,  "terminal":   0.45,
+
+    # ── ROUND 26 BATCH 2 — March 20 2026 ───────────────────────────
+    # Remaining real-word UNK gaps + calendar words (all missing)
+
+    # Calendar — days of week → TEAL (calm, rhythm, structure)
+    "monday":     0.55,  "tuesday":    0.55,  "wednesday":  0.55,
+    "thursday":   0.55,  "friday":     0.55,  "saturday":   0.55,
+    "sunday":     0.55,
+
+    # Place / structure → CYAN (openness)
+    "chinese":    0.50,  "highway":    0.50,  "stairwell":  0.45,
+    "county":     0.48,  "bank":       0.48,
+
+    # Group / org → BLUE (depth)
+    "triad":      0.35,  "triads":     0.35,  "guards":     0.35,
+
+    # Action / motion → GREEN (growth/forward)
+    "managed":    0.65,  "push":       0.65,  "screaming":  0.70,
+
+    # Pattern / shape → CYAN_BLUE (logic)
+    "circles":    0.43,  "pair":       0.45,
+
     # ── ROUND 24 BATCH 6 — March 18 2026 — FINAL PUSH ──────────────
     # Target: cross below 15% UNK rate
     # Proper nouns excluded (reacher, astelan, roy, john, lantry, sorenson, brael, magnus, garber skipped)
