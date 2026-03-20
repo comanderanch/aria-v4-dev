@@ -40,3 +40,4 @@ myenv/
 *.log
 logs/
 *.bak
+aria-core/vosk-model-small-en-us-0.15/
