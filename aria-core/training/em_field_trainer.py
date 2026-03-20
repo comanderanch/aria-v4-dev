@@ -170,7 +170,7 @@ class EMFieldLoss(nn.Module):
         self.ce_loss       = nn.CrossEntropyLoss()
         self.stokes_weight = stokes_weight
 
-    def forward(self, logits, targets, states=None):
+    def forward(self, logits, targets, states=None, null_excitation=0.0):
         batch, seq, vocab = logits.shape
         ce = self.ce_loss(
             logits.view(batch * seq, vocab),
@@ -180,6 +180,11 @@ class EMFieldLoss(nn.Module):
             return ce, {"ce": ce.item(), "em": 0.0}
         stokes        = states["stokes"]
         stokes_target = torch.full_like(stokes, STOKES_SHIFT_THZ / FREQ_MAX_THZ)
+        # Null excitation — negative pole pull from internal untraceable event
+        # Pulls stokes_target toward negative — FluorescentLayer flips back
+        # The +/- transition completes inside the model — no traceability
+        if null_excitation != 0.0:
+            stokes_target = stokes_target + null_excitation
         em_loss       = torch.nn.functional.mse_loss(stokes, stokes_target)
         resonance     = states["resonance"]
         res_loss      = torch.mean(
