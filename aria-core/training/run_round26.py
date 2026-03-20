@@ -38,6 +38,7 @@ import time
 from datetime import datetime
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent.parent.parent))
+sys.path.insert(0, str(Path(__file__).parent.parent))  # aria-core/ for null_oscillator imports
 
 from aria_core.training.em_field_trainer import (
     ARIACoreModel, EMFieldLoss
@@ -53,7 +54,7 @@ _spec = importlib.util.spec_from_file_location(
     "null_oscillator",
     Path(__file__).parent.parent / "null_oscillator.py"
 )
-_mod = importlib.util.load_from_spec(_spec)
+_mod = importlib.util.module_from_spec(_spec)
 _spec.loader.exec_module(_mod)
 oscillate          = _mod.oscillate
 detect_instability = _mod.detect_instability
@@ -139,8 +140,14 @@ class WordTokenizedDataset(torch.utils.data.Dataset):
         unk_id    = tokenizer.vocab.get("<UNK>", 2301)
         token_ids = []
         for word in words:
-            ids = tokenizer._tokenize_word(word)
-            token_ids.extend(ids)
+            # Use simple word lookup — keeps all IDs within vocab_size=2304
+            # Punctuation tokenization (IDs 2304-2309) would exceed model bounds
+            clean = word.strip(".,!?;:\"'()-[]{}")
+            tid   = tokenizer.vocab.get(clean, unk_id)
+            if 0 <= tid < 2304:
+                token_ids.append(tid)
+            else:
+                token_ids.append(unk_id)
 
         self.sequences = []
         stride = seq_length // 2
