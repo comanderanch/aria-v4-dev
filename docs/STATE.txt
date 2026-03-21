@@ -1,0 +1,11 @@
+PHASE: GRAMMAR EMERGENCE — STABLE
+CONVERGENCE: PARTIAL (EXPECTED FOR CORPUS LIMIT)
+LOSS FLOOR (CURRENT): ~4.39
+UNK: ELIMINATED (RESOLVER LAYER)
+STRUCTURE: PARTIAL BUT FORMING
+Loss flattening confirmed rounds 65-68
+
+NEXT SESSION:
+1. midpoint token correction 0.1 cluster
+2. short burst training
+3. sleeper pins controlled
