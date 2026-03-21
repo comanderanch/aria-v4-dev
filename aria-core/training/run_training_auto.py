@@ -62,11 +62,11 @@ from aria_core.dual_verifier import watch_floor
 # CONFIGURATION
 # ═══════════════════════════════════════════════════════════════════════════════
 
-START_ROUND   = 31       # First round to run
-MAX_ROUND     = 60       # Hard ceiling — won't run past this
+START_ROUND   = 61       # Round 61 — post vocab patch (2049 words, 16.3% UNK)
+MAX_ROUND     = 100      # Hard ceiling
 TARGET_LOSS   = 3.5      # Stop when loss drops below this
 EPOCHS        = 3        # Epochs per round
-LR_START      = 0.00005  # Learning rate for round 31 — decays each round
+LR_START      = 0.00005  # lr reset for vocab relearn phase (same as Round 26)
 LR_MIN        = 0.000005 # Floor — never goes below this
 
 CKPT_DIR = Path(__file__).parent / "checkpoints"
@@ -305,6 +305,7 @@ if __name__ == "__main__":
     prev_ckpt = None
     for candidate in [
         CKPT_DIR / f"round{START_ROUND - 1}_best.pt",
+        CKPT_DIR / "round60_best.pt",
         CKPT_DIR / "round30_best.pt",
         CKPT_DIR / "round27_best.pt",
         CKPT_DIR / "best_word_level.pt",

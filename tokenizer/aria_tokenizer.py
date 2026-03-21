@@ -1370,6 +1370,59 @@ WORD_FREQUENCIES = {
     "forgive":   0.192, "married":   0.192, "beauty":    0.192,
     "pleasure":  0.192, "innocent":  0.192, "spirit":    0.192,
 
+    # ── STEP 3 TARGETED PATCH — March 21 2026 ───────────────────────
+    # Signal shaping — uncertainty pressure reduction
+    # Frequencies anchored to stable existing bands — not midpoints
+    # VIOLET=0.192  GRAY=0.00  TEAL=0.55  CYAN=0.50  BLUE=0.35
+
+    # 1. CONNECTORS — GRAY_ZERO (structural glue, neutral, present)
+    "because":   0.00,  "while":     0.00,  "before":    0.00,
+    "after":     0.00,  "during":    0.00,  "until":     0.00,
+    "unless":    0.00,  "although":  0.00,  "though":    0.00,
+    "since":     0.00,  "therefore": 0.00,  "however":   0.00,
+    "instead":   0.00,  "within":    0.00,  "without":   0.00,
+    "across":    0.00,  "between":   0.00,  "through":   0.00,
+    "toward":    0.00,  "against":   0.00,  "upon":      0.00,
+    "around":    0.00,  "beyond":    0.00,  "except":    0.00,
+    "despite":   0.00,  "whether":   0.00,  "whenever":  0.00,
+    "wherever":  0.00,  "whatever":  0.00,  "whoever":   0.00,
+
+    # 2. CORE VERBS — CYAN (openness, motion, action)
+    "build":     0.50,  "move":      0.50,  "hold":      0.50,
+    "push":      0.50,  "pull":      0.50,  "carry":     0.50,
+    "break":     0.50,  "fix":       0.50,  "start":     0.50,
+    "stop":      0.50,  "turn":      0.50,  "bring":     0.50,
+    "send":      0.50,  "receive":   0.50,  "create":    0.50,
+    "change":    0.50,  "follow":    0.50,  "lead":      0.50,
+    "keep":      0.50,  "release":   0.50,  "enter":     0.50,
+    "exit":      0.50,  "return":    0.50,  "choose":    0.50,
+    "check":     0.50,  "measure":   0.50,  "adjust":    0.50,
+    "connect":   0.50,  "disconnect":0.50,  "open":      0.50,
+    "close":     0.50,  "lock":      0.50,  "unlock":    0.50,
+    "read":      0.50,  "write":     0.50,  "store":     0.50,
+    "load":      0.50,  "save":      0.50,  "run":       0.50,
+
+    # 3. COMMON OBJECTS — TEAL (calm, concrete, grounded)
+    "door":      0.55,  "window":    0.55,  "wall":      0.55,
+    "floor":     0.55,  "ceiling":   0.55,  "tool":      0.55,
+    "cable":     0.55,  "pipe":      0.55,  "screw":     0.55,
+    "gear":      0.55,  "panel":     0.55,  "switch":    0.55,
+    "light":     0.55,  "box":       0.55,  "frame":     0.55,
+    "mount":     0.55,  "rope":      0.55,  "chain":     0.55,
+    "lever":     0.55,  "valve":     0.55,  "tube":      0.55,
+    "handle":    0.55,  "grip":      0.55,  "lock":      0.55,
+    "key":       0.55,  "button":    0.55,  "screen":    0.55,
+    "board":     0.55,  "port":      0.55,  "slot":      0.55,
+
+    # 4. STATE WORDS — VIOLET-adjacent 0.192 (stable, known truth)
+    "ready":     0.192, "active":    0.192, "idle":      0.192,
+    "broken":    0.192, "stable":    0.192, "correct":   0.192,
+    "wrong":     0.192, "safe":      0.192, "complete":  0.192,
+    "partial":   0.192, "pending":   0.192, "failed":    0.192,
+    "fixed":     0.192, "open":      0.192, "closed":    0.192,
+    "full":      0.192, "empty":     0.192, "clear":     0.192,
+    "blocked":   0.192, "locked":    0.192,
+
 }
 
 # ═══════════════════════════════════════════════
