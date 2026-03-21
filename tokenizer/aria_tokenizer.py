@@ -1175,6 +1175,201 @@ WORD_FREQUENCIES = {
     # Neutral structural
     "needs":     0.00,  "pool":      0.00,  "fat":       0.00,
 
+    # ── VOCAB PATCH — March 21 2026 ─────────────────────────────────
+    # UNK rate 18.2% → target < 12%
+    # Source: top-100 missing words from filtered_corpus.txt diagnostic
+    # Proper nouns excluded (reacher, tyrion, orks, astartes, etc.)
+    # Priority 1: contractions — highest frequency, pure language signal
+
+    # Contractions → GRAY_ZERO (present-tense structural glue)
+    "it's":      0.00,  "i'm":       0.00,  "don't":     0.00,
+    "didn't":   -0.30,  "i've":      0.192, "i'd":       0.192,
+    "that's":    0.00,  "there's":   0.00,  "you're":    0.00,
+    "we're":     0.00,  "wasn't":   -0.30,  "i'll":      0.05,
+    "he's":      0.00,  "can't":     0.00,  "they're":   0.00,
+    "she's":     0.00,  "wouldn't": -0.30,  "couldn't": -0.30,
+    "haven't":  -0.30,  "hadn't":   -0.30,  "isn't":    -0.30,
+    "aren't":   -0.30,  "doesn't":  -0.30,  "won't":    -0.30,
+    "you've":    0.192, "we've":     0.192, "they've":   0.192,
+    "you'll":    0.05,  "he'll":     0.05,  "she'll":    0.05,
+    "we'll":     0.05,  "they'll":   0.05,  "it'll":     0.05,
+    "that'll":   0.05,  "what's":    0.00,  "who's":     0.00,
+    "where's":   0.00,  "here's":    0.00,  "let's":     0.00,
+    "it'd":      0.00,  "shouldn't":-0.30,  "mustn't":  -0.30,
+
+    # Priority 2: high-frequency real words missing from vocab
+    # Action verbs → CYAN (openness, motion)
+    "carrying":  0.50,  "hanging":   0.50,  "wants":     0.50,
+    "forwards":  0.50,  "burst":     0.50,  "wound":     0.50,
+    "attempt":   0.50,  "process":   0.50,  "contact":   0.50,
+    "function":  0.50,  "target":    0.50,  "turning":   0.50,
+    "pulling":   0.50,  "pushing":   0.50,  "raised":    0.50,
+    "covered":   0.50,  "crossed":   0.50,  "dropped":   0.50,
+
+    # Physical / concrete → TEAL (calm, real)
+    "nerve":     0.55,  "radio":     0.55,  "image":     0.55,
+    "mass":      0.55,  "sons":      0.55,  "uniform":   0.55,
+    "wine":      0.55,  "plate":     0.55,  "tongue":    0.55,
+    "mistake":   0.55,  "buildings": 0.55,  "knife":     0.55,
+    "shoulder":  0.55,  "corner":    0.55,  "surface":   0.55,
+    "passage":   0.55,  "distance":  0.55,  "silence":   0.55,
+    "figure":    0.55,  "shadow":    0.55,  "motion":    0.55,
+    "impact":    0.55,  "signal":    0.55,  "structure": 0.55,
+    "vessel":    0.55,  "barrier":   0.55,  "warning":   0.55,
+
+    # Cognitive / abstract → BLUE (depth, reason)
+    "reality":   0.35,  "physical":  0.35,  "earlier":   0.35,
+    "understanding": 0.35, "merely": 0.35,  "thousands": 0.35,
+    "pattern":   0.35,  "pressure":  0.35,  "position":  0.35,
+    "direction": 0.35,  "response":  0.35,  "purpose":   0.35,
+    "origin":    0.35,  "decision":  0.35,  "approach":  0.35,
+    "condition": 0.35,  "element":   0.35,  "factor":    0.35,
+    "numbers":   0.35,  "plain":     0.35,
+
+    # Connectors / adverbs → GRAY_ZERO (language flow)
+    "perhaps":   0.00,  "suddenly":  0.00,  "quietly":   0.00,
+    "slowly":    0.00,  "quickly":   0.00,  "finally":   0.00,
+    "already":   0.00,  "nearly":    0.00,  "almost":    0.00,
+    "certainly": 0.00,  "obviously": 0.00,  "clearly":   0.00,
+    "apparently":0.00,  "generally": 0.00,  "usually":   0.00,
+    "normally":  0.00,  "probably":  0.00,  "possibly":  0.00,
+    "likely":    0.00,  "simply":    0.00,  "exactly":   0.00,
+    "entirely":  0.00,  "slightly":  0.00,  "mainly":    0.00,
+    "mostly":    0.00,  "mrs":       0.00,  "ring":      0.00,
+
+    # ── VOCAB PATCH BATCH 2 — March 21 2026 ─────────────────────────
+    # Real words below the proper-noun wall — ~350 hits each
+    # Names excluded: kurt, joe, gabriel, roy, jack, john, smith, anton, duncan
+
+    # Action verbs → CYAN (motion, openness)
+    "grabbed":   0.50,  "slammed":   0.50,  "twisted":   0.50,
+    "prepared":  0.50,  "suggested": 0.50,  "explained": 0.50,
+    "repeated":  0.50,  "jumped":    0.50,  "blew":      0.50,
+    "concerned": 0.50,  "cast":      0.50,
+
+    # Physical / concrete → TEAL (calm, real)
+    "chaplain":  0.55,  "cup":       0.55,  "throne":    0.55,
+    "vehicle":   0.55,  "chain":     0.55,  "mistress":  0.55,
+    "grip":      0.55,  "pistol":    0.55,  "hunter":    0.55,
+    "desert":    0.55,  "dinner":    0.55,  "flight":    0.55,
+    "park":      0.55,  "wolf":      0.55,  "ocean":     0.55,
+    "music":     0.55,  "card":      0.55,  "team":      0.55,
+    "lawyer":    0.55,  "officers":  0.55,  "department":0.55,
+    "leader":    0.55,  "features":  0.55,  "mess":      0.55,
+
+    # Descriptive / state → BLUE (depth, reason)
+    "concerned": 0.35,  "loose":     0.35,  "interesting":0.35,
+    "bloody":    0.35,  "otherwise": 0.35,  "poor":      0.35,
+    "bigger":    0.35,  "lower":     0.35,  "cool":      0.35,
+    "golden":    0.35,  "hundreds":  0.35,  "everywhere":0.35,
+
+    # Time / place → TEAL (structure, rhythm)
+    "yesterday": 0.55,  "york":      0.55,
+
+    # ── VOCAB PATCH BATCH 3 — March 21 2026 ─────────────────────────
+    # 200-499 frequency bucket — real English words only
+    # Names/proper nouns skipped (jack, helen, richard, tom, john, etc.)
+    # Remaining contraction: he'd
+    "he'd":      0.00,  "shouldn":   0.00,
+
+    # Action verbs → CYAN (motion)
+    "grabbed":   0.50,  "slammed":   0.50,  "twisted":   0.50,
+    "pointing":  0.50,  "slowed":    0.50,  "destroyed":  0.50,
+    "hoping":    0.50,  "folded":    0.50,  "waved":     0.50,
+    "ducked":    0.50,  "letting":   0.50,  "screamed":  0.50,
+    "gathered":  0.50,  "thrown":    0.50,  "knocked":   0.50,
+    "approached":0.50,  "emerged":   0.50,  "driven":    0.50,
+    "muttered":  0.50,  "dragged":   0.50,  "hissed":    0.50,
+    "lowered":   0.50,  "demanded":  0.50,  "landed":    0.50,
+    "shifted":   0.50,  "strode":    0.50,  "spun":      0.50,
+    "warned":    0.50,  "switched":  0.50,  "smashed":   0.50,
+    "growled":   0.50,  "gasped":    0.50,  "leapt":     0.50,
+    "tossed":    0.50,  "dragged":   0.50,  "cracked":   0.50,
+    "peered":    0.50,  "grinned":   0.50,  "glanced":   0.50,
+    "hurried":   0.50,  "struggled":  0.50, "reached":   0.50,
+    "aimed":     0.50,  "yelled":    0.50,  "flashed":   0.50,
+    "kissed":    0.50,  "convinced":  0.50, "refused":   0.50,
+    "stepped":   0.50,  "wiped":     0.50,  "blinked":   0.50,
+
+    # Physical / concrete → TEAL (real, grounded)
+    "jacket":    0.55,  "leather":   0.55,  "leg":       0.55,
+    "boots":     0.55,  "guns":      0.55,  "rifle":     0.55,
+    "bullet":    0.55,  "pistol":    0.55,  "tank":      0.55,
+    "truck":     0.55,  "van":       0.55,  "cabin":     0.55,
+    "rooms":     0.55,  "lobby":     0.55,  "porch":     0.55,
+    "garage":    0.55,  "elevator":  0.55,  "bedroom":   0.55,
+    "diner":     0.55,  "breakfast": 0.55,  "lunch":     0.55,
+    "dinner":    0.55,  "restaurant":0.55,  "shop":      0.55,
+    "clerk":     0.55,  "desk":      0.55,  "bench":     0.55,
+    "chairs":    0.55,  "table":     0.55,  "pockets":   0.55,
+    "belt":      0.55,  "palm":      0.55,  "thumb":     0.55,
+    "elbow":     0.55,  "knee":      0.55,  "chin":      0.55,
+    "cheek":     0.55,  "jaw":       0.55,  "waist":     0.55,
+    "shoulder":  0.55,  "forehead":  0.55,  "wrist":     0.55,
+    "fists":     0.55,  "muscles":   0.55,  "stomach":   0.55,
+    "dirt":      0.55,  "mud":       0.55,  "snow":      0.55,
+    "flame":     0.55,  "flames":    0.55,  "sunlight":  0.55,
+    "cloud":     0.55,  "clouds":    0.55,  "mist":      0.55,
+    "woods":     0.55,  "valley":    0.55,  "lake":      0.55,
+    "camp":      0.55,  "alley":     0.55,  "parking":   0.55,
+    "plastic":   0.55,  "wire":      0.55,  "tape":      0.55,
+    "shell":     0.55,  "bolt":      0.55,  "blast":     0.55,
+    "map":       0.55,  "camera":    0.55,  "computer":  0.55,
+    "telephone": 0.55,  "photograph":0.55,  "dollar":    0.55,
+    "dollars":   0.55,  "cash":      0.55,  "truck":     0.55,
+    "platform":  0.55,  "avenue":    0.55,  "page":      0.55,
+
+    # Abstract / state → BLUE (depth, reason)
+    "relief":    0.35,  "glory":     0.35,  "respect":   0.35,
+    "focus":     0.35,  "fury":      0.35,  "gravity":   0.35,
+    "despair":   0.35,  "promise":   0.35,  "desire":    0.35,
+    "horror":    0.35,  "terror":    0.35,  "laughter":  0.35,
+    "opportunity":0.35, "possibility":0.35, "intelligence":0.35,
+    "humanity":  0.35,  "empire":    0.35,  "authority": 0.35,
+    "advantage": 0.35,  "operation": 0.35,  "impression":0.35,
+    "atmosphere": 0.35, "tension":   0.35,  "century":   0.35,
+    "centuries": 0.35,  "murder":    0.35,  "crime":     0.35,
+    "accident":  0.35,  "damage":    0.35,  "assault":   0.35,
+    "victory":   0.35,  "defeat":    0.35,  "combat":    0.35,
+    "fate":      0.35,  "record":    0.35,  "result":    0.35,
+    "role":      0.35,  "stage":     0.35,  "career":    0.35,
+    "journey":   0.35,  "arrival":   0.35,  "departure": 0.35,
+    "science":   0.35,  "physics":   0.35,  "particle":  0.35,
+    "particles": 0.35,  "orbit":     0.35,  "gravity":   0.35,
+
+    # Descriptive → GREEN (growth, assessment)
+    "interested":0.65,  "stupid":    0.65,  "proud":     0.65,
+    "wild":      0.65,  "tough":     0.65,  "lonely":    0.65,
+    "desperate": 0.65,  "anxious":   0.65,  "guilty":    0.65,
+    "wonderful": 0.65,  "awful":     0.65,  "hungry":    0.65,
+    "tired":     0.65,  "drunk":     0.65,  "asleep":    0.65,
+    "naked":     0.65,  "wounded":   0.65,  "armed":     0.65,
+    "frozen":    0.65,  "invisible": 0.65,  "ordinary":  0.65,
+    "unusual":   0.65,  "comfortable":0.65, "capable":   0.65,
+    "confident": 0.65,  "innocent":  0.65,  "determined":0.65,
+    "appropriate":0.65, "similar":   0.65,  "enormous":  0.65,
+    "endless":   0.65,  "deeper":    0.65,  "stronger":  0.65,
+    "larger":    0.65,  "smaller":   0.65,  "higher":    0.65,
+    "lower":     0.65,  "wider":     0.65,  "harder":    0.65,
+    "broader":   0.65,  "steady":    0.65,  "neat":      0.65,
+
+    # Flow words / adverbs → GRAY_ZERO
+    "okay":      0.00,  "yeah":      0.00,  "hey":       0.00,
+    "ah":        0.00,  "aye":       0.00,  "softly":    0.00,
+    "sideways":  0.00,  "backward":  0.00,  "alongside": 0.00,
+    "amongst":   0.00,  "aboard":    0.00,  "upstairs":  0.00,
+    "halfway":   0.00,  "anywhere":  0.00,  "anymore":   0.00,
+    "everywhere":0.00,  "instantly":  0.00, "definitely": 0.00,
+    "particularly":0.00,"presumably": 0.00, "seriously":  0.00,
+    "naturally":  0.00, "properly":   0.00,  "briefly":   0.00,
+    "swiftly":   0.00,  "heavily":   0.00,  "closely":   0.00,
+    "quietly":   0.00,
+
+    # Memory / belonging → VIOLET
+    "memories":  0.192, "dreams":    0.192, "promise":   0.192,
+    "forgive":   0.192, "married":   0.192, "beauty":    0.192,
+    "pleasure":  0.192, "innocent":  0.192, "spirit":    0.192,
+
 }
 
 # ═══════════════════════════════════════════════
