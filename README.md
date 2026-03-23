@@ -1,3 +1,74 @@
+# AI-Core — Foundational Principle
+
+AI-Core is built on a strict rule:
+
+Fact overrides assumption.
+
+This system is not designed to predict, speculate, or assume intent.
+All behavior, evaluation, and output must be grounded in observable data or verifiable state.
+
+---
+
+## What This Means
+
+* No claims are made without evidence
+* No intent is assigned without direct observation
+* No conclusion is accepted without repeatable results
+
+---
+
+## What This Project Is
+
+AI-Core is an experimental architecture focused on:
+
+* Exploring alternative methods of AI computation
+* Reducing computational cost per decision
+* Evaluating structured, deterministic approaches to AI systems
+
+This work is driven by:
+
+* Measured behavior
+* Documented results
+* Repeatable testing
+
+---
+
+## What This Project Is Not
+
+* A claim of superiority over existing AI systems
+* A declaration of general intelligence
+* A finished or fully validated system
+
+---
+
+## Development Philosophy
+
+All progress follows this rule:
+
+If it is not observed, it is not treated as fact.
+
+Prediction, assumption, and interpretation are not used as evidence.
+
+---
+
+## Purpose
+
+This project exists to explore and learn.
+
+Any conclusions about its capability must come from:
+
+* Testing
+* Validation
+* Independent evaluation
+
+Not from assumption.
+
+---
+
+Commander Anthony Hagerty
+AI-Core Systems
+
+
 # ARIA V4 DEV — Master Project Log
 ## Commander: Anthony Hagerty — Haskell Texas
 ## Status: STABLE — pre-reboot sealed — March 17 2026
